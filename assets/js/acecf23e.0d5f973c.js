@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[1903],{1912:s=>{s.exports=JSON.parse('{"blogBasePath":"/REQ-2025.2-T02-RxHospitalar/blog","blogTitle":"Blog","authorsListPath":"/REQ-2025.2-T02-RxHospitalar/blog/authors"}')}}]);
