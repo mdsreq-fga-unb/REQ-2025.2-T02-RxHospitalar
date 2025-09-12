@@ -33,7 +33,7 @@ export default function Home() {
   return (
     <Layout
       title={`${siteConfig.title}`}
-      description="BASED - RX Hospitalar, sistema de gestão inteligente  <head />">
+      description="BASED - RX Hospitalar, sistema de gestão inteligente">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
