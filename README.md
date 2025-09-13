@@ -1,5 +1,10 @@
 # REQ-2025.2-T02-RxHospitalar
 
+![Contributors](https://img.shields.io/github/contributors/mdsreq-fga-unb/REQ-2025.2-T02-RxHospitalar)
+![Stars](https://img.shields.io/github/stars/mdsreq-fga-unb/REQ-2025.2-T02-RxHospitalar)
+![Last Commit](https://img.shields.io/github/last-commit/mdsreq-fga-unb/REQ-2025.2-T02-RxHospitalar)
+![Forks](https://img.shields.io/github/forks/mdsreq-fga-unb/REQ-2025.2-T02-RxHospitalar)
+
 Somos estudantes da **Universidade de Brasília (UnB) | Faculdade de Ciências e Tecnologias em Engenharia (FCTE)** e este projeto está sendo desenvolvido no contexto da disciplina de **Requisitos de Software**, ministrada pelo professor e doutor **George Marsicano Correia**. Nosso grupo, denominado **BASED**, tem como objetivo aplicar conceitos e práticas de engenharia de software em um caso real, em parceria com a empresa **RX Hospitalar**. A RX Hospitalar é uma distribuidora de produtos médicos e oftalmológicos que enfrenta desafios significativos relacionados à gestão de dados, estoque e processos operacionais. Nesse cenário, nosso projeto busca propor e desenvolver um **sistema de gestão inteligente**, capaz de otimizar análises, reduzir riscos operacionais, melhorar a integração entre setores e apoiar a tomada de decisão estratégica, contribuindo para a modernização e eficiência da empresa.
 
 ## Integrantes do grupo BASED:
