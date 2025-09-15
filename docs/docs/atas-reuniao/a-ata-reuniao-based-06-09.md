@@ -2,7 +2,7 @@
 sidebar_label: "N.º 1 (06/09/2025)"
 sidebar_position: 2
 ---
-# ATA N.º1 | BASED 06/09
+# ATA N.º1 | 06/09
 
 **Disciplina:** Requisitos de Software  
 **Data:** 06/09/2025  
@@ -106,4 +106,3 @@ sidebar_position: 2
 **Duração:** Aproximadamente 1h15  
 **Responsável pela redação da ata:** Gabriel Augusto V. V. Rocha  
 
----
