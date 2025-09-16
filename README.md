@@ -9,10 +9,9 @@ Somos estudantes da **Universidade de Brasília (UnB) | Faculdade de Ciências e
 
 ## Integrantes do grupo BASED:
 
-| <img src="https://github.com/AmandaaMoura.png" width="120"/> | <img src="https://github.com/BeatrizSants.png" width="120"/> | <img src="https://github.com/daviegito.png" width="120"/> |
+
+| <img src="https://github.com/AmandaaMoura.png" width="150"/> | <img src="https://github.com/BeatrizSants.png" width="150"/> | <img src="https://github.com/daviegito.png" width="150"/> |
 |:------------------------------------------------------------:|:------------------------------------------------------------:|:---------------------------------------------------------:|
 | **[Amanda de Moura](https://github.com/AmandaaMoura)**       | **[Beatriz Figueiredo dos Santos](https://github.com/BeatrizSants)** | **[Davi Marques do Egito Coelho](https://github.com/daviegito)** |
-
-| <img src="https://github.com/Tridudys.png" width="120"/> | <img src="https://github.com/gabrielaugusto23.png" width="120"/> | <img src="https://github.com/samuelvlobo.png" width="120"/> |
-|:--------------------------------------------------------:|:----------------------------------------------------------------:|:-----------------------------------------------------------:|
+| <img src="https://github.com/Tridudys.png" width="120"/>     | <img src="https://github.com/gabrielaugusto23.png" width="120"/> | <img src="https://github.com/samuelvlobo.png" width="120"/> |
 | **[Eduardo Oliveira Valadares](https://github.com/Tridudys)** | **[Gabriel Augusto V. V. Rocha](https://github.com/gabrielaugusto23)** | **[Samuel Rodrigues Viana Lobo](https://github.com/samuelvlobo)** |
