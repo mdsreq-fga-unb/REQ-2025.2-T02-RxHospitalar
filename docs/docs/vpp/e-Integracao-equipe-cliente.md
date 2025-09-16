@@ -18,6 +18,21 @@ sidebar_position: 5
 | Analista de Requisitos | Responsável por definir os critérios de análise, métricas importantes e regras de negócio.                                               | Todos os integrantes | Todos os integrantes   |
 | Infraestrutura e CI| Responsável por configurar o ambiente de desenvolvimento, testes e produção para suportar o sistema de análise de dados.                     | Gabriel         | Davi                       |
 
-### 5.2 Comunicação
+### 5.2 Comunicação|
+
+A presente seção aborda como se dará a comunicação interna e externa da equipe de maneira a evitar desentendimentos e maximizar o valor agregado do produto ao cliente.
+Os objetivos a seguir detalham especificamente o que o produto busca alcançar, transformando a gestão de compras e estoque em um processo mais ágil, intuitivo, estratégico e centralizado.
+
+**Ferramentas de comunicação**
+
+- **Discord:** ferramenta que armazena links importantes da disciplina e também é usado para comunicação e reuniões informais. Os documentos principais da equipe e do projeto também estão armazenados nele.
+- **WhatsApp:** ferramenta usada para comunicação rápida em situações mais urgentes.
+- **Microsoft Teams:** ferramenta usada para as reuniões com o cliente e gravação dessas reuniões, permitindo que a equipe posteriormente possa rever algumas informações acordadas com o cliente.
+- **GitHub Projects:** será utilizado para gestão de tarefas dentro da equipe. Ele apresenta alta integração com o próprio repositório do projeto e permite a criação de issues, que são cards que podem sinalizar problemas, coisas a serem feitas, pedidos de revisão de código e afins, além de permitir que usuários comentem nessas cards e facilite a colaboração entre membros.
+
+**Métodos e frequência de reuniões**
+
+- **Reuniões semanais entre a equipe:** A equipe de desenvolvimento se reunirá toda semana durante 1 hora e meia pelo Discord ou Microsoft Teams para discussão do andamento do projeto, em que cada membro irá relatar os progressos e dificuldades que teve durante a semana. A reunião será documentada por meio de uma ata. 
+- **Reuniões extraordinárias entre a equipe:** Em situações excepcionais, a equipe de desenvolvimento poderá se reunir para resolução de um problema ou para fins de alinhamento. A reunião será documentada por meio de uma ata.
 
 ### 5.3 Processo de validação 
