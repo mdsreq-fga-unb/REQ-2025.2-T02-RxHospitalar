@@ -6,8 +6,8 @@ sidebar_position: 2
 
 ### 2.1 Objetivos do Produto
 
-Com este produto visamos otimizar o processo de análise de planilhas de compras, estoque e vendas que são gerenciados pelo cliente, focando em reduzir o tempo dedicado neste processo de análise. Adicionado à este objetivo, também buscaremos garantir que a centralização dos dados seja disposta de forma mais intuitiva para que outras áreas também possam compreender e utilizar insights de forma estratégica, o que também diminui a carga de trabalho delegada ao setor de compras.
-Os objetivos a seguir detalham especificamente o que o produto busca alcançar, transformando a gestão de compras e estoque em um processo mais ágil, intuitivo, estratégico e centralizado.
+Com este produto visamos otimizar o processo de análise de planilhas de compras, estoque e vendas que são gerenciados pelo cliente, focando em reduzir o tempo dedicado neste processo de análise. Adicionado à este objetivo, também buscaremos garantir que a centralização dos dados seja disposta de forma mais intuitiva para que outras áreas também possam compreender e utilizar insights de forma estratégica, o que também diminui a carga de trabalho delegada ao setor de compras.  
+Os objetivos a seguir detalham especificamente o que o produto busca alcançar, transformando a gestão de compras e estoque em um processo mais ágil, intuitivo, estratégico e centralizado. De forma complementar, a Tabela 1 apresenta os objetivos específicos do projeto, evidenciando indicadores de sucesso diretamente relacionados à otimização do tempo e à criação de uma interface intuitiva.
 
 - **Reduzir o tempo** de análise de compras por **linha** de “horas/manhãs” para **minutos**.
 - **Consolidar** faturado + pendências + estoque + validade em **visão única** por **produto/linha/ indústria/região**.
