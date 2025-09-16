@@ -13,146 +13,68 @@ Somos estudantes da **Universidade de Brasília (UnB) | Faculdade de Ciências e
 <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "20px" }}>
 
   <a href="https://github.com/AmandaaMoura" style={{ textDecoration: "none", color: "inherit" }}>
-    <div style={{
-      textAlign: "center",
-      background: "var(--ifm-card-background-color)",
-      padding: "20px",
-      borderRadius: "15px",
-      boxShadow: "0 4px 8px rgba(0,0,0,0.1)"
-    }}>
+    <div className="team-card">
       <img 
         src="https://github.com/AmandaaMoura.png"
         alt="Amanda de Moura"
-        style={{
-          width: "120px",
-          height: "120px",
-          borderRadius: "50%",
-          border: "3px solid var(--ifm-color-primary)",
-          objectFit: "cover"
-        }}
+        className="team-avatar"
       />
-      <h3 style={{ color: "var(--ifm-heading-color)" }}>Amanda de Moura</h3>
-      <!-- <p style={{ color: "var(--ifm-font-color-base)" }}>Gerente de Projetos | Testes</p> -->
+      <h3>Amanda de Moura</h3>
     </div>
   </a>
 
   <a href="https://github.com/BeatrizSants" style={{ textDecoration: "none", color: "inherit" }}>
-    <div style={{
-      textAlign: "center",
-      background: "var(--ifm-card-background-color)",
-      padding: "20px",
-      borderRadius: "15px",
-      boxShadow: "0 4px 8px rgba(0,0,0,0.1)"
-    }}>
+    <div className="team-card">
       <img 
         src="https://github.com/BeatrizSants.png"
         alt="Beatriz Figueiredo"
-        style={{
-          width: "120px",
-          height: "120px",
-          borderRadius: "50%",
-          border: "3px solid var(--ifm-color-primary)",
-          objectFit: "cover"
-        }}
+        className="team-avatar"
       />
-      <h3 style={{ color: "var(--ifm-heading-color)" }}>Beatriz Figueiredo</h3>
-      <!-- <p style={{ color: "var(--ifm-font-color-base)" }}>Frontend</p> -->
+      <h3>Beatriz Figueiredo</h3>
     </div>
   </a>
 
   <a href="https://github.com/daviegito" style={{ textDecoration: "none", color: "inherit" }}>
-    <div style={{
-      textAlign: "center",
-      background: "var(--ifm-card-background-color)",
-      padding: "20px",
-      borderRadius: "15px",
-      boxShadow: "0 4px 8px rgba(0,0,0,0.1)"
-    }}>
+    <div className="team-card">
       <img 
         src="https://github.com/daviegito.png"
         alt="Davi Marques"
-        style={{
-          width: "120px",
-          height: "120px",
-          borderRadius: "50%",
-          border: "3px solid var(--ifm-color-primary)",
-          objectFit: "cover"
-        }}
+        className="team-avatar"
       />
-      <h3 style={{ color: "var(--ifm-heading-color)" }}>Davi Marques</h3>
-      <!-- <p style={{ color: "var(--ifm-font-color-base)" }}>Backend | Scrum Master</p> -->
+      <h3>Davi Marques</h3>
     </div>
   </a>
 
   <a href="https://github.com/Tridudys" style={{ textDecoration: "none", color: "inherit" }}>
-    <div style={{
-      textAlign: "center",
-      background: "var(--ifm-card-background-color)",
-      padding: "20px",
-      borderRadius: "15px",
-      boxShadow: "0 4px 8px rgba(0,0,0,0.1)"
-    }}>
+    <div className="team-card">
       <img 
         src="https://github.com/Tridudys.png"
         alt="Eduardo Oliveira"
-        style={{
-          width: "120px",
-          height: "120px",
-          borderRadius: "50%",
-          border: "3px solid var(--ifm-color-primary)",
-          objectFit: "cover"
-        }}
+        className="team-avatar"
       />
-      <h3 style={{ color: "var(--ifm-heading-color)" }}>Eduardo Oliveira</h3>
-      <!-- <p style={{ color: "var(--ifm-font-color-base)" }}>Backend</p> -->
+      <h3>Eduardo Oliveira</h3>
     </div>
   </a>
 
   <a href="https://github.com/gabrielaugusto23" style={{ textDecoration: "none", color: "inherit" }}>
-    <div style={{
-      textAlign: "center",
-      background: "var(--ifm-card-background-color)",
-      padding: "20px",
-      borderRadius: "15px",
-      boxShadow: "0 4px 8px rgba(0,0,0,0.1)"
-    }}>
+    <div className="team-card">
       <img 
         src="https://github.com/gabrielaugusto23.png"
         alt="Gabriel Augusto"
-        style={{
-          width: "120px",
-          height: "120px",
-          borderRadius: "50%",
-          border: "3px solid var(--ifm-color-primary)",
-          objectFit: "cover"
-        }}
+        className="team-avatar"
       />
-      <h3 style={{ color: "var(--ifm-heading-color)" }}>Gabriel Augusto</h3>
-      <!-- <p style={{ color: "var(--ifm-font-color-base)" }}>Infraestrutura & CI | Documentação</p> -->
+      <h3>Gabriel Augusto</h3>
     </div>
   </a>
 
   <a href="https://github.com/samuelvlobo" style={{ textDecoration: "none", color: "inherit" }}>
-    <div style={{
-      textAlign: "center",
-      background: "var(--ifm-card-background-color)",
-      padding: "20px",
-      borderRadius: "15px",
-      boxShadow: "0 4px 8px rgba(0,0,0,0.1)"
-    }}>
+    <div className="team-card">
       <img 
         src="https://github.com/samuelvlobo.png"
         alt="Samuel Rodrigues"
-        style={{
-          width: "120px",
-          height: "120px",
-          borderRadius: "50%",
-          border: "3px solid var(--ifm-color-primary)",
-          objectFit: "cover"
-        }}
+        className="team-avatar"
       />
-      <h3 style={{ color: "var(--ifm-heading-color)" }}>Samuel Rodrigues</h3>
-      <!-- <p style={{ color: "var(--ifm-font-color-base)" }}>Product Owner</p> -->
+      <h3>Samuel Rodrigues</h3>
     </div>
   </a>
 
