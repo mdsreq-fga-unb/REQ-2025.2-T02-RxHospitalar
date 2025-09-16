@@ -56,9 +56,9 @@ Do ponto de vista estratégico, o projeto deve estar estritamente alinhado às r
 
 ### 1.4 Segmentação de Clientes
 
-A estratégia comercial da organização é direcionada por uma clara segmentação de seu público-alvo. O foco principal reside no mercado B2B, com atuação em diversas frentes do setor de saúde, embora existam também nichos específicos no mercado B2C. A distribuição de receita, por sua vez, segue um padrão que reforça a importância de clientes estratégicos.
+A estratégia comercial da RX Hospitalar é orientada por uma segmentação de clientes bastante clara, que direciona de forma eficiente seus esforços de mercado. O foco principal está no modelo B2B (Business to Business), no qual a empresa atua de maneira consistente junto a diferentes frentes do setor de saúde. Entre os principais clientes:
 
-- **Principalmente B2B:**
+- **B2B:**
     - Hospitais 
     - Clínicas
     - Óticas 
@@ -66,3 +66,12 @@ A estratégia comercial da organização é direcionada por uma clara segmentaç
 - **B2C em casos específicos:** 
     - Ex: Prótese Mamária
 - **Pareto:** Aproximadamente 20% dos clientes respondem por 80% do faturamento da organização
+
+Essa abordagem fortalece o posicionamento da organização como parceira estratégica para empresas que necessitam de soluções confiáveis e ágeis.
+Apesar da predominância do B2B, a RX também atende nichos específicos no mercado B2C (Business to Consumer). Nesses casos, o relacionamento é direto com o consumidor final, geralmente em demandas mais personalizadas, como por exemplo a aquisição de próteses mamárias e outros produtos voltados para necessidades individuais.
+
+Outro ponto relevante da estratégia é a concentração da receita. A RX segue o princípio de Pareto, em que aproximadamente 20% dos clientes representam cerca de 80% do faturamento total. Isso evidencia a importância de manter relacionamentos sólidos com clientes estratégicos, que não apenas garantem maior estabilidade financeira, mas também consolidam a posição da empresa em um mercado altamente competitivo.
+
+No contexto da solução de software proposta, os usuários diretos serão os membros do setor administrativo responsáveis pela gestão de compras e estoque da RX Hospitalar. Esse público, ao utilizar a ferramenta, terá sua rotina de análise otimizada, com ganhos de produtividade, precisão e eficiência na tomada de decisões.
+Assim, ao alinhar uma segmentação bem definida, uma atuação diversificada no B2B, nichos seletivos no B2C, aplicação de tecnologia para atender às necessidades internas, o que contribui para uma melhor sustentabilidade e crescimento contínuo da organização.
+
