@@ -8,7 +8,6 @@ sidebar_position: 6
 
 ### 6.1.1 Lições aprendidas e melhorias
 
-
 ##### Desafio: A definição da abordagem, do ciclo de vida e do processo de desenvolvimento é essencial, pois orienta as atividades da equipe, estabelece a relação com o cliente e deve estar alinhada às características do software a ser desenvolvido.
 
 ##### Ação de melhoria: Realizar a escolha com base no perfil e maturidade da equipe, de modo que os membros consigam adotar e executar as etapas previstas de maneira consistente, dentro dos prazos determinados para o desenvolvimento do projeto.
