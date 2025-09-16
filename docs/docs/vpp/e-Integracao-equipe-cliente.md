@@ -36,3 +36,19 @@ Os objetivos a seguir detalham especificamente o que o produto busca alcançar, 
 - **Reuniões extraordinárias entre a equipe:** Em situações excepcionais, a equipe de desenvolvimento poderá se reunir para resolução de um problema ou para fins de alinhamento. A reunião será documentada por meio de uma ata.
 
 ### 5.3 Processo de validação 
+O processo de validação da solução será estruturado em torno de três pilares fundamentais, garantindo que cada funcionalidade seja bem definida, corretamente implementada e formalmente aprovada pelo cliente.  
+
+**Critérios de Prontidão (Definition of Ready - DoR):** Uma funcionalidade será considerada "Pronta para Desenvolvimento" apenas quando:
+  - O requisito estiver claramente descrito como uma User Story (ex: "Eu, como analista, quero ver um gráfico de vendas por região para tomar decisões de compra").
+  - A funcionalidade estiver representada e validada no protótipo interativo (Figma) pelo cliente.
+  - Os **Critérios de Aceite** estiverem claramente definidos (ex: "o gráfico deve ser de barras", "deve ser possível filtrar por mês", "os dados devem vir da planilha X").
+
+**Critérios de Conclusão (Definition of Done - DoD):** Uma funcionalidade só será considerada "Pronta" ao final de um Sprint se atender rigorosamente ao nosso Definition of Done. Nossa definição de "Pronto" inclui:
+  - O código ter sido desenvolvido, testado (testes unitários e de integração) e integrado à versão principal.
+  - O código ter passado pela revisão de outro membro da equipe (Code Review).
+  - A funcionalidade ter sido demonstrada e validada pelo cliente durante a Sprint Review, confirmando que atende visual e funcionalmente ao que foi solicitado.
+
+**Teste de Aceitação do Usuário (UAT):** Após a conclusão do desenvolvimento de todas as funcionalidades planejadas, ocorrerá o Teste de Aceitação final. Nesta fase:  
+  - O cliente utilizará a ferramenta para executar suas tarefas reais de ponta a ponta (ex: simular uma análise de compras mensal completa).
+  - A validação será feita com base no conjunto de critérios de aceite de todas as funcionalidades que foram aprovadas ao longo do projeto.
+  - O sucesso nesta etapa formaliza que a solução, como um todo, atende aos requisitos e está pronta para a implementação final.
