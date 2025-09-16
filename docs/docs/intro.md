@@ -10,7 +10,7 @@ Somos estudantes da **Universidade de Brasília (UnB) | Faculdade de Ciências e
 
 ## 👥 Integrantes do grupo BASED
 
-<div style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(220px, 1fr))", gap: "20px" }}>
+<div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "20px" }}>
 
   <a href="https://github.com/AmandaaMoura" style={{ textDecoration: "none", color: "inherit" }}>
     <div style={{
