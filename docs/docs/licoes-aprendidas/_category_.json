@@ -1,0 +1,8 @@
+{
+  "label": "Lições Aprendidas",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "Informações sobre as lições aprendidas"
+  }
+}
