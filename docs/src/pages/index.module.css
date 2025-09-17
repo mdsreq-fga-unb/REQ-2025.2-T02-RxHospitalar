@@ -4,20 +4,125 @@
  */
 
 .heroBanner {
-  padding: 4rem 0;
-  text-align: center;
+  padding: 1.5rem 0;
   position: relative;
-  overflow: hidden;
+  background: transparent;
 }
 
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
-  }
+.heroContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
+
+.textSection {
+  flex: 1;
+  min-width: 300px;
+  padding-right: 2rem;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
 
 .buttons {
   display: flex;
+  gap: 2rem;
   align-items: center;
+}
+
+.primaryButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 1.2rem;
+  border: 2px solid #00a86b;
+  border-radius: 9999px; /* bem arredondado */
+  color: #00a86b;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.primaryButton:hover {
+  background: #00a86b;
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 168, 107, 0.3);
+}
+
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: #333;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.secondaryButton:hover {
+  color: #00a86b;
+}
+
+/* Corrige a cor do GitHub no tema escuro */
+html[data-theme='dark'] .secondaryButton {
+  color: #fff;
+}
+
+html[data-theme='dark'] .secondaryButton:hover {
+  color: #00a86b;
+}
+
+.iconRight {
+  margin-left: 0.2rem;
+}
+
+
+.imageSection {
+  flex: 1;
+  display: flex;
   justify-content: center;
+}
+
+.heroImage {
+  max-width: 300px;
+  height: auto;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .heroBanner {
+    padding: 0;
+    position: relative;
+    background: transparent;
+  }
+  .heroImage {
+    max-width: 230px;
+    height: auto;
+  }
+  .heroContent {
+    flex-direction: column; /* Faz a logo ir para cima */
+  }
+  .buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+  .imageSection {
+    order: -1; /* Coloca a logo antes do texto */
+    margin-bottom: 1rem;
+  }
+
+  .textSection {
+    text-align: center; /* Centraliza o texto */
+    padding-right: 0;
+  }
 }

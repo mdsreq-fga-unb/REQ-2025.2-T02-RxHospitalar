@@ -11,7 +11,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'BASED - RX Hospitalar',
-  tagline: 'Sistema de gestão inteligente ',
+  tagline: 'Projeto em parceria com a RX Hospitalar para desenvolver um sistema de gestão inteligente que modernize processos e aumente a eficiência da empresa.',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future

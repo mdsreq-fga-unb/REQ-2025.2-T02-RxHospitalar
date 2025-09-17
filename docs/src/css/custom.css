@@ -69,3 +69,16 @@
   transform: scale(1.1);
   box-shadow: 0 0 12px var(--ifm-color-primary);
 }
+
+.footer {
+  background: transparent !important;
+  border-top: none;
+}
+
+[data-theme='light'] .footer {
+  color: black;
+}
+
+[data-theme='dark'] .footer {
+  color: white;
+}
