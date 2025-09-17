@@ -19,11 +19,7 @@ sidebar_position: 4
 - Davi Marques do Egito Coelho  
 - Eduardo Oliveira Valadares  
 - Gabriel Augusto Vilarinho Viana Rocha  
-- Samuel Rodrigues Viana Lobo  
-
-**Cliente:**  
-- Arthur Ribeiro  
-
+- Samuel Rodrigues Viana Lobo
 ---
 
 ## Objetivos da Reunião  
@@ -69,12 +65,13 @@ sidebar_position: 4
 
 
 ## Encaminhamentos Finais  
+
 - Grupo alinhado em seguir com a solução em Python.
 - Decisão do tipo de processo após a reunião com o cliente.
 - Necessidade de reunião com cliente para validação dos filtros.
 
 ---
 
-**Encerramento da reunião:** 22:23 
-**Duração:** Aproximadamente 1h30
+**Encerramento da reunião:** 22:23  
+**Duração:** Aproximadamente 1h30  
 **Responsável pela redação da ata:** Samuel R. V. Lobo 
