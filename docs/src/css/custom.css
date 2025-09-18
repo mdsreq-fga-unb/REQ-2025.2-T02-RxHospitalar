@@ -73,9 +73,7 @@
 .footer {
   background: transparent !important;
   border-top: none;
-  margin-top: 2%;
-  
- 
+  margin-top: 2.8%;
 }
 
 [data-theme='light'] .footer {

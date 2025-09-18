@@ -7,6 +7,10 @@
   padding: 4rem 0;
   position: relative;
   background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh; /* opcional: ocupa ~60% da tela, sem passar por cima do footer */
 }
 
 .heroContent {
@@ -19,18 +23,21 @@
 
 .textSection {
   flex: 1;
-  max-width: 550px;
+  max-width: 650px;
   padding-right: 1rem; /* pode reduzir o padding pra aproximar ainda mais */
+ 
 }
 
 .title {
-  font-size: 2rem;
+  font-size: 3rem; /* maior que antes */
   margin-bottom: 1rem;
+  font-weight: 700;
 }
 
 .subtitle {
-  font-size: 1.2rem;
+  font-size: 1.5rem; /* um pouco maior */
   margin-bottom: 2rem;
+  line-height: 1.6;
 }
 
 
@@ -94,7 +101,7 @@ html[data-theme='dark'] .secondaryButton:hover {
 }
 
 .heroImage {
-  max-width: 300px;
+  max-width: 350px;
   height: auto;
 }
 
@@ -129,5 +136,14 @@ html[data-theme='dark'] .secondaryButton:hover {
     text-align: center; /* Centraliza o texto */
     padding-right: 0;
     margin-bottom: 12%;
+  }
+  .title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
   }
 }
