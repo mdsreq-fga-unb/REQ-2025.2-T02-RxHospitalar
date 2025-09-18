@@ -4,7 +4,7 @@
  */
 
 .heroBanner {
-  padding: 1.5rem 0;
+  padding: 4rem 0;
   position: relative;
   background: transparent;
 }
@@ -12,14 +12,15 @@
 .heroContent {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center; /* deixa os dois colados à esquerda */
+  gap: 4rem; /* controla a distância entre texto e logo */
   flex-wrap: wrap;
 }
 
 .textSection {
   flex: 1;
-  min-width: 300px;
-  padding-right: 2rem;
+  max-width: 550px;
+  padding-right: 1rem; /* pode reduzir o padding pra aproximar ainda mais */
 }
 
 .title {
@@ -87,7 +88,7 @@ html[data-theme='dark'] .secondaryButton:hover {
 
 
 .imageSection {
-  flex: 1;
+  flex-shrink: 0; /* evita que a logo diminua demais */
   display: flex;
   justify-content: center;
 }
@@ -100,7 +101,7 @@ html[data-theme='dark'] .secondaryButton:hover {
 /* Responsividade */
 @media (max-width: 768px) {
   .heroBanner {
-    padding: 0;
+    padding: 1rem 0;
     position: relative;
     background: transparent;
   }
@@ -110,6 +111,9 @@ html[data-theme='dark'] .secondaryButton:hover {
   }
   .heroContent {
     flex-direction: column; /* Faz a logo ir para cima */
+
+    gap: 1rem; /* controla a distância entre texto e logo */
+    flex-wrap: wrap;
   }
   .buttons {
     display: flex;
@@ -124,5 +128,6 @@ html[data-theme='dark'] .secondaryButton:hover {
   .textSection {
     text-align: center; /* Centraliza o texto */
     padding-right: 0;
+    margin-bottom: 12%;
   }
 }

@@ -35,7 +35,7 @@
   background: var(--ifm-card-background-color);
   padding: 20px;
   border-radius: 15px;
-  box-shadow: 8px 8px 8px 8px rgba(0,0,0,0.1);
+  box-shadow: 4px 4px 7px 7px rgba(0,0,0,0.1);
   transition: transform 0.25s ease, box-shadow 0.25s ease, border 0.25s ease;
   border: 2px solid transparent;
 }
@@ -73,7 +73,19 @@
 .footer {
   background: transparent !important;
   border-top: none;
+  margin-top: 2%;
+  
+ 
 }
+
+[data-theme='light'] .footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.11); /* quase invisível */
+}
+
+[data-theme='dark'] .footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.08); /* branco com opacidade */
+}
+
 
 [data-theme='light'] .footer {
   color: black;
@@ -82,3 +94,20 @@
 [data-theme='dark'] .footer {
   color: white;
 }
+
+/* Centralizar a barra de pesquisa na navbar */
+.navbarSearchBar {
+  margin: 0 auto; /* isso força o alinhamento central */
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  
+}
+
+/* Opcional: deixar a barra de pesquisa menor */
+.navbarSearchBar input {
+  width: 50vw !important; /* metade da viewport */
+  max-width: 500px;
+ 
+}
+
