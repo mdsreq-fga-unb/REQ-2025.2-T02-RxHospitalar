@@ -6,36 +6,26 @@
 
 import {themes as prismThemes} from 'prism-react-renderer';
 
-// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
-
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'BASED - RX Hospitalar',
-  tagline: 'Projeto em parceria com a RX Hospitalar para desenvolver um sistema de gestão inteligente que modernize processos e aumente a eficiência da empresa.',
+  tagline:
+    'Projeto em parceria com a RX Hospitalar para desenvolver um sistema de gestão inteligente que modernize processos e aumente a eficiência da empresa.',
   favicon: 'img/favicon.ico',
 
-  // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
     v4: true, // Improve compatibility with the upcoming Docusaurus v4
   },
 
-  // Set the production url of your site here
   url: 'https://mdsreq-fga-unb.github.io',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/REQ-2025.2-T02-RxHospitalar/',
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'mdsreq-fga-unb', // Usually your GitHub org/user name.
-  projectName: 'REQ-2025.2-T02-RxHospitalar', // Usually your repo name.
+  organizationName: 'mdsreq-fga-unb',
+  projectName: 'REQ-2025.2-T02-RxHospitalar',
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -56,10 +46,22 @@ const config = {
     ],
   ],
 
+  // 🔎 Adicionando o plugin de busca local
+  plugins: [
+    [
+      require.resolve('@easyops-cn/docusaurus-search-local'),
+      {
+        hashed: true,
+        indexDocs: true,
+        indexBlog: false,
+        docsRouteBasePath: '/docs',
+      },
+    ],
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Replace with your project's social card
       image: 'img/based-social-card.png',
       navbar: {
         title: 'BASED',
@@ -73,6 +75,11 @@ const config = {
             sidebarId: 'tutorialSidebar',
             position: 'left',
             label: 'Docs',
+          },
+          {
+            type: 'search',
+            position: 'left',
+            className: 'navbarSearchBar', 
           },
           {
             href: 'https://github.com/mdsreq-fga-unb/REQ-2025.2-T02-RxHospitalar',
