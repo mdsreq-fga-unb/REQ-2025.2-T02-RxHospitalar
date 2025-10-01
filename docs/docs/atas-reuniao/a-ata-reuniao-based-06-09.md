@@ -1,6 +1,6 @@
 ---
 sidebar_label: "N.º 1 (06/09/2025)"
-sidebar_position: 2
+sidebar_position: 1
 ---
 # ATA N.º1 | 06/09
 

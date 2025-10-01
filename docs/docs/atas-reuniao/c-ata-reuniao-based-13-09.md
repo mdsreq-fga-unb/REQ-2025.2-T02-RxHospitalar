@@ -1,8 +1,8 @@
 ---
 sidebar_label: "N.º 3 (13/09/2025)"
-sidebar_position: 4
+sidebar_position: 3
 ---
-# ATA N.º 3 | 13/09
+# ATA N.º3 | 13/09
 
 **Disciplina:** Requisitos de Software  
 **Data:** 13/09/2025  

@@ -2,7 +2,7 @@
 sidebar_label: "N.º 5 (18/09/2025)"
 sidebar_position: 5
 ---
-# ATA N.º 5 | 18/09  
+# ATA N.º5 | 18/09  
 
 **Disciplina:** Requisitos de Software  
 **Data:** 18/09/2025  
