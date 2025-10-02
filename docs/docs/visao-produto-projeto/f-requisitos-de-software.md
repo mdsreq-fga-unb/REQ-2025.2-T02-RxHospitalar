@@ -11,7 +11,7 @@ Esta seção descreve os requisitos necessários para o desenvolvimento do softw
 Os requisitos funcionais detalham as funcionalidades específicas que o sistema deve executar para atender às necessidades do negócio.
 ### **7.1.1 Análise Base do Sistema**
 
-Este grupo de requisitos constitui o núcleo analítico do sistema, automatizando os cálculos fundamentais de gestão de estoque. Sua implementação visa reduzir drasticamente o tempo de análise ([OG1](https://docs.google.com/document/d/1ObKkLQiQ6n5fSmXcMj0E3VsbUX4fnFBW7WjJGxMA8vg/edit?tab=t.0#bookmark=id.mfwlj63l2hz2)) e automatizar a gestão de estoque com base em regras parametrizáveis ([OG3](https://docs.google.com/document/d/1ObKkLQiQ6n5fSmXcMj0E3VsbUX4fnFBW7WjJGxMA8vg/edit?tab=t.0#bookmark=id.weaxijen9b55)), atendendo diretamente aos objetivos de diminuir o tempo de análise ([OE01](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE1)) e automatizar cálculos de reposição ([OE05](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE5)).
+Este grupo de requisitos constitui o núcleo analítico do sistema, automatizando os cálculos fundamentais de gestão de estoque. Sua implementação visa reduzir drasticamente o tempo de análise ([OG1](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OG1)) e automatizar a gestão de estoque com base em regras parametrizáveis ([OG3](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OG3)), atendendo diretamente aos objetivos de diminuir o tempo de análise ([OE01](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE1)) e automatizar cálculos de reposição ([OE05](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE5)).
 
 **RF01** - Analisar período de estoque (CORE)
 
@@ -33,7 +33,7 @@ Produto inserido nas tabelas, considerando:
 
 ### **7.1.2 Filtros avançados**
 
-Estes requisitos garantem que os usuários possam explorar os dados centralizados de forma rápida e eficiente. Eles são essenciais para oferecer uma interface intuitiva e acessível ([OG4](https://docs.google.com/document/d/1ObKkLQiQ6n5fSmXcMj0E3VsbUX4fnFBW7WjJGxMA8vg/edit?tab=t.0#bookmark=id.9ccn3zvu7c6d)) e prover insights estratégicos ([OG6](https://docs.google.com/document/d/1ObKkLQiQ6n5fSmXcMj0E3VsbUX4fnFBW7WjJGxMA8vg/edit?tab=t.0#bookmark=id.lxzjgld3hly7)), permitindo que o usuário filtre e visualize dados em minutos ([OE04](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE4)) e acesse uma visão analítica do histórico ([OE09](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE9)).
+Estes requisitos garantem que os usuários possam explorar os dados centralizados de forma rápida e eficiente. Eles são essenciais para oferecer uma interface intuitiva e acessível ([OG4](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OG4)) e prover insights estratégicos ([OG6](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OG6)), permitindo que o usuário filtre e visualize dados em minutos ([OE04](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE4)) e acesse uma visão analítica do histórico ([OE09](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE9)).
 
 **RF02** - Integrar os dados das 4 planilhas principais
 
@@ -82,7 +82,7 @@ Critérios de aceitação:
 
 ### **7.1.3 Análises Avançadas**
 
-Indo além da análise básica, estes requisitos fornecem inteligência de negócio acionável, como sugestões de compra e análise de desempenho. Eles contribuem diretamente para prover insights estratégicos por cliente e vendedor ([OG6](https://docs.google.com/document/d/1ObKkLQiQ6n5fSmXcMj0E3VsbUX4fnFBW7WjJGxMA8vg/edit?tab=t.0#bookmark=id.lxzjgld3hly7)) e apoiar a tomada de decisão baseada em dados, realizando os objetivos de oferecer visão analítica do histórico por cliente ([OE09](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE9)) e automatizar sugestões de reposição ([OE05](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE5)).
+Indo além da análise básica, estes requisitos fornecem inteligência de negócio acionável, como sugestões de compra e análise de desempenho. Eles contribuem diretamente para prover insights estratégicos por cliente e vendedor ([OG6](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OG6)) e apoiar a tomada de decisão baseada em dados, realizando os objetivos de oferecer visão analítica do histórico por cliente ([OE09](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE9)) e automatizar sugestões de reposição ([OE05](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE5)).
 
 **RF07** - Sugerir compras inteligentes
 
@@ -137,7 +137,7 @@ Indo além da análise básica, estes requisitos fornecem inteligência de negó
 
 ### **7.1.4 Notificação sobre produtos em estado crítico**
 
-Estes requisitos implementam um sistema de alertas proativo para mitigar riscos operacionais. Eles são fundamentais para notificar proativamente sobre situações críticas ([OG7](https://docs.google.com/document/d/1ObKkLQiQ6n5fSmXcMj0E3VsbUX4fnFBW7WjJGxMA8vg/edit?tab=t.0#bookmark=id.iaaq90w6xtya)) e melhorar a confiabilidade e redução de riscos (Impacto 2), viabilizados pelos objetivos de notificar sobre produtos parados ([OE08](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE8)) e permitir a visualização rápida de produtos abaixo do estoque mínimo ([OE06](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE6)).
+Estes requisitos implementam um sistema de alertas proativo para mitigar riscos operacionais. Eles são fundamentais para notificar proativamente sobre situações críticas ([OG7](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OG7)) e melhorar a confiabilidade e redução de riscos (Impacto 2), viabilizados pelos objetivos de notificar sobre produtos parados ([OE08](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE8)) e permitir a visualização rápida de produtos abaixo do estoque mínimo ([OE06](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE6)).
 
 **RF12** - Notificar produtos com baixa saída
 
@@ -162,7 +162,7 @@ Estes requisitos implementam um sistema de alertas proativo para mitigar riscos 
 
 ### **7.1.5 Autorização de Acesso**
 
-Este grupo assegura a proteção dos dados sensíveis do negócio, um pilar crítico da solução. Ele materializa o objetivo de garantir segurança e controle de acesso ([OG5](https://docs.google.com/document/d/1ObKkLQiQ6n5fSmXcMj0E3VsbUX4fnFBW7WjJGxMA8vg/edit?tab=t.0#bookmark=id.bfdm3gcoohe0)), atendendo rigorosamente ao objetivo de garantir sigilo e controle de acesso ([OE07](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE7)).
+Este grupo assegura a proteção dos dados sensíveis do negócio, um pilar crítico da solução. Ele materializa o objetivo de garantir segurança e controle de acesso ([OG5](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OG5)), atendendo rigorosamente ao objetivo de garantir sigilo e controle de acesso ([OE07](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE7)).
 
 **RF15** - Permitir somente acesso autorizado
 
