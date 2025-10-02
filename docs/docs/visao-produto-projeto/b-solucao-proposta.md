@@ -10,19 +10,19 @@ Com este produto visamos otimizar o processo de análise de planilhas de compras
 Este produto também visa transformar a gestão de compras, estoque e vendas da RX Hospitalar, tornando-a mais ágil, intuitiva e estratégica. Os objetivos gerais abaixo orientam o desenvolvimento da solução, e cada um deles está diretamente associado a um ou mais **Objetivos Específicos (OE)** do Projeto detalhados na [Tabela 1](#tabela-1), assegurando rastreabilidade e foco nos resultados mensuráveis.
 
 **Objetivos Gerais (OG) do Projeto:** 
-- **Reduzir drasticamente o tempo de análise de compras e estoque**  
+- **OG1 Reduzir drasticamente o tempo de análise de compras e estoque**  
 Relacionado ao [OE1](#OE1) – Diminuir o tempo de análise em pelo menos 50%, substituindo horas de trabalho manual por minutos com o uso da ferramenta.
-- **Centralizar e unificar as fontes de dados**  
+- **OG2 Centralizar e unificar as fontes de dados**  
 Relacionado ao [OE3](#OE3) – Integrar em uma única visão as planilhas de faturado, pendências, estoque e validades, eliminando a consulta fragmentada.
-- **Automatizar a gestão de estoque com base em regras parametrizáveis**  
+- **OG3 Automatizar a gestão de estoque com base em regras parametrizáveis**  
 Relacionado ao [OE5](#OE5) e [OE06](#OE6) – Implementar cálculos automáticos de estoque ideal, sugerir reposições com alta precisão e reduzir riscos de ruptura ou perdas por validade.
-- **Oferecer uma interface intuitiva e acessível**  
+- **OG4 Oferecer uma interface intuitiva e acessível**  
 Relacionado ao [OE2](#OE2) e [OE04](#OE4) – Disponibilizar filtros dinâmicos e visões personalizadas que permitam ao usuário acessar e analisar dados em menos de 5 minutos.
-- **Garantir segurança e controle de acesso**  
+- **OG5 Garantir segurança e controle de acesso**  
 Relacionado ao [OE7](#OE7) – Assegurar que apenas usuários autorizados tenham acesso a dados sensíveis, com zero vazamentos.
-- **Prover insights estratégicos por cliente e vendedor**  
+- **OG6 Prover insights estratégicos por cliente e vendedor**  
 Relacionado ao [OE9](#OE9) – Oferecer visão analítica do histórico de compras por cliente, facilitando a identificação de padrões e oportunidades de venda.
-- **Notificar proativamente sobre situações críticas**  
+- **OG7 Notificar proativamente sobre situações críticas**  
 Relacionado ao [OE8](#OE8) – Alertar sobre produtos parados, com giro baixo ou próximos do vencimento.
 
 ### 2.2 Características da Solução
