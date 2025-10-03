@@ -92,3 +92,20 @@ Assegura rastreabilidade e auditoria das notificações geradas. Está conectado
 
 **RNF08 - Histórico de Notificações**  
 > - **Descrição:** O sistema deve manter histórico de notificações por 15 dias para análise de rastreabilidade do produto. As notificações devem estar disponíveis na interface para o cliente, incluindo aquelas geradas pelos requisitos da categoria **Notificação sobre produtos em estado crítico**.  
+
+---
+
+### Tabela de Requisitos Não Funcionais  
+
+A tabela abaixo apresenta a lista dos **Requisitos Não Funcionais (RNF)** definidos no projeto, com seus respectivos IDs e nomes resumidos.  
+
+| ID    | Nome                                    |
+|-------|-----------------------------------------|
+| RNF01 | Performance do Sistema                  |
+| RNF02 | Usabilidade e Experiência do Usuário    |
+| RNF03 | Compatibilidade com Ambientes e Planilhas |
+| RNF04 | Segurança           |
+| RNF05 | Confiabilidade Operacional              |
+| RNF06 | Escalabilidade de Usuários e Dados      |
+| RNF07 | Manutenibilidade e Evolução             |
+| RNF08 | Histórico de Notificações               |
