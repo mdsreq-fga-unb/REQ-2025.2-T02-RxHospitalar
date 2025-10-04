@@ -85,6 +85,7 @@ Foi identificado um erro na apresentação: o requisito “Análises Avançadas�
 - O sistema proposto trará agilidade e eficiência às análises;  
 - Deseja apenas melhor compreensão futura sobre o tratamento de colunas e planilhas;  
 - O número de linhas nas planilhas não será impeditivo (o grupo explicou que o sistema processará dados em blocos, sem perda).  
+
 **Decisão:** Feedback positivo; cliente satisfeito com o direcionamento do MVP.  
 
 ---
