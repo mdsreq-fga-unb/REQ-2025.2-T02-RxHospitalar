@@ -6,7 +6,7 @@ sidebar_position: 7
 # ATA N.º7 | 23/09
 
 **Disciplina:** Requisitos de Software  
-**Data:** 23/09/2025 
+**Data:** 23/09/2025  
 **Horário:** 21:13  
 **Local:** Microsoft Teams  
 
