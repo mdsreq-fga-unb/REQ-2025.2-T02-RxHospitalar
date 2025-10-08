@@ -124,3 +124,41 @@
   width: 100%;
   height: 100%;
 }
+
+/* === Base table styling === */
+.requirements-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.requirements-table th,
+.requirements-table td {
+  border: 1px solid #ccc;
+  padding: 6px 10px;
+  text-align: left;
+}
+
+/* === Header row === */
+.requirements-table thead {
+  background-color: #dcedc8;
+}
+
+/* === Functional rows (RF) === */
+.requirements-table tr.functional {
+  background-color: #e8f5e9; /* light green */
+}
+.requirements-table tr.functional.alt {
+  background-color: #f9fbe7; /* light yellow-green for repeated desc */
+}
+
+/* === Non-Functional rows (RFN) === */
+.requirements-table tr.nonfunctional {
+  background-color: #e3f2fd; /* light blue */
+}
+.requirements-table tr.nonfunctional.alt {
+  background-color: #e8eaf6; /* lavender blue for variation */
+}
+
+/* === Optional: better MVP emoji alignment === */
+.requirements-table td:last-child {
+  text-align: center;
+}
