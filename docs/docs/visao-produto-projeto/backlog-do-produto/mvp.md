@@ -14,7 +14,7 @@ Cada requisito está diretamente relacionado aos **[Objetivos Gerais (OG)](https
     <tr>
       <th>OG</th>
       <th>OE</th>
-      <th>Descrição</th>
+      <th>Categoria</th>
       <th>Requisito</th>
       <th>Priorização</th>
       <th>MVP</th>
@@ -47,11 +47,11 @@ Cada requisito está diretamente relacionado aos **[Objetivos Gerais (OG)](https
     <tr className="nonfunctional"><td>OG1</td><td>OE01</td><td>Performance</td><td>RFN01</td><td>Must</td><td>✅</td></tr>
     <tr className="nonfunctional"><td>OG4</td><td>OE02, OE04</td><td>Usabilidade</td><td>RFN02</td><td>Must</td><td>✅</td></tr>
     <tr className="nonfunctional"><td>OG2</td><td>OE03</td><td>Compatibilidade</td><td>RFN03</td><td>Must</td><td>✅</td></tr>
-    <tr className="nonfunctional alt"><td>OG5</td><td>OE07</td><td>Segurança</td><td>RFN04</td><td>Should</td><td>❌</td></tr>
+    <tr className="nonfunctional"><td>OG5</td><td>OE07</td><td>Segurança</td><td>RFN04</td><td>Should</td><td>❌</td></tr>
     <tr className="nonfunctional"><td>OG3, OG7</td><td>OE06, OE08</td><td>Confiabilidade</td><td>RFN05</td><td>Must</td><td>✅</td></tr>
-    <tr className="nonfunctional alt"><td>OG2, OG3</td><td>OE03</td><td>Escalabilidade</td><td>RFN06</td><td>Should</td><td>❌</td></tr>
-    <tr className="nonfunctional alt"><td>OG2, OG3, OG5</td><td>OE05, OE07</td><td>Manutenibilidade</td><td>RFN07</td><td>Should</td><td>❌</td></tr>
-    <tr className="nonfunctional alt"><td>OG6, OG7</td><td>OE08</td><td>Manter Histórico de Notificações</td><td>RFN08</td><td>Could</td><td>❌</td></tr>
+    <tr className="nonfunctional"><td>OG2, OG3</td><td>OE03</td><td>Escalabilidade</td><td>RFN06</td><td>Should</td><td>❌</td></tr>
+    <tr className="nonfunctional"><td>OG2, OG3, OG5</td><td>OE05, OE07</td><td>Manutenibilidade</td><td>RFN07</td><td>Should</td><td>❌</td></tr>
+    <tr className="nonfunctional"><td>OG6, OG7</td><td>OE08</td><td>Manter Histórico de Notificações</td><td>RFN08</td><td>Could</td><td>❌</td></tr>
 
   </tbody>
 </table>
