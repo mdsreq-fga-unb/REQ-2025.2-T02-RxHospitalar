@@ -32,7 +32,7 @@ Este grupo de requisitos constitui o núcleo analítico do sistema, automatizand
 
 Estes requisitos garantem que os usuários possam explorar os dados centralizados de forma rápida e eficiente. Eles são essenciais para oferecer uma interface intuitiva e acessível ([OG4](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OG4)) e prover insights estratégicos ([OG6](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OG6)), permitindo que o usuário filtre e visualize dados em minutos ([OE04](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE4)) e acesse uma visão analítica do histórico ([OE09](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE9)).
 
-**RF02 - Integrar os dados das 4 planilhas principais**
+**RF02 - Consultar os dados das 4 planilhas principais**
 
 > **Descrição**: O sistema deve importar e centralizar dados de múltiplas fontes:
 > - Base de dados de faturamento (relatório 14)
@@ -44,32 +44,32 @@ Estes requisitos garantem que os usuários possam explorar os dados centralizado
 > - O sistema aceita dados via upload de planilhas Excel
 > - Através de um botão o sistema atualiza os dados automaticamente quando as planilhas forem carregadas
 
-**RF03 - Filtrar produto por código original do produto**
+**RF03 - Consultar produto por código original do produto**
 
 > Critérios de aceitação:
-> - Filtro que utiliza o código original do produto para listar
+> - Consulta que utiliza o código original do produto para listar
 
-**RF04 - Filtrar produto pela linha do produto (prioritário)**
-
-> **Critérios de aceitação**:
-> - Filtro que utiliza a linha do produto escolhida pelo usuário para listar
-
-**RF05 - Filtrar produto por status (ativo, parado, etc.)  (prioritário)**
+**RF04 - Consultar produto pela linha do produto (prioritário)**
 
 > **Critérios de aceitação**:
-> - Filtro que utiliza o status dos produtos escolhido pelo usuário para listar
+> - Consulta que utiliza a linha do produto escolhida pelo usuário para listar
 
-**RF06 - Filtrar por período de estoque (abaixo/acima de X meses)**
+**RF05 - Consultar produto por status (ativo, parado, etc.)  (prioritário)**
 
 > **Critérios de aceitação**:
-> - Filtro que utiliza o período do estoque escolhido pelo usuário para listar
+> - Consulta que utiliza o status dos produtos escolhido pelo usuário para listar
+
+**RF06 - Consultar por período de estoque (abaixo/acima de X meses)**
+
+> **Critérios de aceitação**:
+> - Consulta que utiliza o período do estoque escolhido pelo usuário para listar
 
 **Critérios de aceitação gerais**:
 
-- Interface deve permitir ao usuário aplicar filtros em poucos cliques
-- Permitir a aplicação de múltiplos filtros simultaneamente em uma única busca
+- Interface deve permitir ao usuário aplicar Consultas em poucos cliques
+- Permitir a aplicação de múltiplos Consultas simultaneamente em uma única busca
 - Mostrar resultados em tempo real
-- Salvar configurações de filtros frequentes
+- Salvar configurações de Consultas frequentes
 
 ---
 
