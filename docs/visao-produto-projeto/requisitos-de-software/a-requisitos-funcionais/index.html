@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.8.1">
 <title data-rh="true">Requisitos Funcionais | BASED, RX Hospitalar</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/img/based-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/img/based-social-card.png"><meta data-rh="true" property="og:url" content="https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/requisitos-de-software/a-requisitos-funcionais"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Requisitos Funcionais | BASED, RX Hospitalar"><meta data-rh="true" name="description" content="Os requisitos funcionais detalham as funcionalidades específicas que o sistema deve executar para atender às necessidades do negócio."><meta data-rh="true" property="og:description" content="Os requisitos funcionais detalham as funcionalidades específicas que o sistema deve executar para atender às necessidades do negócio."><link data-rh="true" rel="icon" href="/REQ-2025.2-T02-RxHospitalar/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/requisitos-de-software/a-requisitos-funcionais"><link data-rh="true" rel="alternate" href="https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/requisitos-de-software/a-requisitos-funcionais" hreflang="en"><link data-rh="true" rel="alternate" href="https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/requisitos-de-software/a-requisitos-funcionais" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Visão do Produto e Projeto","item":"https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/category/visão-do-produto-e-projeto"},{"@type":"ListItem","position":2,"name":"Requisitos de Software","item":"https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/category/requisitos-de-software"},{"@type":"ListItem","position":3,"name":"Requisitos Funcionais","item":"https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/requisitos-de-software/a-requisitos-funcionais"}]}</script><link rel="stylesheet" href="/REQ-2025.2-T02-RxHospitalar/assets/css/styles.27ade2e2.css">
-<script src="/REQ-2025.2-T02-RxHospitalar/assets/js/runtime~main.8b675665.js" defer="defer"></script>
+<script src="/REQ-2025.2-T02-RxHospitalar/assets/js/runtime~main.572cf612.js" defer="defer"></script>
 <script src="/REQ-2025.2-T02-RxHospitalar/assets/js/main.cc6d865e.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -36,7 +36,7 @@
 <hr>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="filtros-avançados">Filtros avançados<a href="#filtros-avançados" class="hash-link" aria-label="Direct link to Filtros avançados" title="Direct link to Filtros avançados">​</a></h3>
 <p>Estes requisitos garantem que os usuários possam explorar os dados centralizados de forma rápida e eficiente. Eles são essenciais para oferecer uma interface intuitiva e acessível (<a href="https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OG4" target="_blank" rel="noopener noreferrer">OG4</a>) e prover insights estratégicos (<a href="https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OG6" target="_blank" rel="noopener noreferrer">OG6</a>), permitindo que o usuário filtre e visualize dados em minutos (<a href="https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE4" target="_blank" rel="noopener noreferrer">OE04</a>) e acesse uma visão analítica do histórico (<a href="https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE9" target="_blank" rel="noopener noreferrer">OE09</a>).</p>
-<p><strong>RF02 - Integrar os dados das 4 planilhas principais</strong></p>
+<p><strong>RF02 - Consultar os dados das 4 planilhas principais</strong></p>
 <blockquote>
 <p><strong>Descrição</strong>: O sistema deve importar e centralizar dados de múltiplas fontes:</p>
 <ul>
@@ -51,40 +51,40 @@
 <li>Através de um botão o sistema atualiza os dados automaticamente quando as planilhas forem carregadas</li>
 </ul>
 </blockquote>
-<p><strong>RF03 - Filtrar produto por código original do produto</strong></p>
+<p><strong>RF03 - Consultar produto por código original do produto</strong></p>
 <blockquote>
 <p>Critérios de aceitação:</p>
 <ul>
-<li>Filtro que utiliza o código original do produto para listar</li>
+<li>Consulta que utiliza o código original do produto para listar</li>
 </ul>
 </blockquote>
-<p><strong>RF04 - Filtrar produto pela linha do produto (prioritário)</strong></p>
+<p><strong>RF04 - Consultar produto pela linha do produto (prioritário)</strong></p>
 <blockquote>
 <p><strong>Critérios de aceitação</strong>:</p>
 <ul>
-<li>Filtro que utiliza a linha do produto escolhida pelo usuário para listar</li>
+<li>Consulta que utiliza a linha do produto escolhida pelo usuário para listar</li>
 </ul>
 </blockquote>
-<p><strong>RF05 - Filtrar produto por status (ativo, parado, etc.)  (prioritário)</strong></p>
+<p><strong>RF05 - Consultar produto por status (ativo, parado, etc.)  (prioritário)</strong></p>
 <blockquote>
 <p><strong>Critérios de aceitação</strong>:</p>
 <ul>
-<li>Filtro que utiliza o status dos produtos escolhido pelo usuário para listar</li>
+<li>Consulta que utiliza o status dos produtos escolhido pelo usuário para listar</li>
 </ul>
 </blockquote>
-<p><strong>RF06 - Filtrar por período de estoque (abaixo/acima de X meses)</strong></p>
+<p><strong>RF06 - Consultar por período de estoque (abaixo/acima de X meses)</strong></p>
 <blockquote>
 <p><strong>Critérios de aceitação</strong>:</p>
 <ul>
-<li>Filtro que utiliza o período do estoque escolhido pelo usuário para listar</li>
+<li>Consulta que utiliza o período do estoque escolhido pelo usuário para listar</li>
 </ul>
 </blockquote>
 <p><strong>Critérios de aceitação gerais</strong>:</p>
 <ul>
-<li>Interface deve permitir ao usuário aplicar filtros em poucos cliques</li>
-<li>Permitir a aplicação de múltiplos filtros simultaneamente em uma única busca</li>
+<li>Interface deve permitir ao usuário aplicar Consultas em poucos cliques</li>
+<li>Permitir a aplicação de múltiplos Consultas simultaneamente em uma única busca</li>
 <li>Mostrar resultados em tempo real</li>
-<li>Salvar configurações de filtros frequentes</li>
+<li>Salvar configurações de Consultas frequentes</li>
 </ul>
 <hr>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="análises-avançadas">Análises Avançadas<a href="#análises-avançadas" class="hash-link" aria-label="Direct link to Análises Avançadas" title="Direct link to Análises Avançadas">​</a></h3>
