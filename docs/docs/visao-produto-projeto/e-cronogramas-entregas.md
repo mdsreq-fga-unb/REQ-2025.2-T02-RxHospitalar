@@ -15,7 +15,7 @@ sidebar_position: 5
 | **9** | **Início:** 01/12 <br /> **Fim:** 05/12 | Implementação dos requisitos de Análises Avançadas e Ajustes finais do MVP (se ainda necessário) | MVP com os incrementos das Análises Avançadas funcionando sem prejudicar a entrega anterior do sistema | Analisar se os requisitos de análise avançadas dispostas estão funcionando corretamente entregando o resultado esperado e se ainda é possível utilizar as funcionalidades do MVP sem quebra/bug nenhum do sistema por completo |  
 | **10** | **Início:** 05/12 <br /> **Fim:** 08/12 | Entrega do produto | Sistema de análise rápida e intuitiva das planilhas de estoque | Utilização eficaz e intuitiva do produto desenvolvido |
 
-### Considerações importantes
+### 4.1 Considerações importantes
 - Cada sprint tem a duração de 1 ou 2 semanas, dependendo da complexidade do incremento.
 
 - Ao final de cada sprint haverá uma reunião de validação com o cliente, com os seguintes objetivos:
