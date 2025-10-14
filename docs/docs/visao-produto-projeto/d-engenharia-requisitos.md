@@ -6,7 +6,6 @@ sidebar_position: 4
 # Engenharia de Requisitos
 
 A partir das informações apresentadas na seção 3, deste documento, devem ser estabelecidas as atividades da Engenharia de Requisitos (ER), suas práticas e técnicas em alinhamento ao processo de ESW informado. Inicialmente, cada uma das 6 atividades da ER deve ser associadas às técnicas que serão utilizadas no projeto em desenvolvimento durante a disciplina.
-
 ## Atividades e Técnicas de ER
 
 ### Elicitação e Descoberta:
