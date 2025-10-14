@@ -110,4 +110,4 @@ A implementação desta solução vai além da simples automação de tarefas, g
 
 - **Padronização e Qualidade de Vida no Trabalho**  
 **Impacto:** Unificação de processos e linguagem, redução da carga mental operacional e provisionamento de uma ferramenta intuitiva, resultando em um ambiente de trabalho mais organizado e com menor estresse.  
-**Viabilizado por:** [OE2](#OE2) (Interface intuitiva) e a sinergia de todos os OEs que eliminam tarefas manuais repetitivas.
+**Viabilizado por:** [OE2](#OE2) (Interface intuitiva) e a sinergia de todos os OEs que eliminam tarefas manuais repetitivas do escopo.
