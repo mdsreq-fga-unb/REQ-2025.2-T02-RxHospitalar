@@ -36,3 +36,19 @@ A partir das informações apresentadas na seção 3, deste documento, devem ser
 
 - **Refinamento do Backlog**: à medida em que o andamento do projeto avança, os requisitos serão revisados e atualizados conforme o feedback do cliente e a capacidade técnica da equipe.
 - **Rastreabilidade de requisitos**: Por meio de um quadro Kanban no Github Projects, será feito o acompanhamento da evolução dos requisitos a serem feitos, sendo feitos e concluído.
+
+## Engenharia de Requisitos e o RAD + Scrum
+
+Aqui, as atividades da ER, suas práticas e técnicas devem ser mapeadas, a partir das fases (etapas) do processo estabelecido pela equipe, para a condução do projeto. Essas informações devem ser apresentadas em uma tabela conforme indicado, a seguir (exemplo).
+
+| Fase do RAD                  | Atividades ER              | Prática                              | Técnica                                                              | Resultado Esperado                                      |
+|------------------------------|----------------------------|--------------------------------------|----------------------------------------------------------------------|---------------------------------------------------------|
+| Joint Requirements Planning (JRP) Sprint 1 | Elicitação e Descoberta    | Levantamento de Requisitos           | Brainstorming // Entrevista // Documento de Visão de Produto         | Visão de Produto e Projeto                              |
+|                              | Declaração de Requisitos   | Registro dos Requisitos              | Brainstorming // Especificação de Requisitos                         | Lista de Requisitos (RFs) e Lista de Requisitos não funcionais (RNFs) BackLog do Produto |
+|                              | Análise e Consenso         | Refinamento dos requisitos           | Lean Inception e Reuniões                                            | BackLog do MVP validado pelo cliente                    |
+|                              | Verificação e Validação    | Validação de Requisitos              | Reuniões // Descrição dos requisitos // Critérios de aceitação       | Funcionalidades verificadas com o cliente e feedback coletado |
+|                              | Organização e Atualização  | Priorização de Requisitos            | MoSCoW // Critérios de Avaliação Técnica                             | Backlog atualizado e alinhado com os objetivos da sprint em andamento |
+| Joint Application Design (JAD) Sprint 2 | Representação              | Criação de Protótipos                | Prototipagem                                                         | Protótipos que orientam a equipe                        |
+|                              | Verificação e Validação    | Verificação de Requisitos            | Revisão dos Requisitos Funcionais                                    | Requisitos Funcionais validados em relação aos OE's     |
+|                              | Organização e Atualização  | Atualização dos Requisitos do MVP    | Feedback                                                             | MVP atualizado e alinhado                               |
+|                              | Análise e Consenso         | Refinamento e Esclarecimento de alguns Requisitos Funcionais | Especificação dos Requisitos com base nos casos de uso // Prototipagem | Especificação de Requisitos (RFs) Com o Backlog ajustado conforme consenso com o cliente |
