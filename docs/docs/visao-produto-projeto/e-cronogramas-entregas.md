@@ -1,6 +1,6 @@
 ---
 sidebar_label: "Cronograma e Entregas"
-sidebar_position: 4
+sidebar_position: 5
 ---
 # Cronograma e Entregas
 | Sprint/Fase | Período | Objetivo Principal | Entregas Esperadas | Validação do Cliente |

@@ -1,6 +1,6 @@
 ---
-sidebar_label: "Integração entre equipe e cliente"
-sidebar_position: 5
+sidebar_label: "Interação entre equipe e cliente"
+sidebar_position: 6
 ---
 # Integração entre equipe e cliente
 
