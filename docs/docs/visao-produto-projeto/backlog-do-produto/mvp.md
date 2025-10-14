@@ -30,11 +30,11 @@ Cada requisito está diretamente relacionado aos **[Objetivos Gerais (OG)](https
     <tr className="functional alt"><td>OG4, OG6</td><td>OE04, OE09</td><td>Filtros avançados</td><td>RF05</td><td>Must</td><td>✅</td></tr>
     <tr className="functional alt"><td>OG4, OG6</td><td>OE04, OE09</td><td>Filtros avançados</td><td>RF06</td><td>Must</td><td>✅</td></tr>
 
-    <tr className="functional"><td>OG6</td><td>OE05, OE09</td><td>Análises Avançadas</td><td>RF07</td><td>Could</td><td>❌</td></tr>
-    <tr className="functional"><td>OG6</td><td>OE05, OE09</td><td>Análises Avançadas</td><td>RF08</td><td>Could</td><td>❌</td></tr>
-    <tr className="functional"><td>OG6</td><td>OE05, OE09</td><td>Análises Avançadas</td><td>RF09</td><td>Could</td><td>❌</td></tr>
-    <tr className="functional"><td>OG6</td><td>OE05, OE09</td><td>Análises Avançadas</td><td>RF10</td><td>Could</td><td>❌</td></tr>
-    <tr className="functional"><td>OG6</td><td>OE05, OE09</td><td>Análises Avançadas</td><td>RF11</td><td>Could</td><td>❌</td></tr>
+    <tr className="functional"><td>OG6</td><td>OE05, OE09</td><td>Análises Avançadas</td><td>RF07</td><td>Should</td><td>✅</td></tr>
+    <tr className="functional"><td>OG6</td><td>OE05, OE09</td><td>Análises Avançadas</td><td>RF08</td><td>Should</td><td>✅</td></tr>
+    <tr className="functional"><td>OG6</td><td>OE05, OE09</td><td>Análises Avançadas</td><td>RF09</td><td>Should</td><td>✅</td></tr>
+    <tr className="functional"><td>OG6</td><td>OE05, OE09</td><td>Análises Avançadas</td><td>RF10</td><td>Should</td><td>✅</td></tr>
+    <tr className="functional"><td>OG6</td><td>OE05, OE09</td><td>Análises Avançadas</td><td>RF11</td><td>Should</td><td>✅</td></tr>
 
     <tr className="functional alt"><td>OG7</td><td>OE06, OE08</td><td>Notificação sobre produtos em estado crítico</td><td>RF12</td><td>Should</td><td>✅</td></tr>
     <tr className="functional alt"><td>OG7</td><td>OE06, OE08</td><td>Notificação sobre produtos em estado crítico</td><td>RF13</td><td>Should</td><td>✅</td></tr>
