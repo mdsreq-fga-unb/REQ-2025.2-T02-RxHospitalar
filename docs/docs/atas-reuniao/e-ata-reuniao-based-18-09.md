@@ -35,7 +35,7 @@ sidebar_position: 5
 
 ## Principais Pontos Abordados  
 
-### 1. Análise do Processo Atual ("As-Is")  
+### 1. Análise de Tarefas do Cliente ("As-Is")  
 **Discussão:** O processo de gestão de Arthur é centrado em planilhas Excel (BD - 14, BD Estoque, PEDIDO FORA, BD - CONSIGNADO) atualizadas a partir de dados de um sistema interno. Foram identificados desafios como o processo ser muito manual, a baixa eficiência por precisar cruzar múltiplas planilhas, e o alto risco de erros devido à manipulação de fórmulas.  
 
 **Justificativa:** Compreender o fluxo de trabalho atual é fundamental para identificar os pontos de melhoria e definir os requisitos da nova solução.  
