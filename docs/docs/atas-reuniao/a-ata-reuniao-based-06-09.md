@@ -4,7 +4,7 @@ sidebar_position: 1
 ---
 # ATA N.º1 | 06/09
 
-**Disciplina:** Requisitos de Software
+**Disciplina:** Requisitos de Software  
 **Atividade de Eng. de Requisitos:** Elicitação e Descoberta
 **Data:** 06/09/2025  
 **Horário:** 13:00  
