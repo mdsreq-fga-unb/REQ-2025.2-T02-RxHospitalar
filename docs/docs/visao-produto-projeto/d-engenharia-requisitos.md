@@ -113,6 +113,6 @@ Aqui, as atividades da ER, suas práticas e técnicas devem ser mapeadas, a part
 | | [Organização e Atualização](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/atas-reuniao/i-ata-reuniao-based-04-10) | Priorização de Requisitos | Feedbacks do professor sobre rastreabilidade e da validação do cliente | Backlog do MVP atualizado, alinhado com o Mapa de Rastreabilidade dos O.E’S do produto |
 | **Fase 2 - User Design** | | | | |
 | | [Representação](https://www.figma.com/design/Xk5sSYqw2tHww9UCYAKv7k/BASED--RX-Hospitalar?node-id=0-1&p=f&t=yfklc8zNh3fXNjdj-0) | Criação de Protótipos | Prototipagem | Protótipo de baixa e média fidelidade |
-| | [Análise e Consenso]() | Refinamento dos requisitos | Protótipos, Inspeção, Análise de Objetivo de Domínio | Protótipo Analisado: Consenso da equipe sobre os primeiros RF a serem implementados com base nos protótipos |
+| | Análise e Consenso | Refinamento dos requisitos | Protótipos, Inspeção, Análise de Objetivo de Domínio | Protótipo Analisado: Consenso da equipe sobre os primeiros RF a serem implementados com base nos protótipos |
 | | Verificação e Validação | Verificação da jornada de interação do usuário em relação ao fluxo de tarefas | Walkthrough, Decomposição funcional | Protótipo verificado: Clareza da equipe em relação ao passo a passo seguido pelo usuário para executar os primeiros RF’s |
 | | Declaração | Especificações da interação do usuário | Prótipos, Decomposição funcional | Primeiros RF’s do backlog do MVP a serem desenvolvidos com mais especificações em relação ao UI |
