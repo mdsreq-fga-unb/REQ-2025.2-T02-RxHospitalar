@@ -8,7 +8,7 @@ sidebar_position: 5
 **Atividade de Engenharia de Requisitos:** Declaração dos Requisitos
 **Data:** 18/09/2025  
 **Horário de início:** 21:00  
-**Local:** Microsoft Teams
+**Local:** Microsoft Teams  
 [**Evidência:**](https://unbbr.sharepoint.com/:v:/s/BASED/EcecFTlLaX5Hq4UOwGJp0VQBuc4ZfW79XYq5GVsVkmftGA?e=ich7zC&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D) 
 
 ---
