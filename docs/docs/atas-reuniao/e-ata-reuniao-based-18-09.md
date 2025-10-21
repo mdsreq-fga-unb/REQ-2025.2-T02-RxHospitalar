@@ -1,13 +1,15 @@
 ---
-sidebar_label: "N.º 5 (18/09/2025)"
+sidebar_label: "Declaração dos Requisitos"
 sidebar_position: 5
 ---
 # ATA N.º5 | 18/09  
 
 **Disciplina:** Requisitos de Software  
+**Atividade de Engenharia de Requisitos:** Declaração dos Requisitos
 **Data:** 18/09/2025  
 **Horário de início:** 21:00  
-**Local:** Microsoft Teams  
+**Local:** Microsoft Teams
+[**Evidência:**](https://unbbr.sharepoint.com/:v:/s/BASED/EcecFTlLaX5Hq4UOwGJp0VQBuc4ZfW79XYq5GVsVkmftGA?e=ich7zC&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D) 
 
 ---
 
@@ -29,7 +31,7 @@ sidebar_position: 5
 
 ## Objetivos da Reunião  
 - Compreender melhor o processo atual do Arthur de análise e gestão de estoque  
-- Identificar as principais necessidades para reconstruirmos os passos que tomaremos na construção do projeto  
+- Identificar as principais necessidades para reconstruirmos os passos que tomaremos na construção do projeto (Declaração e Refinamento dos Requisitos)
 
 ---
 
