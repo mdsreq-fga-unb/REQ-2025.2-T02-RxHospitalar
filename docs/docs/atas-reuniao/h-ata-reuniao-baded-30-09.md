@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Organização final do Backlog e Alinhamento sobre Protótipo do produto"
+sidebar_label: "Declaração dos Requisitos a partir de novos feedbacks"
 sidebar_position: 8
 ---
 
