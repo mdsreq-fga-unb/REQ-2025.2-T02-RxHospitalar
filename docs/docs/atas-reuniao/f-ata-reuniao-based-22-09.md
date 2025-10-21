@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Verificação dos Requisitos de Software"
+sidebar_label: "Verificação dos Requisitos de Software em relação ao MVP"
 sidebar_position: 6
 ---
 
