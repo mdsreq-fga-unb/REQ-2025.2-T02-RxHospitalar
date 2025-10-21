@@ -23,7 +23,8 @@ Nesta secção são estabelecidas as atividades da Engenharia de Requisitos (ER)
 
 - **Análise de priorização MoSCoW**: aplicada durante o refinamento do Backlog para classificação de requisitos em Must, Should, Could e Won’t have e assim ajudar na priorização do MVP.
 - **Análise de critérios técnicos**: houve a criação de critérios de avaliação da complexidade técnica numa escala de 1 a 3 sobre a lógica de negócios e algoritmo; complexidade de dados e combinações analíticas; complexidade de interface e experiência do usuário UI/UX.
-- **Resultado gerado:** Documento de Visão de Produto e Projeto: Consolidação sobre o documento de Visão de Produto e Projeto, nos trazendo uma ideia mais clara sobre o problema do cliente e sobre os objetivos da nossa solução.
+
+**Resultado gerado:** Documento de Visão de Produto e Projeto: Consolidação sobre o documento de Visão de Produto e Projeto, nos trazendo uma ideia mais clara sobre o problema do cliente e sobre os objetivos da nossa solução.
 
 #### 4.1.3 Declaração de Requisitos:
 
@@ -83,7 +84,7 @@ Nesta secção são estabelecidas as atividades da Engenharia de Requisitos (ER)
 #### 4.1.9 Verificação e Validação de Requisitos:
 
 * **Walkthrough:** Foi realizado um *walkthrough* no protótipo para simular a jornada de interação do usuário. Essa técnica nos permitiu percorrer o fluxo de tarefas e validar se a sequência de passos para executar as funcionalidades principais era lógica e simples de ser executada pelo usuário.
-* **Decomposição Funcional:** Através da inspeção, cada tela e interação foi analisada detalhadamente. A decomposição funcional foi aplicada para quebrar as tarefas maiores em passos menores, verificando a consistência e a clareza de cada etapa do processo.
+* **Decomposição Funcional:** Através da inspeção, cada tela e interação foram analisadas detalhadamente. A decomposição funcional foi aplicada para quebrar as tarefas maiores em passos menores, verificando a consistência e a clareza de cada etapa do processo.
 
 **Resultado:** Protótipo verificado: Clareza da equipe em relação ao passo a passo seguido pelo usuário para executar os primeiros RF’s.
 
@@ -98,7 +99,7 @@ Nesta secção são estabelecidas as atividades da Engenharia de Requisitos (ER)
 
 ## 4.2 Engenharia de Requisitos e o RAD + Scrum
 
-Aqui, as atividades da ER, suas práticas e técnicas devem ser mapeadas, a partir das fases (etapas) do processo estabelecido pela equipe, para a condução do projeto. Essas informações devem ser apresentadas em uma tabela conforme indicado, a seguir (exemplo).
+Aqui, as atividades da ER, suas práticas e técnicas devem ser mapeadas, a partir das fases (etapas) do RAD, para a condução do projeto. As evidências de cada uma das atividades estão linkadas através do nome da atividade às atas realizadas pelos membros da equipe.
 
 | Fase do RAD | Atividades ER | Prática | Técnica | Resultado |
 | :--- | :--- | :--- | :--- | :--- |
