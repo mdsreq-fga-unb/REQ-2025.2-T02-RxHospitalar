@@ -1,4 +1,4 @@
-<img width="1445" height="749" alt="image" src="https://github.com/user-attachments/assets/4b9b962a-5c8e-495a-908f-3aef34070e24" />---
+---
 sidebar_label: "User Design"
 sidebar_position: 11
 ---
@@ -8,7 +8,7 @@ sidebar_position: 11
 **Disciplina:** Requisitos de Software  
 **Data:** 13/10/2025  
 **Horário:** 21:13  
-**Local:** Microsoft Teams
+**Local:** Microsoft Teams  
 [**Evidência**](https://unbbr.sharepoint.com/:v:/s/BASED/EX4SQperic5IirQ68wNToa0BOkFUqIRXDp2T-A8GKhIFGQ?e=nejpI6&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
 
 ---
