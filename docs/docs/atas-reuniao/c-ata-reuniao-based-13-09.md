@@ -1,10 +1,11 @@
 ---
-sidebar_label: "N.º 3 (13/09/2025)"
+sidebar_label: "Reunião de Deecisão e Organização da equipe"
 sidebar_position: 3
 ---
 # ATA N.º3 | 13/09
 
 **Disciplina:** Requisitos de Software  
+**Atividade da reunião:** A partir das atividades de engenahria de requisitos feitas anteriormente, analisar o projeto, cenário do cliente e aprópria equipe para decidir a Abordagem, Ciclo de Vida e ESW
 **Data:** 13/09/2025  
 **Horário de início:** 13:30  
 **Local:** Microsoft Teams  
