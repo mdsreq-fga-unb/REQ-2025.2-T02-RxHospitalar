@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Verificação da Jornada de Interação do Usuário"
+sidebar_label: "Verificação a partir da Jornada de Interação do Usuário"
 sidebar_position: 10
 ---
 
