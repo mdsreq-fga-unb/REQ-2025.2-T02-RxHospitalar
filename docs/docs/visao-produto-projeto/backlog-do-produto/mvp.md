@@ -23,22 +23,23 @@ Cada requisito está diretamente relacionado aos **[Objetivos Gerais (OG)](https
   <tbody>
 
     <!-- === FUNCIONAIS === -->
-    <tr className="functional"><td>OG1, OG3</td><td>OE01, OE05</td><td>Análise Base do Sistema</td><td>RF01</td><td>Must</td><td>✅</td></tr>
-    <tr className="functional alt"><td>OG4, OG6</td><td>OE04, OE09</td><td>Filtros avançados</td><td>RF02</td><td>Must</td><td>✅</td></tr>
-    <tr className="functional alt"><td>OG4, OG6</td><td>OE04, OE09</td><td>Filtros avançados</td><td>RF03</td><td>Must</td><td>✅</td></tr>
-    <tr className="functional alt"><td>OG4, OG6</td><td>OE04, OE09</td><td>Filtros avançados</td><td>RF04</td><td>Must</td><td>✅</td></tr>
-    <tr className="functional alt"><td>OG4, OG6</td><td>OE04, OE09</td><td>Filtros avançados</td><td>RF05</td><td>Must</td><td>✅</td></tr>
-    <tr className="functional alt"><td>OG4, OG6</td><td>OE04, OE09</td><td>Filtros avançados</td><td>RF06</td><td>Must</td><td>✅</td></tr>
+    <tr className="functional"><td>OG1, OG3</td><td>OE05</td><td>Análise Base do Sistema</td><td>RF01</td><td>Must</td><td>✅</td></tr>
+    <tr className="functional alt"><td>OG3</td><td>OE03</td><td>Análise Base do Sistema</td><td>RF02</td><td>Must</td><td>✅</td></tr>
 
-    <tr className="functional"><td>OG6</td><td>OE05, OE09</td><td>Análises Avançadas</td><td>RF07</td><td>Should</td><td>✅</td></tr>
-    <tr className="functional"><td>OG6</td><td>OE05, OE09</td><td>Análises Avançadas</td><td>RF08</td><td>Should</td><td>✅</td></tr>
-    <tr className="functional"><td>OG6</td><td>OE05, OE09</td><td>Análises Avançadas</td><td>RF09</td><td>Should</td><td>✅</td></tr>
-    <tr className="functional"><td>OG6</td><td>OE05, OE09</td><td>Análises Avançadas</td><td>RF10</td><td>Should</td><td>✅</td></tr>
-    <tr className="functional"><td>OG6</td><td>OE05, OE09</td><td>Análises Avançadas</td><td>RF11</td><td>Should</td><td>✅</td></tr>
+    <tr className="functional alt"><td>OG3</td><td>OE04</td><td>Consultas Diretas</td><td>RF03</td><td>Must</td><td>✅</td></tr>
+    <tr className="functional alt"><td>OG3</td><td>OE04</td><td>Consultas Diretas</td><td>RF04</td><td>Must</td><td>✅</td></tr>
+    <tr className="functional alt"><td>OG3</td><td>OE04</td><td>Consultas Diretas</td><td>RF05</td><td>Must</td><td>✅</td></tr>
+    <tr className="functional alt"><td>OG3</td><td>OE04</td><td>Consultas Diretas</td><td>RF06</td><td>Must</td><td>✅</td></tr>
 
-    <tr className="functional alt"><td>OG7</td><td>OE06, OE08</td><td>Notificação sobre produtos em estado crítico</td><td>RF12</td><td>Should</td><td>✅</td></tr>
-    <tr className="functional alt"><td>OG7</td><td>OE06, OE08</td><td>Notificação sobre produtos em estado crítico</td><td>RF13</td><td>Should</td><td>✅</td></tr>
-    <tr className="functional alt"><td>OG7</td><td>OE06, OE08</td><td>Notificação sobre produtos em estado crítico</td><td>RF14</td><td>Should</td><td>✅</td></tr>
+    <tr className="functional"><td>OG6</td><td>OE05</td><td>Análises Avançadas</td><td>RF07</td><td>Should</td><td>✅</td></tr>
+    <tr className="functional"><td>OG6</td><td>OE09</td><td>Análises Avançadas</td><td>RF08</td><td>Should</td><td>✅</td></tr>
+    <tr className="functional"><td>OG6</td><td>OE09</td><td>Análises Avançadas</td><td>RF09</td><td>Should</td><td>✅</td></tr>
+    <tr className="functional"><td>OG6</td><td>OE09</td><td>Análises Avançadas</td><td>RF10</td><td>Should</td><td>✅</td></tr>
+    <tr className="functional"><td>OG6</td><td>OE09</td><td>Análises Avançadas</td><td>RF11</td><td>Should</td><td>✅</td></tr>
+
+    <tr className="functional alt"><td>OG7</td><td>OE08</td><td>Notificação sobre produtos em estado crítico</td><td>RF12</td><td>Should</td><td>✅</td></tr>
+    <tr className="functional alt"><td>OG7</td><td>OE08</td><td>Notificação sobre produtos em estado crítico</td><td>RF13</td><td>Should</td><td>✅</td></tr>
+    <tr className="functional alt"><td>OG7</td><td>OE08</td><td>Notificação sobre produtos em estado crítico</td><td>RF14</td><td>Should</td><td>✅</td></tr>
 
     <tr className="functional"><td>OG5</td><td>OE07</td><td>Autorização de Acesso</td><td>RF15</td><td>Should</td><td>❌</td></tr>
     <tr className="functional"><td>OG5</td><td>OE07</td><td>Autorização de Acesso</td><td>RF16</td><td>Should</td><td>❌</td></tr>
