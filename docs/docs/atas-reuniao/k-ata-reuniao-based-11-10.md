@@ -71,7 +71,7 @@ Decisão: Por conta do acesso a todas as planilhas necessárias para analisar o 
 2. Garantir o armazenamento seguro e local dos arquivos.
 3. Preparar o material para a próxima reunião com o cliente.
 4. Estudos sobre o conjunto de requisitos os quais cada grupo ficou designado a estudar e identificar como poderia ser implementado logicamente com a biblioteca pandas
-   - <img width="1615" height="792" alt="image" src="https://github.com/user-attachments/assets/5ef9c6e4-c060-4b1b-8db4-a61eef5068ed" />
+   - <img width="700" height="400" alt="image" src="https://github.com/user-attachments/assets/5ef9c6e4-c060-4b1b-8db4-a61eef5068ed" />
 ---
 
 ## Encaminhamentos Finais
