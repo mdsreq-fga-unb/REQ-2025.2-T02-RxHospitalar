@@ -1,5 +1,5 @@
 ---
-sidebar_label: "N.º 10 (06/10/2025)"
+sidebar_label: "Reunião de Organização da equipe em relação ao RAD"
 sidebar_position: 10
 ---
 
@@ -8,8 +8,7 @@ sidebar_position: 10
 **Disciplina:** Requisitos de Software  
 **Data:** 06/10/2025  
 **Horário:** 21:00  
-**Local:** Discord
-
+**Local:** Discord  
 ---
 
 ## Participantes
