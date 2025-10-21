@@ -1,13 +1,14 @@
 ---
-sidebar_label: "N.º 2 (09/09/2025)"
+sidebar_label: "Análise e Consenso"
 sidebar_position: 2
 ---
 # ATA N.º2 | 09/09
 
 **Disciplina:** Requisitos de Software  
+**Atividade de Eng. de Requisitos:** Análise e Consenso
 **Data:** 09/09/2025  
 **Horário de início:** 21:00  
-**Local:** Discord  
+**Local:** Discord 
 
 ---
 
@@ -36,7 +37,8 @@ O documento foi finalizado e enviado durante a reunião.
 ---
 
 ## Encaminhamentos Finais  
-- Documento de Visão do Produto e Projeto concluído e entregue.  
+- Documento de Visão do Produto e Projeto concluído e entregue.
+- **Evidência**: [Docx do projeto -versionamento do histórico de alterações](https://docs.google.com/document/d/1ObKkLQiQ6n5fSmXcMj0E3VsbUX4fnFBW7WjJGxMA8vg/edit?usp=sharing)
 
 ---
 
