@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Reunião de Alinhamento da equipe"
+sidebar_label: "Fase 2 - Análise e Consenso"
 sidebar_position: 10
 ---
 
@@ -7,8 +7,10 @@ sidebar_position: 10
 
 **Disciplina:** Requisitos de Software  
 **Data:** 11/10/2025  
-**Horário:** 21:00  
+**Horário:** 21:00
+**Fase do Projeto:** Fase 2
 **Local:** Microsoft Teams
+[**Evidencia**](https://unbbr.sharepoint.com/:v:/s/BASED/EVeURyImSNFLlgcL4OYub9gBEAE8AJYhw6pJ2bC4Z-8BdA?e=L3ZSGn&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
 
 ---
 
