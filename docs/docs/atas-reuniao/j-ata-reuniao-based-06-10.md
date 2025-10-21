@@ -9,7 +9,6 @@ sidebar_position: 10
 **Data:** 06/10/2025  
 **Horário:** 21:00  
 **Local:** Discord  
----
 
 ## Participantes
 
