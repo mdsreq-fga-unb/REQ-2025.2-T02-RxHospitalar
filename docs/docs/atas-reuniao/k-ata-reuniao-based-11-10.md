@@ -41,7 +41,8 @@ sidebar_position: 10
 ### 1. Alinhamento Geral
 **Discussão:** Amanda propôs que cada líder de área apresentasse o andamento e planejamento das tarefas, formalizando os pontos discutidos anteriormente.
 
-**Decisão:** Manter reuniões regulares de acompanhamento para garantir coerência entre as frentes do projeto.
+**Decisão:** Manter reuniões regulares de acompanhamento para garantir coerência entre as frentes do projeto.  
+
 ---
 ### 2. Comunicação Interna e Suporte
 Discussão:O grupo destacou a necessidade de melhorar o contato com o monitor Ian e manter a comunicação ativa entre as áreas.
@@ -49,14 +50,20 @@ Decisão:Utilizar o monitor como apoio técnico contínuo e registrar dúvidas o
 
 ---
 
-### 3. Sigilo e Segurança dos Dados
-Discussão: Samuel reforçou a orientação do cliente quanto à confidencialidade dos dados, destacando a importância de evitar o armazenamento em nuvem.
-Decisão: Manter todas as planilhas e arquivos sigilosos armazenados apenas em dispositivos locais dos integrantes.
+### 3. Sigilo e Segurança dos Dados  
+
+Discussão: Samuel reforçou a orientação do cliente quanto à confidencialidade dos dados, destacando a importância de evitar o armazenamento em nuvem.  
+
+Decisão: Manter todas as planilhas e arquivos sigilosos armazenados apenas em dispositivos locais dos integrantes.  
+
 ---  
 
-### 4. Entendimento dos requisitos a nível de sistema
-Discussão: Amanda trouxe o ponto de analisarem os primeiros requisitos que seriam implementados do MVP para que conseguissem ter uma mlehor visão para a prototipação de média fidelidade
-Decisão: Por conta do acesso a todas as planilhas necessárias para analisar o sistema terem sido dadas no mesmo dia da reunião, ficou acordo entre os integrantes estudarem como poderia implementar um conjunto de requisitos ao analisarem os dados e fórmulas das planilhas já que os mesmos reconhecinham ainda ter pouco conhecimento sobre elas e o seu funcionamento com os dados.
+### 4. Entendimento dos requisitos a nível de sistema  
+
+Discussão: Amanda trouxe o ponto de analisarem os primeiros requisitos que seriam implementados do MVP para que conseguissem ter uma mlehor visão para a prototipação de média fidelidade  
+
+Decisão: Por conta do acesso a todas as planilhas necessárias para analisar o sistema terem sido dadas no mesmo dia da reunião, ficou acordo entre os integrantes estudarem como poderia implementar um conjunto de requisitos ao analisarem os dados e fórmulas das planilhas já que os mesmos reconhecinham ainda ter pouco conhecimento sobre elas e o seu funcionamento com os dados.  
+
 ---
 
 ## Próximos Passos
