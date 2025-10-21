@@ -1,14 +1,16 @@
 ---
-sidebar_label: "N.º 9 (04/10/2025)"
+sidebar_label: "Validação do BackLog do MVP"
 sidebar_position: 9
 ---
 
 # ATA N.º9 | 04/10
 
 **Disciplina:** Requisitos de Software  
+**Atividades de Eng. de Requisitos:** Validação
 **Data:** 04/10/2025  
 **Horário:** 08:04  
 **Local:** Microsoft Teams  
+[**Evidência**](https://unbbr.sharepoint.com/:v:/s/BASED/EbdAeTcPMEVGjgtisSwXNkEBSxI2GBSktwX6C9vQqTzMAg?e=97w6KX&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
 
 ---
 
