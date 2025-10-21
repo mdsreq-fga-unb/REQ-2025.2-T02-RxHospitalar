@@ -1,6 +1,6 @@
 ---
-sidebar_label: "N.º11 (11/10/2025)"
-sidebar_position: 11
+sidebar_label: "Reunião de Alinhamento da equipe"
+sidebar_position: 10
 ---
 
 # ATA N.ºX | 11/10
@@ -52,18 +52,24 @@ Decisão:Utilizar o monitor como apoio técnico contínuo e registrar dúvidas o
 ### 3. Sigilo e Segurança dos Dados
 Discussão: Samuel reforçou a orientação do cliente quanto à confidencialidade dos dados, destacando a importância de evitar o armazenamento em nuvem.
 Decisão: Manter todas as planilhas e arquivos sigilosos armazenados apenas em dispositivos locais dos integrantes.
+---  
+
+### 4. Entendimento dos requisitos a nível de sistema
+Discussão: Amanda trouxe o ponto de analisarem os primeiros requisitos que seriam implementados do MVP para que conseguissem ter uma mlehor visão para a prototipação de média fidelidade
+Decisão: Por conta do acesso a todas as planilhas necessárias para analisar o sistema terem sido dadas no mesmo dia da reunião, ficou acordo entre os integrantes estudarem como poderia implementar um conjunto de requisitos ao analisarem os dados e fórmulas das planilhas já que os mesmos reconhecinham ainda ter pouco conhecimento sobre elas e o seu funcionamento com os dados.
 ---
 
 ## Próximos Passos
 1. Centralizar o resumo das apresentações de cada área em documento único.
 2. Garantir o armazenamento seguro e local dos arquivos.
 3. Preparar o material para a próxima reunião com o cliente.
-
+4. Estudos sobre o conjunto de requisitos os quais cada grupo ficou designado a estudar e identificar como poderia ser implementado logicamente com a biblioteca pandas
+   - <img width="1615" height="792" alt="image" src="https://github.com/user-attachments/assets/5ef9c6e4-c060-4b1b-8db4-a61eef5068ed" />
 ---
 
 ## Encaminhamentos Finais
 - Todos os integrantes concordaram com os alinhamentos e reforçaram o compromisso com o sigilo dos dados.
-- O grupo encerrará esta etapa de organização e seguirá para as atividades técnicas na próxima semana.
+- O grupo encerrará esta etapa com o entendimento mais profundo sobre as planilhas e um melhor destrinchamento da interação do usuário com os primeiros RF's que estão dispostos na v1 do protótipo
 
 ---
 
