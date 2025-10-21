@@ -5,7 +5,7 @@ sidebar_position: 5
 # ATA N.º5 | 18/09  
 
 **Disciplina:** Requisitos de Software  
-**Atividade de Engenharia de Requisitos:** Declaração dos Requisitos
+**Atividade de Engenharia de Requisitos:** Declaração dos Requisitos  
 **Data:** 18/09/2025  
 **Horário de início:** 21:00  
 **Local:** Microsoft Teams  
