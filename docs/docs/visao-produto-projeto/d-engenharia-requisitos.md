@@ -97,22 +97,22 @@ Nesta secção são estabelecidas as atividades da Engenharia de Requisitos (ER)
 
 ---
 
-## 4.2 Engenharia de Requisitos e o RAD + Scrum
+## 4.2 Engenharia de Requisitos e o RAD
 
 Aqui, as atividades da ER, suas práticas e técnicas devem ser mapeadas, a partir das fases (etapas) do RAD, para a condução do projeto. As evidências de cada uma das atividades estão linkadas através do nome da atividade às atas realizadas pelos membros da equipe.
 
 | Fase do RAD | Atividades ER | Prática | Técnica | Resultado |
 | :--- | :--- | :--- | :--- | :--- |
 | **Fase 1 - Joint Requirements Planning (JRP)** | | | | |
-| | Elicitação e Descoberta | Descoberta sobre o negócio e dor do cliente | Entrevista, Casos de Uso, Análise de Tarefas | Entendimento sobre o negócio e contexto do cliente, Declaração do Problema, Personas |
-| | Análise e Consenso | Discussões em Equipe, Reuniões com a equipe | Brainstorming, Análise de Personas, Análise de Concorrentes | Declaração do Problema, Lista de Necessidades, Personas, Proposta de Solução, Documento de Visão do Produto e Projeto |
-| | Declaração dos Requisitos | Registro dos Requisitos | Brainstorming, Análise de Domínio de Requisito, Especificação de Requisitos | Lista de Requisitos (RFs) e Lista de Requisitos não funcionais (RNFs), BackLog do Produto |
-| | Verificação e Validação | Verificação dos Requisitos && Refinamento dos requisitos && Priorização dos Requisitos | Reuniões, Feedbacks, MoSCoW, Critérios de Avaliação Técnica | BackLog do MVP priorizado |
-| | Declaração | Melhoria da declaração dos Requisitos | Reunião e Feedbacks | Requisitos de Software com nomenclaturas corretas |
-| | Verificação e Validação | Validação de Requisitos && Resolução de Conflito (Valor e Acordo) | Negociação, Reunião, Feedbacks, Análise de Domínio de Requisito | MVP validado pelo cliente, e consenso sobre os primeiros requisitos a serem implementados |
-| | Organização e Atualização | Priorização de Requisitos | Feedbacks do professor sobre rastreabilidade e da validação do cliente | Backlog do MVP atualizado, alinhado com o Mapa de Rastreabilidade dos O.E’S do produto |
+| | [Elicitação e Descoberta](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/atas-reuniao/a-ata-reuniao-based-06-09) | Descoberta sobre o negócio e dor do cliente | Entrevista, Casos de Uso, Análise de Tarefas | Entendimento sobre o negócio e contexto do cliente, Declaração do Problema, Personas |
+| | [Análise e Consenso](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/atas-reuniao/b-ata-reuniao-based-09-09) | Discussões em Equipe, Reuniões com a equipe | Brainstorming, Análise de Personas, Análise de Concorrentes | Declaração do Problema, Lista de Necessidades, Personas, Proposta de Solução, Documento de Visão do Produto e Projeto |
+| | [Declaração dos Requisitos](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/atas-reuniao/e-ata-reuniao-based-18-09) | Registro dos Requisitos | Brainstorming, Análise de Domínio de Requisito, Especificação de Requisitos | Lista de Requisitos (RFs) e Lista de Requisitos não funcionais (RNFs), BackLog do Produto |
+| | [Verificação e Validação](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/atas-reuniao/f-ata-reuniao-based-22-09) | Verificação dos Requisitos && Refinamento dos requisitos && Priorização dos Requisitos | Reuniões, Feedbacks, MoSCoW, Critérios de Avaliação Técnica | BackLog do MVP priorizado |
+| | [Declaração](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/atas-reuniao/h-ata-reuniao-baded-30-09) | Melhoria da declaração dos Requisitos | Reunião e Feedbacks | Requisitos de Software com nomenclaturas corretas |
+| | [Verificação e Validação](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/atas-reuniao/i-ata-reuniao-based-04-10) | Validação de Requisitos && Resolução de Conflito (Valor e Acordo) | Negociação, Reunião, Feedbacks, Análise de Domínio de Requisito | MVP validado pelo cliente, e consenso sobre os primeiros requisitos a serem implementados |
+| | [Organização e Atualização](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/atas-reuniao/i-ata-reuniao-based-04-10) | Priorização de Requisitos | Feedbacks do professor sobre rastreabilidade e da validação do cliente | Backlog do MVP atualizado, alinhado com o Mapa de Rastreabilidade dos O.E’S do produto |
 | **Fase 2 - User Design** | | | | |
-| | Representação | Criação de Protótipos | Prototipagem | Protótipo de baixa e média fidelidade |
-| | Análise e Consenso | Refinamento dos requisitos | Protótipos, Inspeção, Análise de Objetivo de Domínio | Protótipo Analisado: Consenso da equipe sobre os primeiros RF a serem implementados com base nos protótipos |
+| | [Representação](https://www.figma.com/design/Xk5sSYqw2tHww9UCYAKv7k/BASED--RX-Hospitalar?node-id=0-1&p=f&t=yfklc8zNh3fXNjdj-0) | Criação de Protótipos | Prototipagem | Protótipo de baixa e média fidelidade |
+| | [Análise e Consenso]() | Refinamento dos requisitos | Protótipos, Inspeção, Análise de Objetivo de Domínio | Protótipo Analisado: Consenso da equipe sobre os primeiros RF a serem implementados com base nos protótipos |
 | | Verificação e Validação | Verificação da jornada de interação do usuário em relação ao fluxo de tarefas | Walkthrough, Decomposição funcional | Protótipo verificado: Clareza da equipe em relação ao passo a passo seguido pelo usuário para executar os primeiros RF’s |
 | | Declaração | Especificações da interação do usuário | Prótipos, Decomposição funcional | Primeiros RF’s do backlog do MVP a serem desenvolvidos com mais especificações em relação ao UI |
