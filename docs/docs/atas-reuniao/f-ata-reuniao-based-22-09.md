@@ -1,14 +1,16 @@
 ---
-sidebar_label: "N.º 6 (22/09/2025)"
+sidebar_label: "Verificação dos Requisitos de Software"
 sidebar_position: 6
 ---
 
 # ATA N.º6 | 22/09
 
 **Disciplina:** Requisitos de Software  
+**Atividade de Eng. de Requisitos:** Verificação e Validação
 **Data:** 22/09/2025  
 **Horário:** 21:24  
-**Local:** Microsoft Teams  
+**Local:** Microsoft Teams
+[**Evidência**](https://unbbr.sharepoint.com/:v:/s/BASED/EVLL_RvHBLlHuAp_ufHQwQcB5XqxNbQhy07WA1tZCU8KTA?e=SvuSOK&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
 
 ---
 
@@ -58,7 +60,7 @@ sidebar_position: 6
 ---
 
 ### 3. Requisitos Não Funcionais
-**Discussão:** Segurança, escalabilidade e performance foram considerados importantes, mas não são prioridade imediata.  
+**Discussão:** Segurança, escalabilidade e performance foram consideradas importantes, mas não são prioridade imediata.  
 **Decisão:** Serão tratados de forma incremental, após consolidação do MVP.  
 
 ---
@@ -67,9 +69,9 @@ sidebar_position: 6
 **Discussão:**  
 - **Pandas** será a principal biblioteca para manipulação de dados.  
 - Possibilidade de explorar **Streamlit** para interface.  
-- Debate sobre integração direta com SoftSystem (API), mas decisão foi focar inicialmente nas planilhas do cliente.  
+- Debate sobre integração direta com SoftSystem (API), mas a decisão foi focar inicialmente nas planilhas do cliente.  
 
-**Decisão:** Confirmado uso inicial de Pandas; Streamlit será avaliado futuramente.  
+**Decisão:** Confirmado o uso inicial de Pandas; Streamlit será avaliado futuramente.  
 
 ---
 
@@ -83,14 +85,14 @@ sidebar_position: 6
 1. Refinar requisitos e matriz de priorização no Miro.  
 2. Definir backlog e primeiras sprints.  
 3. Iniciar protótipos com Pandas.  
-4. Validar escopo do MVP com professor.  
+4. Validar escopo do MVP com o professor.  
 
 ---
 
 ## Encaminhamentos Finais
 - MVP será enxuto (estoque + integração de dados).  
 - Requisitos adicionais tratados como incrementos futuros.  
-- Metodologia híbrida confirmada (SCRUM + RAD + XP).  
+- Metodología híbrida confirmada (SCRUM + RAD + XP).  
 - Grupo segue com definição do backlog e sprints no Miro.  
 
 ---
