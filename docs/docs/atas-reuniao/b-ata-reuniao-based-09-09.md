@@ -5,7 +5,7 @@ sidebar_position: 2
 # ATA N.º2 | 09/09
 
 **Disciplina:** Requisitos de Software  
-**Atividade de Eng. de Requisitos:** Análise e Consenso
+**Atividade de Eng. de Requisitos:** Análise e Consenso  
 **Data:** 09/09/2025  
 **Horário de início:** 21:00  
 **Local:** Discord 
