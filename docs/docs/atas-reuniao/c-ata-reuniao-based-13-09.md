@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Reunião de Deecisão e Organização da equipe"
+sidebar_label: "Reunião de Decisão e Organização da equipe"
 sidebar_position: 3
 ---
 # ATA N.º3 | 13/09
