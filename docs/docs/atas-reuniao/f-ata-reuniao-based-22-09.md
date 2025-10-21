@@ -6,7 +6,7 @@ sidebar_position: 6
 # ATA N.º6 | 22/09
 
 **Disciplina:** Requisitos de Software  
-**Atividade de Eng. de Requisitos:** Verificação e Validação  
+**Atividade de Eng. de Requisitos:** Verificação  
 **Data:** 22/09/2025  
 **Horário:** 21:24  
 **Local:** Microsoft Teams  
