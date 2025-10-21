@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Discutindo sobre a organização do projeto"
+sidebar_label: "Discução sobre a organização do projeto"
 sidebar_position: 4
 ---
 # ATA N.º4 | 16/09
