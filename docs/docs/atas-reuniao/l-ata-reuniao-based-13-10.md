@@ -1,5 +1,5 @@
 ---
-sidebar_label: "User Design"
+sidebar_label: "Verificação da Jornada de Interação do Usuário"
 sidebar_position: 10
 ---
 
@@ -9,9 +9,7 @@ sidebar_position: 10
 **Data:** 13/10/2025  
 **Horário:** 21:13  
 **Local:** Microsoft Teams  
-**Evidências:**  
-- [Vídeo](https://unbbr.sharepoint.com/:v:/s/BASED/EX4SQperic5IirQ68wNToa0BOkFUqIRXDp2T-A8GKhIFGQ?e=nejpI6&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
-- [Checklist](https://unbbr.sharepoint.com/:b:/s/BASED/EZyLCRLi71FLigzVsgHhAGkBexsh2h5LZCllD5UJd73q1g?e=ZFYok6)
+[**Evidência**](https://unbbr.sharepoint.com/:v:/s/BASED/EX4SQperic5IirQ68wNToa0BOkFUqIRXDp2T-A8GKhIFGQ?e=nejpI6&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
 
 ---
 
