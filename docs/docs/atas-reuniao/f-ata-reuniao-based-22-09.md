@@ -6,10 +6,10 @@ sidebar_position: 6
 # ATA N.º6 | 22/09
 
 **Disciplina:** Requisitos de Software  
-**Atividade de Eng. de Requisitos:** Verificação e Validação
+**Atividade de Eng. de Requisitos:** Verificação e Validação  
 **Data:** 22/09/2025  
 **Horário:** 21:24  
-**Local:** Microsoft Teams
+**Local:** Microsoft Teams  
 [**Evidência**](https://unbbr.sharepoint.com/:v:/s/BASED/EVLL_RvHBLlHuAp_ufHQwQcB5XqxNbQhy07WA1tZCU8KTA?e=SvuSOK&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
 
 ---
