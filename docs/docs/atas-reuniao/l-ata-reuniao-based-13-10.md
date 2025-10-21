@@ -47,8 +47,8 @@ sidebar_position: 10
 * [cite_start]**Beatriz (Regras de Negócio):** Destacou a importância crítica da coluna "Observações" nas planilhas, que contém regras de negócio explícitas (ex: "não comprar", "compra sob encomenda") que devem ser tratadas pela lógica do sistema para evitar sugestões de compra incorretas [cite: 2261-2267, 2315-2322].
 * [cite_start]**Amanda (Vendas/Sazonalidade):** Propôs cruzar "código do vendedor" com "total pago" (para performance) e "código do produto" (para sazonalidade), unificando as análises [cite: 2431-2432, 2438-2441, 2448-2450].
 
-* <img width="1845" height="858" alt="image" src="https://github.com/user-attachments/assets/0ba6f91a-ce96-4227-b804-01d5d355cf99" />
-* <img width="1445" height="749" alt="image" src="https://github.com/user-attachments/assets/f0a44c0a-ebd3-4078-afeb-040f5c77698c" />
+* <img width="763" height="467" alt="image" src="https://github.com/user-attachments/assets/0ba6f91a-ce96-4227-b804-01d5d355cf99" />
+* <img width="763" height="467" alt="image" src="https://github.com/user-attachments/assets/f0a44c0a-ebd3-4078-afeb-040f5c77698c" />
 
 
 **Decisão:** As análises e os protótipos foram validados internamente pela equipe.
