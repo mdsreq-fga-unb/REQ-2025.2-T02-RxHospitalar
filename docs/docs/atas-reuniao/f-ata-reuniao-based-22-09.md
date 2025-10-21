@@ -10,7 +10,7 @@ sidebar_position: 6
 **Data:** 22/09/2025  
 **Horário:** 21:24  
 **Local:** Microsoft Teams  
-[**Evidência**](https://unbbr.sharepoint.com/:v:/s/BASED/EU6DQGOXyg1ApG6q5H96UrwBysDn22JjBX15vODKl23FoQ?e=t1uquR&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
+[**Evidência**](https://unbbr.sharepoint.com/sites/BASED/_layouts/15/stream.aspx?id=%2Fsites%2FBASED%2FDocumentos%20Compartilhados%2FGeral%2FGrava%C3%A7%C3%B5es%2FDefini%C3%A7%C3%A3o%20dos%20requisitos%2C%20sprints%20e%20metodologia%20de%20software%2D20250922%5F210523%2DTranscri%C3%A7%C3%A3o%20da%20Reuni%C3%A3o%2Emp4&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0&ga=1&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E9f744097%2Dc2f7%2D45e0%2Dbae1%2Dc633d01f7b92)
 
 ---
 
