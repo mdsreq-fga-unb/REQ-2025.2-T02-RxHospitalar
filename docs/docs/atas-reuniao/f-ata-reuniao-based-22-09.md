@@ -97,6 +97,6 @@ sidebar_position: 6
 
 ---
 
-**Encerramento da reunião:** 23 de Setembro de 2025, às 00:01:34
-**Duração:** Aproximadamente 2h37min34s 
+**Encerramento da reunião:** 23 de Setembro de 2025, às 00:01:34  
+**Duração:** Aproximadamente 2h37min34s  
 **Responsável pela redação da ata:** Gabriel Augusto Vilarinho Viana Rocha  
