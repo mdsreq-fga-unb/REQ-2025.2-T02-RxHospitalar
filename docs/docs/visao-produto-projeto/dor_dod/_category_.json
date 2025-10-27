@@ -1,0 +1,8 @@
+{
+  "label": "DoR e DoD",
+  "position": 7,
+  "link": {
+    "type": "generated-index",
+    "description": "Esta seção apresenta os conceitos de Definition of Ready (DoR) e Definition of Done (DoD), que ajudam a garantir que o trabalho seja bem definido antes de ser iniciado e que esteja completo antes de ser considerado pronto para entrega. "
+  }
+}
