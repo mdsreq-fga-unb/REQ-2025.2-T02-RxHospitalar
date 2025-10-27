@@ -24,7 +24,12 @@ const config = {
   projectName: 'REQ-2025.2-T02-RxHospitalar',
 
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  // old: onBrokenMarkdownLinks: 'warn',
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+    },
+  },
 
   i18n: {
     defaultLocale: 'en',
