@@ -37,7 +37,7 @@ sidebar_position: 3
 
 Após avaliarmos com precisão o que seria o escopo do projeto e a arquitetura mapeada para o mesmo, identificamos uma parte já bem definida (mais estável), e outra em relação a outras consultas dinâmicas e experiência do usuário, que são mais variáveis.  
 
-Assim, dada tais caractéristicas do produto, a reutilização de prototipagem rápida, e feedback constante do cliente entre as iterações, foram características deferidas como fortes auxiliadoras, dada a arquitetura mapeada para o projeto (utilizando a biblioteca Pandase  o formato de entrega em exe(executável). Além disso, conectada  ao nível de maturidade da equipe BASED, a junção com o Scrum promove a colaboratividade e aprendizagem compartilhada durante o processo, e com uma perspectiva mais técnica, iremos utilizar algumas características do XP.  
+Assim, dada tais caractéristicas do produto, a reutilização de prototipagem rápida, e feedback constante do cliente entre as iterações, foram características deferidas como fortes auxiliadoras, dada a arquitetura mapeada para o projeto utilizando a biblioteca Pandas e o formato de entrega em exe(executável). Além disso, conectada ao nível de maturidade da equipe BASED, a junção com o Scrum promove a colaboratividade e aprendizagem compartilhada durante o processo, e com uma perspectiva mais técnica, iremos utilizar algumas características do XP.  
 
 Todos esses fatores se mostram mais oportunos, pelos seguintes fatores:  
 

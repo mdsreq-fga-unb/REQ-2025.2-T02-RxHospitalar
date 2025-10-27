@@ -5,7 +5,7 @@ sidebar_position: 4
 
 # Engenharia de Requisitos
 
-Nesta secção são estabelecidas as atividades da Engenharia de Requisitos (ER), suas práticas e técnicas em alinhamento ao processo de ESW escolhido para o nosso projeto, o RAD. Cada uma das atividades foi descrita a partir de algumas técnicas e práticas que mais estavam alinhadas com a equipe em relação ao projeto. Suas evidências estarão disponíveis em uma ata da reunião que representa o momento no qual executamos tal atividade de Engenharia de Requisitos.  
+Nesta seção são estabelecidas as atividades da Engenharia de Requisitos (ER), suas práticas e técnicas em alinhamento ao processo de ESW escolhido para o nosso projeto, o RAD. Cada uma das atividades foi descrita a partir de algumas técnicas e práticas que mais estavam alinhadas com a equipe em relação ao projeto. Suas evidências estarão disponíveis em uma ata da reunião que representa o momento no qual executamos tal atividade de Engenharia de Requisitos.  
 
 ## Atividades e Técnicas de ER
 
