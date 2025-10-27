@@ -7,29 +7,10 @@ sidebar_position: 2
 ### 2.1 Objetivos do Produto
 
 Com este produto visamos otimizar o processo de análise de planilhas de compras, estoque e vendas que são gerenciadas pelo cliente, focando em reduzir o tempo dedicado neste processo de análise. Adicionado a este objetivo, também buscaremos garantir que a centralização dos dados seja disposta de forma mais intuitiva para que outras áreas também possam compreender e utilizar insights de forma estratégica, o que também diminui a carga de trabalho delegada ao setor de compras.
-Este produto também visa transformar a gestão de compras, estoque e vendas da RX Hospitalar, tornando-a mais ágil, intuitiva e estratégica. Os objetivos gerais abaixo orientam o desenvolvimento da solução, e cada um deles está diretamente associado a um ou mais **Objetivos Específicos (OE)** do Projeto detalhados na [Tabela 1](#tabela-1), assegurando rastreabilidade e foco nos resultados mensuráveis.
+Este produto também visa transformar a gestão de compras, estoque e vendas da RX Hospitalar, tornando-a mais ágil, intuitiva e estratégica. O objetivo geral abaixo orienta o desenvolvimento da solução e os **Objetivos Específicos (OE)** do Projeto detalhados na [Tabela 1](#tabela-1), assegurando rastreabilidade e foco nos resultados mensuráveis.
 <a id="OG1"></a> <br/>
-**Objetivos Gerais (OG) do Projeto:** 
-<a id="OG2"></a>
-- **OG1 Reduzir drasticamente o tempo de análise de compras e estoque**  
-Relacionado ao [OE1](#OE1) – Diminuir o tempo de análise em pelo menos 50%, substituindo horas de trabalho manual por minutos com o uso da ferramenta.
-<a id="OG3"></a>
-- **OG2 Centralizar e unificar as fontes de dados**  
-Relacionado ao [OE3](#OE3) – Integrar em uma única visão as planilhas de faturado, pendências, estoque e validades, eliminando a consulta fragmentada.
-<a id="OG4"></a>
-- **OG3 Automatizar a gestão de estoque com base em regras parametrizáveis**  
-Relacionado ao [OE5](#OE5) e [OE06](#OE6) – Implementar cálculos automáticos de estoque ideal, sugerir reposições com alta precisão e reduzir riscos de ruptura ou perdas por validade.
-<a id="OG5"></a>
-- **OG4 Oferecer uma interface intuitiva e acessível**  
-Relacionado ao [OE2](#OE2) e [OE04](#OE4) – Disponibilizar filtros dinâmicos e visões personalizadas que permitam ao usuário acessar e analisar dados em menos de 5 minutos.
-<a id="OG6"></a>
-- **OG5 Garantir segurança e controle de acesso**  
-Relacionado ao [OE7](#OE7) – Assegurar que apenas usuários autorizados tenham acesso a dados sensíveis, com zero vazamentos.
-<a id="OG7"></a>
-- **OG6 Prover insights estratégicos por cliente e vendedor**  
-Relacionado ao [OE9](#OE9) – Oferecer visão analítica do histórico de compras por cliente, facilitando a identificação de padrões e oportunidades de venda.
-- **OG7 Notificar proativamente sobre situações críticas**  
-Relacionado ao [OE8](#OE8) – Alertar sobre produtos parados, com giro baixo ou próximos do vencimento.
+**Objetivo Geral (OG) do Projeto:** 
+- Otimizar o processo de análise de planilhas, atualmente gerenciadas pelo cliente, de forma a transformar a gestão de compras e estoque da RX Hospitalar, tornando-a mais ágil, intuitiva e estratégica.
 
 ### 2.2 Características da Solução
 
