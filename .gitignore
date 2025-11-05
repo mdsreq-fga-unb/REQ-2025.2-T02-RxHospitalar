@@ -1,0 +1,16 @@
+# NÃO subir a pasta de dados
+data/
+
+# NÃO subir ambiente virtual
+venv/
+
+# Cache do python
+__pycache__/
+
+# Arquivos temporários do VSCode e Python
+*.pyc
+*.pyo
+*.pyd
+
+# Arquivos do sistema
+.DS_Store
