@@ -2,6 +2,7 @@
 import pandas as pd
 from app import consulta_por_codigo
 
+#critério de aceitação: utilizar o código original do produto para listar o produto
 def test_consulta_por_codigo_com_sucesso():
   df = pd.DataFrame([
     {"codigo": "123", "nome": "Dipirona", "linha": "ABC"},
@@ -22,7 +23,8 @@ def test_consulta_por_codigo_nao_achada():
 
   result = consulta_por_codigo(df, "X987654321")
 
-  assert result is not None   
+  assert result is not None 
+  assert ValueError("Código não encontrado")  
 
 def test_consulta_por_codigo_string():
   df = pd.DataFrame([
@@ -36,7 +38,7 @@ def test_consulta_por_codigo_string():
 
 def test_consulta_por_codigo_vazio():
   df = pd.DataFrame([
-    {"codigo": "456", "nome": "Dexametasona", "linha": "DEF"}
+    {"codigo": "", "nome": "Dexametasona", "linha": "DEF"}
   ])
 
   result = consulta_por_codigo(df, "")

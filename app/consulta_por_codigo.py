@@ -2,4 +2,4 @@
 import panda as pd
 
 def consulta_por_codigo():
-  
+  pass
