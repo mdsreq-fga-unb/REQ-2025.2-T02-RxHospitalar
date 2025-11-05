@@ -1,13 +1,16 @@
 ---
-sidebar_label: "N.º 5 (18/09/2025)"
+sidebar_label: "Declaração dos Requisitos"
 sidebar_position: 5
 ---
 # ATA N.º5 | 18/09  
 
 **Disciplina:** Requisitos de Software  
+**Atividade de Engenharia de Requisitos:** Declaração dos Requisitos  
 **Data:** 18/09/2025  
 **Horário de início:** 21:00  
 **Local:** Microsoft Teams  
+[**Evidência 1**](https://unbbr.sharepoint.com/:v:/s/BASED/EcecFTlLaX5Hq4UOwGJp0VQBuc4ZfW79XYq5GVsVkmftGA?e=ich7zC&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)  
+[**Evidência 2**](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/atas-reuniao/h-ata-reuniao-baded-30-09)
 
 ---
 
@@ -29,13 +32,13 @@ sidebar_position: 5
 
 ## Objetivos da Reunião  
 - Compreender melhor o processo atual do Arthur de análise e gestão de estoque  
-- Identificar as principais necessidades para reconstruirmos os passos que tomaremos na construção do projeto  
+- Identificar as principais necessidades para reconstruirmos os passos que tomaremos na construção do projeto (Declaração e Refinamento dos Requisitos)
 
 ---
 
 ## Principais Pontos Abordados  
 
-### 1. Análise do Processo Atual ("As-Is")  
+### 1. Análise de Tarefas do Cliente ("As-Is")  
 **Discussão:** O processo de gestão de Arthur é centrado em planilhas Excel (BD - 14, BD Estoque, PEDIDO FORA, BD - CONSIGNADO) atualizadas a partir de dados de um sistema interno. Foram identificados desafios como o processo ser muito manual, a baixa eficiência por precisar cruzar múltiplas planilhas, e o alto risco de erros devido à manipulação de fórmulas.  
 
 **Justificativa:** Compreender o fluxo de trabalho atual é fundamental para identificar os pontos de melhoria e definir os requisitos da nova solução.  
