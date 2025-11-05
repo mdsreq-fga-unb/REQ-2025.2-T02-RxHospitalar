@@ -7,9 +7,9 @@ sidebar_position: 3
 ### 3.1 Estratégia priorizada
 
 
-- **Abordagem:** Híbrido ( Dirigido a plano + Ágil )
-- **Ciclo de Vida:** Adaptativo
-- **Processo:** Scrum + XP
+- **Abordagem:** Híbrido
+- **Ciclo de Vida:** Iterativo Incremental
+- **Processo:** Scrum + RAD
   
  
 ### 3.2 Quadro comparativo
@@ -25,7 +25,7 @@ sidebar_position: 3
 | Complexidade do Processo  | Moderada: orientada a protótipo, modularização permite que partes do projeto sejam divididas em equipes RAD | Moderada: Práticas Scrum e XP exigem organização e participação da equipe. |
 |  Qualidade Técnica  | Foco em protótipos e entregas rápidas pode comprometer a qualidade do código. Sem práticas fortes de testes automatizados. |Alta: Prioriza testes automatizados, integração contínua, refatoração. |
 |  Práticas de Desenvolvimento  | Construção rápida de protótipos, iterações rápidas com foco em design de usuário. | TDD, pair programming, integração contínua. |
-|  Adaptação ao Projeto da RX Hospitalar  | Ideal para um cenário com foco em protótipos | Ideal para um cenário extremamente dinâmico, garantido qualidade de código. |
+|  Adaptação ao Projeto da RX Hospitalar  | Ideal para um cenário com foco em protótipos | Ideal para um cenário extremamente dinâmico, garantindo qualidade de código. |
 |  Documentação  | Representação informal (protótipos) pode substituir partes da documentação formal. Documentação mínima. | Documentação mínima, apenas o necessário para o cliente e equipe. |
 |  Controle de Qualidade  | Feito no ciclo de prototipagem via retorno do usuário | Testes automatizados. |
 |  Escalabilidade  | Apresenta limitações para sistemas de grande escala, melhor para projetos de baixa complexidade | Boa em times pequenos e médios, difícil em times muito grandes. |
@@ -35,22 +35,26 @@ sidebar_position: 3
 
 ### 3.3 Justificativa
 
-Considerando a necessidade de alinhar características do software a ser desenvolvido com o nível de maturidade da equipe BASED, o processo ScrumXP se mostrou mais oportuno, pelos seguintes fatores:
+Após avaliarmos com precisão o que seria o escopo do projeto e a arquitetura mapeada para o mesmo, identificamos uma parte já bem definida (mais estável), e outra em relação a outras consultas dinâmicas e experiência do usuário, que são mais variáveis.  
+
+Assim, dada tais caractéristicas do produto, a reutilização de prototipagem rápida, e feedback constante do cliente entre as iterações, foram características deferidas como fortes auxiliadoras, dada a arquitetura mapeada para o projeto utilizando a biblioteca Pandas e o formato de entrega em exe(executável). Além disso, conectada ao nível de maturidade da equipe BASED, a junção com o Scrum promove a colaboratividade e aprendizagem compartilhada durante o processo, e com uma perspectiva mais técnica, iremos utilizar algumas características do XP.  
+
+Todos esses fatores se mostram mais oportunos, pelos seguintes fatores:  
 
 #### 1. Aprendizagem Contínua
 
-O ScrumXP, por meio de práticas interativas e colaborativas, favorece o desenvolvimento técnico e o crescimento da equipe. Diferentemente do RAD, que foca em prototipação rápida, o ScrumXP promove evolução das habilidades ao longo de todo o projeto. Ideal para equipes de baixa experiência.
+O Scrum promove evolução das habilidades ao longo de todo o projeto. Ideal para equipes de baixa experiência. E com características do XP, por meio de práticas colaborativas, favorece o desenvolvimento técnico e o crescimento da equipe, como o Pair Programming.
 
 #### 2. Controle de Qualidade
 
-A aplicação de práticas do XP, tais como Test-Driven Development (TDD), testes automatizados e integração contínua, assegura maior confiabilidade ao código. Essa abordagem reduz a ocorrência de falhas e garante maior qualidade em comparação ao RAD, onde a prototipação pode deixar lacunas de qualidades a depender do nível de experiência da equipe.
+Seguindo o processo do RAD, que foca na rapidez da prototipação e na qualidade das entregas, podemos a cada iteração verificar o nosso protótipo, garantindo que cada incremento se conecta com o planejamento do projeto e o valor a ser entregue para o cliente. Além disso, trazendo para as práticas do XP, o Test-Driven Development (TDD), testes automatizados e integração contínua, assegura maior confiabilidade ao código. A escolha dessa prática do XP, nos ajuda a reduzir a ocorrência de falhas e garante maior qualidade e previsibilidade no desenvolvimento do sistema, em comparação a somente utilização do RAD, onde a prototipação pode deixar lacunas de qualidades a depender do nível de experiência da equipe.
 
 #### 3. Práticas XP + Scrum
 
-O uso de práticas como pair programming, em conjunto com a estrutura do Scrum (reuniões diárias e retrospectivas), promove colaboração contínua, alinhamento de expectativas e maior eficiência na comunicação. Assim, contribuindo para o aumento de produtividade e redução de riscos organizacionais.
+O uso de práticas como pair programming, em conjunto com a estrutura do Scrum (reuniões diárias e retrospectivas), promove colaboração contínua, alinhamento de expectativas e maior eficiência na comunicação. Assim, contribui para o aumento de produtividade e redução de riscos organizacionais.
 
 #### 4. Releases e Validação Contínua
 
-As entregas incrementais e frequentes permitem validação contínua do produto pelo cliente, garantindo que o produto atenda suas demandas e necessidades reais. Essa prática reduz o risco de retrabalho na entrega final. Em contrapartida, o RAD utiliza de validação de protótipos, que, a depender da experiência técnica, pode não refletir a complexidade real do sistema.
+Com o RAD, as entregas incrementais a cada ciclo iterativo do processo permitem a validação contínua do produto pelo cliente, garantindo que o produto atenda às suas demandas e necessidades reais. Essa prática reduz o risco de retrabalho na entrega final, com a  validação de protótipos que refletem a evolução do desenvolvimento do produto.
 
 

@@ -1,14 +1,16 @@
 ---
-sidebar_label: "N.º 6 (22/09/2025)"
+sidebar_label: "Verificação dos Requisitos de Software em relação ao MVP"
 sidebar_position: 6
 ---
 
 # ATA N.º6 | 22/09
 
 **Disciplina:** Requisitos de Software  
+**Atividade de Eng. de Requisitos:** Verificação e Validação  
 **Data:** 22/09/2025  
 **Horário:** 21:24  
 **Local:** Microsoft Teams  
+[**Evidência**](https://unbbr.sharepoint.com/sites/BASED/_layouts/15/stream.aspx?id=%2Fsites%2FBASED%2FDocumentos%20Compartilhados%2FGeral%2FGrava%C3%A7%C3%B5es%2FDefini%C3%A7%C3%A3o%20dos%20requisitos%2C%20sprints%20e%20metodologia%20de%20software%2D20250922%5F210523%2DTranscri%C3%A7%C3%A3o%20da%20Reuni%C3%A3o%2Emp4&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0&ga=1&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E9f744097%2Dc2f7%2D45e0%2Dbae1%2Dc633d01f7b92)
 
 ---
 
@@ -58,7 +60,7 @@ sidebar_position: 6
 ---
 
 ### 3. Requisitos Não Funcionais
-**Discussão:** Segurança, escalabilidade e performance foram considerados importantes, mas não são prioridade imediata.  
+**Discussão:** Segurança, escalabilidade e performance foram consideradas importantes, mas não são prioridade imediata.  
 **Decisão:** Serão tratados de forma incremental, após consolidação do MVP.  
 
 ---
@@ -67,9 +69,9 @@ sidebar_position: 6
 **Discussão:**  
 - **Pandas** será a principal biblioteca para manipulação de dados.  
 - Possibilidade de explorar **Streamlit** para interface.  
-- Debate sobre integração direta com SoftSystem (API), mas decisão foi focar inicialmente nas planilhas do cliente.  
+- Debate sobre integração direta com SoftSystem (API), mas a decisão foi focar inicialmente nas planilhas do cliente.  
 
-**Decisão:** Confirmado uso inicial de Pandas; Streamlit será avaliado futuramente.  
+**Decisão:** Confirmado o uso inicial de Pandas; Streamlit será avaliado futuramente.  
 
 ---
 
@@ -83,18 +85,18 @@ sidebar_position: 6
 1. Refinar requisitos e matriz de priorização no Miro.  
 2. Definir backlog e primeiras sprints.  
 3. Iniciar protótipos com Pandas.  
-4. Validar escopo do MVP com professor.  
+4. Validar escopo do MVP com o professor.  
 
 ---
 
 ## Encaminhamentos Finais
 - MVP será enxuto (estoque + integração de dados).  
 - Requisitos adicionais tratados como incrementos futuros.  
-- Metodologia híbrida confirmada (SCRUM + RAD + XP).  
+- Metodología híbrida confirmada (SCRUM + RAD + XP).  
 - Grupo segue com definição do backlog e sprints no Miro.  
 
 ---
 
-**Encerramento da reunião:** 23 de Setembro de 2025, às 00:01:34
-**Duração:** Aproximadamente 2h37min34s 
+**Encerramento da reunião:** 23 de Setembro de 2025, às 00:01:34  
+**Duração:** Aproximadamente 2h37min34s  
 **Responsável pela redação da ata:** Gabriel Augusto Vilarinho Viana Rocha  

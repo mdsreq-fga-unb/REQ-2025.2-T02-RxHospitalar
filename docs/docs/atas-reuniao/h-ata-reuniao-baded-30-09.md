@@ -1,14 +1,17 @@
 ---
-sidebar_label: "N.º 8 (30/09/2025)"
+sidebar_label: "Declaração dos Requisitos a partir de novos feedbacks"
 sidebar_position: 8
 ---
 
 # ATA N.º8 | 30/09
 
-**Disciplina:** Requisitos de Software  
+**Disciplina:** Requisitos de Software
+**Atividade de Eng. de Requisitos:** Declaração  
+**Fase do Projeto**: Fase 1  
 **Data:** 30/09/2025  
 **Horário:** 21:10  
 **Local:** Microsoft Teams  
+[**Evidência**](https://unbbr.sharepoint.com/:v:/s/BASED/ETsFqwwJG8ROhBP62u2Kn3kB-PhDsacRqsis11ts_9ddvw?e=diWOa5&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
 
 ---
 
