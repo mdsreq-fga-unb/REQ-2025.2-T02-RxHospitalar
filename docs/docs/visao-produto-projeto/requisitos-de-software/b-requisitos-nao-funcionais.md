@@ -75,7 +75,7 @@ Estabelece critérios para suportar crescimento de usuários e dados sem perda d
 
 ### Manutenibilidade  
 
-Define práticas para manter e evoluir o sistema, incluindo revisão de código, testes, documentação e integração de novos requisitos. Apoia transversalmente todos os OGs, especialmente **[OG2](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OG2), [OG3](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OG3) e [OG5](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OG5)**, e conecta-se a **OE05/OE07**.  
+Define práticas para manter e evoluir o sistema, incluindo revisão de código, testes, documentação e integração de novos requisitos. 
 
 **RNF07 - Manutenibilidade e Evolução**  
 > - **Incremento de Requisitos Funcionais:** Nenhuma nova funcionalidade pode ser integrada ao ramo principal sem aprovação de pelo menos um outro membro da equipe.  
