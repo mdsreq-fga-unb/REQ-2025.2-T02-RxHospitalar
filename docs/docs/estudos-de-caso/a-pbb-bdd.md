@@ -40,7 +40,7 @@ A InovaHub é uma rede nacional que conecta e fomenta o ecossistema de inovaçã
 | Dificuldade em compartilhar e gerenciar dados de forma integrada | Facilitação na análise para a atuação de cada persona |
 | Dificuldade em acompanhar as métricas de desempenho dos programas | Centralização dos dados dos programas em uma plataforma única para análise |
 | Dificuldade na analisar o desempenho das startups | Dashboard para analisar métricas e avaliar desempenhos das startups|
-| Difculdade na tomada de decisão para diferentes objetivos | Painel com indicadores confiáveis para mensurar impacto |
+| Dificuldade na tomada de decisão para diferentes objetivos | Painel com indicadores confiáveis para mensurar impacto |
 | Dificuldade em visualizar o impacto das políticas de incentivo à inovação | Painel unificado entre os resultados gerados pela Gestora de Inov. e Analista de Inovação  |
 | Dificuldade em identificar boas oportunidades de investimento | Melhor disposição de dados estratégicos das startups para identificar boas oportunidades de investimento |
 | Inscrições e editais são dispostos de forma não organizada | Sistema unificado para a gestão dos editais, mentorias e suas inscrições destes programas |
