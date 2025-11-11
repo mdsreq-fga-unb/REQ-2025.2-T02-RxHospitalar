@@ -9,7 +9,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(BASE_DIR)))
 
 # endereço planilha excel 
-file = os.path.join(PROJECT_ROOT, "data", "PlanilhaAnaliseTeste.xlsx")
+file = os.path.join(PROJECT_ROOT, "data", "RRX Análise Compras.xlsx")
 
 #funcao para carregar dados das linhas com filtro de colunas
 def load_selected_columns( sheet_name: str, columns):
