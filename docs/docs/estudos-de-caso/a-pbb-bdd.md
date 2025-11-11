@@ -31,18 +31,6 @@ A InovaHub é uma rede nacional que conecta e fomenta o ecossistema de inovaçã
 <img width="1913" height="865" alt="image" src="https://github.com/user-attachments/assets/dfe0dbad-b4ce-4fe5-acba-67e20caa8520" />   
 
 
-### Personas
-![Print do Miro com as principais atividade e User Stories da persona Marina](image-1.png)
-
-| **Atividade Principal**   | **User Stories**                                                                     |
-| ------------------------- | ------------------------------------------------------------------------------------ |
-| Identificar Defeitos      | Como técnica, quero acessar lista com localização exata dos veículos defeituosos     |
-| Registrar Reparo          | Como técnica, quero registrar rapidamente manutenções realizadas                     |
-| Ser Alertada de Falhas    | Como técnica, quero receber notificações automáticas de falhas recorrentes           |
-| Planejar Roteiro          | Como técnica, quero gerar rotas otimizadas para recolhimento/redistribuição          |
-| Comunicar-se com a Equipe | Como técnica, quero trocar mensagens instantâneas com o time de campo e supervisores |
-
-
 | **Problemas** | **Expectativas** |
 | :--- | :--- |
 | Dados dispersos | Sistema unificado para a gestão do ecossitema de inovação |
@@ -60,63 +48,17 @@ A InovaHub é uma rede nacional que conecta e fomenta o ecossistema de inovaçã
 | Feedback despadronizado | Dados e ferramenteas padronizados por todos usuários|
 | Formulários repetitivos (Redundância e Retrabalho) | Salvamento de dados que são recorrentemente utilizados em todas inscrições aos programas de incentivo |
 | Comunicações dispersas | Integração entre as diferentes personas e as suas atividades |
-| Triagem manual | Processo digital que auxilia na organização da triagem das candidaturas por meio de categorização das etapas da triagem |
+| Triagem manual | Processo digital que auxilia na organização da triagem das candidaturas por meio de categorização das etapas da triagem |    
+
+### Personas - Atividades e Objetivos
+
 
 
 ### Funcionalidades + PBI
-![Print do Miro com as principais atividade e User Stories da persona Marina](image-1.png)
 
-| **Atividade Principal**   | **User Stories**                                                                     |
-| ------------------------- | ------------------------------------------------------------------------------------ |
-| Identificar Defeitos      | Como técnica, quero acessar lista com localização exata dos veículos defeituosos     |
-| Registrar Reparo          | Como técnica, quero registrar rapidamente manutenções realizadas                     |
-| Ser Alertada de Falhas    | Como técnica, quero receber notificações automáticas de falhas recorrentes           |
-| Planejar Roteiro          | Como técnica, quero gerar rotas otimizadas para recolhimento/redistribuição          |
-| Comunicar-se com a Equipe | Como técnica, quero trocar mensagens instantâneas com o time de campo e supervisores |
 
 
 ### US's + BDD
-![Print do Miro com as principais atividade e User Stories da persona Carlos](image-2.png)
-
-| **Atividade Principal** | **User Stories**                                                                 |
-| ----------------------- | -------------------------------------------------------------------------------- |
-| Visualizar Frota        | Como operador, quero painel com mapa em tempo real                               |
-| Monitorar Indicadores   | Como operador, quero ver status, desempenho e alertas de veículos                |
-| Controlar Recolhimentos | Como operador, quero acompanhar deslocamento e recolhimento em campo             |
-| Redistribuir Veículos   | Como operador, quero comandos para redistribuição com base em análise de demanda |
-| Gerar Relatórios        | Como operador, quero exportar relatórios para parceiros e gestão                 |
 
 
-### Fernanda (Gestora Municipal)
-![Print do Miro com as principais atividade e User Stories da persona Fernanda](image-3.png)
 
-| **Atividade Principal**    | **User Stories**                                                                   |
-| -------------------------- | ---------------------------------------------------------------------------------- |
-| Acompanhar Dados de Uso    | Como gestora, quero acessar painéis de uso, impacto ambiental e desempenho         |
-| Emitir Relatórios          | Como gestora, quero emitir relatórios integrados para políticas públicas           |
-| Integrar Dados             | Como gestora, quero integrar dados com sistemas da prefeitura                      |
-| Gerenciar Licenças         | Como gestora, quero ferramentas para emissão automática de licenças e autorizações |
-| Comunicação com Operadores | Como gestora, quero canal direto de comunicação com operadores parceiros           |
-
-
-### Rogério (Motorista de Apoio)
-
-![Print do Miro com as principais atividade e User Stories da persona Rogério](image-4.png)
-
-| **Atividade Principal**  | **User Stories**                                                            |
-| ------------------------ | --------------------------------------------------------------------------- |
-| Receber Rotas            | Como motorista, quero receber rotas otimizadas para recolher veículos       |
-| Ver Prioridades          | Como motorista, quero notificações de prioridade no atendimento             |
-| Integrar-se com a Equipe | Como motorista, quero integração em tempo real com técnicos e central       |
-| Comprovar Recolhimento   | Como motorista, quero registrar digitalmente o recolhimento dos veículos    |
-| Realizar Checklist       | Como motorista, quero um checklist digital de segurança antes do transporte |
-
-### Priorização (MVP)
-
-| **Persona** | **Prioridades para o MVP**                                       |
-| ----------- | ---------------------------------------------------------------- |
-| Lucas       | Localizar, desbloquear, uso básico, pagamento e canal de suporte |
-| Marina      | Localização de defeitos, registro de manutenção e comunicação    |
-| Carlos      | Painel da frota e redistribuição básica                          |
-| Fernanda    | Painel de dados de uso e comunicação com operadores              |
-| Rogério     | Rotas otimizadas, comprovação e checklist                        |
