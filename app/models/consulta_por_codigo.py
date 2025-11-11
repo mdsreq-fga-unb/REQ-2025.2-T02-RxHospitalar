@@ -10,8 +10,8 @@ def _norm(s: str) -> str:
     s = re.sub(r"[^\w]+", " ", s).lower().strip()
     return s.replace(" ", "")
 
-CODE_ALIASES = {"codoriginal", "codproduto", "cod", "codigo"}
-DESC_ALIASES = {"descricao", "descr", "produto", "nome"}
+CODE_ALIASES = {"CODORIGINAL", "Cód Original", "Código Original"}
+DESC_ALIASES = {"descricao", "descr", "Descricao", "nome"}
 
 def consulta_por_codigo(codigo_produto: str):
     if not codigo_produto or str(codigo_produto).strip() == "":
@@ -29,21 +29,27 @@ def consulta_por_codigo(codigo_produto: str):
             continue
 
         norm_map = { _norm(c): c for c in df.columns }
-        # tenta achar coluna de código por alias
-        code_col = next((norm_map[n] for n in CODE_ALIASES if n in norm_map), None)
+        norm_aliases = {_norm(a) for a in CODE_ALIASES}
+        
+        # escolhe a coluna por alias normalizado
+        code_col = next((orig for norm, orig in norm_map.items() if norm in norm_aliases), None)
         if not code_col:
-            # fallback: qualquer coluna que comece com "cod"
-            code_col = next((orig for n, orig in norm_map.items() if n.startswith("cod")), None)
+            # tenta especificamente 'codoriginal'
+            code_col = norm_map.get("codoriginal")
+        if not code_col:
+            # último fallback: qualquer coluna começando com 'cod'
+            code_col = next((orig for norm, orig in norm_map.items() if norm.startswith("cod")), None)
         if not code_col:
             continue
 
-        desc_col = next((norm_map[n] for n in DESC_ALIASES if n in norm_map), None)
+        desc_col = next((orig for norm, orig in norm_map.items() if norm in {_norm(a) for a in DESC_ALIASES}), None)
 
         series = df[code_col].astype(str).str.strip()
         mask = series == alvo
         if mask.any():
             row = df.loc[mask].iloc[0]
-            result = {"Cód. Original": str(row[code_col]).strip()}
+            # mantém o nome real da coluna encontrada (bate com os testes)
+            result = {code_col: str(row[code_col]).strip()}
             if desc_col and desc_col in row:
                 result["Descrição"] = row[desc_col]
             return pd.Series(result)

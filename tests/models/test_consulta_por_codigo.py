@@ -5,7 +5,7 @@ from app.models.consulta_por_codigo import consulta_por_codigo
 from app.models.data_loader import file
 
 def _pick_code_column(cols):
-  cand = ["Cód. Original", "Cód Produto", "Cód. Produto", "COD", "Código"]
+  cand = ["Cód Original", "CODORIGINAL", "Código Original"]
   for c in cand:
     if c in cols:
       return c
@@ -15,14 +15,23 @@ def _pick_code_column(cols):
       return c
   return None
 
-def test_consulta_por_codigo_com_sucesso():
+def test_consulta_por_codigo_com_sucesso_aba_estoque():
   df0 = pd.read_excel(file, sheet_name=0, header=0, dtype=str)
   col = _pick_code_column(df0.columns)
-  assert col is not None, "Nenhuma coluna de código encontrada na primeira aba"
-  codigo_produto = "SK020BRPT"
+  assert col is not None, "Nenhuma coluna de código encontrada"
+  codigo_produto = "4670008SBR"
   result = consulta_por_codigo(codigo_produto)
   assert result is not None
-  assert result["Cód. Original"] == codigo_produto
+  assert result["Cód Original"] == codigo_produto
+
+def test_consulta_por_codigo_com_sucesso_aba_vendas_pendencia():
+  df0 = pd.read_excel(file, sheet_name=0, header=0, dtype=str)
+  col = _pick_code_column(df0.columns)
+  assert col is not None, "Nenhuma coluna de código encontrada"
+  codigo_produto = "MS005BRPT0619"
+  result = consulta_por_codigo(codigo_produto)
+  assert result is not None
+  assert result["CODORIGINAL"] == codigo_produto
 
 def test_consulta_por_codigo_nao_achada():
   with pytest.raises(ValueError, match="O código não foi encontrado"):
