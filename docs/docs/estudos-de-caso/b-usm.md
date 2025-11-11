@@ -19,3 +19,19 @@ A EcoMove é uma startup fictícia voltada à mobilidade urbana sustentável com
 - Rogério (motorista de apoio)
 
 ## Atividades principais e user stories 
+
+### Lucas (Usuário Urbano)
+![Print do Miro com as principais atividade e User Stories da persona Lucas](image.png)
+
+### Marina (Técnica de Manutenção)
+![Print do Miro com as principais atividade e User Stories da persona Marina](image-1.png)
+
+### Carlos (Operador de Frota)
+![Print do Miro com as principais atividade e User Stories da persona Carlos](image-2.png)
+
+### Fernanda (Gestora Municipal)
+![Print do Miro com as principais atividade e User Stories da persona Fernanda](image-3.png)
+
+### Rogério (Motorista de Apoio)
+
+![Print do Miro com as principais atividade e User Stories da persona Rogério](image-4.png)
