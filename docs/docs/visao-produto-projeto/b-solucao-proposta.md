@@ -6,30 +6,11 @@ sidebar_position: 2
 
 ### 2.1 Objetivos do Produto
 
-Com este produto visamos otimizar o processo de análise de planilhas de compras, estoque e vendas que são gerenciadas pelo cliente, focando em reduzir o tempo dedicado neste processo de análise. Adicionado a este objetivo, também buscaremos garantir que a centralização dos dados seja disposta de forma mais intuitiva para que outras áreas também possam compreender e utilizar insights de forma estratégica, o que também diminui a carga de trabalho delegada ao setor de compras.
-Este produto também visa transformar a gestão de compras, estoque e vendas da RX Hospitalar, tornando-a mais ágil, intuitiva e estratégica. Os objetivos gerais abaixo orientam o desenvolvimento da solução, e cada um deles está diretamente associado a um ou mais **Objetivos Específicos (OE)** do Projeto detalhados na [Tabela 1](#tabela-1), assegurando rastreabilidade e foco nos resultados mensuráveis.
+Este produto visa transformar a gestão de compras, estoque e vendas da RX Hospitalar, tornando-a mais ágil, intuitivo e estratégico o processo de análise. A história de usuário junto com o objetivo geral abaixo orienta o desenvolvimento da solução e os Objetivos Específicos do Projeto (OE) detalhados na Tabela 1, assegurando rastreabilidade e foco nos resultados mensuráveis.
+
 <a id="OG1"></a> <br/>
-**Objetivos Gerais (OG) do Projeto:** 
-<a id="OG2"></a>
-- **OG1 Reduzir drasticamente o tempo de análise de compras e estoque**  
-Relacionado ao [OE1](#OE1) – Diminuir o tempo de análise em pelo menos 50%, substituindo horas de trabalho manual por minutos com o uso da ferramenta.
-<a id="OG3"></a>
-- **OG2 Centralizar e unificar as fontes de dados**  
-Relacionado ao [OE3](#OE3) – Integrar em uma única visão as planilhas de faturado, pendências, estoque e validades, eliminando a consulta fragmentada.
-<a id="OG4"></a>
-- **OG3 Automatizar a gestão de estoque com base em regras parametrizáveis**  
-Relacionado ao [OE5](#OE5) e [OE06](#OE6) – Implementar cálculos automáticos de estoque ideal, sugerir reposições com alta precisão e reduzir riscos de ruptura ou perdas por validade.
-<a id="OG5"></a>
-- **OG4 Oferecer uma interface intuitiva e acessível**  
-Relacionado ao [OE2](#OE2) e [OE04](#OE4) – Disponibilizar filtros dinâmicos e visões personalizadas que permitam ao usuário acessar e analisar dados em menos de 5 minutos.
-<a id="OG6"></a>
-- **OG5 Garantir segurança e controle de acesso**  
-Relacionado ao [OE7](#OE7) – Assegurar que apenas usuários autorizados tenham acesso a dados sensíveis, com zero vazamentos.
-<a id="OG7"></a>
-- **OG6 Prover insights estratégicos por cliente e vendedor**  
-Relacionado ao [OE9](#OE9) – Oferecer visão analítica do histórico de compras por cliente, facilitando a identificação de padrões e oportunidades de venda.
-- **OG7 Notificar proativamente sobre situações críticas**  
-Relacionado ao [OE8](#OE8) – Alertar sobre produtos parados, com giro baixo ou próximos do vencimento.
+**Objetivo Geral (OG) do Projeto:** 
+- Otimizar o processo de análise de planilhas, atualmente gerenciadas pelo cliente, de forma a transformar a gestão de compras e estoque da RX Hospitalar, tornando-a mais ágil, intuitiva e estratégica.
 
 ### 2.2 Características da Solução
 
@@ -52,7 +33,7 @@ A seguir, detalhamos os pilares que compõem as características do produto:
 |--------|-----------------------|-----------------------------------------------------|
 | OE1 <a id="OE2"></a>| Reduzir o tempo de análise de compras e estoque | Diminuir o tempo gasto nas análises em no mínimo 50% |
 | OE2 <a id="OE3"></a> | Disponibilizar interface intuitiva para análise e consulta de dados | Diminuir em 50% a quantidade de assistências dada à equipe de vendas (representantes) |
-| OE3 <a id="OE4"></a> | Centralizar dados das planilhas de itens faturado, pendente, estoque, consignado e pedidos em uma visão única. | Eliminar completamente a necessidade de consulta parcelada das 5 planilhas distintas usadas. |
+| OE3 <a id="OE4"></a> | Centralizar dados das planilhas de itens faturados, pendentes, estoque, consignados e pedidos em uma visão única. | Eliminar completamente a necessidade de consulta parcelada das 5 planilhas distintas usadas. |
 | OE4 <a id="OE5"></a> | Implementar filtros dinâmicos por linha, produto, cliente e período (ex: últimos 4 meses). | O usuário consegue filtrar e visualizar dados pesquisados em menos de 5 minutos. |
 | OE5 <a id="OE6"></a> | Automatizar o cálculo de estoque ideal <br/> com base na média de vendas dos últimos <br/> 4 meses, gerando sugestões automáticas de reposição e pedidos fracionados por caixas. | O sistema sugere uma reposição com 100% de precisão em relação à análise manual atual, com isso se espera obter uma redução de até 80% na necessidade de cálculos manuais de compra. |
 | OE6 <a id="OE7"></a> | Permitir a visualização rápida de produtos abaixo do estoque mínimo (4 meses) e produtos parados. | Redução em 80% do risco de ruptura de estoque ou perda por validade. |
@@ -84,7 +65,7 @@ A solução proposta neste trabalho se diferenciará por:
 Além disso, com informações advindas da nossa pesquisa, já há soluções parecidas com o nosso produto no mercado e que podem ser usadas como referência no desenvolvimento, ao invés de precisar começar tudo do zero. Com a utilização de bibliotecas como Panda, para os gráficos dos dashboards, e frameworks, como o Django, o projeto tende a ser mais fácil de ser executado pela disponibilidade de informação nos meios de pesquisa. A disposição, interesse e compromisso do grupo, até o presente momento, por inteiro são fatores que também demonstram uma boa perspectiva da execução do projeto.
 
 
-O prazo estimado de acordo com o planejamento das sprints é 3 meses, no máximo, de sprints de no mínimo 1 semana, com 5 horas de trabalho cada uma, por integrante do grupo. Cada sprint terá entregas incrementais ao sistema, que o irá deixando mais robusto e completo para o uso do cliente, com foco em analisar rapidamente diferentes planilhas de forma intuitiva, o que permitirá validações constantes e ajustes rápidos. O cronograma é considerado viável, mas aidna sim apertado, dado a ambientação da equipe com as tecnologias a serem usadas e conhecimento sobre manipulação de tabelas e dados, já que a equipe não possui processos semelhantes a esse feito previamente. 
+O prazo estimado de acordo com o planejamento das sprints é 3 meses, no máximo, de sprints de no mínimo 1 semana, com 5 horas de trabalho cada uma, por integrante do grupo. Cada sprint terá entregas incrementais ao sistema, que o irá deixando mais robusto e completo para o uso do cliente, com foco em analisar rapidamente diferentes planilhas de forma intuitiva, o que permitirá validações constantes e ajustes rápidos. O cronograma é considerado viável, mas ainda sim apertado, dada a ambientação da equipe com as tecnologias a serem usadas e conhecimento sobre manipulação de tabelas e dados, já que a equipe não possui processos semelhantes a esse feito previamente. 
 
 
 Todavia, mesmo com a restrição de tempo, a viabilidade do projeto é possível, pois a equipe de desenvolvimento usará uma base de dados já existente, regras de negócio já definidas, já há soluções parecidas no mercado que servirão como referência, utilizando o PowerBI por exemplo. Deixando o nosso desafio tornar esses dados mais fáceis e rápidos de serem analisados dentro de um sistema interno e seguro para o cliente.

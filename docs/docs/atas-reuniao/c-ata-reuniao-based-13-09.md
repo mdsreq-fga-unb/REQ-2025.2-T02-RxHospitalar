@@ -1,13 +1,15 @@
 ---
-sidebar_label: "N.º 3 (13/09/2025)"
+sidebar_label: "Reunião de Decisão e Organização da equipe"
 sidebar_position: 3
 ---
 # ATA N.º3 | 13/09
 
 **Disciplina:** Requisitos de Software  
+**Atividade da reunião:** A partir das atividades de engenahria de requisitos feitas anteriormente, analisar o projeto, cenário do cliente e aprópria equipe para decidir a Abordagem, Ciclo de Vida e ESW
 **Data:** 13/09/2025  
 **Horário de início:** 13:30  
 **Local:** Microsoft Teams  
+[**Evidência**](https://unbbr.sharepoint.com/:v:/s/BASED/ERaKl8OESIpGiu-iUedh-hEBEfcmoGXkHLqzHqSN9tMjdw?e=pbmrmE&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
 
 ---
 
