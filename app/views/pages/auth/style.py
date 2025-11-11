@@ -33,7 +33,7 @@ def configure_styles():
 
     # === TÍTULOS ===
     style.configure("titulo.TLabel",
-                    font=("Arial", 16, "bold"),
+                    font=("Arial", 24, "bold"),
                     foreground=cor_texto,
                     background=cor_container)
 
@@ -93,7 +93,22 @@ def configure_styles():
               font=[("active", ("Arial", 12, "bold"))],
               foreground=[("active", (cor_destaque))]
               )
-
+    
+    # === VOLTAR BUTTON ===
+    style.configure("back.TButton",
+                    font=("Arial", 12, "bold"),
+                    foreground=cor_texto,
+                    background="#014B50",
+                    padding=6,
+                    focuscolor="none")
+    style.map("back.TButton",
+        background=[
+        ("active","#011F22" )
+        ],
+        foreground=[
+        ("active", "#00FFE6")
+        ]
+    )
 
 
   # === CHECKBOX ===
@@ -125,20 +140,15 @@ def configure_styles():
     style.map(
         "TButton",
         background=[
-        ("active", cor_destaque),      # Mantém a mesma cor no hover
-        ("pressed", "#009688"),     # Cor mais escura quando clicado
-        ("!active", cor_botao)
+        ("active", cor_destaque),
+        ("pressed", "#009688"),
+        ("disabled", "#2C2C2C")
     ],
         foreground=[
-            ("disabled", "#AAAAAA"), ("active", "#000000")
+            ("disabled", "#666666"), ("active", "#000000")
         ]
     )
-    # === VOLTAR BUTTON ===
-    style.configure("back.TButton",
-                    font=("Arial", 9),
-                    foreground="#444",
-                    background=cor_fundo,
-                    focuscolor="none")
+    
 
 def load_logo(container, image_name="Based.png", size=(167, 167)):
 

@@ -48,7 +48,7 @@ class LoginPage(ttk.Frame):
                 self.feedback_label
             ),
             style="TButton",
-            width=400
+            width = 400
         ).pack(pady=(40,10), padx=70, anchor="w")
 
         self.feedback_label = ttk.Label(container, text="",style="feedback_erro.TLabel")
@@ -66,13 +66,13 @@ class ForgotPasswordPage(ttk.Frame):
             text="Voltar ao Login",
             command=lambda: controller.show_frame("LoginPage"),
             style="back.TButton"
-        ).pack()
+        ).pack(pady=(15,0), padx=(10,0), anchor="w")
 
-        ttk.Label(self.container, text="Recuperação de Senha", style="titulo.TLabel").pack()
-        ttk.Label(self.container, text="Digite seu email:", style="texto.TLabel").pack()
+        ttk.Label(self.container, text="Recuperação de Senha", style="titulo.TLabel").pack(pady=(20, 10))
+        ttk.Label(self.container, text="Digite seu email:", style="texto.TLabel").pack(pady=(5,0))
 
-        self.email_entry = ttk.Entry(self.container)
-        self.email_entry.pack()
+        self.email_entry = ttk.Entry(self.container, width=400,font=("Arial", 18))
+        self.email_entry.pack(pady=(17, 0), padx=70)
 
 
         self.submit_button = ttk.Button(
@@ -81,9 +81,9 @@ class ForgotPasswordPage(ttk.Frame):
             command=self.submit_email,
             style="TButton"
         )
-        self.submit_button.pack()
+        self.submit_button.pack(pady=(30,0))
         self.feedback_label = ttk.Label(self.container, text="",style="feedback_erro.TLabel")
-        self.feedback_label.pack(pady=5)
+        self.feedback_label.pack(pady=10)
 
         
 
@@ -95,7 +95,7 @@ class ForgotPasswordPage(ttk.Frame):
 
             ttk.Label(self.container, text="Nova Senha:", style="texto.TLabel").pack()
             self.password_entry = ttk.Entry(self.container, show="•")
-            self.password_entry.pack()
+            self.password_entry.pack(pady=(15,0))
 
             self.show_password_var = tk.BooleanVar(value=False)
             ttk.Checkbutton(
@@ -104,18 +104,24 @@ class ForgotPasswordPage(ttk.Frame):
                 variable=self.show_password_var,
                 command=lambda: toggle_password_visibility(self.password_entry, self.show_password_var),
                 style="TCheckbutton"
-            ).pack()
+            ).pack(pady=(10,0))
 
             ttk.Button(
                 self.container,
                 text="Confirmar",
                 command=lambda: update_password(
                     self.password_entry.get(),
-                    self.feedback_label,
+                    self.dynamic_feedback_label,
                     self.controller
                 ),
                 style="TButton"
-            ).pack()
+            ).pack(pady=(20,10))
+            self.dynamic_feedback_label = ttk.Label(
+                self.container,
+                text="",  # Começa vazio
+                style="feedback_ok.TLabel"
+            )
+            self.dynamic_feedback_label.pack(pady=(5, 0))
         else:
             self.feedback_label.config(style="feedback_erro.TLabel", text="Email não encontrado")
 
@@ -132,8 +138,8 @@ class App(tk.Tk):
         super().__init__()
 
         self.title("Sistema RX Hospitalar")
-        self.geometry("800x800") 
-        self.bg="#000000"
+        self.geometry("800x800")
+
         # Guarda referência do frame atual
         self.current_frame = None
 
