@@ -1,8 +1,8 @@
 import tkinter as tk
 from tkinter import ttk
-from user_controller import get_email
-from utils import *
-from style import configure_styles, load_logo, create_container
+from app.controllers.login_controller import get_email
+from app.utils.login_utils import toggle_password_visibility, validate_login, update_password
+from.style import configure_styles, load_logo, create_container
 
 class LoginPage(ttk.Frame):
     def __init__(self, parent, controller):
@@ -42,7 +42,7 @@ class LoginPage(ttk.Frame):
         ttk.Button(
             container,
             text="Login",
-            command=lambda: validate_login(
+            command=lambda: controller.attempt_login(
                 self.username_entry.get(),
                 self.password_entry.get(),
                 self.feedback_label

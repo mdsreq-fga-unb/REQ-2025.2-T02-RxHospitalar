@@ -1,7 +1,7 @@
 #config user
 
 import json
-import os
+import os 
 
 def get_json_path():    return os.path.join(os.path.dirname(__file__), "user.json")
 
@@ -14,6 +14,7 @@ def get_user(username, password):
     with open(path, "r", encoding="utf-8") as file:
         data = json.load(file)
     return data.get("username") == username and data.get("password") == password
+
     
 
 def get_email():

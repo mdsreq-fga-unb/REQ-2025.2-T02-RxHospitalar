@@ -1,6 +1,6 @@
 #funções auxiliares login
 
-from user_controller import get_user, change_password
+from app.controllers.login_controller import get_user, change_password
 
 def toggle_password_visibility(password_entry, show_password_var):
     if show_password_var.get():
