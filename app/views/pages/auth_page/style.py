@@ -150,7 +150,7 @@ def configure_styles():
     )
     
 
-def load_logo(container, image_name="Based.png", size=(167, 167)):
+def load_logo(container, image_name="Based.png", size=(171, 196)):
 
     try:
         image_path = os.path.join("app", "views", "images", image_name)

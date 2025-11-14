@@ -56,7 +56,7 @@ class AppController(tk.Tk):
             self.frames[page_name] = frame
             frame.grid(row=0, column=0, sticky="nsew") 
 
-        self.show_frame("LoginPage")
+        self.show_frame("DashboardView")
         
     def show_frame(self, page_name):
         """Traz o frame para o topo (front) e o exibe."""
