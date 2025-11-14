@@ -2,10 +2,8 @@ import tkinter as tk
 from tkinter import ttk
 from PIL import Image, ImageTk
 from pathlib import Path
-from app.views.components.tooltip import ToolTip
-from datetime import datetime
+from app.utils.navbar_utils import ToolTip, attach_update_tooltip, attach_hover_image, update, logout
 
-from app.views.components.loading_import_modal import LoadingImportModal
 class Header(ttk.Frame):
     def __init__(self, parent, controller=None):
 
@@ -67,11 +65,10 @@ class Header(ttk.Frame):
         buttons_frame.pack(side="right")
 
         # atualizar
-        update_btn = ttk.Button(buttons_frame, image=self.update_default, command=self.update,style="Icon.TButton",cursor="hand2")
+        update_btn = ttk.Button(buttons_frame, image=self.update_default, command=lambda:update(self.controller),
+                                style="Icon.TButton",cursor="hand2")
         update_btn.grid(row=0, column=0, padx=5)
-        self.update_tooltip = ToolTip(update_btn, "Nenhuma atualização realizada ainda.")
-        update_btn.bind("<Enter>", self.on_enter, add="+")
-        update_btn.bind("<Leave>", self.on_leave, add="+")
+        self.update_tooltip = attach_update_tooltip(update_btn, self.controller, self.update_hover, self.update_default)
 
 
         # dropdown 1: notificacao
@@ -96,31 +93,6 @@ class Header(ttk.Frame):
                                font=("Arial", 15, "bold"),
                                bd=2,
                                relief="solid")
-        profile_menu.add_command(label="Sair", command=self.logout)
+        profile_menu.add_command(label="Sair", command=lambda: logout(self.controller))
         profile_btn["menu"] = profile_menu
         profile_btn.grid(row=0, column=2, padx=5)
-
-    #funções
-# Atualiza botao update ao passar o mouse
-    def on_enter(self, event):
-        event.widget.configure(image=self.update_hover)
-
-        if self.controller.last_update_time:
-            self.update_tooltip.text = (
-                "Última atualização:\n"
-                + self.controller.last_update_time.strftime("%d/%m/%Y às %H:%M:%S")
-            )
-        else:
-            self.update_tooltip.text = "Nenhuma atualização realizada ainda."
-
-    def on_leave(self, event):
-        event.widget.configure(image=self.update_default)   
-
-    def update(self):
-        if self.controller:
-            self.controller.loading_import_modal = LoadingImportModal(self.controller)
-            self.controller.start_data_loading(None, None)
-    def logout(self):
-        if self.controller:
-            self.controller.show_frame("LoginPage")
- 
