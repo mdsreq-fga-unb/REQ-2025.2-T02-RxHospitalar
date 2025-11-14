@@ -11,7 +11,7 @@ from app.models.data_loader import load_selected_columns
 
 # 2. IMPORTS DAS VIEWS (app/views/pages)
 
-from app.views.pages.auth_page.login import LoginPage 
+from app.views.pages.auth_page.login import LoginPage, ForgotPasswordPage
 from app.views.components.loading_import_modal import LoadingImportModal
 from app.views.pages.dashboard_page.dashboard_page import DashboardView 
 
@@ -50,13 +50,13 @@ class AppController(tk.Tk):
         self.frames = {}
         
         # 3. Criação e Empilhamento dos Frames (Views)
-        for F in (LoginPage, DashboardView): 
+        for F in (LoginPage, ForgotPasswordPage, DashboardView): 
             page_name = F.__name__
             frame = F(parent=container, controller=self)
             self.frames[page_name] = frame
             frame.grid(row=0, column=0, sticky="nsew") 
 
-        self.show_frame("DashboardView")
+        self.show_frame("LoginPage")
         
     def show_frame(self, page_name):
         """Traz o frame para o topo (front) e o exibe."""
