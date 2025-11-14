@@ -2,12 +2,13 @@ import tkinter as tk
 from tkinter import ttk
 from PIL import Image, ImageTk
 from pathlib import Path
-#from app.views.pages.import_page.import_page import ImportView
 
+#from app.views.components.loading_import_modal import LoadingImportModal
 class Header(ttk.Frame):
     def __init__(self, parent, controller=None):
+
         # --- Frame externo (borda) ---
-        border_frame = tk.Frame(parent, bg="#046C62", height=100)  # borda branca ou a cor que quiser
+        border_frame = tk.Frame(parent, bg="#046C62", height=100)
         border_frame.pack(side="top", fill="x")
         border_frame.pack_propagate(False)
 
@@ -19,26 +20,29 @@ class Header(ttk.Frame):
         style = ttk.Style()
         style.configure('Header.TFrame', background="#01252A", side="top")
         style.configure('HeaderTitle.TLabel', font=('Arial', 16, 'bold'))
+
         # --- Estilo para botões de imagem ---
         style.configure(
             "Icon.TButton",
-            background="#01252A",   # mesma cor do header
+            background="#01252A",
             borderwidth=0,
             relief="flat"
         )
         style.map("Icon.TButton",
-                background=[("active", "#01252A")],   # não muda ao passar o mouse
+                background=[("active", "#01252A")],
                 relief=[("pressed", "flat"), ("active", "flat")])
 
-        # === Ícone do app ===
+        # === Ícone navbar ===
         img_path = Path(__file__).resolve().parent.parent / "images" / "Logo=NavBar.png"
         img = Image.open(img_path).resize((171, 80))
         self.logo = ImageTk.PhotoImage(img)
 
-        logo_label = ttk.Label(self, image=self.logo, background="#01252A")
+        logo_label = ttk.Label(self, image=self.logo, background="#01252A",cursor="hand2")
         logo_label.pack(side="left", padx=(80,0) )
 
-        # --- Carregar imagens ---
+        logo_label.bind("<Button-1>", lambda e: self.controller.show_frame("DashboardView"))
+
+        # --- Carregar icones de navegação ---
         img_dir = Path(__file__).resolve().parent.parent / "images"
 
         notifi_off = ImageTk.PhotoImage(Image.open(img_dir / "Notification=Off.png").resize((60, 60)))
@@ -61,14 +65,14 @@ class Header(ttk.Frame):
         buttons_frame.pack(side="right")
 
         # atualizar
-        update_btn = ttk.Button(buttons_frame, image=self.update_default, command=self.update,style="Icon.TButton")
+        update_btn = ttk.Button(buttons_frame, image=self.update_default, command=self.update,style="Icon.TButton",cursor="hand2")
         update_btn.grid(row=0, column=0, padx=5)
         update_btn.bind("<Enter>", lambda e: update_btn.configure(image=self.update_hover))
         update_btn.bind("<Leave>", lambda e: update_btn.configure(image=self.update_default))
 
 
         # dropdown 1: notificacao
-        config_btn = ttk.Menubutton(buttons_frame, image=self.notifi_off,style="Icon.TButton")
+        config_btn = ttk.Menubutton(buttons_frame, image=self.notifi_off,style="Icon.TButton",cursor="hand2")
         config_btn.bind("<Enter>", lambda e: config_btn.configure(image=self.notifi_off_hover))
         config_btn.bind("<Leave>", lambda e: config_btn.configure(image=self.notifi_off))
         config_menu = tk.Menu(config_btn, tearoff=0)
@@ -77,7 +81,7 @@ class Header(ttk.Frame):
         config_btn.grid(row=0, column=1, padx=5)
 
         # dropdown 2: sair
-        profile_btn = ttk.Menubutton(buttons_frame, image=self.profile_default,style="Icon.TButton")
+        profile_btn = ttk.Menubutton(buttons_frame, image=self.profile_default,style="Icon.TButton", cursor="hand2")
         profile_btn.bind("<Enter>", lambda e: profile_btn.configure(image=self.profile_hover))
         profile_btn.bind("<Leave>", lambda e: profile_btn.configure(image=self.profile_default))
 
@@ -86,10 +90,11 @@ class Header(ttk.Frame):
         profile_btn["menu"] = profile_menu
         profile_btn.grid(row=0, column=2, padx=5)
 
-    #funçõa
-    #def update(self):
-       # if self.controller:
-          #
+    #funções
+    def update(self):
+        if self.controller:
+            #LoadingImportModal()
+            self.controller.start_data_loading(None, None)
     def logout(self):
         if self.controller:
             self.controller.show_frame("LoginPage")
