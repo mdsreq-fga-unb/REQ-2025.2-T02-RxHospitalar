@@ -2,8 +2,10 @@ import tkinter as tk
 from tkinter import ttk
 from PIL import Image, ImageTk
 from pathlib import Path
+from app.views.components.tooltip import ToolTip
+from datetime import datetime
 
-#from app.views.components.loading_import_modal import LoadingImportModal
+from app.views.components.loading_import_modal import LoadingImportModal
 class Header(ttk.Frame):
     def __init__(self, parent, controller=None):
 
@@ -67,8 +69,9 @@ class Header(ttk.Frame):
         # atualizar
         update_btn = ttk.Button(buttons_frame, image=self.update_default, command=self.update,style="Icon.TButton",cursor="hand2")
         update_btn.grid(row=0, column=0, padx=5)
-        update_btn.bind("<Enter>", lambda e: update_btn.configure(image=self.update_hover))
-        update_btn.bind("<Leave>", lambda e: update_btn.configure(image=self.update_default))
+        self.update_tooltip = ToolTip(update_btn, "Nenhuma atualização realizada ainda.")
+        update_btn.bind("<Enter>", self.on_enter, add="+")
+        update_btn.bind("<Leave>", self.on_leave, add="+")
 
 
         # dropdown 1: notificacao
@@ -91,9 +94,24 @@ class Header(ttk.Frame):
         profile_btn.grid(row=0, column=2, padx=5)
 
     #funções
+# Atualiza botao update ao passar o mouse
+    def on_enter(self, event):
+        event.widget.configure(image=self.update_hover)
+
+        if self.controller.last_update_time:
+            self.update_tooltip.text = (
+                "Última atualização:\n"
+                + self.controller.last_update_time.strftime("%d/%m/%Y %H:%M:%S")
+            )
+        else:
+            self.update_tooltip.text = "Nenhuma atualização realizada ainda."
+
+    def on_leave(self, event):
+        event.widget.configure(image=self.update_default)   
+
     def update(self):
         if self.controller:
-            #LoadingImportModal()
+            self.controller.loading_import_modal = LoadingImportModal(self.controller)
             self.controller.start_data_loading(None, None)
     def logout(self):
         if self.controller:

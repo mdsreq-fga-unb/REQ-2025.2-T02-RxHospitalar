@@ -4,6 +4,7 @@ import tkinter as tk
 from tkinter import ttk, filedialog, messagebox
 import threading
 import pandas as pd
+from datetime import datetime
 
 # ----------------------------------------------------
 # 1. IMPORTS DO MODEL (app/models)
@@ -33,7 +34,8 @@ class AppController(tk.Tk):
         # Atributos de estado do Controller
         self.df_master = pd.DataFrame() 
         self.loading_import_modal = None
-        
+        self.last_update_time = None
+
         # 1. Configuração do Contêiner Principal
         container = ttk.Frame(self)
         container.pack(side="top", fill="both", expand=True)
@@ -122,6 +124,7 @@ class AppController(tk.Tk):
 
         if success:
             self.df_master = df_master
+            self.last_update_time = datetime.now()
             print("Dados carregados com sucesso. Próxima tela: Dashboard.")
             
             # 2. Define o TIMER para transicionar após 1500ms (1.5 segundos)
