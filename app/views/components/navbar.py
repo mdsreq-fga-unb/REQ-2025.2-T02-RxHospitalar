@@ -88,7 +88,14 @@ class Header(ttk.Frame):
         profile_btn.bind("<Enter>", lambda e: profile_btn.configure(image=self.profile_hover))
         profile_btn.bind("<Leave>", lambda e: profile_btn.configure(image=self.profile_default))
 
-        profile_menu = tk.Menu(profile_btn, tearoff=0)
+        profile_menu = tk.Menu(profile_btn, tearoff=0,
+                               bg="#FBFFFC",
+                               fg="#01252A",
+                               activebackground="#45934C",
+                               activeforeground="#FBFFFC",
+                               font=("Arial", 15, "bold"),
+                               bd=2,
+                               relief="solid")
         profile_menu.add_command(label="Sair", command=self.logout)
         profile_btn["menu"] = profile_menu
         profile_btn.grid(row=0, column=2, padx=5)
@@ -101,7 +108,7 @@ class Header(ttk.Frame):
         if self.controller.last_update_time:
             self.update_tooltip.text = (
                 "Última atualização:\n"
-                + self.controller.last_update_time.strftime("%d/%m/%Y %H:%M:%S")
+                + self.controller.last_update_time.strftime("%d/%m/%Y às %H:%M:%S")
             )
         else:
             self.update_tooltip.text = "Nenhuma atualização realizada ainda."

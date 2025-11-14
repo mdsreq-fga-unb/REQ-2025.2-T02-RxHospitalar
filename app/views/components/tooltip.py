@@ -14,20 +14,21 @@ class ToolTip:
         if self.tip_window or not self.text:
             return
 
-        x = self.widget.winfo_rootx() + 40
-        y = self.widget.winfo_rooty() + 25
+        x = self.widget.winfo_rootx() - 170
+        y = self.widget.winfo_rooty() + self.widget.winfo_height() // 2
 
         self.tip_window = tw = tk.Toplevel(self.widget)
-        tw.wm_overrideredirect(True)  # remove bordas
+        tw.wm_overrideredirect(True)
         tw.wm_geometry(f"+{x}+{y}")
 
         label = tk.Label(
             tw,
             text=self.text,
+            justify=tk.LEFT,
             background="#ffffe0",
             relief="solid",
             borderwidth=1,
-            font=("Arial", 10)
+            font=("Arial", 10,"bold")
         )
         label.pack(ipadx=5, ipady=3)
 
