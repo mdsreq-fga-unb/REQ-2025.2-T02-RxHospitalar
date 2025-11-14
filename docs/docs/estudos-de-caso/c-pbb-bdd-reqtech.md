@@ -3,11 +3,10 @@ sidebar_label: "Avaliação da ReqTech - PBB e BDD"
 sidebar_position: 3
 ---
 
-# Avaliação do PBB e BDD do grupo ReqTech
+# Checklist de avaliação do PBB e BDD do grupo ReqTech
+Os itens que cumprem os critérios foram assinalados.
 
-# Checklist
-
-## Identificação e Contexto
+## Identificação e contexto
 
 - [X] O produto ou serviço está claramente identificado?​
 
@@ -25,26 +24,27 @@ sidebar_position: 3
 
 - [X] As funcionalidades essenciais do sistema/serviço estão listadas?
 
-- [X] As funcionalidades foram decompostas em PBIs claros e objetivos?
-Em grande parte sim, com exceção de: "Meio de comunicação único" e "Notificação sobre o fomento, mentores e networking", que não pareciam passos. Achamos que seria interessante acrescentar um verbo antes porque a ideia do steps map é justamente dar uma rastreabilidade ao que será feito: primeiramente ação a, depois a ação b e por aí vai.
+- [ ] As funcionalidades foram decompostas em PBIs claros e objetivos?
+- Há algumas discrepâncias bem evidentes como "Meio de comunicação único" e "Notificação sobre o fomento, mentores e networking", que não pareciam passos. Achamos que seria interessante acrescentar um verbo antes porque a ideia do steps map é justamente dar uma rastreabilidade ao que será feito: primeiramente ação a, depois a ação b e por aí vai.
+- Somado a isto, a estrutura do PBI não está muito adequada, porque o nome de alguns parece mais uma característica do produto ou da feature do que um PBI. Ex: "Histórico de evolução das startups com indicadores de mercado e governança".
 
-## Histórias de Usuário
+## Histórias de usuário
 
-- [] Cada PBI ou funcionalidade relevante está descrito como história de usuário (“Eu, como... quero... para...”)?
-Faltou isso. Não há descrição como história de usuário.
+- [ ] Cada PBI ou funcionalidade relevante está descrito como história de usuário (“Eu, como... quero... para...”)?
+- Faltou isso. Não há descrição como história de usuário.
 
-- [] Os benefícios para as personas estão explícitos nas histórias?
-Faltou as histórias
+- [ ] Os benefícios para as personas estão explícitos nas histórias?
+- Faltou as histórias
 
-## Critérios de Aceitação
+## Critérios de aceitação
 
-- [] Cada história/PBI contém critérios de aceitação objetivos e testáveis?​
-Faltou as histórias
+- [ ] Cada história/PBI contém critérios de aceitação objetivos e testáveis?​
+- Faltou as histórias
 
-- [] Os critérios deixam claro quando uma entrega pode ser considerada concluída (“pronto”/“done”)?
-Não está explícito
+- [ ] Os critérios deixam claro quando uma entrega pode ser considerada concluída (“pronto”/“done”)?
+- Não está explícito
 
-## Organização Visual e Compreensão
+## Organização visual e compreensão
 
 - [X] As informações estão organizadas de maneira lógica e de fácil consulta (canvas, tabela, lista, etc.)?
 
