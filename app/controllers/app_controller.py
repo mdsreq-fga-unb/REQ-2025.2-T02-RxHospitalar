@@ -4,6 +4,7 @@ import tkinter as tk
 from tkinter import ttk, filedialog, messagebox
 import threading
 import pandas as pd
+from datetime import datetime
 
 # ----------------------------------------------------
 # 1. IMPORTS DO MODEL (app/models)
@@ -11,7 +12,7 @@ from app.models.data_loader import load_selected_columns
 
 # 2. IMPORTS DAS VIEWS (app/views/pages)
 
-from app.views.pages.auth_page.login import LoginPage 
+from app.views.pages.auth_page.login import LoginPage, ForgotPasswordPage
 from app.views.components.loading_import_modal import LoadingImportModal
 from app.views.pages.dashboard_page.dashboard_page import DashboardView 
 
@@ -33,7 +34,8 @@ class AppController(tk.Tk):
         # Atributos de estado do Controller
         self.df_master = pd.DataFrame() 
         self.loading_import_modal = None
-        
+        self.last_update_time = None
+
         # 1. Configuração do Contêiner Principal
         container = ttk.Frame(self)
         container.pack(side="top", fill="both", expand=True)
@@ -50,7 +52,7 @@ class AppController(tk.Tk):
         self.frames = {}
         
         # 3. Criação e Empilhamento dos Frames (Views)
-        for F in (LoginPage, DashboardView): 
+        for F in (LoginPage, ForgotPasswordPage, DashboardView): 
             page_name = F.__name__
             frame = F(parent=container, controller=self)
             self.frames[page_name] = frame
@@ -122,6 +124,7 @@ class AppController(tk.Tk):
 
         if success:
             self.df_master = df_master
+            self.last_update_time = datetime.now()
             print("Dados carregados com sucesso. Próxima tela: Dashboard.")
             
             # 2. Define o TIMER para transicionar após 1500ms (1.5 segundos)
