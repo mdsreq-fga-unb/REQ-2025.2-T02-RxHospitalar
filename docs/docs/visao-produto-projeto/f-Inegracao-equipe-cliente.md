@@ -1,6 +1,6 @@
 ---
-sidebar_label: "Integração entre equipe e cliente"
-sidebar_position: 5
+sidebar_label: "Interação entre equipe e cliente"
+sidebar_position: 6
 ---
 # Integração entre equipe e cliente
 
@@ -9,12 +9,12 @@ sidebar_position: 5
 | Papel              | Descrição                                                                                                                                     | Responsável     | Participantes              |
 |--------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|-----------------|----------------------------|
 | Product Owner      | Responsável pelo produto, gestão do backlog, aceitação de entregáveis e mudanças no escopo.                                                  | Samuel          |                            |
-| Gerente de Projetos| Responsável por coordenar todo o desenvolvimento do produto, gerenciando cronogramas, recursos e comunicação entre a equipe.                  | Amanda          | Gabriel                    |
+| Gerente de Projetos| Responsável por coordenar todo o desenvolvimento do produto, gerenciando cronogramas, recursos e comunicação entre a equipe.                  | Amanda          | Davi                    |
 | Scrum Master       | Responsável por conduzir cerimônias do Scrum, remover impedimentos, ajudar na coleta de métricas e promover melhorias contínuas.              | Davi            | Amanda                     |
 | Documentação       | Responsável pela documentação do projeto                                                                                                      | Gabriel Augusto | Todos integrantes          |
 | Frontend           | Responsável por desenvolver a interface intuitiva para visualização e interação com os dados de compras e estoque.                           | Beatriz         | Gabriel, Amanda            |
-| Backend            | Responsável por implementar algoritmos de análise de dados, integração com sistemas existentes e migração de dados das planilhas existentes e criação de views para diferentes perfis de usuário. | Davi            | Samuel, Eduardo, Beatriz, Gabriel |
-| Testes             | Responsável por verificar o funcionamento do código e remediar eventuais defeitos no funcionamento.                                          | Amanda          | Todos os integrantes       |
+| Backend            | Responsável por implementar algoritmos de análise de dados, integração com sistemas existentes e migração de dados das planilhas existentes e criação de views para diferentes perfis de usuário. | Samuel            | Davi, Eduardo, Beatriz, Gabriel |
+| Testes             | Responsável por verificar o funcionamento do código e remediar eventuais defeitos no funcionamento.                                          | Davi          | Todos os integrantes       |
 | Analista de Requisitos | Responsável por definir os critérios de análise, métricas importantes e regras de negócio.                                               | Todos os integrantes | Todos os integrantes   |
 | Infraestrutura e CI| Responsável por configurar o ambiente de desenvolvimento, testes e produção para suportar o sistema de análise de dados.                     | Gabriel         | Davi                       |
 
@@ -37,16 +37,6 @@ Os objetivos a seguir detalham especificamente o que o produto busca alcançar, 
 
 ### 5.3 Processo de validação 
 O processo de validação da solução será estruturado em torno de três pilares fundamentais, garantindo que cada funcionalidade seja bem definida, corretamente implementada e formalmente aprovada pelo cliente.  
-
-**Critérios de Prontidão (Definition of Ready - DoR):** Uma funcionalidade será considerada "Pronta para Desenvolvimento" apenas quando:
-  - O requisito estiver claramente descrito como uma User Story (ex: "Eu, como analista, quero ver um gráfico de vendas por região para tomar decisões de compra").
-  - A funcionalidade estiver representada e validada no protótipo interativo (Figma) pelo cliente.
-  - Os **Critérios de Aceite** estiverem claramente definidos (ex: "o gráfico deve ser de barras", "deve ser possível filtrar por mês", "os dados devem vir da planilha X").
-
-**Critérios de Conclusão (Definition of Done - DoD):** Uma funcionalidade só será considerada "Pronta" ao final de um Sprint se atender rigorosamente ao nosso Definition of Done. Nossa definição de "Pronto" inclui:
-  - O código ter sido desenvolvido, testado (testes unitários e de integração) e integrado à versão principal.
-  - O código ter passado pela revisão de outro membro da equipe (Code Review).
-  - A funcionalidade ter sido demonstrada e validada pelo cliente durante a Sprint Review, confirmando que atende visual e funcionalmente ao que foi solicitado.
 
 **Teste de Aceitação do Usuário (UAT):** Após a conclusão do desenvolvimento de todas as funcionalidades planejadas, ocorrerá o Teste de Aceitação final. Nesta fase:  
   - O cliente utilizará a ferramenta para executar suas tarefas reais de ponta a ponta (ex: simular uma análise de compras mensal completa).

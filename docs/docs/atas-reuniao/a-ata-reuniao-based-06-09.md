@@ -1,13 +1,15 @@
 ---
-sidebar_label: "N.º 1 (06/09/2025)"
+sidebar_label: "Elicitação e Descoberta"
 sidebar_position: 1
 ---
 # ATA N.º1 | 06/09
 
 **Disciplina:** Requisitos de Software  
+**Atividade de Eng. de Requisitos:** Elicitação e Descoberta  
 **Data:** 06/09/2025  
 **Horário:** 13:00  
-**Local:** Microsoft Teams  
+**Local:** Microsoft Teams   
+[**Link da evidência da execução da atividade em vídeo**](https://unbbr.sharepoint.com/:v:/s/BASED/ERC2MUaHLylLjutzLudXJMABwZvFsM2Kf6uBH4gWNIG8Bw?e=iQqA8g&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)  
 
 ---
 

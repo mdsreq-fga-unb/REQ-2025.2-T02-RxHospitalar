@@ -1,5 +1,5 @@
 ---
-sidebar_label: "N.º 7 (23/09/2025)" 
+sidebar_label: "Reunião de Organização da equipe e do projeto em relação ao RAD e Scrum" 
 sidebar_position: 7 
 ---
 
@@ -8,7 +8,8 @@ sidebar_position: 7
 **Disciplina:** Requisitos de Software  
 **Data:** 23/09/2025  
 **Horário:** 21:13  
-**Local:** Microsoft Teams  
+**Local:** Microsoft Teams   
+[**Evidência**](https://unbbr.sharepoint.com/:v:/s/BASED/EVSXc4J7MSRFngdwJoJuK-MBijc-aScRZjLLSrzMEnCCSw?e=auwv9R&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
 
 ---
 
