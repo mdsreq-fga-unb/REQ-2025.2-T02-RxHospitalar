@@ -1,9 +1,9 @@
 ---
-sidebar_label: "Fase 2 - Análise e Consenso"
+sidebar_label: "Ata N.º11 | 11/10"
 sidebar_position: 10
 ---
 
-# ATA N.ºX | 11/10
+# ATA N.º11 | 11/10
 
 **Disciplina:** Requisitos de Software  
 **Data:** 11/10/2025  

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Reunião de Organização da equipe em relação ao RAD"
+sidebar_label: "Ata N.º10 | 06/10"
 sidebar_position: 10
 ---
 

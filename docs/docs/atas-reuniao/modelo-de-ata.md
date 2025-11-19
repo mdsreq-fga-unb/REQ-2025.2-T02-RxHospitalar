@@ -1,5 +1,5 @@
 ---
-sidebar_label: "N.º X (DD/MM/AAAA)"
+sidebar_label: "Ata Modelo"
 sidebar_position: 10
 ---
 
