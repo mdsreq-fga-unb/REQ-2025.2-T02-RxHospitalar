@@ -1,6 +1,6 @@
 ---
 sidebar_label: "Ata N.º12 | 13/10"
-sidebar_position: 10
+sidebar_position: 12
 ---
 
 # ATA N.º12 | 13/10
