@@ -59,17 +59,17 @@ A branch `developer` será utilizada como base estável para integração.
 ---
 
 ### 3. Progresso dos Requisitos RF
-**Samuel (RF 7 – Compras Inteligentes):**  
+**Samuel (RF07 – Compras Inteligentes):**  
 - Falta finalizar comparação entre planilhas de estoque e vendas.  
 - Já acessa planilha de estoque e falta implementar lógica de síntese.
 
 **Amanda e Beatriz (Front – Importação e Dashboard):**  
 - Parte da importação e exibição de dados já pode subir para branch `developer`.
 
-**Davi (RF 1 e correlatos):**  
+**Davi (RF01 e correlatos):**  
 - Testes acima de 87%, meta continuar ampliando cobertura.
 
-**Eduardo (RF 5 e 6):**  
+**Eduardo (RF05 e RF06):**  
 - Início atrasado devido a provas, retomando agora.
 
 ---
@@ -99,7 +99,7 @@ Necessário apresentar:
 
 ---
 
-### 6. Dashboard – Consulta de Principais Clientes (RF 8)
+### 6. Dashboard – Consulta de Principais Clientes (RF08)
 **Discussão:**  
 Beatriz apresentou proposta inicial de exibição via gráfico. Debate sobre:  
 - O que é mais relevante ao cliente: frequência, quantidade, faturamento, datas  
@@ -142,19 +142,19 @@ Samuel informou que, conforme cliente, a data exata não é sempre relevante –
 ## Próximos Passos
 
 1. **Samuel**  
-   - Finalizar lógica do RF 7  
+   - Finalizar lógica do RF07  
    - Gravar conversas e repassar ao grupo  
-   - Ajustar dados e filtros do RF 8
+   - Ajustar dados e filtros do RF08
 
 2. **Beatriz e Amanda**  
    - Subir progresso atual do front para `developer`  
    - Criar testes básicos para telas iniciais
 
 3. **Eduardo**  
-   - Retomar RFs 5 e 6 analisando trabalhos já implementados
+   - Retomar RF05 e RF06 analisando trabalhos já implementados
 
 4. **Davi**  
-   - Melhorar cobertura de testes do RF 1  
+   - Melhorar cobertura de testes do RF01  
    - Configurar lint e workflows  
    - Consolidar checklist de acompanhamento
 
