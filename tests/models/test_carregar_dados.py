@@ -1,5 +1,5 @@
 import pandas as pd
-from app.models.data_loader import load_selected_columns
+from app.models.carregar_dados import carregar_dados_por_colunas
 
 def test_load_selected_columns():
     # Definindo a planilha e as colunas a serem carregadas
@@ -7,7 +7,7 @@ def test_load_selected_columns():
     cols = ["OPERADOR", "CODPRODUTO"]
     
     # Carregando os dados usando a função do data_loader
-    df = load_selected_columns(sheet, cols)
+    df = carregar_dados_por_colunas(sheet, cols)
     
     # Verificações simples 
     assert isinstance(df, pd.DataFrame), "A função deve retornar um DataFrame"
