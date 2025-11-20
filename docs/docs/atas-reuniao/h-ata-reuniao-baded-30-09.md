@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Declaração dos Requisitos a partir de novos feedbacks"
+sidebar_label: "Ata N.º8 | 30/09"
 sidebar_position: 8
 ---
 

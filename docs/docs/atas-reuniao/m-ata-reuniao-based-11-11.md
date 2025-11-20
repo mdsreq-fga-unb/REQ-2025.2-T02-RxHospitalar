@@ -1,9 +1,9 @@
 ---
-sidebar_label: "RRP 11/11"
+sidebar_label: "Ata N.º13 | 11/11"
 sidebar_position: 13
 ---
 
-# ATA N.13 | 11/11
+# ATA N.º13 | 11/11
 
 **Disciplina:** Requisitos de Software  
 **Data:** 11/11/2025  

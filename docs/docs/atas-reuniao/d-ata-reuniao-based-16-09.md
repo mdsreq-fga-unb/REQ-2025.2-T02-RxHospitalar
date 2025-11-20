@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Discussão sobre a organização do projeto"
+sidebar_label: "Ata N.º4 | 16/09"
 sidebar_position: 4
 ---
 # ATA N.º4 | 16/09
