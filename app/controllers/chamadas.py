@@ -3,7 +3,7 @@ from app.models.carregar_dados import carregar_dados_por_colunas
 from app.utils.separar_por_data import separar_quantidade_por_data
 
 
-
+#funcao incompleta
 #Usada em RF07
 # Função para sugerir quantidade de compra com base na média de vendas dos últimos 'periodo' meses
 def sugestao_compra(linha: str, periodo):
@@ -20,7 +20,7 @@ def sugestao_compra(linha: str, periodo):
     return df_aux
 
 
-
+# Exemplo de uso parar teste 
 if __name__ == "__main__":
     linha_teste = "BBRAUN"
     periodo_teste = 4

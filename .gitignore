@@ -3,6 +3,7 @@ Projeto/data
 data/
 
 # NÃO subir ambiente virtual
+Projeto/venv
 venv/
 
 # Cache do python

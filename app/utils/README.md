@@ -1,0 +1,1 @@
+Vai servir para chamar as funções do back pro front - vai fazer as rotas/chamadas ligadas ao requisito.

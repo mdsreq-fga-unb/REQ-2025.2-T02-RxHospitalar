@@ -1,5 +1,4 @@
 
-
 import pandas as pd
 from app.models.carregar_dados import carregar_dados_por_colunas
 from app.utils.separar_por_data import separar_quantidade_por_data
