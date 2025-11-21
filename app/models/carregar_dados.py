@@ -9,7 +9,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(BASE_DIR)))
 
 # endereço planilha excel 
-file = os.path.join(PROJECT_ROOT, "data", "PlanilhaAnaliseTeste.xlsx")
+file = os.path.join(PROJECT_ROOT, "data", "planilha_de_dados.xlsx")
 
 #Usada em RF07
 #funcao para carregar dados das linhas com filtro de colunas
