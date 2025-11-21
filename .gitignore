@@ -1,7 +1,9 @@
 # NÃO subir a pasta de dados
+Projeto/data
 data/
 
 # NÃO subir ambiente virtual
+Projeto/venv
 venv/
 
 # Cache do python
@@ -14,3 +16,6 @@ __pycache__/
 
 # Arquivos do sistema
 .DS_Store
+
+#arquivos teste
+app/main/chamadas_test.py
