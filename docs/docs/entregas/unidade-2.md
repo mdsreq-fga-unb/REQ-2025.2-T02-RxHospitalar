@@ -5,7 +5,7 @@ sidebar_position: 2
 
 # Entrega Unidade 2
 
-## Apresentação da primeira unidade do projeto BASED - RX Hospitalar:
+## Apresentação da segunda unidade do projeto BASED - RX Hospitalar:
 
 <div className="video-container">
 <iframe 
