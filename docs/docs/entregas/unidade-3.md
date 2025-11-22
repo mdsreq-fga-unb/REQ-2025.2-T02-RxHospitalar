@@ -6,7 +6,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 # Entrega Unidade 3
 
-## Apresentação da primeira unidade do projeto BASED - RX Hospitalar:
+## Apresentação da terceira unidade do projeto BASED - RX Hospitalar:
 
 (Apresentação quando estiver pronta)
 
