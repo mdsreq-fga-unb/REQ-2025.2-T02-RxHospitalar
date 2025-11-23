@@ -48,7 +48,6 @@ def consulta_por_codigo(codigo_produto: str):
         if not code_col:
             #último fallback: qualquer coluna começando com 'cod'
             code_col = next((orig for norm, orig in norm_map.items() if norm.startswith("cod")), None)
-        #
         print(f"[{sheet}] code_col escolhido: {code_col}")
         if not code_col:
             continue
@@ -63,16 +62,24 @@ def consulta_por_codigo(codigo_produto: str):
         print(f"[{sheet}] amostra valores em '{code_col}': {sample}")
         #compara elemento a elemento com a "string-alvo"
         mask = series == alvo
-        print(f"[{sheet}] total_matches={mask.sum()}")
+        print(f"[{sheet}] total_matches_encontrados={mask.sum()}")
 
         if mask.any():
-            row = df.loc[mask].iloc[0]
-            #mantém o nome real da coluna encontrada (bate com os testes)
-            result = {code_col: str(row[code_col]).strip()}
-            if desc_col and desc_col in row:
-                result["Descrição"] = row[desc_col]
-            print(f"[{sheet}] ENCONTRADO -> {result}")
-            return pd.Series(result)
+            result_rows = df.loc[mask]
+            row = result_rows.iloc[0].copy()  #para pegar valores para o card
+            descricao = row.get(desc_col, "")
+            grupo = row.get("Grupo", row.get("GRUPO", ""))
+            estoque = row.get("Estoque", row.get("ESTOQUE", ""))
 
-    print(f"[consulta_por_codigo] NÃO ENCONTRADO alvo={alvo}")
+            card = (
+                f"O produto **{descricao}** (código **{alvo}**) pertence à linha **{grupo}** "
+                f"e possui {estoque} unidades em estoque."
+            )
+            #retorna em dicionário para o front "pegar"
+            return {
+                "df": result_rows,
+                "card": card
+            }  
+    
+    print(f"[consulta_por_codigo] não encontrado. Alvo={alvo}")
     raise ValueError("O código não foi encontrado")
