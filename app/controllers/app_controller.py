@@ -30,7 +30,7 @@ class AppController(tk.Tk):
     def __init__(self, *args, **kwargs):
         tk.Tk.__init__(self, *args, **kwargs)
 
-        self.geometry("1920x1080")
+        self.geometry("1366x768")
         self.state("normal")
         self.title("Sistema de Estoque - RX Hospitalar")
         
@@ -48,9 +48,9 @@ class AppController(tk.Tk):
         # 2. Inicialização do Tema
         self.style = ttk.Style()
         self.style.theme_use('clam') 
-        self.configure(bg='#1e1e1e')
-        self.style.configure('TFrame', background='#1e1e1e') 
-        self.style.configure('TLabel', background='#1e1e1e', foreground='white') 
+        self.configure(bg='#FFFFFF')
+        self.style.configure('TFrame', background='#FFFFFF') 
+        self.style.configure('TLabel', background='#FFFFFF', foreground='black') 
         
         self.frames = {}
         
