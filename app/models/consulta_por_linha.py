@@ -32,11 +32,14 @@ def consulta_por_linha(linha_produto: str):
         try:
             df = pd.read_excel(file, sheet_name=sheet, header=0, dtype=str)
         #há um loop de continuidade porque às vezes a coluna pode estar em outra aba da planilha
-        except Exception:
+        except Exception as e:
+            print(f"[{sheet}] erro leitura: {e}")
             continue
         if df.empty:
+            print(f"[{sheet}] dataframe vazio")
             continue
 
+        print(f"[{sheet}] colunas: {list(df.columns)}")
         #isso normaliza os nomes das colunas para achar caso ela esteja com case diferente a depender da aba
         norm_map = { _norm(c): c for c in df.columns }
         norm_aliases = {_norm(a) for a in CODE_ALIASES}
@@ -56,9 +59,20 @@ def consulta_por_linha(linha_produto: str):
         #verificando e achando a "coluna-alvo"
         for col in candidata_cols:
             series = df[col].astype(str).str.strip()
-            if series.eq(alvo).any():
-                row = df.loc[series == alvo].iloc[0]
-                canon_key = CANONICAL.get(_norm(col), col)
-                return pd.Series({canon_key: str(row[col]).strip()})
+            mask = series == alvo
+            if mask.any():
+                result_rows = df.loc[mask]
+                row = result_rows.iloc[0].copy()
+                grupo = row.get("Grupo", row.get("GRUPO", ""))
+                estoque = row.get("Estoque", row.get("ESTOQUE", ""))
+                card = (
+                    f"O grupo/linha **{grupo}** possui {len(result_rows)} produtos "
+                    f"totalizando {result_rows['ESTOQUE'].astype(float).sum() if 'ESTOQUE' in result_rows else estoque} itens em estoque."
+                )
+                return {
+                    "df": result_rows,
+                    "card": card
+                }
 
+    print(f"[consulta_por_codigo] não encontrado. Alvo={alvo}")
     raise ValueError("A linha não foi encontrada")
