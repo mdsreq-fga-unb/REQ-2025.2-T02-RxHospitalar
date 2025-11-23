@@ -2,23 +2,27 @@ import tkinter as tk
 from tkinter import ttk
 from PIL import Image, ImageTk
 from pathlib import Path
-from app.utils.navbar_utils import ToolTip, attach_update_tooltip, attach_hover_image, update, logout
+# Assumindo que essas utilidades são acessíveis
+from app.utils.navbar_utils import ToolTip, attach_update_tooltip, attach_hover_image, update, logout 
 
 class Header(ttk.Frame):
+    """
+    Componente de Navegação (Navbar)
+    
+    Foi refatorado para NÃO usar pack() ou grid() para se anexar ao seu PARENT,
+    permitindo que o Controller ou a View (DashboardView) a posicione usando grid.
+    """
     def __init__(self, parent, controller=None):
 
-        # --- Frame externo (borda) ---
-        border_frame = tk.Frame(parent, bg="#046C62", height=100)
-        border_frame.pack(side="top", fill="x")
-        border_frame.pack_propagate(False)
-
-        super().__init__(border_frame, style='Header.TFrame')
+        super().__init__(parent, style='Header.TFrame', height=100)
         self.controller = controller
-        self.pack(fill="both", expand=True, padx=0, pady=(0,9))
-
+        
+        # Forçamos a altura e desativamos a propagação para manter o tamanho fixo de 100px.
+        self.grid_propagate(False)
+        
         # === Estilos ===
         style = ttk.Style()
-        style.configure('Header.TFrame', background="#01252A", side="top")
+        style.configure('Header.TFrame', background="#01252A", borderwidth=0)
         style.configure('HeaderTitle.TLabel', font=('Arial', 16, 'bold'))
 
         # --- Estilo para botões de imagem ---
@@ -29,8 +33,8 @@ class Header(ttk.Frame):
             relief="flat"
         )
         style.map("Icon.TButton",
-                background=[("active", "#01252A")],
-                relief=[("pressed", "flat"), ("active", "flat")])
+                 background=[("active", "#01252A")],
+                 relief=[("pressed", "flat"), ("active", "flat")])
 
         # === Ícone navbar ===
         img_path = Path(__file__).resolve().parent.parent / "images" / "Logo=NavBar.png"
@@ -38,13 +42,13 @@ class Header(ttk.Frame):
         self.logo = ImageTk.PhotoImage(img)
 
         logo_label = ttk.Label(self, image=self.logo, background="#01252A",cursor="hand2")
-        logo_label.pack(side="left", padx=(80,0) )
-
+        # CORREÇÃO: Adicionando fill="y" para garantir que o logo preencha a altura do Header
+        logo_label.pack(side="left", padx=(80,0), fill="y" ) 
         logo_label.bind("<Button-1>", lambda e: self.controller.show_frame("DashboardView"))
 
         # --- Carregar icones de navegação ---
         img_dir = Path(__file__).resolve().parent.parent / "images"
-
+        
         notifi_off = ImageTk.PhotoImage(Image.open(img_dir / "Notification=Off.png").resize((60, 60)))
         profile_default = ImageTk.PhotoImage(Image.open(img_dir / "profile=Default.png").resize((60, 60)))
         update_default = ImageTk.PhotoImage(Image.open(img_dir / "Update=Default.png").resize((60, 60)))
@@ -58,15 +62,15 @@ class Header(ttk.Frame):
         self.notifi_off_hover = notifi_off_hover
         self.profile_hover = profile_hover
         self.update_hover = update_hover
-
-        # === Conteúdo ===
-        # === Botões de navegação (direita) ===
+        
+        # === Conteúdo (Botões de navegação na direita) ===
         buttons_frame = ttk.Frame(self, style="Header.TFrame")
-        buttons_frame.pack(side="right")
+        # CORREÇÃO: Adicionando fill="y" para garantir que o container de botões preencha a altura
+        buttons_frame.pack(side="right", fill="y") 
 
         # atualizar
         update_btn = ttk.Button(buttons_frame, image=self.update_default, command=lambda:update(self.controller),
-                                style="Icon.TButton",cursor="hand2")
+                                 style="Icon.TButton",cursor="hand2")
         update_btn.grid(row=0, column=0, padx=5)
         self.update_tooltip = attach_update_tooltip(update_btn, self.controller, self.update_hover, self.update_default)
 
@@ -86,13 +90,13 @@ class Header(ttk.Frame):
         profile_btn.bind("<Leave>", lambda e: profile_btn.configure(image=self.profile_default))
 
         profile_menu = tk.Menu(profile_btn, tearoff=0,
-                               bg="#FBFFFC",
-                               fg="#01252A",
-                               activebackground="#45934C",
-                               activeforeground="#FBFFFC",
-                               font=("Arial", 15, "bold"),
-                               bd=2,
-                               relief="solid")
+                                 bg="#FBFFFC",
+                                 fg="#01252A",
+                                 activebackground="#45934C",
+                                 activeforeground="#FBFFFC",
+                                 font=("Arial", 15, "bold"),
+                                 bd=2,
+                                 relief="solid")
         profile_menu.add_command(label="Sair", command=lambda: logout(self.controller))
         profile_btn["menu"] = profile_menu
         profile_btn.grid(row=0, column=2, padx=5)
