@@ -1,21 +1,82 @@
-# NÃO subir a pasta de dados
-Projeto/data
-data/
+# =========================================
+# PYTHON
+# =========================================
 
-# NÃO subir ambiente virtual
-Projeto/venv
-venv/
-
-# Cache do python
 __pycache__/
+*.py[cod]
+*$py.class
 
-# Arquivos temporários do VSCode e Python
-*.pyc
-*.pyo
-*.pyd
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
 
-# Arquivos do sistema
+# Distribution / packaging
+build/
+develop-eggs/
+dist/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# macOS
 .DS_Store
 
-#arquivos teste
-app/main/chamadas_test.py
+# =========================================
+# NODE / FRONTEND
+# =========================================
+
+node_modules/
+dist/
+build/
+.vite/
+*.log
+
+# React local files
+.env.development.local
+.env.test.local
+.env.production.local
+
+# =========================================
+# VSCODE / EDITOR
+# =========================================
+
+.vscode/
+*.code-workspace
+
+# =========================================
+# SYSTEM / MISC
+# =========================================
+
+Thumbs.db
+*.bak
+*.swp
+*.tmp
