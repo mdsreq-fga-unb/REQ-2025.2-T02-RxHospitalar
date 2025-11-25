@@ -12,15 +12,17 @@ sidebar_position: 2
 A EcoMove é uma startup fictícia voltada à mobilidade urbana sustentável com a missão de promover o uso de meios de transporte não motorizados, como bicicletas e patinetes elétricos compartilhados, conectando usuários, operadores, técnicos, gestores e prefeituras para formar um ecossistema eficiente e confiável. Os principais usuários são cidadãos urbanos, equipes técnicas de manutenção, operadores de frota, gestores públicos e motoristas de apoio. O principal problema tratado é a fragmentação de informações, ineficiência operacional e experiência ruim para os usuários finais. 
 
 ## Personas e Stakeholders
-- Lucas (usuário urbano)
-- Marina (técnica de manutenção)
-- Carlos (operador de frota)
-- Fernanda (gestora municipal de mobilidade)
-- Rogério (motorista de apoio)
+- Usuário urbano (Lucas)
+- Técnica de manutenção (Marina)
+- Operador de frota (Carlos)
+- Gestora municipal de mobilidade (Fernanda)
+- Motorista de apoio (Rogério)
 
 ## Atividades principais e user stories 
 
-### Lucas (Usuário Urbano)
+[**Link de redirecionamento para o USM no Miro**](https://miro.com/app/board/uXjVJxdHdLc=/?share_link_id=869782407306)
+
+### Usuário urbano (Lucas)
 ![Print do Miro com as principais atividade e User Stories da persona Lucas](image.png)
 
 | **Atividade Principal**      | **User Stories (MVP)**                                                                |
@@ -33,7 +35,7 @@ A EcoMove é uma startup fictícia voltada à mobilidade urbana sustentável com
 | Acompanhar Histórico         | Como usuário, quero consultar meu histórico de uso e gastos                     |
 
 
-### Marina (Técnica de Manutenção)
+### Técnica de manutenção (Marina)
 ![Print do Miro com as principais atividade e User Stories da persona Marina](image-1.png)
 
 | **Atividade Principal**   | **User Stories**                                                                     |
@@ -45,7 +47,7 @@ A EcoMove é uma startup fictícia voltada à mobilidade urbana sustentável com
 | Comunicar-se com a Equipe | Como técnica, quero trocar mensagens instantâneas com o time de campo e supervisores |
 
 
-### Carlos (Operador de Frota)
+### Operador de frota (Carlos)
 ![Print do Miro com as principais atividade e User Stories da persona Carlos](image-2.png)
 
 | **Atividade Principal** | **User Stories**                                                                 |
@@ -57,7 +59,7 @@ A EcoMove é uma startup fictícia voltada à mobilidade urbana sustentável com
 | Gerar Relatórios        | Como operador, quero exportar relatórios para parceiros e gestão                 |
 
 
-### Fernanda (Gestora Municipal)
+### Gestora municipal de mobilidade (Fernanda)
 ![Print do Miro com as principais atividade e User Stories da persona Fernanda](image-3.png)
 
 | **Atividade Principal**    | **User Stories**                                                                   |
@@ -69,7 +71,7 @@ A EcoMove é uma startup fictícia voltada à mobilidade urbana sustentável com
 | Comunicação com Operadores | Como gestora, quero canal direto de comunicação com operadores parceiros           |
 
 
-### Rogério (Motorista de Apoio)
+### Motorista de apoio (Rogério)
 
 ![Print do Miro com as principais atividade e User Stories da persona Rogério](image-4.png)
 

@@ -47,7 +47,7 @@ O Scrum promove evolução das habilidades ao longo de todo o projeto. Ideal par
 
 #### 2. Controle de Qualidade
 
-Seguindo o processo do RAD, que foca na rapidez da prototipação e na qualidade das entregas, podemos a cada iteração verificar o nosso protótipo, garantindo que cada incremento se conecta com o planejamento do projeto e o valor a ser entregue para o cliente. Além disso, trazendo para as práticas do XP, o Test-Driven Development (TDD), testes automatizados e integração contínua, assegura maior confiabilidade ao código. A escolha dessa prática do XP, nos ajuda a reduzir a ocorrência de falhas e garante maior qualidade e previsibilidade no desenvolvimento do sistema, em comparação a somente utilização do RAD, onde a prototipação pode deixar lacunas de qualidades a depender do nível de experiência da equipe.
+Seguindo o processo do RAD, que foca na rapidez da prototipação e na qualidade das entregas, podemos a cada iteração verificar o nosso protótipo, garantindo que cada incremento se conecta com o planejamento do projeto e o valor a ser entregue para o cliente. Além disso, trazendo para as práticas do XP, o Test-Driven Development (TDD) no desenvolvimento backend, testes automatizados e integração contínua, assegura maior confiabilidade ao código. A escolha dessa prática do XP, nos ajuda a reduzir a ocorrência de falhas e garante maior qualidade e previsibilidade no desenvolvimento do sistema, em comparação a somente utilização do RAD, onde a prototipação pode deixar lacunas de qualidades a depender do nível de experiência da equipe.
 
 #### 3. Práticas XP + Scrum
 

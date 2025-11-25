@@ -3,15 +3,9 @@ sidebar_label: "Unidade 2"
 sidebar_position: 2
 ---
 
-# Entregas por Unidade
+# Entrega Unidade 2
 
-Esta seção contém as entregas e apresentações do projeto organizadas por unidade.
-
-## Unidade 2
-
-### Entrega Unidade 2
-
-Apresentação da primeira unidade do projeto BASED - RX Hospitalar:
+## Apresentação da segunda unidade do projeto BASED - RX Hospitalar:
 
 <div className="video-container">
 <iframe 

@@ -12,16 +12,16 @@ sidebar_position: 1
 A InovaHub é uma rede nacional que conecta e fomenta o ecossistema de inovação e empreendedorismo (incubadoras, startups, aceleradoras, etc.), visando fortalecer a colaboração entre universidades, empresas e governos. A partir das problemáticas de Redundância e Retrabalho, Dados Inconsistentes, Incapacidade de mensurar impacto das iniciativas e Baixa Visibilidade integrada dos dados, a proposta do InovaHub é o desenvolvimento de uma plataforma digital integrada para conectar usuário dos diferentes âmbitos e necessidades, monitorar o progresso das startups de forma unificada e consolidar os dados estratégicos para facilitar a análise das políticas públicas de inovação.
 
 ## Personas e Stakeholders
-- Mariana (Gestora de Inovação)
-- Lucas (Empreendedor de StartUp)
-- Sérgio (Mentor)
-- Patrícia (Analista de Inovação)
-- Renato (Investidor Anjo)
-- Cláudia (Gestora Pública de Empreendedorismo)
+- Gestora de inovação (Mariana)
+- Empreendedor de Startup (Lucas)
+- Mentor (Sérgio)
+- Analista de inovação (Patrícia)
+- Investidor-anjo (Renato)
+- Gestora pública de empreendedorismo (Cláudia)
 
 ## Organização do PBB - Miro
 
-[Link de Redirecionamento para o PBB Canvas](https://miro.com/app/board/uXjVJzWTeaU=/)
+[**Link de Redirecionamento para o PBB Canvas**](https://miro.com/app/board/uXjVJzWTeaU=/)
 
 ### Fotos - Evidências
 <img width="1913" height="865" alt="image" src="https://github.com/user-attachments/assets/5c99ded6-96a0-4421-aa1d-8290b083d8f0" />  
