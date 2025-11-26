@@ -24,9 +24,19 @@ A figura abaixo mostra o gráfico disponibilizado pela ferramenta nativa Insight
 
 #### **Organização das tarefas dentro do GitHub Projects**
 A figura abaixo mostra um exemplo da organização das tarefas da disciplina.
-<a id="burnup_rxhospitalar_projects"></a>
+<a id="github_projects"></a>
 *Figura 2: Tasks no GitHub Projects*
 <img src={useBaseUrl('/img/github_projects_18_11_25.png')} alt="Tasks no GitHub Projects" />
+*Fonte: De autoria própria.*
+
+### Uso do Discord
+O Discord foi uma ferramenta usada para comunicação e para se fazer as dailies assíncronas.
+
+#### **Dailies assíncronas via Discord**
+A figura abaixo mostra um exemplo da organização das atualizações na daily por via assíncrona. Na maior parte das vezes, elas ocorreram de maneira síncrona.
+<a id="dailies_discord"></a>
+*Figura 3: Dailies assíncronas no Discord*
+<img src={useBaseUrl('/img/dailies_assincronas.png')} alt="Tasks no GitHub Projects" />
 *Fonte: De autoria própria.*
 
 ### Histórico de Versão
