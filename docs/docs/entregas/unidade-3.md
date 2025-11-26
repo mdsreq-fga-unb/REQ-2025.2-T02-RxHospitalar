@@ -29,13 +29,23 @@ A figura abaixo mostra um exemplo da organização das tarefas da disciplina.
 <img src={useBaseUrl('/img/github_projects_18_11_25.png')} alt="Tasks no GitHub Projects" />
 *Fonte: De autoria própria.*
 
+### Uso do Teams
+O Teams foi a ferramenta usada para dailies síncronas, porque permite gravá-las.
+
+#### **Reuniões via Teams**
+A figura abaixo apresenta um exemplo de como fazíamos as nossas reuniões mais longas.
+<a id="dailies_teams"></a>
+*Figura 3: Reuniões no Teams*
+<img src={useBaseUrl('/img/dailies_sincronas.png')} alt="Dailies síncronas no Teams" />
+*Fonte: De autoria própria.*
+
 ### Uso do Discord
 O Discord foi uma ferramenta usada para comunicação e para se fazer as dailies assíncronas.
 
 #### **Dailies assíncronas via Discord**
 A figura abaixo mostra um exemplo da organização das atualizações na daily por via assíncrona. Na maior parte das vezes, elas ocorreram de maneira síncrona.
 <a id="dailies_discord"></a>
-*Figura 3: Dailies assíncronas no Discord*
+*Figura 4: Dailies assíncronas no Discord*
 <img src={useBaseUrl('/img/dailies_assincronas.png')} alt="Tasks no GitHub Projects" />
 *Fonte: De autoria própria.*
 
