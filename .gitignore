@@ -1,0 +1,82 @@
+# =========================================
+# PYTHON
+# =========================================
+
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Distribution / packaging
+build/
+develop-eggs/
+dist/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# macOS
+.DS_Store
+
+# =========================================
+# NODE / FRONTEND
+# =========================================
+
+node_modules/
+dist/
+build/
+.vite/
+*.log
+
+# React local files
+.env.development.local
+.env.test.local
+.env.production.local
+
+# =========================================
+# VSCODE / EDITOR
+# =========================================
+
+.vscode/
+*.code-workspace
+
+# =========================================
+# SYSTEM / MISC
+# =========================================
+
+Thumbs.db
+*.bak
+*.swp
+*.tmp
