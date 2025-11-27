@@ -1,22 +1,16 @@
-# app/controllers/app_controller.py
-
 import tkinter as tk
 from tkinter import ttk, filedialog, messagebox
 import threading
 import pandas as pd
 from datetime import datetime
 
-# ----------------------------------------------------
 # 1. IMPORTS DO MODEL (app/models)
 from app.models.data_loader import load_selected_columns 
 
 # 2. IMPORTS DAS VIEWS (app/views/pages)
-
 from app.views.pages.auth_page.login import LoginPage, ForgotPasswordPage
 from app.views.components.loading_import_modal import LoadingImportModal
 from app.views.pages.dashboard_page.dashboard_page import DashboardView 
-
-# 3. IMPORTS DE OUTROS ARQUIVOS
 
 from app.controllers.login_controller import get_user
 from app.utils.login_utils import *
@@ -27,8 +21,11 @@ class AppController(tk.Tk):
     def __init__(self, *args, **kwargs):
         tk.Tk.__init__(self, *args, **kwargs)
 
-        self.geometry("1920x1080")
-        self.state("normal")
+        try:
+            self.state("zoomed") 
+        except tk.TclError:
+            self.attributes('-zoomed', True)
+        
         self.title("Sistema de Estoque - RX Hospitalar")
         
         # Atributos de estado do Controller
@@ -144,4 +141,3 @@ class AppController(tk.Tk):
 
         # 2. Transiciona para a página de destino (Dashboard ou LoginPage)
         self.show_frame(next_page)
-
