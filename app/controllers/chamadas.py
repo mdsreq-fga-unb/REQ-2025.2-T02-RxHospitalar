@@ -1,29 +1,70 @@
 import pandas as pd
-from app.models.carregar_dados import carregar_dados_por_colunas
+from app.models.carregar_dados import carregar_dados_por_colunas, salvar_tabela_txt
 from app.utils.separar_por_data import separar_quantidade_por_data
+from app.utils.dataframe_utils import juntar_por_codigo, quantidade_para_comprar
 
 
-#funcao incompleta
-#Usada em RF07
-# Função para sugerir quantidade de compra com base na média de vendas dos últimos 'periodo' meses
+# Função usada no RF07
+# Sugere quantidade de compra com base na média dos últimos “periodo” meses
 def sugestao_compra(linha: str, periodo):
     """
-    Funcao que sugere a quantidade de compra com base na media de vendas dos ultimos 'period' meses.
+    Executa o fluxo principal:
+    1. Carrega vendas filtradas pelo grupo (linha).
+    2. Processa vendas por mês e calcula média.
+    3. Carrega estoque.
+    4. Junta vendas + estoque por código.
+    5. Calcula quantidade sugerida para compra.
     """
+
+    # ============================
+    # 1. Carregar vendas pendentes
+    # ============================
     sheet = "Vendas_Pendencia"
-    cols = ["INDICADOR", "CODORIGINAL", "DATASTATUS", "QUANTIDADE", "INDICADOR_3"]
+    cols = ["GRUPO", "CODORIGINAL", "DATASTATUS", "QUANTIDADE", "INDICADOR_3"]
+    linha_aux = linha
+    coluna = "GRUPO"
 
-    df_aux = carregar_dados_por_colunas(sheet, cols)
-    periodo_aux = periodo
-    df_aux = separar_quantidade_por_data(df_aux, periodo_aux)
+    # Carrega somente as linhas da GRUPO selecionado
+    df_vendas = carregar_dados_por_colunas(sheet, cols, linha=linha_aux, coluna=coluna)
+    print("== VENDAS CARREGADAS ==")
+    print(df_vendas.head())
 
-    return df_aux
+    # ====================================
+    # 2. Processa datas e gera colunas por mês
+    # ====================================
+    df_vendas = separar_quantidade_por_data(df_vendas, periodo)
+    print("\n== VENDAS AGRUPADAS POR MÊS ==")
+    print(df_vendas.head())
+
+    # ======================
+    # 3. Carregar estoque
+    # ======================
+    df_estoque = carregar_dados_por_colunas(
+        sheet_name="Estoque",
+        columns=["Grupo", "Cód Original", "Qtd Caixa", "Estoque"],
+        linha=linha_aux,
+        coluna="Grupo"
+    )
+
+    # ======================
+    # 4. Juntar vendas + estoque por código
+    # ======================
+    df_compras = juntar_por_codigo(df_vendas, df_estoque)
+
+    # ======================
+    # 5. Calcular sugestão de compra
+    # ======================
+    df_compras = quantidade_para_comprar(df_compras, periodo)
+
+    return df_compras
 
 
-# Exemplo de uso parar teste 
+
+# ======================
+# TESTE LOCAL
+# ======================
 if __name__ == "__main__":
     linha_teste = "BBRAUN"
-    periodo_teste = 4
+    periodo_teste = 5
 
-    
     print(sugestao_compra(linha_teste, periodo_teste))
