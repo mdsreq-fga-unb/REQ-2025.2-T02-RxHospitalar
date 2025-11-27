@@ -2,6 +2,9 @@ import tkinter as tk
 from tkinter import ttk
 from PIL import Image, ImageTk, ImageDraw
 
+# Importação da nova lógica de dados do Backend
+from app.models.carregar_dados import obter_dados_cascata
+
 # Light mode pallet 
 COLOR_BACKGROUND = "#FFFFFF"
 COLOR_CARD_BG = "#F4F9F4"
@@ -12,14 +15,13 @@ COLOR_BUTTON_BG = "#B8D4C0"
 COLOR_BUTTON_ACTIVE_BG = "#A0C0A8"
 COLOR_CHECKED_SOLID = "#52805D"
 COLOR_TEXT_HOVER = "#52805D"
-# Fundo Escuro para combinar com o título do Dashboard
 COLOR_DASHBOARD_BG = "#1e1e1e" 
 
 PLACEHOLDER_LINHA = "Selecione uma Linha"
 PLACEHOLDER_SUB_LINHA = "Selecione uma Sub Linha"
 PLACEHOLDER_CODIGO = "Insira um código"
 PLACEHOLDER_PERIOD = "Opções"
-# Variáveis globais para segurar as referências das imagens
+
 _img_unchecked = None
 _img_checked = None
 
@@ -113,11 +115,21 @@ def setup_styles(root):
 
 class EstoqueFilterFrame(ttk.Frame):
     def __init__(self, parent):
-        # Usa "Sidebar.TFrame" para garantir que o fundo entre os cards seja escuro
         super().__init__(parent, padding=0, style="Sidebar.TFrame")
         self.columnconfigure(0, weight=1)
 
-        # Card Principal de Filtros
+        # ---------------------------------------------------------
+        # 1. CARREGAMENTO DE DADOS (Antes de criar os Widgets)
+        # ---------------------------------------------------------
+        try:
+            self.dados_linhas, self.dados_sublinhas_totais, self.mapa_cascata = obter_dados_cascata()
+        except Exception as e:
+            print(f"Erro ao carregar dados do Excel no filtro: {e}")
+            self.dados_linhas, self.dados_sublinhas_totais, self.mapa_cascata = [], [], {}
+
+        # ---------------------------------------------------------
+        # 2. CRIAÇÃO DO CARD PRINCIPAL (Isso estava faltando!)
+        # ---------------------------------------------------------
         self.filter_card = ttk.Frame(self, padding=20, style="Card.TFrame")
         self.filter_card.grid(row=0, column=0, sticky="ew", padx=0, pady=(0, 10))
         self.filter_card.columnconfigure(0, weight=1)
@@ -126,29 +138,47 @@ class EstoqueFilterFrame(ttk.Frame):
         ttk.Label(self.filter_card, text="Estoque", style="Title.TLabel").grid(row=0, column=0, sticky="w", pady=(0, 0))
         ttk.Label(self.filter_card, text="Filtros", style="Subtitle.TLabel").grid(row=1, column=0, sticky="w", pady=(0, 10))
         
-        # Seleção de Produtos 
+        # ---------------------------------------------------------
+        # 3. SELEÇÃO DE PRODUTOS (LINHA)
+        # ---------------------------------------------------------
         ttk.Label(self.filter_card, text="Linha:", style="Header.TLabel").grid(row=2, column=0, sticky="w", pady=(5, 0))
         self.linha_var = tk.StringVar(value=PLACEHOLDER_LINHA)
-        self.linha_values = [PLACEHOLDER_LINHA, "Linha A", "Linha B", "Linha C"]
+        
+        # Popula com dados do Excel
+        self.linha_values = [PLACEHOLDER_LINHA] + self.dados_linhas
+        
         self.linha_combo = ttk.Combobox(self.filter_card, textvariable=self.linha_var, values=self.linha_values, state="readonly")
         self.linha_combo.grid(row=3, column=0, sticky="ew", pady=(0, 5))
         self.set_placeholder(self.linha_combo, PLACEHOLDER_LINHA)
+        
+        # Bind para atualizar a sublinha quando a linha mudar
+        self.linha_combo.bind("<<ComboboxSelected>>", self._on_linha_selected, add="+")
 
+        # ---------------------------------------------------------
+        # 4. SELEÇÃO DE PRODUTOS (SUB LINHA)
+        # ---------------------------------------------------------
         ttk.Label(self.filter_card, text="Sub Linha:", style="Header.TLabel").grid(row=4, column=0, sticky="w", pady=(5, 0))
         self.sub_linha_var = tk.StringVar(value=PLACEHOLDER_SUB_LINHA)
-        self.sub_linha_values = [PLACEHOLDER_SUB_LINHA, "Sub 1", "Sub 2", "Sub 3"]
+        
+        # Inicialmente mostra TODAS as sublinhas disponíveis
+        self.sub_linha_values = [PLACEHOLDER_SUB_LINHA] + self.dados_sublinhas_totais
+        
         self.sub_linha_combo = ttk.Combobox(self.filter_card, textvariable=self.sub_linha_var, values=self.sub_linha_values, state="readonly")
         self.sub_linha_combo.grid(row=5, column=0, sticky="ew", pady=(0, 5))
         self.set_placeholder(self.sub_linha_combo, PLACEHOLDER_SUB_LINHA)
 
-        # INPUT CÓDIGO 
+        # ---------------------------------------------------------
+        # 5. INPUT CÓDIGO 
+        # ---------------------------------------------------------
         ttk.Label(self.filter_card, text="Código:", style="Header.TLabel").grid(row=6, column=0, sticky="w", pady=(5, 0))
         self.codigo_var = tk.StringVar()
         self.codigo_entry = ttk.Entry(self.filter_card, textvariable=self.codigo_var, style="TEntry")
         self.codigo_entry.grid(row=7, column=0, sticky="ew", pady=(0, 10))
         self.add_placeholder(self.codigo_entry, PLACEHOLDER_CODIGO)
 
-        # Período 
+        # ---------------------------------------------------------
+        # 6. PERÍODO 
+        # ---------------------------------------------------------
         ttk.Label(self.filter_card, text="Período:", style="Header.TLabel").grid(row=8, column=0, sticky="w", pady=(10, 5))
         
         period_grid_frame = ttk.Frame(self.filter_card, style="PeriodButton.TFrame")
@@ -182,7 +212,9 @@ class EstoqueFilterFrame(ttk.Frame):
         self.set_placeholder(self.period_combo, PLACEHOLDER_PERIOD)
         self.period_combo.bind("<<ComboboxSelected>>", self._handle_period_combo_select)
         
-        # Card Secundário (Condição e Recomendações)
+        # ---------------------------------------------------------
+        # 7. CARD SECUNDÁRIO (Condição e Recomendações)
+        # ---------------------------------------------------------
         self.sub_card = ttk.Frame(self, padding=20, style="Card.TFrame")
         self.sub_card.grid(row=1, column=0, sticky="ew", padx=0, pady=(0, 10))
         self.sub_card.columnconfigure(0, weight=1)
@@ -202,6 +234,35 @@ class EstoqueFilterFrame(ttk.Frame):
         
         # Botão de filtro 
         ttk.Button(self, text="Filtrar", command=self.filtrar, style="Filter.TButton").grid(row=2, column=0, sticky="ew", padx=0, pady=(0, 0))
+
+    # --- LÓGICA DE CASCATA (EVENTO) ---
+    def _on_linha_selected(self, event):
+        """Atualiza a lista de Sub Linhas com base na Linha selecionada."""
+        linha_selecionada = self.linha_var.get()
+
+        # 1. Se resetar para "Selecione...", mostra tudo
+        if linha_selecionada == PLACEHOLDER_LINHA:
+            novas_opcoes = [PLACEHOLDER_SUB_LINHA] + self.dados_sublinhas_totais
+        
+        # 2. Se a linha existe no mapa, filtra as sublinhas
+        elif linha_selecionada in self.mapa_cascata:
+            sublinhas_da_linha = self.mapa_cascata[linha_selecionada]
+            novas_opcoes = [PLACEHOLDER_SUB_LINHA] + sublinhas_da_linha
+        
+        # 3. Fallback
+        else:
+            novas_opcoes = [PLACEHOLDER_SUB_LINHA]
+
+        # Atualiza o widget
+        self.sub_linha_combo['values'] = novas_opcoes
+        
+        # Reseta a seleção visual da Sub Linha
+        self.sub_linha_var.set(PLACEHOLDER_SUB_LINHA)
+        self.set_placeholder(self.sub_linha_combo, PLACEHOLDER_SUB_LINHA)
+        
+        # Ajusta o estilo visual da Linha (remove itálico cinza)
+        self.linha_combo.configure(font=("Segoe UI", 10), foreground=COLOR_TEXT)
+
 
     def create_period_button(self, parent, text, var, column):
         frame = ttk.Frame(parent, style="PeriodButton.TFrame", padding=[0, 0, 0, 0])
@@ -286,6 +347,8 @@ class EstoqueFilterFrame(ttk.Frame):
         def on_combo_select(event):
             combobox.configure(font=("Segoe UI", 10), foreground=COLOR_TEXT)
         
+        # Importante: bind sem "+=" aqui para não duplicar se chamar várias vezes
+        # Mas para garantir a funcionalidade correta com o cascata, o evento de cascata usa add="+"
         combobox.bind("<<ComboboxSelected>>", on_combo_select, add="+")
         
     def filtrar(self):
