@@ -1,4 +1,4 @@
-import sys
+'''import sys
 import os
 
 # Add the project root to sys.path
@@ -22,3 +22,4 @@ if __name__ == "__main__":
     frame.pack(fill="both", expand=True, padx=10, pady=10)
 
     root.mainloop()
+'''
