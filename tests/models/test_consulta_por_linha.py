@@ -28,6 +28,7 @@ def test_consulta_com_sucesso_aba_estoque():
     assert df.iloc[0][col] == linha_produto
     assert linha_produto in resultado["card"]
 
+#teste de um caso de sucesso para a aba vendas_pendencia da planilha
 def test_consulta_com_sucesso_aba_vendas_pendencia():
     linha_produto = "SMITH"
     resultado = consulta_por_linha(linha_produto)
@@ -37,6 +38,7 @@ def test_consulta_com_sucesso_aba_vendas_pendencia():
     assert col is not None
     assert df.iloc[0][col] == linha_produto
 
+#teste para o retorno sair conforme o esperado
 def test_consulta_por_codigo_retorno_padrao(monkeypatch, df_exemplo, tmp_path):
     # cria arquivo excel temporário com a aba simulada
     path = tmp_path / "fake.xlsx"
@@ -62,6 +64,7 @@ def df_exemplo():
     }
     return pd.DataFrame(data)
 
+#teste para consulta por codigo
 def test_consulta_por_codigo_override(monkeypatch, df_exemplo, tmp_path):
     path = tmp_path / "fake.xlsx"
     with pd.ExcelWriter(path) as w:
