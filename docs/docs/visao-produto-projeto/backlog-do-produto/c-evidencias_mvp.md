@@ -11,7 +11,8 @@ Essa seção apresenta as evidências de implementação dos requisitos funciona
 
  **RF02 - Integrar os dados das 4 planilhas principais**
 
-<img src="./rf02.png" alt="RF02 - Integração das 4 planilhas principais" width="500" /> 
+[Implementação (Front-end)](https://github.com/mdsreq-fga-unb/REQ-2025.2-T02-RxHospitalar/pull/130)  
+[Implementação (Back-end)](https://github.com/mdsreq-fga-unb/REQ-2025.2-T02-RxHospitalar/commit/3fccf1d72323273473c935372423072d1743b8e6)
  
  - No sistema 
 
