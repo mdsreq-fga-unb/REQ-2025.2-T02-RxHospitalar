@@ -12,13 +12,7 @@ from app.views.pages.auth_page.login import LoginPage, ForgotPasswordPage
 from app.views.components.loading_import_modal import LoadingImportModal
 from app.views.pages.dashboard_page.dashboard_page import DashboardView 
 
-from pandastable import Table
-
-# 3. IMPORTS DE OUTROS ARQUIVOS
-
-from app.controllers.login_controller import get_user
 from app.utils.login_utils import *
-
 # ----------------------------------------------------
 
 class AppController(tk.Tk):
@@ -47,9 +41,9 @@ class AppController(tk.Tk):
         # 2. Inicialização do Tema
         self.style = ttk.Style()
         self.style.theme_use('clam') 
-        self.configure(bg='#FFFFFF')
-        self.style.configure('TFrame', background='#FFFFFF') 
-        self.style.configure('TLabel', background='#FFFFFF', foreground='black') 
+        self.configure(bg='#1e1e1e')
+        self.style.configure('TFrame', background='#1e1e1e') 
+        self.style.configure('TLabel', background='#1e1e1e', foreground='white') 
         
         self.frames = {}
         
@@ -108,7 +102,7 @@ class AppController(tk.Tk):
         )
         loader_thread.start()
 
-    # 3. THREAD SECUNDÁRIA: Executa o Model (Pandas)
+    # 3. THREAD SECUNDÁRIA: Executa o Model 
     def _run_pandas_in_thread(self, sheet_name, columns_to_load):
         """Executa a função do Model que lê o arquivo fixo."""
         
@@ -117,9 +111,6 @@ class AppController(tk.Tk):
         
         # Retorna para a thread principal (UI)
         self.after(0, self.finish_data_loading, df_master)
-
-
-        
 
     # 4. FINALIZAÇÃO NA THREAD PRINCIPAL: Fecha modal e troca tela
     def finish_data_loading(self, df_master):
@@ -131,15 +122,9 @@ class AppController(tk.Tk):
             self.df_master = df_master
             self.last_update_time = datetime.now()
             print("Dados carregados com sucesso. Próxima tela: Dashboard.")
-
-            dashboard_view = self.frames["DashboardView"]
-            dashboard_view.render_dataframe_table(df_master) 
-            print("Planilha instruída a exibir com sucesso!")
             
             # 2. Define o TIMER para transicionar após 1500ms (1.5 segundos)
             self.after(1500, self.handle_final_transition, "DashboardView")
-
-           
         else:
             print(" Erro na importação.")
             # 2. Define o TIMER para transicionar após 2500ms (dá mais tempo para ler o erro)
@@ -153,5 +138,5 @@ class AppController(tk.Tk):
             self.loading_import_modal.destroy_modal()
             self.loading_import_modal = None
 
-        # 2. Transiciona para a página de destino (Dashboard ou LoginPage)
+        # 2. Transiciona para a página de destino
         self.show_frame(next_page)
