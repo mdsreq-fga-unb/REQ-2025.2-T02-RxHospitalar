@@ -60,7 +60,6 @@ class Header(ttk.Frame):
         self.update_hover = update_hover
 
         # === Conteúdo ===
-        # === Botões de navegação (direita) ===
         buttons_frame = ttk.Frame(self, style="Header.TFrame")
         buttons_frame.pack(side="right")
 
