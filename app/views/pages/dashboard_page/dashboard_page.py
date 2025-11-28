@@ -4,6 +4,8 @@ from pandastable import Table
 import pandas as pd
 import unicodedata
 import re
+# from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+from app.views.components.estoque_filters import EstoqueFilterFrame
 
 from app.views.components.navbar import Header
 from app.views.components.estoque_filters import EstoqueFilterFrame, setup_styles
@@ -17,9 +19,11 @@ def _norm(s):
     s = re.sub(r"[^\w]+", " ", s).lower().strip()
     return s.replace(" ", "")
 
+from pandastable import Table
+
 class DashboardView(ttk.Frame):
     def __init__(self, parent, controller):
-        super().__init__(parent)
+        ttk.Frame.__init__(self, parent)
         self.controller = controller
 
         setup_styles(self.controller)
