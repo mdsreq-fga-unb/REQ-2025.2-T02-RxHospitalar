@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import ttk
 import os
 from PIL import Image, ImageTk
+from app.utils.path import get_resource_path
 
 CONTAINER_WIDTH = 540
 CONTAINER_HEIGHT = 745
@@ -154,7 +155,8 @@ def load_logo(container, image_name="Based.png", size=(171, 196)):
 
     try:
         image_path = os.path.join("app", "views", "images", image_name)
-        logo_image = Image.open(image_path)
+        final_image_path = get_resource_path(image_path)
+        logo_image = Image.open(final_image_path)
         
         # Redimensiona a imagem
         logo_image = logo_image.resize(size, Image.Resampling.LANCZOS)

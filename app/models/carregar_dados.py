@@ -2,16 +2,23 @@ import os
 import pandas as pd
 import unicodedata
 import re
+from app.utils.path import get_resource_path
 
 #caminho do arquivo excel
-# Caminho da pasta /Projeto/REQ.../app/models/carregar_dados.py
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-# Sobe 2 níveis: models -> app -> REQ-... -> Projeto/
-PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(BASE_DIR)))
+# refatorado para  o executavel
 
-# endereço planilha excel 
-file = os.path.join(PROJECT_ROOT, "data", "planilha_de_dados.xlsx")
+# --- BLOCO DE DIAGNÓSTICO (Copie isto) ---
+print("="*50)
+print("DIAGNÓSTICO DE CAMINHOS:")
+raiz = get_resource_path(".")
+print(f"1. Raiz do App: {raiz}")
+
+file = get_resource_path(os.path.join("data", "planilha_de_dados.xlsx"))
+print(f"2. Onde o código procura a planilha: {file}")
+
+existe = os.path.exists(file)
+print(f"3. O arquivo existe lá? {'SIM' if existe else 'NÃO'}")
 
 #Usada em RF07
 #funcao para carregar dados das linhas com filtro de colunas
