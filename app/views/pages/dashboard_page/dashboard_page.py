@@ -1,9 +1,23 @@
 import tkinter as tk
 from tkinter import ttk
+from pandastable import Table
+import pandas as pd
+import unicodedata
+import re
 # from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from app.views.components.estoque_filters import EstoqueFilterFrame
 
 from app.views.components.navbar import Header
+from app.views.components.estoque_filters import EstoqueFilterFrame, setup_styles
+# IMPORT ATUALIZADO:
+from app.models.carregar_dados import carregar_dados_unificados 
+
+def _norm(s):
+    if not isinstance(s, str): return str(s)
+    s = unicodedata.normalize("NFKD", s)
+    s = s.encode("ascii", "ignore").decode("ascii")
+    s = re.sub(r"[^\w]+", " ", s).lower().strip()
+    return s.replace(" ", "")
 
 from pandastable import Table
 
@@ -11,94 +25,106 @@ class DashboardView(ttk.Frame):
     def __init__(self, parent, controller):
         ttk.Frame.__init__(self, parent)
         self.controller = controller
-        
-        # --- Configuração do Layout GRID Principal ---
-        # A DashboardView terá 3 linhas principais e 1 coluna
-        self.grid_rowconfigure(0, weight=1) # Linha 0 (navbar) - Expande um pouco
-        self.grid_rowconfigure(1, weight=0) # Linha 1 (cardsframe_cards) - Não expande verticalmente
-        self.grid_rowconfigure(2, weight=1) # Linha 2 (Gráficos) - Expande um pouco
-        self.grid_rowconfigure(3, weight=4) # Linha 3 (Tabela) - Expande mais
-        self.grid_columnconfigure(0, weight=1) # Coluna 0 (Principal) - Expande horizontalmente
-        # ---------------------------------------------
 
-        # INSTANCIANDO E POSICIONANDO O HEADER NO GRID
-        self.navbar = Header(self, controller=self.controller)
-        self.navbar.grid(row=0, column=0, sticky="nsew") # sticky="ew" garante que preencha toda a largura
-        
-        # # LINHA 1: Cards ---
-        # self.frame_cards = ttk.Frame(self, padding="10")
-        # self.frame_cards.grid(row=1, column=0, sticky="ew") # sticky="ew" garante que preencha a largura
-        # self.setup_kpi_cards()
-        
-        # # ---  LINHA 2: Gráfico Principal ---
-        # self.frame_chart = ttk.Frame(self, padding="10", relief="groove", borderwidth=1)
-        # self.frame_chart.grid(row=2, column=0, sticky="nsew", padx=10, pady=5)
-        # ttk.Label(self.frame_chart, text="[Placeholder: Gráfico de Movimentação/Estoque]").pack(expand=True)
-        
-        # --- LINHA 3: Tabela de Dados (Pandastable Container) ---
-        self.frame_tabela_container = ttk.Frame(self, padding="10")
-        self.frame_tabela_container.grid(row=3, column=0, sticky="nsew", padx=10, pady=10)
-        
-        # Placeholder inicial
-        self.tabela_placeholder = ttk.Label(self.frame_tabela_container, text="Aguardando importação de dados para exibir a planilha...")
-        self.tabela_placeholder.grid(row=0, column=0, sticky='nsew', padx=50, pady=50)
+        setup_styles(self.controller)
 
-    # def setup_kpi_cards(self):
-    #     """Cria e organiza os mini-cards de cardsframe_cards (Exemplo)."""
-        
-    #     # Usamos o 'pack' dentro do frame_cards para organizá-los horizontalmente (lado a lado)
-        
-    #     kpi_data = [
-    #         ("Estoque Total", "12.500 Unid."),
-    #         ("Produtos Críticos", "25 Itens"),
-    #         ("Última Atualização", "Carregando...")
-    #     ]
-        
-    #     for titulo, valor in kpi_data:
-    #         # Container para cada card
-    #         card = ttk.Frame(self.frame_cards, relief="raised", padding="10")
-    #         card.pack(side="left", padx=15, fill="x", expand=True) # side="left" coloca lado a lado
+        self.header = Header(self, controller)
+        self.header.pack(side="top", fill="x")
 
-    #         ttk.Label(card, text=titulo, font=('Helvetica', 10)).pack(anchor='nw')
+        self.body_frame = ttk.Frame(self)
+        self.body_frame.pack(side="top", fill="both", expand=True)
+
+        self.body_frame.columnconfigure(0, weight=0, minsize=335)
+        self.body_frame.columnconfigure(1, weight=1)
+        self.body_frame.rowconfigure(0, weight=1)
+
+        self.sidebar_container = ttk.Frame(self.body_frame, style="Sidebar.TFrame")
+        self.sidebar_container.grid(row=0, column=0, sticky="nsew")
+        
+        self.filters = EstoqueFilterFrame(self.sidebar_container, on_filter_callback=self.apply_filters)
+        self.filters.pack(fill="both", expand=True, padx=10, pady=(85, 10))
+
+        self.content_area = ttk.Frame(self.body_frame)
+        self.content_area.grid(row=0, column=1, sticky="nsew", padx=20, pady=20)
+        
+        self.title_label = ttk.Label(
+            self.content_area,
+            text="Dashboard Unificado (Vendas + Estoque)",
+            font=("Segoe UI", 24, "bold"),
+            foreground="white",
+            background="#1e1e1e"
+        )
+        self.title_label.pack(anchor="w", pady=(0, 20))
+
+        # Container da Tabela
+        self.frame_tabela_container = ttk.Frame(self.content_area, style="Card.TFrame")
+        self.frame_tabela_container.pack(fill="both", expand=True)
+        
+        self.pt_widget = None
+
+    def tkraise(self, aboveThis=None):
+        super().tkraise(aboveThis)
+        
+        # LÓGICA ATUALIZADA:
+        if not hasattr(self.controller, 'df_master') or \
+           (isinstance(self.controller.df_master, pd.DataFrame) and self.controller.df_master.empty):
             
-    #         # Adicionamos um ID para que possamos atualizar dinamicamente o valor (ex: o timestamp de atualização)
-    #         lbl_valor = ttk.Label(card, text=valor, font=('Helvetica', 16, 'bold'))
-    #         lbl_valor.pack(anchor='sw')
-            
-    #         if titulo == "Última Atualização":
-    #             self.lbl_ultima_atualizacao = lbl_valor # Guarda a referência para atualizar depois
+            print("Carregando e unificando dados...")
+            # Chama a função que cruza as tabelas
+            self.controller.df_master = carregar_dados_unificados()
+
+        self.render_dataframe_table(self.controller.df_master)
 
     def render_dataframe_table(self, df):
-        """
-        Método chamado pelo AppController para exibir o DataFrame (pandastable).
-        """
-        
-        # 1. Limpa o container antes de renderizar a nova tabela
         for widget in self.frame_tabela_container.winfo_children():
             widget.destroy()
 
-        if df.empty:
+        if df is None or df.empty:
             ttk.Label(self.frame_tabela_container, 
-                      text="Dados não disponíveis ou importação falhou.", 
-                      foreground='red').pack(pady=50)
+                      text="Nenhum dado encontrado ou erro ao cruzar tabelas.", 
+                      font=("Segoe UI", 12),
+                      background="#F4F9F4").pack(pady=50)
             return
 
-        # 2. Cria e exibe o Widget Table (pandastable)
-        pt = Table(self.frame_tabela_container, dataframe=df,
-                   showtoolbar=True,
-                   showstatusbar=True,
-                   showscrolly=True,  # Mostra a rolagem vertical (Y)
-                   showscrollx=True,
-                   )
-        
-        # Força o re-cálculo das dimensões e dos parâmetros de visualização
-        pt.redraw() 
+        self.pt_widget = Table(self.frame_tabela_container, dataframe=df,
+                               showtoolbar=True, showstatusbar=True)
+        self.pt_widget.show()
+        self.pt_widget.redraw()
 
-        # O widget Table preenche todo o container
-        pt.grid(row=0, column=0, sticky='nsew')
-        pt.show()
+    def apply_filters(self, filter_data):
+        # A lógica de filtro permanece a mesma, pois o df_master agora contém todas as colunas
+        df = self.controller.df_master
+        if df is None or df.empty:
+            return
+
+        print("Aplicando filtros:", filter_data)
+        df_filtered = df.copy()
+
+        cols_map = {_norm(c): c for c in df_filtered.columns}
         
-        # # 3. Atualiza o KPI de última atualização (se o Controller definiu)
-        # if hasattr(self.controller, 'last_update_time') and self.controller.last_update_time:
-        #      time_str = self.controller.last_update_time.strftime("%d/%m/%Y %H:%M")
-        #      self.lbl_ultima_atualizacao.config(text=time_str)
+        # Apelidos para encontrar as colunas no DF unificado
+        aliases_linha = {"grupo", "linha", "categoria"}
+        aliases_sub = {"subgrupo", "sublinha", "subgruponivel1", "familia"}
+        aliases_cod = {"codven", "codproduto", "referencia", "codigooriginal"}
+        
+        col_linha = next((cols_map[k] for k in cols_map if k in aliases_linha), None)
+        col_sub = next((cols_map[k] for k in cols_map if k in aliases_sub), None)
+        
+        # Busca coluna de código (pode ter mudado com o merge)
+        col_cod = next((cols_map[k] for k in cols_map if k in aliases_cod), None)
+        if not col_cod:
+            col_cod = next((cols_map[k] for k in cols_map if "cod" in k), None)
+
+        if val_linha := filter_data.get("linha"):
+            if col_linha:
+                df_filtered = df_filtered[df_filtered[col_linha].astype(str).str.strip() == val_linha.strip()]
+
+        if val_sub := filter_data.get("sub_linha"):
+            if col_sub:
+                df_filtered = df_filtered[df_filtered[col_sub].astype(str).str.strip() == val_sub.strip()]
+
+        if val_cod := filter_data.get("codigo"):
+            if col_cod:
+                df_filtered = df_filtered[df_filtered[col_cod].astype(str).str.contains(val_cod, case=False, na=False)]
+
+        self.render_dataframe_table(df_filtered)
