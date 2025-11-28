@@ -49,7 +49,7 @@ class DashboardView(ttk.Frame):
         
         self.title_label = ttk.Label(
             self.content_area,
-            text="Dashboard Unificado (Vendas + Estoque)",
+            text="Planilha de dados",
             font=("Segoe UI", 24, "bold"),
             foreground="white",
             background="#1e1e1e"
