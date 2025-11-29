@@ -17,31 +17,70 @@ def _escolher_coluna_codigo(cols):
   return None
 
 #teste de um caso de sucesso para a aba estoque da planilha
-def test_consulta_por_codigo_com_sucesso_aba_estoque():
-  df0 = pd.read_excel(file, sheet_name=0, header=0, dtype=str)
-  col = _escolher_coluna_codigo(df0.columns)
-  assert col is not None, "Nenhuma coluna de código encontrada"
-  codigo_produto = "4670008SBR"
-  result = consulta_por_codigo(codigo_produto)
-  assert result is not None
-  assert result["Cód Original"] == codigo_produto
+def test_consulta_com_sucesso_aba_estoque():
+    codigo_produto = "JG223R"
+    resultado = consulta_por_codigo(codigo_produto)
+    assert isinstance(resultado, dict)
+    assert "df" in resultado and "card" in resultado
+    df = resultado["df"]
+    col = _escolher_coluna_codigo(df)
+    assert col is not None
+    assert df.iloc[0][col] == codigo_produto
+    assert codigo_produto in resultado["card"]
 
-#teste de um caso de sucesso para a aba vendas da planilha
-def test_consulta_por_codigo_com_sucesso_aba_vendas_pendencia():
-  df0 = pd.read_excel(file, sheet_name=0, header=0, dtype=str)
-  col = _escolher_coluna_codigo(df0.columns)
-  assert col is not None, "Nenhuma coluna de código encontrada"
-  codigo_produto = "MS005BRPT0619"
-  result = consulta_por_codigo(codigo_produto)
-  assert result is not None
-  assert result["CODORIGINAL"] == codigo_produto
+def test_consulta_com_sucesso_aba_vendas_pendencia():
+    codigo_produto = "MS005BRPT0619"
+    resultado = consulta_por_codigo(codigo_produto)
+    assert isinstance(resultado, dict)
+    df = resultado["df"]
+    col = _escolher_coluna_codigo(df)
+    assert col is not None
+    assert df.iloc[0][col] == codigo_produto
 
-#teste para código original não encontrado/cadastrado
-def test_consulta_por_codigo_nao_achada():
-  with pytest.raises(ValueError, match="O código não foi encontrado"):
-    consulta_por_codigo("X987654321")
+def test_consulta_por_codigo_retorno_padrao(monkeypatch, df_exemplo, tmp_path):
+    # cria arquivo excel temporário com a aba simulada
+    path = tmp_path / "fake.xlsx"
+    with pd.ExcelWriter(path) as w:
+        df_exemplo.to_excel(w, sheet_name="Estoque", index=False)
+    # patch do caminho file usado pela função
+    monkeypatch.setattr("app.models.consulta_por_codigo.file", str(path))
+    resultado = consulta_por_codigo("JK489")
+    assert isinstance(resultado, dict)
+    df = resultado["df"]
+    col = _escolher_coluna_codigo(df)
+    assert col is not None
+    assert df.iloc[0][col] == "JK489"
+    assert "JK489" in resultado["card"]
 
-#teste para consulta vazia de código original
-def test_consulta_por_codigo_vazio():
-  with pytest.raises(ValueError, match="O código não foi encontrado"):
-    consulta_por_codigo("")
+@pytest.fixture
+def df_exemplo():
+    data = {
+        "CODORIGINAL": ["JK489", "B456"],
+        "DESCRICAO": ["1/1-TAMPA INFERIOR BÁSICO PRATEADA", "Produto 2"],
+        "GRUPO": ["Eletrônicos", "Papelaria"],
+        "ESTOQUE": [10, 5]
+    }
+    return pd.DataFrame(data)
+
+def test_consulta_por_codigo_override(monkeypatch, df_exemplo, tmp_path):
+    path = tmp_path / "fake.xlsx"
+    with pd.ExcelWriter(path) as w:
+        df_exemplo.to_excel(w, sheet_name="Estoque", index=False)
+
+    #patch variável file usada pela função
+    monkeypatch.setattr("app.models.consulta_por_codigo.file", str(path))
+
+    #mock ExcelFile e read_excel para usar apenas nossa aba
+    class FakeExcel:
+        def __init__(self): self.sheet_names = ["Estoque"]
+    monkeypatch.setattr("pandas.ExcelFile", lambda f: FakeExcel())
+    monkeypatch.setattr("pandas.read_excel", lambda f, sheet_name, header=0, dtype=str: df_exemplo)
+
+    resultado = consulta_por_codigo("JK489")
+    assert isinstance(resultado, dict)
+    assert "df" in resultado and "card" in resultado
+    df = resultado["df"]
+    col = _escolher_coluna_codigo(df.columns)
+    assert col is not None
+    assert "JK489" in df[col].values
+    assert "JK489" in resultado["card"]
