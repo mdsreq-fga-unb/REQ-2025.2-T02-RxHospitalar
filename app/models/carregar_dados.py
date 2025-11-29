@@ -38,87 +38,82 @@ def _norm(s: str) -> str:
 def obter_dados_cascata():
     """
     Retorna (APENAS DA ABA ESTOQUE):
-    1. Lista de todas as Linhas (para o filtro inicial)
-    2. Lista de todas as Sub Linhas (caso nenhuma linha seja selecionada)
-    3. Um Dicionário mapeando Linha -> [Lista de Sub Linhas permitidas]
+    1. Lista de Linhas
+    2. Lista de Sub Linhas
+    3. Mapa de Relacionamento
+    4. Lista de Códigos (NOVO)
     """
     
-    # 1. Tenta abrir o arquivo Excel
     try:
         xls = pd.ExcelFile(file)
     except Exception as e:
         print(f"Erro ao abrir arquivo Excel: {e}")
-        return [], [], {}
+        return [], [], {}, [] # Retorna 4 valores agora
 
     todas_linhas = set()
     todas_sublinhas = set()
+    todos_codigos = set() # NOVO SET
     mapa_relacao = {} 
 
     ALIASES_LINHA = {_norm(x) for x in ["Grupo", "Linha", "Categoria"]}
     ALIASES_SUB_LINHA = {_norm(x) for x in ["Sub Grupo", "Sub Linha", "Sub Grupo Nível 1"]}
+    ALIASES_CODIGO = {_norm(x) for x in ["Cód Produto", "Codigo", "Cod", "Referencia"]} # NOVO ALIAS
     
-    # NOME DA ABA QUE QUEREMOS FIXAR
     TARGET_SHEET = "Estoque"
 
-    # Verifica se a aba existe antes de tentar ler
     if TARGET_SHEET not in xls.sheet_names:
-        print(f"Aviso: Aba '{TARGET_SHEET}' não encontrada no arquivo. Filtros vazios.")
-        return [], [], {}
+        return [], [], {}, []
 
     try:
-        # Leitura otimizada do cabeçalho apenas da aba Estoque
         df_head = pd.read_excel(file, sheet_name=TARGET_SHEET, nrows=0)
         cols_norm = { _norm(c): c for c in df_head.columns }
         
-        # Identifica as colunas dinamicamente
         col_linha = next((cols_norm[k] for k in cols_norm if k in ALIASES_LINHA), None)
         col_sub = next((cols_norm[k] for k in cols_norm if k in ALIASES_SUB_LINHA), None)
+        col_cod = next((cols_norm[k] for k in cols_norm if k in ALIASES_CODIGO), None) # IDENTIFICA COLUNA CÓDIGO
 
         if col_linha:
             cols_to_load = [col_linha]
-            if col_sub:
-                cols_to_load.append(col_sub)
+            if col_sub: cols_to_load.append(col_sub)
+            if col_cod: cols_to_load.append(col_cod) # CARREGA CÓDIGO TAMBÉM
             
-            # Carrega os dados da aba Estoque
+            # Carrega dados como string para evitar erros de comparação
             df = pd.read_excel(file, sheet_name=TARGET_SHEET, usecols=cols_to_load, dtype=str)
             
-            # Normaliza e limpa a coluna de Linha
+            # ... (Lógica existente de Linha e Sublinha permanece igual) ...
             df = df.dropna(subset=[col_linha])
             df[col_linha] = df[col_linha].str.strip()
-            
-            # Adiciona ao conjunto geral de linhas
             todas_linhas.update(df[col_linha].unique())
 
             if col_sub:
-                # Limpa a coluna de Sub Linha
                 df[col_sub] = df[col_sub].str.strip()
-                
-                # Adiciona ao conjunto geral de sublinhas
                 subs_validas = df[col_sub].dropna().unique()
                 todas_sublinhas.update(subs_validas)
 
-                # CONSTRUÇÃO DO MAPA (RELACIONAMENTO)
                 for linha, grupo in df.groupby(col_linha):
                     sublinhas_do_grupo = set(grupo[col_sub].dropna().unique())
-                    
                     if linha not in mapa_relacao:
                         mapa_relacao[linha] = sublinhas_do_grupo
                     else:
                         mapa_relacao[linha].update(sublinhas_do_grupo)
+            
+            # LÓGICA NOVA: Extrair códigos
+            if col_cod:
+                # Remove .0 se vier do Excel como float convertido pra string, tira espaços
+                codigos_limpos = df[col_cod].dropna().astype(str).str.strip().str.replace(r'\.0$', '', regex=True)
+                todos_codigos.update(codigos_limpos.unique())
 
     except Exception as e:
         print(f"Erro ao processar aba {TARGET_SHEET}: {e}")
 
-    # Converte os sets para listas ordenadas para o Frontend
     lista_linhas = sorted([l for l in todas_linhas if l]) 
     lista_sublinhas = sorted([s for s in todas_sublinhas if s])
-    
-    # Converte os sets do mapa para listas ordenadas também
     mapa_final = {k: sorted(list(v)) for k, v in mapa_relacao.items()}
+    
+    # Retorna lista de códigos ordenada
+    lista_codigos = sorted([c for c in todos_codigos if c])
 
-    return lista_linhas, lista_sublinhas, mapa_final
-
-# ... (mantenha os imports e variáveis anteriores)
+    return lista_linhas, lista_sublinhas, mapa_final, lista_codigos
 
 def carregar_dados_unificados():
     """
