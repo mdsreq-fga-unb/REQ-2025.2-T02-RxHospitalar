@@ -17,8 +17,3 @@ sidebar_position: 1
   ></iframe>
 </div>
 
-### Histórico de Versão
-
-| Data       | Versão | Descrição                              | Autor(es)      | 
-| ---------- | ------ | -------------------------------------- | -------------- | 
-| 16/09/2025 | 1.0    | Criação inicial da página de entregas. | Gabriel Augusto | 
