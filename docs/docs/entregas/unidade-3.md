@@ -49,8 +49,13 @@ A figura abaixo mostra um exemplo da organização das atualizações na daily p
 <img src={useBaseUrl('/img/dailies_assincronas.png')} alt="Tasks no GitHub Projects" />
 *Fonte: De autoria própria.*
 
-### Histórico de Versão
+### Uso do Miro
+Usamos o Miro para confecção das atividades referentes aos estudos de caso e planejamento do projeto.
 
-| Data       | Versão | Descrição                              | Autor(es)      | 
-| ---------- | ------ | -------------------------------------- | -------------- | 
-| 18/11/2025 | 1.0    | Criação inicial da página de entregas. | Davi do Egito | 
+#### **Quadro destinado às Sprints**
+A figura abaixo mostra um exemplo de retrospectiva de uma Sprint
+<a id="retrospective_miro"></a>
+*Figura 5: Retrospectiva de uma Sprint no Miro*
+<img src={useBaseUrl('/img/rrp1.png')} alt="Retrospectiva no Miro" />
+*Fonte: De autoria própria.*
+
