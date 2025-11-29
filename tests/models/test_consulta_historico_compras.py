@@ -9,7 +9,7 @@ def workbook_historico_cliente(monkeypatch):
         {
             "CLIENTE": ["C1"] * 12 + ["C2"],
             "CODPRODUTO": [f"P{i}" for i in range(12)] + ["P99"],
-            "DATA": pd.date_range("2024-01-01", periods=13, freq="D").strftime("%Y-%m-%d"),
+            "DATASTATUS": pd.date_range("2024-01-01", periods=13, freq="D").strftime("%Y-%m-%d"),
             "QUANTIDADE": [1] * 13,
         }
     )

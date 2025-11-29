@@ -8,7 +8,7 @@ import app.models.carregar_dados as carregardados
 def _mock_book_clientes(monkeypatch, df_vendas):
     # mesma ideia do _mock_book: monkeypatch em pd.read_excel ou no dataloader
     def fake_read_excel(file, sheet_name=None, *args, **kwargs):
-        if sheet_name == "Vendas":
+        if sheet_name == "Vendas_Pendencia":
             return df_vendas
         raise ValueError("Sheet não mockada")
 
@@ -33,8 +33,8 @@ def test_rf08_top5_clientes_por_produto(workbook_clientes_produto):
     assert len(df_result) <= 5
 
     # Verifica colunas esperadas
-    assert set(df_result.columns) == {"Cliente", "Quantidade"}
+    assert set(df_result.columns) == {"Cliente", "QUANTIDADE"}
 
     # Clientes de P1 são C1 (5+2=7) e C2 (3)
     assert list(df_result["Cliente"]) == ["C1", "C2"]
-    assert list(df_result["Quantidade"]) == [7, 3]
+    assert list(df_result["QUANTIDADE"]) == [7, 3]

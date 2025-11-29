@@ -11,9 +11,9 @@ def workbook_performance_vendedor(monkeypatch):
 
     df_vendas = pd.DataFrame(
         {
-            "VENDEDOR": ["V1", "V2", "V3", "V1", "V4", "V5"],
+            "CODVENDEDOR": ["V1", "V2", "V3", "V1", "V4", "V5"],
             "CODPRODUTO": ["P1", "P1", "P2", "P3", "P4", "P5"],
-            "DATA": [
+            "DATASTATUS": [
                 mes_atras.strftime("%Y-%m-%d"),   # dentro da janela
                 hoje.strftime("%Y-%m-%d"),        # dentro da janela
                 dois_meses_atras.strftime("%Y-%m-%d"),  # fora da janela
@@ -30,13 +30,13 @@ def workbook_performance_vendedor(monkeypatch):
 def test_rf10_top5_vendedores_ultimo_mes(workbook_performance_vendedor):
     df_perf = consulta_performance()
 
-    # Máx. 5 vendedores
+    # 5 vendedores no máximo
     assert len(df_perf) <= 5
 
-    # Colunas esperadas
-    assert set(df_perf.columns) == {"Vendedor", "Quantidade"}
+    #colunas esperadas
+    assert set(df_perf.columns) == {"CODVENDEDOR", "QUANTIDADE"}
 
-    # V3 vendeu só fora da janela, então não deve aparecer
-    assert "V3" not in df_perf["Vendedor"].tolist()
+    #V3 vendeu só fora da janela, então não deve aparecer
+    assert "V3" not in df_perf["CODVENDEDOR"].tolist()
 
-    # V1, V2, V4, V5 aparecem com as somas corretas dentro do período
+    #V1, V2, V4, V5 aparecem com as somas corretas dentro do período
