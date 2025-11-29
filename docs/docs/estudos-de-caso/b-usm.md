@@ -20,6 +20,8 @@ A EcoMove é uma startup fictícia voltada à mobilidade urbana sustentável com
 
 ## Atividades principais e user stories 
 
+<iframe width="768" height="432" src="https://miro.com/app/live-embed/uXjVJxdHdLc=/?embedMode=view_only_without_ui&moveToViewport=-788,2154,4225,2181&embedId=701030004993" frameborder="0" scrolling="no" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen></iframe>
+
 [**Link de redirecionamento para o USM no Miro**](https://miro.com/app/board/uXjVJxdHdLc=/?share_link_id=869782407306)
 
 ### Usuário urbano (Lucas)
