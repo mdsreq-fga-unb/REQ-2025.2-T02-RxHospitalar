@@ -5,6 +5,7 @@ from tests.models.test_consulta_principais_clientes import _mock_book_clientes
 import app.models.carregar_dados as carregar_dados 
 from app.models.carregar_dados import file
 
+#teste geral para o requisito
 def test_historico_compras_real_cliente():
     cliente = "UNIMED GOIANIA COOPERATIVA DE TRABALHO MEDICO"  
 
@@ -47,12 +48,13 @@ def workbook_historico_cliente(monkeypatch):
     _mock_book_clientes(monkeypatch, df_vendas)
     return df_vendas
 
-def test_rf09_ultimas_10_compras(workbook_historico_cliente):
+#teste do mock para verificar os critérios de aceitação do requisito
+def test_ultimas_10_compras(workbook_historico_cliente):
     df_hist = consulta_historico_compras("C1")
 
-    # Deve retornar no máximo 10
+    #deve retornar no máximo 10
     assert len(df_hist) == 10
 
-    # Verifica ordenação (da mais recente para a mais antiga)
+    #verifica ordenação (da mais recente para a mais antiga)
     datas = pd.to_datetime(df_hist["DATASTATUS"])
     assert datas.is_monotonic_decreasing

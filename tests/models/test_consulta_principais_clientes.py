@@ -6,6 +6,7 @@ from app.models.consulta_principais_clientes import consulta_principais_clientes
 import app.models.carregar_dados as carregar_dados 
 from app.models.carregar_dados import file
 
+#teste para garantir até 5 resultados para o produto com código 28815
 def test_consulta_5_clientes():
     df_result = consulta_principais_clientes("28815")
 
@@ -51,15 +52,16 @@ def workbook_clientes_produto(monkeypatch):
     _mock_book_clientes(monkeypatch, df_vendas)
     return df_vendas
 
+#mais um teste para o mock segundo os critérios de aceitação do requisito
 def test_rf08_top5_clientes_por_produto(workbook_clientes_produto):
     df_result = consulta_principais_clientes("P1")
 
-    # Deve trazer no máximo 5 linhas
+    #deve trazer no máximo 5 linhas
     assert len(df_result) <= 5
 
-    # Verifica colunas esperadas
+    #verifica colunas esperadas
     assert set(df_result.columns) == {"RAZAOSOCIAL", "QUANTIDADE"}
 
-    # Clientes de P1 são C1 (5+2=7) e C2 (3)
+    #clientes de P1 são C1 (5+2=7) e C2 (3)
     assert list(df_result["RAZAOSOCIAL"]) == ["C1", "C2"]
     assert list(df_result["QUANTIDADE"]) == [7, 3]

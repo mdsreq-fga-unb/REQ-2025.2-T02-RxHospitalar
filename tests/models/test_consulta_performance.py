@@ -6,6 +6,7 @@ from datetime import datetime
 from app.models.consulta_performance import consulta_performance
 import app.models.carregar_dados as carregar_dados
 
+#teste para todos os aspectos da venda e performance
 def test_performance_vendedor_real():
     df_perf = consulta_performance()
 
@@ -82,10 +83,11 @@ def workbook_performance_vendedor(monkeypatch):
     _mock_book_clientes(monkeypatch, df_vendas)
     return df_vendas
 
+#mais um teste para o mock considerando os critérios de aceitação do requisito
 def test_rf10_top5_vendedores_ultimo_mes(workbook_performance_vendedor):
     df_perf = consulta_performance()
 
-    # 5 vendedores no máximo
+    #5 vendedores no máximo
     assert len(df_perf) <= 5
 
     #colunas esperadas

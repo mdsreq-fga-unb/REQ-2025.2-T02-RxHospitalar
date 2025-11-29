@@ -3,9 +3,10 @@ import pandas as pd
 from app.models.carregar_dados import file
 
 def consulta_principais_clientes(codproduto: str, limite: int = 5) -> pd.DataFrame:
+    #carrega vendas
     df_vendas = pd.read_excel(file, sheet_name="Vendas_Pendencia", dtype=str)
 
-    #garante coluna quantitativa
+    #garante coluna quantitativa para cálculo
     df_vendas["QUANTIDADE"] = df_vendas["QUANTIDADE"].astype(float)
 
     #filtra produto
@@ -22,5 +23,6 @@ def consulta_principais_clientes(codproduto: str, limite: int = 5) -> pd.DataFra
         .reset_index()
     )
 
+    #renomeia colunas finais
     grouped.columns = ["RAZAOSOCIAL", "QUANTIDADE"]
     return grouped
