@@ -19,7 +19,7 @@ def workbook_clientes_produto(monkeypatch):
     df_vendas = pd.DataFrame(
         {
             "CODPRODUTO": ["P1", "P1", "P1", "P2", "P2"],
-            "CLIENTE": ["C1", "C2", "C1", "C3", "C1"],
+            "RAZAOSOCIAL": ["C1", "C2", "C1", "C3", "C1"],
             "QUANTIDADE": [5, 3, 2, 10, 1],
         }
     )
@@ -33,8 +33,8 @@ def test_rf08_top5_clientes_por_produto(workbook_clientes_produto):
     assert len(df_result) <= 5
 
     # Verifica colunas esperadas
-    assert set(df_result.columns) == {"Cliente", "QUANTIDADE"}
+    assert set(df_result.columns) == {"RAZAOSOCIAL", "QUANTIDADE"}
 
     # Clientes de P1 são C1 (5+2=7) e C2 (3)
-    assert list(df_result["Cliente"]) == ["C1", "C2"]
+    assert list(df_result["RAZAOSOCIAL"]) == ["C1", "C2"]
     assert list(df_result["QUANTIDADE"]) == [7, 3]

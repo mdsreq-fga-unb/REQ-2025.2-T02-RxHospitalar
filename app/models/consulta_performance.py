@@ -12,7 +12,7 @@ def consulta_performance(limite: int = 5) -> pd.DataFrame:
     hoje = pd.Timestamp(datetime.today().date())
     um_mes_atras = hoje - pd.DateOffset(months=1)
 
-    mask_periodo = (df_vendas["DATASTATUS"] >= um_mes_atras) & (df_vendas["DATA"] <= hoje)
+    mask_periodo = (df_vendas["DATASTATUS"] >= um_mes_atras) & (df_vendas["DATASTATUS"] <= hoje)
     df_periodo = df_vendas[mask_periodo].copy()
 
     if df_periodo.empty:
