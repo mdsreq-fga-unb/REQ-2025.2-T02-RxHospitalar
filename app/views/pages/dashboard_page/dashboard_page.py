@@ -7,9 +7,10 @@ import re
 
 from app.views.components.navbar import Header
 from app.views.components.estoque_filters import EstoqueFilterFrame, setup_styles
-# IMPORT ATUALIZADO:
 from app.models.carregar_dados import carregar_dados_unificados 
 from app.views.components.analytical_summary import AnalyticalSummary 
+from app.views.components.purchase_suggestions import PurchaseSuggestions
+from app.controllers.chamadas import sugestao_compra 
 
 def _norm(s):
     if not isinstance(s, str): return str(s)
@@ -85,6 +86,10 @@ class DashboardView(ttk.Frame):
         )
         self.title_label.pack(anchor="w", pady=(0, 20))
 
+        # Sugestões de Compra
+        self.purchase_suggestions = PurchaseSuggestions(self.inner_content)
+        self.purchase_suggestions.pack(fill="x", pady=(0, 20))
+
         # Resumo Analítico
         self.analytical_summary = AnalyticalSummary(self.inner_content)
         self.analytical_summary.pack(fill="x", pady=(0, 20))
@@ -94,13 +99,20 @@ class DashboardView(ttk.Frame):
         self.frame_tabela_container.pack(fill="both", expand=True)
         self.frame_tabela_container.pack_propagate(False) # Garante que a altura seja respeitada
 
-        # LÓGICA ATUALIZADA:
         if not hasattr(self.controller, 'df_master') or \
            (isinstance(self.controller.df_master, pd.DataFrame) and self.controller.df_master.empty):
             
             print("Carregando e unificando dados...")
             # Chama a função que cruza as tabelas
             self.controller.df_master = carregar_dados_unificados()
+
+        # Carregar sugestões iniciais (sem filtro de linha, ou seja, tudo)
+        try:
+            # Periodo padrão de 4 meses se não especificado
+            df_sugestoes = sugestao_compra(linha=None, periodo=4)
+            self.purchase_suggestions.update_cards(df_sugestoes)
+        except Exception as e:
+            print(f"Erro ao carregar sugestões de compra: {e}")
 
         self.render_dataframe_table(self.controller.df_master)
 
@@ -159,6 +171,22 @@ class DashboardView(ttk.Frame):
         if val_cod := filter_data.get("codigo"):
             if col_cod:
                 df_filtered = df_filtered[df_filtered[col_cod].astype(str).str.contains(val_cod, case=False, na=False)]
+
+        # Atualizar Sugestões de Compra com base nos filtros
+        try:
+            # Tenta pegar o período do filtro ou usa 4 como padrão
+            periodo_str = filter_data.get("periodo", "4 Meses")
+            # Extrai apenas o número do período (ex: "4 Meses" -> 4)clear
+            match = re.search(r'\d+', str(periodo_str))
+            periodo_val = int(match.group()) if match else 4
+            
+            # Se tiver linha selecionada, passa para a função. Se não, passa None (carrega tudo)
+            linha_para_sugestao = val_linha if val_linha else None
+            
+            df_sugestoes = sugestao_compra(linha=linha_para_sugestao, periodo=periodo_val)
+            self.purchase_suggestions.update_cards(df_sugestoes)
+        except Exception as e:
+            print(f"Erro ao atualizar sugestões de compra: {e}")
 
         self.render_dataframe_table(df_filtered)
 
