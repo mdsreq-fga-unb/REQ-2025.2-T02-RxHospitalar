@@ -12,6 +12,9 @@ PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(BASE_DIR)))
 # endereço planilha excel 
 file = os.path.join(PROJECT_ROOT, "data", "planilha_de_dados.xlsx")
 
+#tal qual consta na RNF03, a importação do arquivo só funcionará com .xlsx ou .csv
+SUPPORTED_EXT = {".xlsx", ".csv"}
+
 #Usada em RF07
 #funcao para carregar dados das linhas com filtro de colunas
 def carregar_dados_por_colunas(sheet_name: str, columns, linha=None, coluna=None):
@@ -42,15 +45,74 @@ def carregar_dados_por_colunas(sheet_name: str, columns, linha=None, coluna=None
         print(f"[ERRO] Ocorreu um problema ao carregar a planilha: {e}")
         return pd.DataFrame()
 
+def importar_arquivo(caminho: str, required_sheets: dict[str, list[str]] | None = None, check_integrity: bool = False) -> dict:
+    """
+    Importa .xlsx ou .csv validando:
+      - extensão suportada (.xlsx ou .csv)
+      - presença de abas (XLSX) e colunas obrigatórias
+      - integridade (opcional): compara contagem de linhas e soma de colunas numéricas definidas no template
+    Parâmetros:
+      caminho: str -> caminho do arquivo
+      required_sheets: dict -> {"Estoque": ["Cód Original","Estoque"], "__csv__": ["Cód Original", ...]}
+      check_integrity: bool -> se True, adiciona 'integrity' com métricas
+    Retorno:
+      {
+        ok: bool,
+        erro: str | None,
+        data: {nome_aba: DataFrame},
+        integrity: {aba: {"rows": int, "sums": {col: valor}}} (se check_integrity=True)
+      }
+    """
+    p = Path(caminho).expanduser().resolve()
+    if not p.exists():
+        return {"ok": False, "erro": f"Importação: arquivo não encontrado: {p}", "data": {}}
+    ext = p.suffix.lower()
+    if ext not in SUPPORTED_EXT:
+        return {"ok": False, "erro": f"Importação: formato inválido '{ext}'. Aceitos: {', '.join(SUPPORTED_EXT)}", "data": {}}
+    integrity = {}
+    try:
+        if ext == ".csv":
+            df = pd.read_csv(p)
+            if required_sheets and "__csv__" in required_sheets:
+                faltando = [c for c in required_sheets["__csv__"] if c not in df.columns]
+                if faltando:
+                    return {"ok": False, "erro": f"Importação: colunas faltando no CSV: {faltando}", "data": {}}
+            if check_integrity and "__csv__" in (required_sheets or {}):
+                sums = {}
+                for col in required_sheets["__csv__"]:
+                    if col in df.columns and pd.api.types.is_numeric_dtype(df[col]):
+                        sums[col] = pd.to_numeric(df[col], errors="coerce").sum()
+                integrity["__csv__"] = {"rows": len(df), "sums": sums}
+            return {"ok": True, "erro": None, "data": {"__csv__": df}, "integrity": integrity if check_integrity else None}
 
+        xls = pd.ExcelFile(p)
+        data = {}
+        if required_sheets:
+            faltam_abas = [s for s in required_sheets if s not in xls.sheet_names and s != "__csv__"]
+            if faltam_abas:
+                return {"ok": False, "erro": f"Importação: abas faltando: {faltam_abas}", "data": {}}
 
-#exemplo de uso
+        for sheet in xls.sheet_names:
+            df_sheet = pd.read_excel(p, sheet_name=sheet, dtype=str)
+            if required_sheets and sheet in required_sheets:
+                faltando_cols = [c for c in required_sheets[sheet] if c not in df_sheet.columns]
+                if faltando_cols:
+                    return {"ok": False, "erro": f"Importação: aba '{sheet}' com colunas faltando: {faltando_cols}", "data": {}}
+            data[sheet] = df_sheet
 
-#sheet_test = "Vendas_Pendencia"
-#cols_test = ["OPERADOR", "CODPRODUTO", "NOTAFISCAL"]
+            if check_integrity and required_sheets and sheet in required_sheets:
+                sums = {}
+                for col in required_sheets[sheet]:
+                    if col in df_sheet.columns:
+                        # converte para numérico se possível e soma; se não for numérico, ignora (NaN vira 0)
+                        serie_num = pd.to_numeric(df_sheet[col], errors="coerce")
+                        if serie_num.notna().any():
+                            sums[col] = float(serie_num.sum())
+                integrity[sheet] = {"rows": int(len(df_sheet)), "sums": sums}
 
-#df_test = carregar_dados_por_colunas(sheet_test, cols_test)
-
+        return {"ok": True, "erro": None, "data": data, "integrity": integrity if check_integrity else None}
+    except Exception as e:
+        return {"ok": False, "erro": f"Importação: falha ao importar: {e}", "data": {}}
 
 #funcao para encontrar a pasta de dados no Projeto
 def find_data_dir(max_levels=6) -> Path:
