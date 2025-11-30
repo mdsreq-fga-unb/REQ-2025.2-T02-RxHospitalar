@@ -20,7 +20,7 @@ def sugestao_compra(linha: str, periodo):
     # 1. Carregar vendas pendentes
     # ============================
     sheet = "Vendas_Pendencia"
-    cols = ["GRUPO", "CODORIGINAL", "DATASTATUS", "QUANTIDADE", "INDICADOR_3"]
+    cols = ["GRUPO", "CODORIGINAL", "DATASTATUS", "QUANTIDADE", "INDICADOR"]
     linha_aux = linha
     coluna = "GRUPO"
 

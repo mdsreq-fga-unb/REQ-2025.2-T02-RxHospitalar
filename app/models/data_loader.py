@@ -18,7 +18,14 @@ def load_selected_columns( sheet_name: str, columns):
         df = pd.read_excel(file, sheet_name=sheet_name, usecols=columns)
         
         if isinstance(df, dict):
-            df_master = pd.concat(df.values(), ignore_index=True)
+            # Filter out empty DataFrames to avoid FutureWarning
+            valid_dfs = [d for d in df.values() if not d.empty]
+            
+            if valid_dfs:
+                df_master = pd.concat(valid_dfs, ignore_index=True)
+            else:
+                df_master = pd.DataFrame()
+                
             return df_master
         
         return df

@@ -18,7 +18,8 @@ def separar_quantidade_por_data(df, n_meses):
     # 1. Normalização de datas
     # ==============================
     df["DATA_NORMALIZADA"] = pd.to_datetime(
-        df["INDICADOR_3"], 
+        df["INDICADOR"], 
+        format="%d/%m/%Y",
         dayfirst=True, 
         errors="coerce"
     )
@@ -26,6 +27,7 @@ def separar_quantidade_por_data(df, n_meses):
     mask_falha = df["DATA_NORMALIZADA"].isna()
     df.loc[mask_falha, "DATA_NORMALIZADA"] = pd.to_datetime(
         df.loc[mask_falha, "DATASTATUS"],
+        format="%Y-%m-%d",
         dayfirst=True,
         errors="coerce"
     )
