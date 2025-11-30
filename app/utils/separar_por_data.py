@@ -7,47 +7,53 @@ from dateutil.relativedelta import relativedelta
 #Usada em RF07
 def separar_quantidade_por_data(df, n_meses):
     """
-    Processa datas usando INDICADOR_3 como prioridade.
-    Se INDICADOR_3 não puder ser interpretado como data,
-    tenta usar DATASTATUS.
+    Processa as datas, filtra últimos n meses, agrupa por CODORIGINAL e retorna
+    uma tabela contendo as colunas mensais, média e também a coluna GRUPO.
     """
 
-    # 1. Tentativa 1: converter INDICADOR_3
+    # Garante uma cópia para evitar SettingWithCopyWarning
+    df = df.copy()
+
+    # ==============================
+    # 1. Normalização de datas
+    # ==============================
     df["DATA_NORMALIZADA"] = pd.to_datetime(
-        df["INDICADOR_3"], 
+        df["INDICADOR"], 
+        format="%d/%m/%Y",
         dayfirst=True, 
         errors="coerce"
     )
 
-    # 2. Tentativa 2: onde INDICADOR_3 falhou, usar DATASTATUS
     mask_falha = df["DATA_NORMALIZADA"].isna()
-
     df.loc[mask_falha, "DATA_NORMALIZADA"] = pd.to_datetime(
         df.loc[mask_falha, "DATASTATUS"],
+        format="%Y-%m-%d",
         dayfirst=True,
         errors="coerce"
     )
 
-    # 3. Agora remove qualquer linha onde as duas opções falharam
-    df = df.dropna(subset=["DATA_NORMALIZADA"])
+    df = df.dropna(subset=["DATA_NORMALIZADA"]).copy()
 
-    # 4. Criar coluna MES_ANO
+    # Coluna MES_ANO
     df["MES_ANO"] = df["DATA_NORMALIZADA"].dt.strftime("%m/%Y")
 
-    # 5. Gerar lista dos últimos n meses
+    # ==============================
+    # 2. Últimos n meses
+    # ==============================
     hoje = datetime.today()
-    meses = []
-    for i in range(1, n_meses + 1):
-        m = hoje - relativedelta(months=i)
-        meses.append(m.strftime("%m/%Y"))
+    meses = [(hoje - relativedelta(months=i)).strftime("%m/%Y") for i in range(1, n_meses + 1)]
 
-    # 6. Filtrar só meses desejados
     df = df[df["MES_ANO"].isin(meses)]
-
-    # 7. Ignorar quantidades negativas
     df = df[df["QUANTIDADE"] > 0]
 
-    # 8. Pivotar
+    # ==============================
+    # 3. Guardar coluna GRUPO por código
+    # ==============================
+    grupos = df[["CODORIGINAL", "GRUPO"]].drop_duplicates()
+
+    # ==============================
+    # 4. Pivot por mês
+    # ==============================
     tabela = df.pivot_table(
         index="CODORIGINAL",
         columns="MES_ANO",
@@ -56,14 +62,25 @@ def separar_quantidade_por_data(df, n_meses):
         fill_value=0
     )
 
-    # 9. Garantir todas as colunas
+    # Garantir todas as colunas (meses)
     for mes in meses:
         if mes not in tabela.columns:
             tabela[mes] = 0
 
-    tabela = tabela[meses]  # ordena as colunas
+    tabela = tabela[meses]  # Ordena colunas
 
-    # 10. Média mensal
+    # Média mensal
     tabela["MEDIA_MENSAL"] = tabela.mean(axis=1)
 
-    return tabela.reset_index()
+    tabela = tabela.reset_index()
+
+    # ==============================
+    # 5. Recolocar GRUPO no resultado final
+    # ==============================
+    tabela = tabela.merge(grupos, on="CODORIGINAL", how="left")
+
+    # Deixar GRUPO como segunda coluna (ficar organizado)
+    cols = ["CODORIGINAL", "GRUPO"] + [c for c in tabela.columns if c not in ["CODORIGINAL", "GRUPO"]]
+    tabela = tabela[cols]
+
+    return tabela

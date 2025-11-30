@@ -9,8 +9,11 @@ from app.views.components.estoque_filters import EstoqueFilterFrame
 
 from app.views.components.navbar import Header
 from app.views.components.estoque_filters import EstoqueFilterFrame, setup_styles
-# IMPORT ATUALIZADO:
 from app.models.carregar_dados import carregar_dados_unificados 
+from app.views.components.analytical_summary import AnalyticalSummary 
+from app.views.components.purchase_suggestions import PurchaseSuggestions
+from app.controllers.chamadas import sugestao_compra 
+from pandastable import Table
 
 def _norm(s):
     if not isinstance(s, str): return str(s)
@@ -19,7 +22,6 @@ def _norm(s):
     s = re.sub(r"[^\w]+", " ", s).lower().strip()
     return s.replace(" ", "")
 
-from pandastable import Table
 
 class DashboardView(ttk.Frame):
     def __init__(self, parent, controller):
@@ -44,28 +46,63 @@ class DashboardView(ttk.Frame):
         self.filters = EstoqueFilterFrame(self.sidebar_container, on_filter_callback=self.apply_filters)
         self.filters.pack(fill="both", expand=True, padx=10, pady=(85, 10))
 
-        self.content_area = ttk.Frame(self.body_frame)
-        self.content_area.grid(row=0, column=1, sticky="nsew", padx=20, pady=20)
+        # --- ÁREA DE CONTEÚDO COM SCROLL ---
+        # Container principal da direita (onde ficará o canvas)
+        self.right_container = ttk.Frame(self.body_frame)
+        self.right_container.grid(row=0, column=1, sticky="nsew", padx=0, pady=0)
         
+        self.right_container.rowconfigure(0, weight=1)
+        self.right_container.columnconfigure(0, weight=1)
+
+        # Canvas e Scrollbar
+        self.canvas = tk.Canvas(self.right_container, background="#1e1e1e", highlightthickness=0)
+        self.scrollbar = ttk.Scrollbar(self.right_container, orient="vertical", command=self.canvas.yview)
+        
+        self.canvas.grid(row=0, column=0, sticky="nsew")
+        self.scrollbar.grid(row=0, column=1, sticky="ns")
+        
+        self.canvas.configure(yscrollcommand=self.scrollbar.set)
+
+        # Frame interno que vai dentro do Canvas (onde ficam os widgets reais)
+        self.content_area = ttk.Frame(self.canvas)
+        
+        # Janela do canvas
+        self.canvas_window = self.canvas.create_window((0, 0), window=self.content_area, anchor="nw")
+
+        # Configurações de redimensionamento do Canvas
+        self.content_area.bind("<Configure>", self._on_frame_configure)
+        self.canvas.bind("<Configure>", self._on_canvas_configure)
+        
+        # Bind do Mousewheel
+        self.bind_all("<MouseWheel>", self._on_mousewheel)
+
+        # --- CONTEÚDO DO DASHBOARD ---
+        # Adicionando padding no frame interno
+        self.inner_content = ttk.Frame(self.content_area)
+        self.inner_content.pack(fill="both", expand=True, padx=20, pady=20)
+
         self.title_label = ttk.Label(
-            self.content_area,
-            text="Planilha de dados",
+            self.inner_content,
+            text="Dashboard Unificado (Vendas + Estoque)",
             font=("Segoe UI", 24, "bold"),
             foreground="white",
             background="#1e1e1e"
         )
         self.title_label.pack(anchor="w", pady=(0, 20))
 
-        # Container da Tabela
-        self.frame_tabela_container = ttk.Frame(self.content_area, style="Card.TFrame")
-        self.frame_tabela_container.pack(fill="both", expand=True)
-        
-        self.pt_widget = None
+        # Sugestões de Compra
+        self.purchase_suggestions = PurchaseSuggestions(self.inner_content)
+        self.purchase_suggestions.pack(fill="x", pady=(0, 20))
 
-    def tkraise(self, aboveThis=None):
-        super().tkraise(aboveThis)
-        
-        # LÓGICA ATUALIZADA:
+        # Resumo Analítico
+        self.analytical_summary = AnalyticalSummary(self.inner_content)
+        self.analytical_summary.pack(fill="x", pady=(0, 20))
+
+        # Container da Tabela (Com altura mínima garantida)
+        self.frame_tabela_container = ttk.Frame(self.inner_content, style="Card.TFrame", height=600)
+        self.frame_tabela_container.pack(fill="both", expand=True)
+        self.frame_tabela_container.pack_propagate(False) # Garante que a altura seja respeitada
+
         if not hasattr(self.controller, 'df_master') or \
            (isinstance(self.controller.df_master, pd.DataFrame) and self.controller.df_master.empty):
             
@@ -73,9 +110,21 @@ class DashboardView(ttk.Frame):
             # Chama a função que cruza as tabelas
             self.controller.df_master = carregar_dados_unificados()
 
+        # Carregar sugestões iniciais (sem filtro de linha, ou seja, tudo)
+        try:
+            # Periodo padrão de 4 meses se não especificado
+            df_sugestoes = sugestao_compra(linha=None, periodo=4)
+            self.purchase_suggestions.update_cards(df_sugestoes)
+        except Exception as e:
+            print(f"Erro ao carregar sugestões de compra: {e}")
+
         self.render_dataframe_table(self.controller.df_master)
 
     def render_dataframe_table(self, df):
+        # Atualiza os cards de resumo
+        if hasattr(self, 'analytical_summary'):
+            self.analytical_summary.update_metrics(df)
+            
         for widget in self.frame_tabela_container.winfo_children():
             widget.destroy()
 
@@ -127,4 +176,34 @@ class DashboardView(ttk.Frame):
             if col_cod:
                 df_filtered = df_filtered[df_filtered[col_cod].astype(str).str.contains(val_cod, case=False, na=False)]
 
+        # --- ATUALIZA SUGESTÕES DE COMPRA ---
+        # Recalcula as sugestões baseadas na LINHA selecionada (se houver)
+        try:
+            print(f"DEBUG: apply_filters called with: {filter_data}")
+            
+            # Tenta pegar o período do filtro ou usa 4 como padrão
+            periodo_str = filter_data.get("periodo", "4 Meses")
+            match = re.search(r'\d+', str(periodo_str))
+            periodo_val = int(match.group()) if match else 4
+            
+            linha_para_sugestao = val_linha if val_linha else None
+            print(f"DEBUG: Calling sugestao_compra with linha={linha_para_sugestao}, periodo={periodo_val}")
+            
+            df_sugestoes = sugestao_compra(linha=linha_para_sugestao, periodo=periodo_val)
+            self.purchase_suggestions.update_cards(df_sugestoes)
+        except Exception as e:
+            print(f"Erro ao atualizar sugestões de compra com filtro: {e}")
+
         self.render_dataframe_table(df_filtered)
+
+    def _on_frame_configure(self, event):
+        """Reseta a região de scroll para englobar o frame interno"""
+        self.canvas.configure(scrollregion=self.canvas.bbox("all"))
+
+    def _on_canvas_configure(self, event):
+        """Redimensiona a janela interna para a largura do canvas"""
+        self.canvas.itemconfig(self.canvas_window, width=event.width)
+
+    def _on_mousewheel(self, event):
+        if self.winfo_viewable():
+            self.canvas.yview_scroll(int(-1*(event.delta/120)), "units")
