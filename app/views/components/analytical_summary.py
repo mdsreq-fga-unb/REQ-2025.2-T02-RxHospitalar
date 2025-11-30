@@ -7,9 +7,18 @@ class AnalyticalSummary(ttk.Frame):
         super().__init__(parent, style="Card.TFrame", padding=15)
         
         # Title
-        title_lbl = ttk.Label(self, text="Resumo Analítico:", font=("Segoe UI", 12, "bold"), 
-                              foreground="#1e1e1e", background="#F4F9F4")
-        title_lbl.pack(anchor="w", pady=(0, 10))
+        self.title_label = ttk.Label(
+            self, 
+            text="Resumo Analítico", 
+            font=("Segoe UI", 16, "bold"),
+            foreground="#343A40",
+            background="#F4F9F4"
+        )
+        self.title_label.pack(anchor="w", padx=20, pady=(20, 10))
+
+         # Separator
+        separator = ttk.Separator(self, orient="horizontal")
+        separator.pack(fill="x", padx=20, pady=(0, 20))
         
         # Configure styles
         style = ttk.Style()
