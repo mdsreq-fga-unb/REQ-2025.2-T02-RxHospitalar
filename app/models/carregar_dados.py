@@ -45,32 +45,20 @@ def carregar_dados_por_colunas(sheet_name: str, columns, linha=None, coluna=None
         print(f"[ERRO] Ocorreu um problema ao carregar a planilha: {e}")
         return pd.DataFrame()
 
+#função usada para os critérios de aceitação da RNF03 - Compatibilidade
 def importar_arquivo(caminho: str, required_sheets: dict[str, list[str]] | None = None, check_integrity: bool = False) -> dict:
-    """
-    Importa .xlsx ou .csv validando:
-      - extensão suportada (.xlsx ou .csv)
-      - presença de abas (XLSX) e colunas obrigatórias
-      - integridade (opcional): compara contagem de linhas e soma de colunas numéricas definidas no template
-    Parâmetros:
-      caminho: str -> caminho do arquivo
-      required_sheets: dict -> {"Estoque": ["Cód Original","Estoque"], "__csv__": ["Cód Original", ...]}
-      check_integrity: bool -> se True, adiciona 'integrity' com métricas
-    Retorno:
-      {
-        ok: bool,
-        erro: str | None,
-        data: {nome_aba: DataFrame},
-        integrity: {aba: {"rows": int, "sums": {col: valor}}} (se check_integrity=True)
-      }
-    """
+    
+    #o caminho para importação
     p = Path(caminho).expanduser().resolve()
     if not p.exists():
         return {"ok": False, "erro": f"Importação: arquivo não encontrado: {p}", "data": {}}
     ext = p.suffix.lower()
+    # Se ext não estiver nas extensões suportadas pelo sistema
     if ext not in SUPPORTED_EXT:
         return {"ok": False, "erro": f"Importação: formato inválido '{ext}'. Aceitos: {', '.join(SUPPORTED_EXT)}", "data": {}}
     integrity = {}
     try:
+        #teste para .csv
         if ext == ".csv":
             df = pd.read_csv(p)
             if required_sheets and "__csv__" in required_sheets:
@@ -84,7 +72,8 @@ def importar_arquivo(caminho: str, required_sheets: dict[str, list[str]] | None 
                         sums[col] = pd.to_numeric(df[col], errors="coerce").sum()
                 integrity["__csv__"] = {"rows": len(df), "sums": sums}
             return {"ok": True, "erro": None, "data": {"__csv__": df}, "integrity": integrity if check_integrity else None}
-
+        
+        #teste para .xlsx
         xls = pd.ExcelFile(p)
         data = {}
         if required_sheets:
@@ -100,6 +89,7 @@ def importar_arquivo(caminho: str, required_sheets: dict[str, list[str]] | None 
                     return {"ok": False, "erro": f"Importação: aba '{sheet}' com colunas faltando: {faltando_cols}", "data": {}}
             data[sheet] = df_sheet
 
+            #checando a integridade das planilhas
             if check_integrity and required_sheets and sheet in required_sheets:
                 sums = {}
                 for col in required_sheets[sheet]:
