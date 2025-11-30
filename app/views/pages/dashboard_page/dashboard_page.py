@@ -133,9 +133,7 @@ class DashboardView(ttk.Frame):
         if hasattr(self, 'analytical_summary'):
             self.analytical_summary.update_metrics(df)
             
-        # Atualiza os gráficos
-        if hasattr(self, 'graphs_section'):
-            self.graphs_section.update_graphs(df)
+        
 
         for widget in self.frame_tabela_container.winfo_children():
             widget.destroy()
@@ -183,6 +181,10 @@ class DashboardView(ttk.Frame):
         if val_cod := filter_data.get("codigo"):
             if col_cod:
                 df_filtered = df_filtered[df_filtered[col_cod].astype(str).str.contains(val_cod, case=False, na=False)]
+        #Mudei pra apply_filters receber o filter_data direto do estoque_filters
+        # Atualiza os gráficos
+        if hasattr(self, 'graphs_section'):
+            self.graphs_section.update_graphs(df,filter_data)
 
         self.render_dataframe_table(df_filtered)
 

@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
-
+from app.views.plots.clientes_principais import TopClientesGrafico
+from app.views.plots.vendedor_performance import ListaVendedores
 class GraphsFrame(ttk.Frame):
     def __init__(self, parent):
         # Frame PRINCIPAL: Esse continua com Card.TFrame (para ter a borda externa bonita)
@@ -45,18 +46,56 @@ class GraphsFrame(ttk.Frame):
         # O pady=50 garante que ele comece com uma altura razoável antes de ter gráficos.
         self.lbl_placeholder.pack(pady=50)
 
-    def update_graphs(self, df):
+    def update_graphs(self, df, filter_data=None):
         """
         Método que será chamado pelo DashboardView para desenhar/atualizar
         os gráficos com base nos dados (df).
         """
+        if filter_data is None:
+            filter_data = {}
         # Limpa gráficos anteriores (se houver)
         for widget in self.charts_container.winfo_children():
             widget.destroy()
-            
-        # Apenas um aviso temporário (Simulando um gráfico)
-        # Quando você colocar o Matplotlib aqui, o frame vai expandir para o tamanho da figura.
-        ttk.Label(self.charts_container, 
-                  text=f"Gráficos gerados com {len(df)} registros\n(O tamanho deste card se ajustará ao gráfico)", 
-                  font=("Segoe UI", 10),
-                  background="#F4F9F4").pack(pady=20)
+
+        # Verifica se deve mostrar gráficos baseado nos checkboxes marcados
+        tem_clientes = filter_data.get("clientes")
+        tem_vendedores = filter_data.get("vendedores")
+
+        # Decide se mostra os gráficos ou placeholder(tirar placeholder quando hover gráficos fixos)
+        if tem_clientes or tem_vendedores:   
+            if tem_clientes:
+                self.mostrar_top_clientes()
+            if tem_vendedores:
+                self.mostrar_top_vendedores()
+        else:
+            # Nenhum filtro: mostra placeholder
+            ttk.Label(self.charts_container, 
+                    text=f"Gráficos gerados com {len(df)} registros\n(O tamanho deste card se ajustará ao gráfico)", 
+                    font=("Segoe UI", 10),
+                    background="#F4F9F4").pack(pady=20)
+                    
+
+    def mostrar_top_clientes(self,df=None):
+        client_frame = ttk.Frame(self.charts_container,style="CardInner.TFrame", width=532, height=320)
+        client_frame.pack(side="left", expand=True, padx=10)
+        client_frame.pack_propagate(False)
+
+        # Dados de exemplo
+        clientes = ["cliente 3", "cliente 1", "cliente 2", "cliente 4", "cliente 5"]
+        quantidade = [1100, 1020, 950, 890, 789]
+        faturamento = [9000, 7000, 5000, 3000, 2500]
+        frequencias = [10, 8, 7, 5, 3]
+
+        TopClientesGrafico(client_frame, clientes, quantidade, faturamento, frequencias)
+
+    def mostrar_top_vendedores(self,df=None):
+        vendor_frame = ttk.Frame(self.charts_container,style="CardInner.TFrame", width=500, height=250)
+        vendor_frame.pack(side="left", expand=True, padx=10)
+        vendor_frame.pack_propagate(False)
+
+        # Dados de exemplo
+        vendedores = ['V1', 'V2', 'V3', 'V4', 'V5']
+        quantidade = [12, 9, 7, 15, 10]
+        faturamento = [1200.50, 890.00, 760.75, 1500.00, 980.30]
+
+        ListaVendedores(vendor_frame, vendedores, quantidade, faturamento)

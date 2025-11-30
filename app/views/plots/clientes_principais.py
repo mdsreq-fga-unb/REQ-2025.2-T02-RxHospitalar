@@ -35,10 +35,11 @@ class TopClientesGrafico:
         self.ax = self.fig.add_subplot(111, facecolor="#E2E2E2")
 
         # Barras
+        cores = ["#06373D", "#08262C", "#2D595C", "#114640", "#7B8B7C"]
         self.barras = self.ax.bar(
             self.clientes, 
             self.quantidade,
-            color="#01252A",
+            color=cores,
             edgecolor="#01252A",
             linewidth=0.8,
             alpha=0.9,

@@ -34,7 +34,7 @@ class ListaVendedores:
         col0_w, col1_w, col2_w = 14, 10, 14
 
         # Cabeçalho (tudo centralizado)
-        header_bg = "#0BC0AF"
+        header_bg = "#21474A"
         header_font = ("Arial", 11, "bold")
 
         tk.Label(
