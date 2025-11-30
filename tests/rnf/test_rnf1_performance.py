@@ -4,21 +4,25 @@ import pytest
 from pathlib import Path
 from app.models.carregar_dados import importar_arquivo
 from app.utils.separar_por_data import separar_quantidade_por_data
+from datetime import datetime
+from dateutil.relativedelta import relativedelta
 
 '''
+#teste do tempo de resposta da análise período
 @pytest.mark.performance
 def test_rnf01_tempo_resposta_analise_periodo(monkeypatch, tmp_path):
-    # Gera planilha grande simulando Estoque
     rows = 5000
+    hoje = datetime.today()
+    # distribui datas nos últimos 6 meses
+    datas = [(hoje - relativedelta(months=i)).strftime("%Y-%m-%d") for i in range(6)]
     df_estoque = pd.DataFrame({
         "Cód Original": [f"C{i:05d}" for i in range(rows)],
         "Descrição": [f"Item {i}" for i in range(rows)],
-        "DATASTATUS": ["2024-10-01"] * rows
+        "DATASTATUS": [datas[i % 6] for i in range(rows)],
     })
     path = tmp_path / "estoque.xlsx"
     with pd.ExcelWriter(path) as w:
         df_estoque.to_excel(w, sheet_name="Estoque", index=False)
-    # Aponta o caminho global usado pelo módulo
     monkeypatch.setattr("app.models.carregar_dados.file", str(path))
     t0 = time.perf_counter()
     resultado = separar_quantidade_por_data(df_estoque, n_meses=6)
@@ -27,6 +31,7 @@ def test_rnf01_tempo_resposta_analise_periodo(monkeypatch, tmp_path):
     assert not resultado.empty
 '''
 
+#teste do tempo de importação inferior a 10 minutos
 @pytest.mark.performance
 def test_rnf01_tempo_importacao_xlsx_ate_10min(tmp_path):
     # Planilha com 1000 linhas (limite do RNF para integridade)
@@ -61,6 +66,7 @@ def test_rnf01_tempo_importacao_xlsx_ate_10min(tmp_path):
     soma_importada = res["integrity"]["Estoque"]["sums"]["Estoque"]
     assert soma_importada == soma_original
 
+#teste de importação de csv sem quebras
 @pytest.mark.performance
 def test_rnf01_importacao_csv_integridade(tmp_path):
     rows = 1000
@@ -79,6 +85,7 @@ def test_rnf01_importacao_csv_integridade(tmp_path):
     soma_importada = res["integrity"]["__csv__"]["sums"]["Estoque"]
     assert soma_importada == soma_original
 
+#teste com importação de xlsx com coluna não numérica ignorada
 @pytest.mark.performance
 def test_rnf01_importacao_xlsx_coluna_nao_numerica_ignorada(tmp_path):
     df = pd.DataFrame({
@@ -95,6 +102,7 @@ def test_rnf01_importacao_xlsx_coluna_nao_numerica_ignorada(tmp_path):
     # Coluna não numérica não entra em sums
     assert "TextoLivre" not in res["integrity"]["Estoque"]["sums"]
 
+#teste de importação com arquivo que não seja .csv ou .xlsx
 @pytest.mark.performance
 def test_rnf01_importacao_falha_extensao_invalida(tmp_path):
     p = tmp_path / "arquivo.txt"

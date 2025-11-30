@@ -34,6 +34,7 @@ def test_load_selected_columns_estoque():
    
     assert list(df.columns) == cols, "As colunas retornadas devem ser as mesmas solicitadas"
 
+#teste para a integridade da importação de um arquivo .xlsx
 def test_importar_xlsx_integridade(tmp_path):
     df = pd.DataFrame({
         "Cód Original": ["A1","A2","A3"],
@@ -49,6 +50,7 @@ def test_importar_xlsx_integridade(tmp_path):
     assert res["integrity"]["Estoque"]["rows"] == 3
     assert res["integrity"]["Estoque"]["sums"]["Estoque"] == 22
 
+#teste de recusa para arquivo .csv com problema na importação
 def test_importar_csv_colunas_faltando(tmp_path):
     p = tmp_path / "dados.csv"
     pd.DataFrame({"Cód Original": ["X1"]}).to_csv(p, index=False)
@@ -57,6 +59,7 @@ def test_importar_csv_colunas_faltando(tmp_path):
     assert not res["ok"]
     assert "colunas faltando" in res["erro"].lower()
 
+#teste de recusa para arquivo .xlsx com abas faltando
 def test_importar_xlsx_abas_faltando(tmp_path):
     p = tmp_path / "dados.xlsx"
     with pd.ExcelWriter(p) as w:
@@ -66,6 +69,7 @@ def test_importar_xlsx_abas_faltando(tmp_path):
     assert not res["ok"]
     assert "abas faltando" in res["erro"].lower()
 
+#teste de importação com o arquivo em CAPS
 def test_importar_ext_maiuscula(tmp_path):
     p = tmp_path / "BASE.XLSX"
     with pd.ExcelWriter(p) as w:
@@ -74,6 +78,7 @@ def test_importar_ext_maiuscula(tmp_path):
     res = importar_arquivo(str(p), req)
     assert res["ok"]
 
+#teste para falhar a importação com arquivo corrompido
 def test_importar_corrompido(tmp_path):
     p = tmp_path / "corrompido.xlsx"
     p.write_text("conteudo nao excel")
@@ -82,6 +87,7 @@ def test_importar_corrompido(tmp_path):
     assert not res["ok"]
     assert "falha ao importar" in res["erro"].lower()
 
+#teste de compatibilidade com o Windows
 def test_windows_style_path(tmp_path):
     df = pd.DataFrame({"Cód Original": ["W1"], "Descrição": ["Win Item"]})
     p = tmp_path / "win.xlsx"
