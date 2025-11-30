@@ -4,6 +4,8 @@ from pandastable import Table
 import pandas as pd
 import unicodedata
 import re
+# from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+from app.views.components.estoque_filters import EstoqueFilterFrame
 
 from app.views.components.navbar import Header
 from app.views.components.estoque_filters import EstoqueFilterFrame, setup_styles
@@ -19,9 +21,11 @@ def _norm(s):
     s = re.sub(r"[^\w]+", " ", s).lower().strip()
     return s.replace(" ", "")
 
+from pandastable import Table
+
 class DashboardView(ttk.Frame):
     def __init__(self, parent, controller):
-        super().__init__(parent)
+        ttk.Frame.__init__(self, parent)
         self.controller = controller
 
         setup_styles(self.controller)
@@ -171,22 +175,6 @@ class DashboardView(ttk.Frame):
         if val_cod := filter_data.get("codigo"):
             if col_cod:
                 df_filtered = df_filtered[df_filtered[col_cod].astype(str).str.contains(val_cod, case=False, na=False)]
-
-        # Atualizar Sugestões de Compra com base nos filtros
-        try:
-            # Tenta pegar o período do filtro ou usa 4 como padrão
-            periodo_str = filter_data.get("periodo", "4 Meses")
-            # Extrai apenas o número do período (ex: "4 Meses" -> 4)clear
-            match = re.search(r'\d+', str(periodo_str))
-            periodo_val = int(match.group()) if match else 4
-            
-            # Se tiver linha selecionada, passa para a função. Se não, passa None (carrega tudo)
-            linha_para_sugestao = val_linha if val_linha else None
-            
-            df_sugestoes = sugestao_compra(linha=linha_para_sugestao, periodo=periodo_val)
-            self.purchase_suggestions.update_cards(df_sugestoes)
-        except Exception as e:
-            print(f"Erro ao atualizar sugestões de compra: {e}")
 
         self.render_dataframe_table(df_filtered)
 

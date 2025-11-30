@@ -1,3 +1,4 @@
+# app/views/components/estoque_filters.py
 import tkinter as tk
 from tkinter import ttk
 from PIL import Image, ImageTk, ImageDraw
@@ -123,12 +124,20 @@ class EstoqueFilterFrame(ttk.Frame):
         self.columnconfigure(0, weight=1)
         self.on_filter_callback = on_filter_callback
 
-        # 1. CARREGAMENTO DE DADOS
+        # 1. CARREGAMENTO DE DADOS (ATUALIZADO: Recebe 4 valores)
         try:
-            self.dados_linhas, self.dados_sublinhas_totais, self.mapa_cascata = obter_dados_cascata()
+            # Importante: obter_dados_cascata agora deve retornar a lista de códigos também!
+            self.dados_linhas, self.dados_sublinhas_totais, self.mapa_cascata, self.dados_codigos = obter_dados_cascata()
+        except ValueError:
+            # Caso a função ainda retorne 3 valores (fallback)
+            try:
+                self.dados_linhas, self.dados_sublinhas_totais, self.mapa_cascata = obter_dados_cascata()
+                self.dados_codigos = []
+            except Exception:
+                self.dados_linhas, self.dados_sublinhas_totais, self.mapa_cascata, self.dados_codigos = [], [], {}, []
         except Exception as e:
             print(f"Erro ao carregar dados do Excel no filtro: {e}")
-            self.dados_linhas, self.dados_sublinhas_totais, self.mapa_cascata = [], [], {}
+            self.dados_linhas, self.dados_sublinhas_totais, self.mapa_cascata, self.dados_codigos = [], [], {}, []
 
         # 2. CARD PRINCIPAL
         self.filter_card = ttk.Frame(self, padding=20, style="Card.TFrame")
@@ -162,14 +171,29 @@ class EstoqueFilterFrame(ttk.Frame):
         ttk.Label(self.filter_card, text="Código:", style="Header.TLabel").grid(row=6, column=0, sticky="w", pady=(5, 0))
         self.codigo_var = tk.StringVar()
         self.codigo_entry = ttk.Entry(self.filter_card, textvariable=self.codigo_var, style="TEntry")
-        self.codigo_entry.grid(row=7, column=0, sticky="ew", pady=(0, 10))
+        self.codigo_entry.grid(row=7, column=0, sticky="ew", pady=(0, 2)) # Padding bottom reduzido
+        
+        # --- NOVO: Label para Mensagem de Erro ---
+        self.lbl_erro_codigo = tk.Label(
+            self.filter_card, 
+            text="", 
+            fg="#ff4444",   # Cor vermelha para erro
+            bg=COLOR_CARD_BG, 
+            font=("Segoe UI", 8, "bold"),
+            anchor="w"
+        )
+        self.lbl_erro_codigo.grid(row=8, column=0, sticky="w", pady=(0, 5))
+        
+        # Placeholder e Bindings de validação
         self.add_placeholder(self.codigo_entry, PLACEHOLDER_CODIGO)
+        self.codigo_entry.bind("<FocusOut>", self._validar_codigo, add="+")
+        self.codigo_entry.bind("<Return>", self._validar_codigo, add="+")
 
-        # 6. PERÍODO 
-        ttk.Label(self.filter_card, text="Período:", style="Header.TLabel").grid(row=8, column=0, sticky="w", pady=(10, 5))
+        # 6. PERÍODO (Ajustado para Rows 9 e 10 por causa da Label de erro)
+        ttk.Label(self.filter_card, text="Período:", style="Header.TLabel").grid(row=9, column=0, sticky="w", pady=(5, 5))
         
         period_grid_frame = ttk.Frame(self.filter_card, style="PeriodButton.TFrame")
-        period_grid_frame.grid(row=9, column=0, sticky="ew", pady=(0, 10))
+        period_grid_frame.grid(row=10, column=0, sticky="ew", pady=(0, 10))
         period_grid_frame.columnconfigure(0, weight=1)
         period_grid_frame.columnconfigure(1, weight=1)
         period_grid_frame.columnconfigure(2, weight=2)
@@ -217,6 +241,32 @@ class EstoqueFilterFrame(ttk.Frame):
         
         # Botão de filtro 
         ttk.Button(self, text="Filtrar", command=self.filtrar, style="Filter.TButton").grid(row=2, column=0, sticky="ew", padx=0, pady=(0, 0))
+
+    # --- LÓGICA DE VALIDAÇÃO DO CÓDIGO ---
+    def _validar_codigo(self, event=None):
+        """Verifica se o código digitado existe na lista de códigos carregados."""
+        valor_digitado = self.codigo_var.get().strip()
+
+        # Ignora se for vazio ou se for o placeholder
+        if not valor_digitado or valor_digitado == PLACEHOLDER_CODIGO:
+            self.lbl_erro_codigo.config(text="")
+            return
+
+        # Verifica se o código existe na lista (case insensitive, convertendo pra str)
+        # Assumindo que self.dados_codigos é uma lista de strings
+        if valor_digitado not in self.dados_codigos:
+            # ERRO: Mostra mensagem e limpa
+            self.lbl_erro_codigo.config(text="Código não encontrado!")
+            
+            # Limpa o campo e restaura o placeholder
+            self.codigo_entry.delete(0, tk.END)
+            self.add_placeholder(self.codigo_entry, PLACEHOLDER_CODIGO)
+            
+            # Opcional: Feedback sonoro
+            self.bell()
+        else:
+            # SUCESSO: Limpa mensagem de erro
+            self.lbl_erro_codigo.config(text="")
 
     def _on_linha_selected(self, event):
         linha_selecionada = self.linha_var.get()
@@ -284,18 +334,31 @@ class EstoqueFilterFrame(ttk.Frame):
             lbl.configure(cursor="hand2")
 
     def add_placeholder(self, widget, text):
-        widget.insert(0, text)
-        widget.configure(foreground='grey')
+        # Configuração inicial
+        if not widget.get():
+            widget.insert(0, text)
+            widget.configure(foreground='grey')
+            
         def on_focus_in(event):
+            # Quando foca, limpa placeholder e erro
             if widget.get() == text:
                 widget.delete(0, tk.END)
                 widget.configure(foreground=COLOR_TEXT)
+            # ATUALIZAÇÃO: Limpa mensagem de erro ao tentar digitar novamente
+            if hasattr(self, 'lbl_erro_codigo'):
+                self.lbl_erro_codigo.config(text="")
+
         def on_focus_out(event):
+            # Quando sai, se estiver vazio, volta placeholder
             if not widget.get():
                 widget.insert(0, text)
                 widget.configure(foreground='grey')
-        widget.bind('<FocusIn>', on_focus_in)
-        widget.bind('<FocusOut>', on_focus_out)
+                # Se saiu vazio, garante que não tem erro de "Não encontrado"
+                if hasattr(self, 'lbl_erro_codigo'):
+                    self.lbl_erro_codigo.config(text="")
+
+        widget.bind('<FocusIn>', on_focus_in, add="+")
+        widget.bind('<FocusOut>', on_focus_out, add="+")
 
     def set_placeholder(self, combobox, text):
         combobox.set(text)

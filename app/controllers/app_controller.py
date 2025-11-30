@@ -12,7 +12,6 @@ from app.views.pages.auth_page.login import LoginPage, ForgotPasswordPage
 from app.views.components.loading_import_modal import LoadingImportModal
 from app.views.pages.dashboard_page.dashboard_page import DashboardView 
 
-from app.controllers.login_controller import get_user
 from app.utils.login_utils import *
 # ----------------------------------------------------
 
@@ -103,7 +102,7 @@ class AppController(tk.Tk):
         )
         loader_thread.start()
 
-    # 3. THREAD SECUNDÁRIA: Executa o Model (Pandas)
+    # 3. THREAD SECUNDÁRIA: Executa o Model 
     def _run_pandas_in_thread(self, sheet_name, columns_to_load):
         """Executa a função do Model que lê o arquivo fixo."""
         
@@ -139,5 +138,5 @@ class AppController(tk.Tk):
             self.loading_import_modal.destroy_modal()
             self.loading_import_modal = None
 
-        # 2. Transiciona para a página de destino (Dashboard ou LoginPage)
+        # 2. Transiciona para a página de destino
         self.show_frame(next_page)

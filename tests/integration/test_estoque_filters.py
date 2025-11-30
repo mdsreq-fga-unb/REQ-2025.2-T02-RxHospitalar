@@ -1,4 +1,6 @@
-'''import sys
+'''
+Docstring for tests.integration.test_estoque_filters
+import sys
 import os
 
 # Add the project root to sys.path
