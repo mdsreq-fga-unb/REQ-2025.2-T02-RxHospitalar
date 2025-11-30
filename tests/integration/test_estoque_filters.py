@@ -1,3 +1,5 @@
+'''
+Docstring for tests.integration.test_estoque_filters
 import sys
 import os
 
@@ -22,3 +24,4 @@ if __name__ == "__main__":
     frame.pack(fill="both", expand=True, padx=10, pady=10)
 
     root.mainloop()
+'''
