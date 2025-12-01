@@ -9,7 +9,7 @@ Nesta seção são estabelecidas as atividades da Engenharia de Requisitos (ER),
 
 ## Atividades e Técnicas de ER
 
-### Joint Requirements Planning (JRP)  
+### Fase 1 - Planejamento de Requisitos
 
 ### Elicitação e Descoberta:
 
@@ -35,7 +35,7 @@ Nesta seção são estabelecidas as atividades da Engenharia de Requisitos (ER),
 * **Critérios de aceitação:** cada requisito contém critérios iniciais de aceitação para que seja testável e validado posteriormente.
 * **Refinamento dos requisitos:** Foi feito um refinamento em relação aos RF’s e RNF’s do projeto, para que estivessem alinhados com a ideia do que é funcional ou não, o que terá interação do usuário ou não a partir da arquitetura MVC planejada.
 
-**Resultado gerado:** Especificação da interação do usuário com os primeiros Requisitos Funcionais (RFs), detalhando a jornada de uso e as ações necessárias para completar as tarefas. 
+**Resultado gerado:** Product Backlog com as nomenclaturas dos Requisitos de Software corretamente declaradas. 
 
 #### 4.1.4 Verificação e Validação de Requisitos:
 
@@ -44,7 +44,7 @@ Nesta seção são estabelecidas as atividades da Engenharia de Requisitos (ER),
 * **Análise de priorização MoSCoW:** aplicada durante o refinamento do Backlog para classificação de requisitos em *Must*, *Should*, *Could* e *Won’t have* e assim ajudar na priorização do MVP.
 * **Análise de critérios técnicos:** Houve a criação de Critérios de Avaliação Técnica em relação à complexidade técnica numa escala de 1 a 3 sobre a lógica de negócios e algoritmo; complexidade de dados, combinações analíticas, complexidade de interface e experiência do usuário UI/UX;
 
-**Resultado gerado:** MoSCoW e critérios de avaliação técnica gerados e usados para definição do MVP.
+**Resultado gerado:**  Análise da priorização dos requisitos com base na complexidade e valor de negócio.
 
 #### 4.1.5 Verificação e Validação de Requisitos && Análise e Consenso:
 
@@ -52,14 +52,16 @@ Nesta seção são estabelecidas as atividades da Engenharia de Requisitos (ER),
 * **Análise de Domínio de Requisito:** A partir de uma reunião de validação com o cliente sobre o MVP, entendemos com mais profundidade as regras de negócio e como elas impactaram nos requisitos que havíamos declarado para a solução.
 * **Feedback:** Após melhor explicação e visão do cliente, entendemos que eles não tinham uma complexidade elevada, mas tinham um alto impacto no valor de negócio para o cliente, o que ficou em consenso geral, que os RF’s presentes neste tema seriam desenvolvidos, após a construção de requisitos mais simples, acordando que ele fará parte do MVP.
 
-**Resultado gerado:** critérios de aceitação, valor de negócio e complexidades atualizados.
+**Resultado gerado:** Feedback do cliente em relação ao escopo do MVP, valor de negócio e priorização
 
 #### 4.1.6 Organização e Atualização:
 
 * **Feedbacks:** Após comentário do professor ao nosso *pitch* do projeto foram realizadas atualizações sobre a rastreabilidade dos requisitos do MVP, alinhando com os O.E’S do produto elencado inicialmente junto às características da solução.
 * **Priorização de Requisitos:** Após o feedback do cliente e a avaliação a partir da rastreabilidade dos requisitos, foi atualizado o tema de Análises Avançadas no MVP.
+* **Refinamento dos requisitos:** Foi feito um refinamento em relação aos RF’s e RNF’s do projeto, para que estivessem alinhados com a ideia do que é funcional ou não, o que terá interação do usuário ou não a partir da arquitetura MVC planejada.
 
-**Resultado gerado:** Backlog do MVP atualizado, alinhado com a rastreabilidade xos O.E’S do produto
+**Resultado gerado:** Backlog do MVP atualizado, alinhado com a rastreabilidade dos O.E’S do produto, da avaliação técnica e valor de negócio do cliente.
+
 
 ### User Design
 
@@ -82,12 +84,29 @@ Nesta seção são estabelecidas as atividades da Engenharia de Requisitos (ER),
 
 **Resultado:** Protótipo verificado: Clareza da equipe em relação ao passo a passo seguido pelo usuário para executar os primeiros RF’s.
 
-#### 4.1.10 Organização e Atualização de Requisitos:
+#### 4.1.10 Declaração de Requisitos:
 
-* **Protótipos:** A criação de protótipos visuais foi essencial para materializar e atualizar as especificações de como o usuário irá interagir com o sistema, permitindo um alinhamento claro antes do desenvolvimento.
-* **Decomposição Funcional:** Utilizamos a decomposição funcional para detalhar cada etapa da interação do usuário com as funcionalidades, quebrando tarefas complexas em ações menores e mais específicas, o que facilitou a especificação dos requisitos.
+* **Decomposição Funcional:** Utilizamos das funcionalidades representadas no protótipo para traçar como seria a interação do usuário com a aplicação e especificar melhor quais eram os resultados que deveriam aparecer para o usuário por meio de uma de nossas reuniões.
 
-**Resultado gerado:** Product Backlog que foi usado para representar de forma organizada os requisitos, garantindo que sejam verificáveis e Requisitos de software com nomenclaturas corretas
+* **Histórias de Usuário:** Através de uma reunião com o cliente foram coletadas ass histórias de usuário do projeto para assim conectá-las aos RF’s e OE’s aos quais estavam relacionados para assim mapear a rastreabilidade do projeto.
+
+**Resultado gerado:** Product Backlog populado com a US’s  
+
+#### 4.1.11 Organização e Atualização de Requisitos: 
+
+* **Histórias de Usuário:** Foi realizado no board do Miro da equipe a relação entre os RF’s e OE’S do projeto às US coletadas com o cliente.
+
+**Resultado gerado:** Mapa de Rastreabilidade e Mapa de Relações entre Requisito  
+
+#### 4.1.12 Validação: 
+
+* **Protótipo de Alta Fidelidade:** Para validação da concepção da aplicação foi realizada uma validação através do protótipo de alta fidelidade gerada pela equipe com foco na interação do usuário com a inteface, para além de visualizar os componentes, procurando garantir mais conexão do cliente com a proposta final do do que será o projeto antes da fase de construção.  
+
+* **Feedback:** Através de um formulário com  critérios de aceitação específicos sobre cada para do protótipo foram deixados checklists e espaços livre para comentários e sugestões em que o cliente poderia preencher rapidamente para coletarmos este feedback antes de iniciarmos a implementação.
+
+**Resultado gerado:** [Formulário com o checklist da  validação do cliente e comentários adicionais sobre o protótipo de alta fidelidade](https://docs.google.com/document/d/1DuWLgI8KOPhmYx1iw2JULCNu_puY95xGvxx-HQFFgos/edit?usp=sharing)
+
+
 
 ---
 
