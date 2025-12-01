@@ -239,12 +239,6 @@ class EstoqueFilterFrame(ttk.Frame):
         self.sugestao_var = tk.BooleanVar()
         self._add_checkbuttons(self.sub_card, {"Sugestão de compra": self.sugestao_var}, start_row=6)
         
-        ttk.Label(self.sub_card, text="Outros:", style="Header.TLabel").grid(row=7, column=0, sticky="w", columnspan=2, pady=(0, 5))
-        self.outros = {
-            "Principais Clientes": tk.BooleanVar(),
-            "Performance de Vendedores": tk.BooleanVar()
-        }
-        self._add_checkbuttons(self.sub_card, self.outros, start_row=8)
         # Botão de filtro 
         ttk.Button(self, text="Filtrar", command=self.filtrar, style="Filter.TButton").grid(row=2, column=0, sticky="ew", padx=0, pady=(0, 0))
 
@@ -390,8 +384,6 @@ class EstoqueFilterFrame(ttk.Frame):
             "periodo": periodo_filtrado,
             "condicoes": {k: v.get() for k, v in self.condicoes.items()},
             "sugestao_compra": self.sugestao_var.get(),
-            "clientes": self.outros["Principais Clientes"].get(),
-            "vendedores": self.outros["Performance de Vendedores"].get()
         }
 
         # CHAMA O CALLBACK DO DASHBOARD SE ELE EXISTIR
