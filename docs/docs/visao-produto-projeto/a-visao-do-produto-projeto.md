@@ -41,7 +41,7 @@ A construção de uma solução robusta e escalável exige a superação de desa
     - Integração batch via arquivos / Explorar API (se possível) 
 - Volume e variedade dos dados 
     - (14k SKUs no óptico; múltiplas linhas hospitalares com regras e SLA distintos).
-- Modelagem de dados para histórico longo (vendas desde 2020), curva ABC por linha, políticas de estoque por indústria, controle de validade/lotes.
+- Modelagem de dados para histórico longo (vendas desde 2020), políticas de estoque por indústria, controle de validade/lotes.
 
 #### Operacionais:
 

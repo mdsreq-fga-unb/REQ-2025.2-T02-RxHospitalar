@@ -6,11 +6,11 @@ sidebar_position: 2
 
 ### 2.1 Objetivos do Produto
 
-Este produto visa transformar a gestão de compras, estoque e vendas da RX Hospitalar, tornando-a mais ágil, intuitivo e estratégico o processo de análise. A história de usuário junto com o objetivo geral abaixo orienta o desenvolvimento da solução e os Objetivos Específicos do Projeto (OE) detalhados na Tabela 1, assegurando rastreabilidade e foco nos resultados mensuráveis.
+Este produto visa transformar a gestão de compras, estoque e vendas da RX Hospitalar, tornando-a mais ágil e intuitivo o processo de análise. O Objetivo Geral abaixo junto aos  Objetivos Específicos do Projeto (OE), detalhados na Tabela 1, orientam o desenvolvimento da solução assegurando rastreabilidade e foco nos resultados mensuráveis.
 
 <a id="OG1"></a> <br/>
 **Objetivo Geral (OG) do Projeto:** 
-- Otimizar o processo de análise de planilhas, atualmente gerenciadas pelo cliente, de forma a transformar a gestão de compras e estoque da RX Hospitalar, tornando-a mais ágil, intuitiva e estratégica.
+- Otimizar o processo de análise de planilhas, atualmente gerenciadas pelo cliente, de forma a transformar a gestão de compras e estoque da RX Hospitalar, tornando-a mais ágil e intuitiva.
 
 ### 2.2 Características da Solução
 
@@ -19,11 +19,10 @@ Para materializar os objetivos definidos, a solução será construída sobre um
 A seguir, detalhamos os pilares que compõem as características do produto:
 
 - **Data Hub:** importação assistida de arquivos gerados pelo ERP, Planejamento de Recursos Empresariais (faturado, estoque, pendências) + cadastro de produtos/linhas/indústrias/regiões. 
-- **Regras de estoque:** parametrização de estoque-alvo, curva ABC por linha, exceções por indústria (ex: 90 dias mínimos), estratégias de vendas de acordo com o estoque. 
-- **Dashboards Operacionais:** Reposição por linha/indústria (priorização por criticidade ABC, cobertura , giro, validade); Produtos parados (dias sem saída) e a vencer (janelas de 30, 60 ou 90 dias). 
-- **Catálogo e busca:** (produto, linha, indústria, região) com cobertura atual e histórico por meses. 
-- **Segurança e sigilo:** (Compras, Vendas, Representante, Gestor). 
-- **Interface amigável para os Representantes:** visão por hospital/médico, últimas compras, sugestões.
+- **Regras de estoque:** parametrização de estoque-alvo, exceções por indústria (ex: 90 dias mínimos), estratégias de vendas de acordo com o estoque. 
+- **Dashboards Operacionais:** Reposição por linha/indústria (priorização por criticidade cobertura , giro, validade); Produtos parados (dias sem saída).
+- **Segurança e sigilo:** (Gestor de Compras). 
+- **Interface que seja de linguagem simples para o usuário:** visão por hospital/médico (clientes), vendedores, sugestões de compra.
 
 #### Objetivos Específicos (OE) do Projeto:
 
