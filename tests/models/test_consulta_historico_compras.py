@@ -1,4 +1,5 @@
 from app.models.consulta_historico_compras import consulta_historico_compras
+from app.models.consulta_historico_compras import consulta_historico_compras, listar_clientes
 import pandas as pd
 import pytest
 from tests.models.test_consulta_principais_clientes import _mock_book_clientes
@@ -58,3 +59,28 @@ def test_ultimas_10_compras(workbook_historico_cliente):
     #verifica ordenação (da mais recente para a mais antiga)
     datas = pd.to_datetime(df_hist["DATASTATUS"])
     assert datas.is_monotonic_decreasing
+
+def test_listar_clientes_unicos_ordenados(monkeypatch):
+    #monta dados com espaços, vazios e duplicados
+    df_vendas = pd.DataFrame(
+        {
+            "RAZAOSOCIAL": ["  Alfa  ", "Beta", "  ", None, "beta", "Alfa", "Gama"],
+            "DATASTATUS": ["2025-01-01"] * 7,
+            "CODPRODUTO": ["P1"] * 7,
+            "QUANTIDADE": ["1"] * 7,
+        }
+    )
+    _mock_book_clientes(monkeypatch, df_vendas)
+
+    df_cli = listar_clientes()
+    #deve ter apenas valores não vazios, normalizados e únicos, ordenados
+    lista = df_cli["RAZAOSOCIAL"].tolist()
+    assert lista == sorted(set(["Alfa", "Beta", "beta", "Gama"]))
+
+def test_listar_clientes_coluna_ausente(monkeypatch):
+    df_vendas = pd.DataFrame({"CODPRODUTO": ["P1"], "DATASTATUS": ["2025-01-01"], "QUANTIDADE": ["1"]})
+    _mock_book_clientes(monkeypatch, df_vendas)
+
+    df_cli = listar_clientes()
+    assert list(df_cli.columns) == ["RAZAOSOCIAL"]
+    assert df_cli.empty
