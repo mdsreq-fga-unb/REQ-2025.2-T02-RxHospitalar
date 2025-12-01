@@ -20,10 +20,10 @@ A seguir, detalhamos os pilares que compõem as características do produto:
 
 - **Data Hub:** importação assistida de arquivos gerados pelo ERP, Planejamento de Recursos Empresariais (faturado, estoque, pendências) + cadastro de produtos/linhas/indústrias/regiões. 
 - **Regras de estoque:** parametrização de estoque-alvo, curva ABC por linha, exceções por indústria (ex: 90 dias mínimos), estratégias de vendas de acordo com o estoque. 
-- **Dashboards Operacionais:** Reposição por linha/indústria (priorização por criticidade ABC, cobertura , giro, validade); Produtos parados (dias sem saída) e a vencer (janelas de 30, 60 ou 90 dias). 
-- **Catálogo e busca:** (produto, linha, indústria, região) com cobertura atual e histórico por meses. 
-- **Segurança e sigilo:** (Compras, Vendas, Representante, Gestor). 
-- **Interface amigável para os Representantes:** visão por hospital/médico, últimas compras, sugestões.
+- **Dashboards Operacionais:** Reposição por linha/indústria (priorização por criticidade ABC, cobertura , giro, validade); Produtos parados (dias sem saída).
+- **Catálogo e busca:** (produto, linha, código) 
+- **Segurança e sigilo:** (Gestor de Compras). 
+- **Interface que seja de entedimento simples para o usuário:** visão por hospital/médico (clientes), vendedores, sugestões de compra.
 
 #### Objetivos Específicos (OE) do Projeto:
 
