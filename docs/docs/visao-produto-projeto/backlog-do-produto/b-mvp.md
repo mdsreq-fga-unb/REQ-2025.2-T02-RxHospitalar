@@ -7,7 +7,7 @@ sidebar_position: 2
 
 O **MVP (Minimum Viable Product)** refere-se ao conjunto mínimo de funcionalidades que permite que o produto seja lançado e utilizado pelos clientes. Ele foca nos recursos essenciais necessários para testar o mercado e validar as principais hipóteses de valor de negócio.  
 A tabela a seguir consolida todos os **[Requisitos Funcionais (RF)](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/requisitos-de-software/a-requisitos-funcionais)** e **[Requisitos Não Funcionais (RNF)](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/requisitos-de-software/b-requisitos-nao-funcionais)**, reunindo-os em um único quadro para facilitar a análise integrada entre as dimensões técnicas e de valor do produto.  
-Cada requisito está diretamente relacionado aos **[Objetivos Gerais (OG)](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#21-objetivos-do-produto)** e **[Objetivos Específicos (OE)](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta/#22-caracter%C3%ADsticas-da-solu%C3%A7%C3%A3o)** definidos para o projeto, evidenciando como cada funcionalidade ou característica técnica contribui para o alcance dos resultados esperados.
+Cada requisito está diretamente relacionado aos **[Objetivo Gerai (OG)](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#21-objetivos-do-produto)** e **[Objetivos Específicos (OE)](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta/#22-caracter%C3%ADsticas-da-solu%C3%A7%C3%A3o)** definidos para o projeto, evidenciando como cada funcionalidade ou característica técnica contribui para o alcance dos resultados esperados.
 
 <table className="requirements-table">
   <thead>
@@ -36,12 +36,12 @@ Cada requisito está diretamente relacionado aos **[Objetivos Gerais (OG)](https
     <tr className="functional"><td>OE09</td><td>Análises Avançadas</td><td>RF10</td><td>Should</td><td>✅</td></tr>
     <tr className="functional"><td>OE09</td><td>Análises Avançadas</td><td>RF11</td><td>Should</td><td>✅</td></tr>
 
-    <tr className="functional alt"><td>OE08</td><td>Notificação sobre produtos em estado crítico</td><td>RF12</td><td>Should</td><td>✅</td></tr>
-    <tr className="functional alt"><td>OE08</td><td>Notificação sobre produtos em estado crítico</td><td>RF13</td><td>Should</td><td>✅</td></tr>
-    <tr className="functional alt"><td>OE08</td><td>Notificação sobre produtos em estado crítico</td><td>RF14</td><td>Should</td><td>✅</td></tr>
+    <tr className="functional alt"><td>OE08</td><td>Notificação sobre produtos em estado crítico</td><td>RF12</td><td>Could</td><td>❌</td></tr>
+    <tr className="functional alt"><td>OE08</td><td>Notificação sobre produtos em estado crítico</td><td>RF13</td><td>Could</td><td>❌</td></tr>
+    <tr className="functional alt"><td>OE08</td><td>Notificação sobre produtos em estado crítico</td><td>RF14</td><td>Could</td><td>❌</td></tr>
 
-    <tr className="functional"><td>OE07</td><td>Autorização de Acesso</td><td>RF15</td><td>Should</td><td>❌</td></tr>
-    <tr className="functional"><td>OE07</td><td>Autorização de Acesso</td><td>RF16</td><td>Should</td><td>❌</td></tr>
+    <tr className="functional"><td>OE07</td><td>Autorização de Acesso</td><td>RF15</td><td>Should</td><td>✅</td></tr>
+    <tr className="functional"><td>OE07</td><td>Autorização de Acesso</td><td>RF16</td><td>Should</td><td>✅</td></tr>
 
     <!-- === NÃO FUNCIONAIS === -->
     <tr className="nonfunctional"><td>OE01</td><td>Performance</td><td>RFN01</td><td>Must</td><td>✅</td></tr>
