@@ -11,8 +11,7 @@ Os requisitos funcionais detalham as funcionalidades específicas que o sistema 
 
 ### Análise Base do Sistema
 
-Este grupo de requisitos constitui o núcleo analítico do sistema, automatizando os cálculos fundamentais de gestão de estoque.  
-Sua implementação visa reduzir drasticamente o tempo de análise e automatizar a gestão de estoque com base em regras parametrizáveis diretamente aos objetivos de diminuir o tempo de análise ([OE01](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE1))  
+Este grupo de requisitos constitui o núcleo analítico do sistema, automatizando os cálculos fundamentais de gestão de estoque. Sua implementação visa reduzir drasticamente o tempo de análise e automatizar a gestão de estoque com base em regras parametrizáveis diretamente aos objetivos de diminuir o tempo de análise ([OE01](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE1))  
 e automatizar cálculos de reposição ([OE05](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE5)).
 
 O **RF01** está relacionado ao **[OE05](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE5)** e o **RF02** está relacionado ao **[OE03](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE3)**.
