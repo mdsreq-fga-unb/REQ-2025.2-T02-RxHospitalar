@@ -95,7 +95,7 @@ Nesta seção são estabelecidas as atividades da Engenharia de Requisitos (ER),
 
 Aqui, as atividades da ER, suas práticas e técnicas devem ser mapeadas, a partir das fases (etapas) do RAD, para a condução do projeto. As evidências de cada uma das atividades estão linkadas através do nome da atividade às atas realizadas pelos membros da equipe.
 
-| Fase do RAD | Atividades ER | Prática | Técnica | Resultado |
+| Abordagem | Atividades ER | Prática | Técnica | Resultado |
 | :--- | :--- | :--- | :--- | :--- |
 | **Joint Requirements Planning (JRP)** | | | | |
 | | [Elicitação e Descoberta](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/atas-reuniao/a-ata-reuniao-based-06-09) | Descoberta sobre o negócio e dor do cliente | Entrevista, Casos de Uso, Análise de Tarefas | Entendimento sobre o negócio e contexto do cliente, Declaração do Problema, Personas |

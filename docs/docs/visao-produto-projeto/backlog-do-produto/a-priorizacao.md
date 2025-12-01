@@ -2,6 +2,8 @@
 sidebar_label: "Priorização do Backlog Geral"
 sidebar_position: 1
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 # Priorização do Backlog Geral
 
 A priorização do backlog foi realizada utilizando o modelo Must Have, Should Have e Could Have, ajudando a identificar quais são as funcionalidades essenciais, desejáveis e opcionais, de modo a orientar o desenvolvimento de acordo com os objetivos do projeto. A priorização das funcionalidades também foi feita utilizando uma análise em relação aos objetivos específicos os quais eles representam e também critérios técnicos para avaliar a complexidade do requisito.
@@ -20,7 +22,7 @@ Os valores de **Business ($)** e **UX (♥)** foram então combinados para deter
 
 <a id="figura-2"></a>
 *Figura 2: Critérios de valor de negócio.*
-![Tabela de critérios de valor de negócio](../../static/img/prioridade.png)
+<img src={useBaseUrl('/img/prioridade.png')} alt="Tabela de critérios de valor de negócio" />
 *Fonte: De autoria própria.*
 
 ## Matriz de Valor vs. Complexidade
@@ -29,7 +31,7 @@ Utilizando os "pesos" de Valor de Negócio (eixo V.N) e a pontuação de Complex
 
 <a id="figura-3"></a>
 *Figura 3: Definição do MVP.*
-![Matriz de valor x complexidade](../../static/img/mvp.png)
+<img src={useBaseUrl('/img/mvp.png')} alt="Matriz de valor x complexidade" />
 *Fonte: De autoria própria.*
 
 ## Escopo do MVP e Sequenciamento de Entregas
@@ -38,5 +40,5 @@ Para definir o escopo do MVP de forma estratégica, a equipe utilizou o sequenci
 
 <a id="figura-4"></a>
 *Figura 4: Sequenciador.*
-![Sequenciador](../../static/img/sequenciador.png)
+<img src={useBaseUrl('/img/sequenciador.png')} alt="Sequenciador" />
 *Fonte: De autoria própria.*
