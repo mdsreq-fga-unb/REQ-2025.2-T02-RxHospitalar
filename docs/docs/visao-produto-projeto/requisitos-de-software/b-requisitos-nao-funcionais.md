@@ -20,7 +20,7 @@ Esse requisito estabelece tempo de resposta e processamento, garantindo fluidez 
 
 ### Usabilidade  
 
-Assegura que a interface seja intuitiva e responsiva (inclusive com modo escuro). Está diretamente ligado a **[OE02](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE2)/[OE04](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE4)** (interface fácil de usar, filtros dinâmicos e acessíveis em até 5 minutos).  
+Assegura que a interface seja intuitiva e responsiva (inclusive com modo escuro). Está diretamente ligado a **[OE04](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE4)** (interface fácil de usar, filtros dinâmicos e acessíveis em até 5 minutos).  
 
 **RNF02 - Usabilidade e Experiência do Usuário**  
 > - **Interface Inclusiva:** A tela principal de análise de dados deve apresentar as informações em um formato que demande pouco esforço de adaptação para o usuário entender e utilizar o sistema.  
