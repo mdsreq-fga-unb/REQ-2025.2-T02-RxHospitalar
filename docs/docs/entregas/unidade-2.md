@@ -3,15 +3,9 @@ sidebar_label: "Unidade 2"
 sidebar_position: 2
 ---
 
-# Entregas por Unidade
+# Entrega Unidade 2
 
-Esta seção contém as entregas e apresentações do projeto organizadas por unidade.
-
-## Unidade 2
-
-### Entrega Unidade 2
-
-Apresentação da primeira unidade do projeto BASED - RX Hospitalar:
+## Apresentação da segunda unidade do projeto BASED - RX Hospitalar:
 
 <div className="video-container">
 <iframe 
@@ -22,9 +16,3 @@ Apresentação da primeira unidade do projeto BASED - RX Hospitalar:
     title="Finalização da Entrega da Unidade 2 + Gravação-20251021_003030-Gravação de Reunião.mp4">
 </iframe>
 </div>
-
-### Histórico de Versão
-
-| Data       | Versão | Descrição                              | Autor(es)      | 
-| ---------- | ------ | -------------------------------------- | -------------- | 
-| 21/10/2025 | 1.0    | Criação inicial da página de entregas. | Gabriel Augusto | 

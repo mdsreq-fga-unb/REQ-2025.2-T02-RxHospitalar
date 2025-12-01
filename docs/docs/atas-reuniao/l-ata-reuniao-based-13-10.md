@@ -1,6 +1,6 @@
 ---
 sidebar_label: "Verificação a partir da Jornada de Interação do Usuário"
-sidebar_position: 10
+sidebar_position: 12
 ---
 
 # ATA N.º3 | 13/10/2025

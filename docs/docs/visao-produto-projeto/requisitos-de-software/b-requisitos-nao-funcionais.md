@@ -79,7 +79,7 @@ Define práticas para manter e evoluir o sistema, incluindo revisão de código,
 
 **RNF07 - Manutenibilidade e Evolução**  
 > - **Incremento de Requisitos Funcionais:** Nenhuma nova funcionalidade pode ser integrada ao ramo principal sem aprovação de pelo menos um outro membro da equipe.  
-> - **Cobertura de Testes:** Utilizar ferramenta de análise de cobertura (ex: `coverage.py` para Python). A cobertura de testes unitários dos módulos de regras de negócio deve ser ≥ 90%.  
+> - **Cobertura de Testes:** Utilizar ferramenta de análise de cobertura (ex: `coverage.py` para Python). A cobertura de testes unitários dos módulos de regras de negócio deve ser ≥ 80%.  
 > - **Revisão Automatizada do Código:** Antes de aceito no projeto, o código deve passar por uma ferramenta de linting (ex: Pylint), sem erros.  
 > - **Documentação da Instalação:** O projeto deve conter um **Readme** descritivo e instrutivo para os primeiros passos do usuário.  
 > - **Documentação do Produto:** Cada funcionalidade deve ter um guia explicando como executar e interpretar resultados, além de descrever botões e fluxos obrigatórios para boa execução.  
