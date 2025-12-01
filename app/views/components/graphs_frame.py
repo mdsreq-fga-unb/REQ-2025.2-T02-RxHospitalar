@@ -8,34 +8,40 @@ from app.models.consulta_performance import consulta_performance
 
 class GraphsFrame(ttk.Frame):
     def __init__(self, parent):
-        # Frame PRINCIPAL: Esse continua com Card.TFrame (para ter a borda externa bonita)
         super().__init__(parent, style="Card.TFrame")
         
-        # Cria um estilo "interno" que só tem a cor de fundo, sem borda
         style = ttk.Style()
-        # Copia a cor de fundo que você usa (#F4F9F4), mas tira a borda
         style.configure("CardInner.TFrame", background="#F4F9F4", borderwidth=0, relief="flat")
 
-        # --- Cabeçalho (Título + Linha) ---
+        # Cabeçalho
         self.header_frame = ttk.Frame(self, style="CardInner.TFrame")
-        self.header_frame.pack(fill="x", padx=15, pady=(15, 0))
+        self.header_frame.pack(fill="x", padx=15, pady=(10, 0))
 
         self.lbl_title = ttk.Label(
             self.header_frame, 
-            text="Dashboard",
-            font=("Segoe UI", 16, "bold"), 
+            text="Análise Gráfica", 
+            font=("Segoe UI", 12, "bold"),
             foreground="#333333",
             background="#F4F9F4" 
         )
         self.lbl_title.pack(anchor="w")
+        
+        ttk.Separator(self.header_frame, orient="horizontal").pack(fill="x", pady=(5, 0))
 
-        self.separator = ttk.Separator(self.header_frame, orient="horizontal")
-        self.separator.pack(fill="x", pady=(5, 0))
-
-        # --- Área de Conteúdo dos Gráficos ---
+        # Container dos Gráficos
         self.charts_container = ttk.Frame(self, style="CardInner.TFrame")
-        self.charts_container.pack(fill="both", expand=True, padx=15, pady=15)
+        self.charts_container.pack(fill="both", expand=True, padx=5, pady=5)
+        
+        self.left_chart_frame = ttk.Frame(self.charts_container, style="CardInner.TFrame")
+        self.left_chart_frame.pack(side="left", fill="both", expand=True, padx=(0, 5))
+        
+        self.right_chart_frame = ttk.Frame(self.charts_container, style="CardInner.TFrame")
+        self.right_chart_frame.pack(side="right", fill="both", expand=True, padx=(5, 0))
 
+    def update_graphs(self, df_full, filter_context=None):
+        # Limpa gráficos anteriores
+        for widget in self.left_chart_frame.winfo_children(): widget.destroy()
+        for widget in self.right_chart_frame.winfo_children(): widget.destroy()
 
         # Placeholder temporário
         self.lbl_placeholder = ttk.Label(
