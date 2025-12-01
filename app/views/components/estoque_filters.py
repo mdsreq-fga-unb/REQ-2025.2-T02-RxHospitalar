@@ -241,7 +241,6 @@ class EstoqueFilterFrame(ttk.Frame):
         
         ttk.Label(self.sub_card, text="Outros:", style="Header.TLabel").grid(row=7, column=0, sticky="w", columnspan=2, pady=(0, 5))
         self.outros = {
-            "Principais Clientes": tk.BooleanVar(),
             "Performance de Vendedores": tk.BooleanVar()
         }
         self._add_checkbuttons(self.sub_card, self.outros, start_row=8)
@@ -390,7 +389,6 @@ class EstoqueFilterFrame(ttk.Frame):
             "periodo": periodo_filtrado,
             "condicoes": {k: v.get() for k, v in self.condicoes.items()},
             "sugestao_compra": self.sugestao_var.get(),
-            "clientes": self.outros["Principais Clientes"].get(),
             "vendedores": self.outros["Performance de Vendedores"].get()
         }
 

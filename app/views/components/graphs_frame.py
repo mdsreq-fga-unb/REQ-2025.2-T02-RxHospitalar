@@ -62,17 +62,16 @@ class GraphsFrame(ttk.Frame):
             widget.destroy()
 
         # Verifica se deve mostrar gráficos baseado nos checkboxes marcados
-        tem_clientes = filter_data.get("clientes")
         tem_vendedores = filter_data.get("vendedores")
 
         # Decide se mostra os gráficos ou placeholder(tirar placeholder quando hover gráficos fixos)
         codproduto = (filter_data or {}).get("codigo") or ""
-        if tem_clientes and codproduto.strip():
+        if  codproduto.strip():
             self.mostrar_top_clientes(df, filter_data)
         if tem_vendedores:
             self.mostrar_top_vendedores()
 
-        if not tem_clientes and not tem_vendedores:
+        if not tem_vendedores:
             # Nenhum filtro: mostra placeholder
             ttk.Label(self.charts_container, 
                     text=f"Gráficos gerados com {len(df)} registros\n(O tamanho deste card se ajustará ao gráfico)", 
