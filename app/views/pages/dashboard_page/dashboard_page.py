@@ -13,6 +13,7 @@ from app.views.components.estoque_filters import EstoqueFilterFrame, setup_style
 from app.models.carregar_dados import carregar_dados_unificados 
 from app.views.components.analytical_summary import AnalyticalSummary 
 from app.views.components.purchase_suggestions import PurchaseSuggestions
+from app.views.components.graphs_frame import GraphsFrame 
 from app.controllers.chamadas import sugestao_compra 
 from app.models.consulta_por_status import consulta_por_status
 from app.views.components.loading_import_modal import LoadingImportModal
@@ -75,8 +76,12 @@ class DashboardView(ttk.Frame):
         self.content_area.bind("<Configure>", self._on_frame_configure)
         self.canvas.bind("<Configure>", self._on_canvas_configure)
         
-        # Bind do Mousewheel
+        # --- BIND DO MOUSEWHEEL (Atualizado para funcionar melhor) ---
+        # Vincula o scroll para Windows e MacOS
         self.bind_all("<MouseWheel>", self._on_mousewheel)
+        # Vincula o scroll para Linux
+        self.bind_all("<Button-4>", self._on_mousewheel)
+        self.bind_all("<Button-5>", self._on_mousewheel)
 
         # --- CONTEÚDO DO DASHBOARD ---
         # Adicionando padding no frame interno
@@ -91,6 +96,10 @@ class DashboardView(ttk.Frame):
             background="#1e1e1e"
         )
         self.title_label.pack(anchor="w", pady=(0, 20))
+
+        # --- ÁREA DOS GRÁFICOS ---
+        self.graphs_section = GraphsFrame(self.inner_content)
+        self.graphs_section.pack(fill="x", pady=(0, 20))
 
         # Sugestões de Compra
         self.purchase_suggestions = PurchaseSuggestions(self.inner_content)
@@ -112,9 +121,8 @@ class DashboardView(ttk.Frame):
             # Chama a função que cruza as tabelas
             self.controller.df_master = carregar_dados_unificados()
 
-        # Carregar sugestões iniciais (sem filtro de linha, ou seja, tudo)
+        # Carregar sugestões iniciais
         try:
-            # Periodo padrão de 4 meses se não especificado
             df_sugestoes = sugestao_compra(linha=None, periodo=4)
             self.purchase_suggestions.update_cards(df_sugestoes)
         except Exception as e:
@@ -283,5 +291,19 @@ class DashboardView(ttk.Frame):
         self.canvas.itemconfig(self.canvas_window, width=event.width)
 
     def _on_mousewheel(self, event):
+        """
+        Função unificada de scroll que funciona em Windows, Linux e MacOS
+        """
         if self.winfo_viewable():
-            self.canvas.yview_scroll(int(-1*(event.delta/120)), "units")
+            # Verifica se é Windows/Mac (event.delta) ou Linux (event.num)
+            
+            # Windows / MacOS
+            if event.delta:
+                # O divisor 120 é padrão do Windows. Negativo para inverter a direção natural.
+                self.canvas.yview_scroll(int(-1*(event.delta/120)), "units")
+            
+            # Linux (Button-4 é pra CIMA, Button-5 é pra BAIXO)
+            elif event.num == 4:
+                self.canvas.yview_scroll(-1, "units")
+            elif event.num == 5:
+                self.canvas.yview_scroll(1, "units")
