@@ -1,9 +1,10 @@
 import tkinter as tk
 from tkinter import ttk
-from pandastable import Table
+from pandastable import Table, TableModel
 import pandas as pd
 import unicodedata
 import re
+import threading
 # from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from app.views.components.estoque_filters import EstoqueFilterFrame
 
@@ -14,7 +15,8 @@ from app.views.components.analytical_summary import AnalyticalSummary
 from app.views.components.purchase_suggestions import PurchaseSuggestions
 from app.views.components.graphs_frame import GraphsFrame 
 from app.controllers.chamadas import sugestao_compra 
-from pandastable import Table
+from app.models.consulta_por_status import consulta_por_status
+from app.views.components.loading_import_modal import LoadingImportModal
 
 def _norm(s):
     if not isinstance(s, str): return str(s)
@@ -133,17 +135,34 @@ class DashboardView(ttk.Frame):
         if hasattr(self, 'analytical_summary'):
             self.analytical_summary.update_metrics(df)
             
-        
-
-        for widget in self.frame_tabela_container.winfo_children():
-            widget.destroy()
-
+        # Caso 1: DataFrame vazio ou None
         if df is None or df.empty:
+            # Limpa tudo para mostrar a mensagem
+            for widget in self.frame_tabela_container.winfo_children():
+                widget.destroy()
+            self.pt_widget = None # Remove referência
+            
             ttk.Label(self.frame_tabela_container, 
                       text="Nenhum dado encontrado ou erro ao cruzar tabelas.", 
                       font=("Segoe UI", 12),
                       background="#F4F9F4").pack(pady=50)
             return
+
+        # Caso 2: Tabela já existe, apenas atualiza os dados
+        if hasattr(self, 'pt_widget') and self.pt_widget is not None:
+            try:
+                # Verifica se o widget ainda existe no Tkinter
+                if self.pt_widget.winfo_exists():
+                    self.pt_widget.updateModel(TableModel(df))
+                    self.pt_widget.redraw()
+                    return
+            except Exception as e:
+                print(f"Erro ao atualizar tabela existente: {e}")
+                # Se der erro, cai no fallback de recriar
+        
+        # Caso 3: Tabela não existe ou precisa ser recriada
+        for widget in self.frame_tabela_container.winfo_children():
+            widget.destroy()
 
         self.pt_widget = Table(self.frame_tabela_container, dataframe=df,
                                showtoolbar=True, showstatusbar=True)
@@ -151,60 +170,117 @@ class DashboardView(ttk.Frame):
         self.pt_widget.redraw()
 
     def apply_filters(self, filter_data):
-        df = self.controller.df_master
-        if df is None or df.empty:
-            return
+        """
+        Inicia o processo de filtragem em uma thread separada,
+        exibindo o modal de carregamento.
+        """
+        # 1. Exibe o Modal de Carregamento
+        self.loading_modal = LoadingImportModal(self.controller)
+        self.controller.update_idletasks() # Força a renderização imediata do modal
 
-        print("Aplicando filtros:", filter_data)
-        df_filtered = df.copy()
+        # 2. Inicia a Thread de Filtragem
+        filter_thread = threading.Thread(
+            target=self._perform_filtering,
+            args=(filter_data,)
+        )
+        filter_thread.start()
 
-        cols_map = {_norm(c): c for c in df_filtered.columns}
-        
-        aliases_linha = {"grupo", "linha", "categoria"}
-        aliases_sub = {"subgrupo", "sublinha", "subgruponivel1", "familia"}
-        aliases_cod = {"codven", "codproduto", "referencia", "codigooriginal"}
-        
-        col_linha = next((cols_map[k] for k in cols_map if k in aliases_linha), None)
-        col_sub = next((cols_map[k] for k in cols_map if k in aliases_sub), None)
-        col_cod = next((cols_map[k] for k in cols_map if k in aliases_cod), None)
-        if not col_cod:
-            col_cod = next((cols_map[k] for k in cols_map if "cod" in k), None)
-
-        if val_linha := filter_data.get("linha"):
-            if col_linha:
-                df_filtered = df_filtered[df_filtered[col_linha].astype(str).str.strip() == val_linha.strip()]
-
-        if val_sub := filter_data.get("sub_linha"):
-            if col_sub:
-                df_filtered = df_filtered[df_filtered[col_sub].astype(str).str.strip() == val_sub.strip()]
-
-        if val_cod := filter_data.get("codigo"):
-            if col_cod:
-                df_filtered = df_filtered[df_filtered[col_cod].astype(str).str.contains(val_cod, case=False, na=False)]
-        #Mudei pra apply_filters receber o filter_data direto do estoque_filters
-        # Atualiza os gráficos
-        if hasattr(self, 'graphs_section'):
-            self.graphs_section.update_graphs(df,filter_data)
-
-        # --- ATUALIZA SUGESTÕES DE COMPRA ---
-        # Recalcula as sugestões baseadas na LINHA selecionada (se houver)
+    def _perform_filtering(self, filter_data):
+        """
+        Lógica pesada de filtragem (executada em background).
+        """
         try:
-            print(f"DEBUG: apply_filters called with: {filter_data}")
+            # 1. Determina o DataFrame base
+        # Se "Produto parado" estiver marcado, usamos o resultado de consulta_por_status
+        # Caso contrário, usamos o df_master unificado
+        
+            df_base = self.controller.df_master
             
-            # Tenta pegar o período do filtro ou usa 4 como padrão
-            periodo_str = filter_data.get("periodo", "4 Meses")
-            match = re.search(r'\d+', str(periodo_str))
-            periodo_val = int(match.group()) if match else 4
-            
-            linha_para_sugestao = val_linha if val_linha else None
-            print(f"DEBUG: Calling sugestao_compra with linha={linha_para_sugestao}, periodo={periodo_val}")
-            
-            df_sugestoes = sugestao_compra(linha=linha_para_sugestao, periodo=periodo_val)
-            self.purchase_suggestions.update_cards(df_sugestoes)
-        except Exception as e:
-            print(f"Erro ao atualizar sugestões de compra com filtro: {e}")
+            if filter_data.get("condicoes", {}).get("Produto parado"):
+                try:
+                    print("Filtrando por Produtos Parados (Base Trocada)...")
+                    resultado_status = consulta_por_status()
+                    df_parados = resultado_status.get("df")
+                    
+                    if df_parados is not None and not df_parados.empty:
+                        df_base = df_parados
+                    else:
+                    # Se não há produtos parados, começamos com vazio
+                        df_base = pd.DataFrame(columns=df_base.columns if df_base is not None else None)
+                except Exception as e:
+                    print(f"Erro ao carregar produtos parados: {e}")
+                    df_base = pd.DataFrame()
 
-        self.render_dataframe_table(df_filtered)
+            if df_base is None or df_base.empty:
+                self.after(0, self._on_filtering_complete, pd.DataFrame(), None)
+                return
+
+            print("Aplicando filtros adicionais:", filter_data)
+            df_filtered = df_base.copy()
+
+            cols_map = {_norm(c): c for c in df_filtered.columns}
+            
+            # Apelidos
+            aliases_linha = {"grupo", "linha", "categoria"}
+            aliases_sub = {"subgrupo", "sublinha", "subgruponivel1", "familia"}
+            aliases_cod = {"codven", "codproduto", "referencia", "codigooriginal"}
+            
+            col_linha = next((cols_map[k] for k in cols_map if k in aliases_linha), None)
+            col_sub = next((cols_map[k] for k in cols_map if k in aliases_sub), None)
+            col_cod = next((cols_map[k] for k in cols_map if k in aliases_cod), None)
+            if not col_cod:
+                col_cod = next((cols_map[k] for k in cols_map if "cod" in k), None)
+
+            if val_linha := filter_data.get("linha"):
+                if col_linha:
+                    df_filtered = df_filtered[df_filtered[col_linha].astype(str).str.strip() == val_linha.strip()]
+
+            if val_sub := filter_data.get("sub_linha"):
+                if col_sub:
+                    df_filtered = df_filtered[df_filtered[col_sub].astype(str).str.strip() == val_sub.strip()]
+
+            if val_cod := filter_data.get("codigo"):
+                if col_cod:
+                    df_filtered = df_filtered[df_filtered[col_cod].astype(str).str.contains(val_cod, case=False, na=False)]
+
+            # --- ATUALIZA SUGESTÕES DE COMPRA ---
+            df_sugestoes = None
+            try:
+            # Tenta pegar o período do filtro ou usa 4 como padrão
+                periodo_str = filter_data.get("periodo", "4 Meses")
+                match = re.search(r'\d+', str(periodo_str))
+                periodo_val = int(match.group()) if match else 4
+                
+                linha_para_sugestao = val_linha if val_linha else None
+                
+                df_sugestoes = sugestao_compra(linha=linha_para_sugestao, periodo=periodo_val)
+            except Exception as e:
+                print(f"Erro ao atualizar sugestões de compra com filtro: {e}")
+
+            # Agenda a atualização da UI na thread principal
+            self.after(0, self._on_filtering_complete, df_filtered, df_sugestoes)
+
+        except Exception as e:
+            print(f"Erro crítico na thread de filtro: {e}")
+            # Garante que o modal feche mesmo com erro
+            self.after(0, self._on_filtering_complete, None, None)
+
+    def _on_filtering_complete(self, df_filtered, df_sugestoes):
+        """
+        Atualiza a UI com os resultados e fecha o modal.
+        """
+        # 1. Fecha o Modal
+        if hasattr(self, 'loading_modal') and self.loading_modal:
+            self.loading_modal.destroy_modal()
+            self.loading_modal = None
+
+        # 2. Atualiza a Tabela
+        if df_filtered is not None:
+            self.render_dataframe_table(df_filtered)
+        
+        # 3. Atualiza Sugestões de Compra
+        if df_sugestoes is not None:
+             self.purchase_suggestions.update_cards(df_sugestoes)
 
     def _on_frame_configure(self, event):
         """Reseta a região de scroll para englobar o frame interno"""
