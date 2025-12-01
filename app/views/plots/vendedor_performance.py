@@ -2,19 +2,18 @@ import tkinter as tk
 from tkinter import ttk
 
 class ListaVendedores:
-    def __init__(self, master, vendedores, quantidade, faturamento):
+    def __init__(self, master, vendedores, faturamento):
         self.master = master
         self.vendedores = vendedores
-        self.quantidade = quantidade
         self.faturamento = faturamento
         
         self._construir_lista()
     
     def _construir_lista(self):
         # Ordenar dados de forma decrescente por quantidade
-        dados = list(zip(self.vendedores, self.quantidade, self.faturamento))
+        dados = list(zip(self.vendedores, self.faturamento))
         dados_ordenados = sorted(dados, key=lambda x: x[1], reverse=True)
-        self.vendedores, self.quantidade, self.faturamento = zip(*dados_ordenados)
+        self.vendedores, self.faturamento = zip(*dados_ordenados)
         
         # Título
         titulo = tk.Label(
@@ -38,25 +37,20 @@ class ListaVendedores:
         header_font = ("Arial", 11, "bold")
 
         tk.Label(
-            lista_frame, text="Vendedor", font=header_font,
+            lista_frame, text="COD. Vendedor", font=header_font,
             bg=header_bg, fg="#FFFFFF", width=col0_w, anchor="center"
         ).grid(row=0, column=0, padx=(5, 3), pady=5, sticky="nsew")
 
         tk.Label(
-            lista_frame, text="Quantidade", font=header_font,
-            bg=header_bg, fg="#FFFFFF", width=col1_w, anchor="center"
-        ).grid(row=0, column=1, padx=3, pady=5, sticky="nsew")
-
-        tk.Label(
             lista_frame, text="Faturamento (R$)", font=header_font,
             bg=header_bg, fg="#FFFFFF", width=col2_w, anchor="center"
-        ).grid(row=0, column=2, padx=(3, 5), pady=5, sticky="nsew")
+        ).grid(row=0, column=1, padx=(3, 5), pady=5, sticky="nsew")
 
         # Linhas da tabela
         texto_font = ("Arial", 10)
 
-        for i, (vend, qtd, fat) in enumerate(
-            zip(self.vendedores, self.quantidade, self.faturamento),
+        for i, (vend, fat) in enumerate(
+            zip(self.vendedores, self.faturamento),
             start=1
         ):
             bg_color = "#ACADAD" if (i % 2 == 0) else "#FFFFFF"
@@ -68,19 +62,14 @@ class ListaVendedores:
             ).grid(row=i, column=0, padx=(5, 3), pady=3, sticky="nsew")
 
             tk.Label(
-                lista_frame, text=str(qtd), font=texto_font,
-                bg=bg_color, fg="#3A3939", width=col1_w, anchor="center"
-            ).grid(row=i, column=1, padx=3, pady=3, sticky="nsew")
-
-            tk.Label(
                 lista_frame, text=fat_formatado, font=texto_font,
                 bg=bg_color, fg="#3A3939", width=col2_w, anchor="center"
-            ).grid(row=i, column=2, padx=(3, 5), pady=3, sticky="nsew")
+            ).grid(row=i, column=1, padx=(3, 5), pady=3, sticky="nsew")
 
         # Deixar colunas “flexíveis” dentro do frame
         lista_frame.grid_columnconfigure(0, weight=1)
         lista_frame.grid_columnconfigure(1, weight=1)
-        lista_frame.grid_columnconfigure(2, weight=1)
+       
 
 
 # main dados exemplo

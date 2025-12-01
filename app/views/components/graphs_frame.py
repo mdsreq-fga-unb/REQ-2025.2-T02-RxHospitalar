@@ -3,6 +3,8 @@ from tkinter import ttk
 from app.views.plots.clientes_principais import TopClientesGrafico
 from app.views.plots.vendedor_performance import ListaVendedores
 from app.models.consulta_principais_clientes import consulta_principais_clientes
+from app.models.consulta_performance import consulta_performance
+
 
 class GraphsFrame(ttk.Frame):
     def __init__(self, parent):
@@ -118,9 +120,17 @@ class GraphsFrame(ttk.Frame):
         vendor_frame.pack(side="left", expand=True, padx=10)
         vendor_frame.pack_propagate(False)
 
-        # Dados de exemplo
-        vendedores = ['V1', 'V2', 'V3', 'V4', 'V5']
-        quantidade = [12, 9, 7, 15, 10]
-        faturamento = [1200.50, 890.00, 760.75, 1500.00, 980.30]
+        # 1. Consultar na planilha
+        try:
+            df_perf = consulta_performance(limite=5)
+        except Exception as e:
+            print(f"[GraphsFrame] Erro ao carregar performance vendedores: {e}")
+            return
 
-        ListaVendedores(vendor_frame, vendedores, quantidade, faturamento)
+        if df_perf.empty:
+            return
+        # 2. Converter o DataFrame em listas
+        vendedores = df_perf["CODVENDEDOR"].tolist()
+        faturamento = df_perf["VALOR"].tolist()
+
+        ListaVendedores(vendor_frame, vendedores, faturamento)
