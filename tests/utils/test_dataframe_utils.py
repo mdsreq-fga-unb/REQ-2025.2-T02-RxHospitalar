@@ -65,31 +65,53 @@ def test_juntar_por_codigo_match():
 # ==============================================================================
 # 3. Testes para quantidade_para_comprar
 # ==============================================================================
-def test_calculo_quantidade_compra_simples():
-    """Testa a lógica matemática de sugestão de compra."""
-    # Arrange
-    # Prod A: Estoque 10, Vende 10/mês. Em 3 meses precisa de 30. Faltam 20.
-    # Prod B: Estoque 100, Vende 10/mês. Em 3 meses precisa de 30. Sobram 70.
+
+def test_calculo_quantidade_compra_caixas_e_valor():
+    """
+    Testa a lógica de:
+    1. Filtrar necessidade.
+    2. Converter falta de unidades para caixas (arredondamento pra cima).
+    3. Calcular valor total monetário.
+    """
+    # ARRANGE
     df_entrada = pd.DataFrame({
         "CODORIGINAL": ["PROD_A", "PROD_B"],
         "GRUPO": ["TESTE", "TESTE"],
-        "Estoque": [10, 100],
-        "Qtd Caixa": [1, 1],
-        "MEDIA_MENSAL": [10, 10],
-        "10/2025": [0, 0] # Coluna dummy
+        
+        # PROD_A: Tem 2 caixas de 10 un (Total 20 un). 
+        # Vende 20/mês. Em 3 meses precisa de 60 un.
+        # Faltam 40 unidades.
+        # Como a caixa tem 10, precisa comprar 4 CAIXAS.
+        # Preço da caixa: R$ 50,00 -> Total: 4 * 50 = R$ 200,00
+        
+        # PROD_B: Estoque gigante, não precisa comprar.
+        "Estoque": [2, 100],        
+        "Qtd Caixa": [10, 10],      
+        "Preço Aquisição": [50.0, 50.0],
+        "MEDIA_MENSAL": [20, 10],   
+        "10/2025": [0, 0]
     })
     periodo = 3 
     
-    # Act
+    # ACT
     resultado = quantidade_para_comprar(df_entrada, periodo=periodo)
 
-    # Assert
-    # 1. Verifica se filtrou quem não precisa comprar (Prod B sai)
+    # ASSERT
+    # 1. Filtro (Prod B sai)
     assert len(resultado) == 1
-    
-    # 2. Verifica se quem ficou foi o Prod A
     row = resultado.iloc[0]
     assert row["CODORIGINAL"] == "PROD_A"
 
-    # 3. Valida a conta: (10 * 3) - 10 = 20
-    assert row["SUGESTAO_COMPRA"] == 20
+    # 2. Valida conta de unidades
+    # Estoque Total: 2 * 10 = 20
+    # Necessidade: 20 * 3 = 60
+    # Saldo: 20 - 60 = -40
+    assert row["SALDO_ESTOQUE_UNIDADES"] == -40
+
+    # 3. Valida conversão para CAIXAS
+    # Faltam 40 un / 10 por caixa = 4 caixas
+    assert row["SUGESTAO_QTD_CAIXAS"] == 4
+
+    # 4. Valida Valor Financeiro
+    # 4 caixas * 50 reais = 200 reais
+    assert row["VALOR_TOTAL_COMPRA"] == 200.0
