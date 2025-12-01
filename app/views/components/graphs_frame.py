@@ -24,9 +24,12 @@ from app.views.plots.dashboard_plots import (
 
 class GraphsFrame(ttk.Frame):
     def __init__(self, parent):
+        # Frame PRINCIPAL: Esse continua com Card.TFrame (para ter a borda externa bonita)
         super().__init__(parent, style="Card.TFrame")
         
+        # Cria um estilo "interno" que só tem a cor de fundo, sem borda
         style = ttk.Style()
+        # Copia a cor de fundo que você usa (#F4F9F4), mas tira a borda
         style.configure("CardInner.TFrame", background="#F4F9F4", borderwidth=0, relief="flat")
 
         # --- Cabeçalho (Título + Linha) ---
@@ -48,6 +51,7 @@ class GraphsFrame(ttk.Frame):
         # --- Área de Conteúdo dos Gráficos ---
         self.charts_container = ttk.Frame(self, style="CardInner.TFrame")
         self.charts_container.pack(fill="both", expand=True, padx=15, pady=15)
+
 
         self.lbl_placeholder = ttk.Label(
             self.charts_container, 
