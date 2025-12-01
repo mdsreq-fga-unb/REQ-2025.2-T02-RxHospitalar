@@ -31,8 +31,7 @@ A seguir, detalhamos os pilares que compõem as características do produto:
 *Tabela 1: Objetivos Específicos do Projeto*
 | Código | Objetivo Específico   | Indicador de Sucesso                                |
 |--------|-----------------------|-----------------------------------------------------|
-| OE1 <a id="OE2"></a>| Reduzir o tempo de análise de compras e estoque | Diminuir o tempo gasto nas análises em no mínimo 50% |
-| OE2 <a id="OE3"></a> | Disponibilizar interface intuitiva para análise e consulta de dados | Diminuir em 50% a quantidade de assistências dada à equipe de vendas (representantes) |
+| OE1 <a id="OE1"></a>| Reduzir o tempo de análise de compras e estoque | Diminuir o tempo gasto nas análises em no mínimo 50% |
 | OE3 <a id="OE4"></a> | Centralizar dados das planilhas de itens faturados, pendentes, estoque, consignados e pedidos em uma visão única. | Eliminar completamente a necessidade de consulta parcelada das 5 planilhas distintas usadas. |
 | OE4 <a id="OE5"></a> | Implementar filtros dinâmicos por linha, produto, cliente e período (ex: últimos 4 meses). | O usuário consegue filtrar e visualizar dados pesquisados em menos de 5 minutos. |
 | OE5 <a id="OE6"></a> | Automatizar o cálculo de estoque ideal <br/> com base na média de vendas dos últimos <br/> 4 meses, gerando sugestões automáticas de reposição e pedidos fracionados por caixas. | O sistema sugere uma reposição com 100% de precisão em relação à análise manual atual, com isso se espera obter uma redução de até 80% na necessidade de cálculos manuais de compra. |
@@ -91,4 +90,4 @@ A implementação desta solução vai além da simples automação de tarefas, g
 
 - **Padronização e Qualidade de Vida no Trabalho**  
 **Impacto:** Unificação de processos e linguagem, redução da carga mental operacional e provisionamento de uma ferramenta intuitiva, resultando em um ambiente de trabalho mais organizado e com menor estresse.  
-**Viabilizado por:** [OE2](#OE2) (Interface intuitiva) e a sinergia de todos os OEs que eliminam tarefas manuais repetitivas.
+**Viabilizado pela:** Sinergia de todos os OEs que eliminam tarefas manuais repetitivas.
