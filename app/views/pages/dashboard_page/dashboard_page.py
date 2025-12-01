@@ -14,6 +14,7 @@ from app.views.components.analytical_summary import AnalyticalSummary
 from app.views.components.purchase_suggestions import PurchaseSuggestions
 from app.views.components.graphs_frame import GraphsFrame 
 from app.controllers.chamadas import sugestao_compra 
+from pandastable import Table
 
 def _norm(s):
     if not isinstance(s, str): return str(s)
@@ -22,7 +23,6 @@ def _norm(s):
     s = re.sub(r"[^\w]+", " ", s).lower().strip()
     return s.replace(" ", "")
 
-from pandastable import Table
 
 class DashboardView(ttk.Frame):
     def __init__(self, parent, controller):
@@ -185,6 +185,24 @@ class DashboardView(ttk.Frame):
         # Atualiza os gráficos
         if hasattr(self, 'graphs_section'):
             self.graphs_section.update_graphs(df,filter_data)
+
+        # --- ATUALIZA SUGESTÕES DE COMPRA ---
+        # Recalcula as sugestões baseadas na LINHA selecionada (se houver)
+        try:
+            print(f"DEBUG: apply_filters called with: {filter_data}")
+            
+            # Tenta pegar o período do filtro ou usa 4 como padrão
+            periodo_str = filter_data.get("periodo", "4 Meses")
+            match = re.search(r'\d+', str(periodo_str))
+            periodo_val = int(match.group()) if match else 4
+            
+            linha_para_sugestao = val_linha if val_linha else None
+            print(f"DEBUG: Calling sugestao_compra with linha={linha_para_sugestao}, periodo={periodo_val}")
+            
+            df_sugestoes = sugestao_compra(linha=linha_para_sugestao, periodo=periodo_val)
+            self.purchase_suggestions.update_cards(df_sugestoes)
+        except Exception as e:
+            print(f"Erro ao atualizar sugestões de compra com filtro: {e}")
 
         self.render_dataframe_table(df_filtered)
 
