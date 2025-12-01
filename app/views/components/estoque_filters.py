@@ -106,9 +106,9 @@ def setup_styles(root):
     style.configure("PeriodButton.TFrame", background=COLOR_CARD_BG)
 
     style.configure("Period.TCombobox", fieldbackground=COLOR_CARD_BG, background=COLOR_CARD_BG, bordercolor=COLOR_BUTTON_BG, borderwidth=1, relief="solid", padding=[2, 2])
-    style.map("Period.TCombobox", fieldbackground=[('readonly', COLOR_CARD_BG)], bordercolor=[('readonly', COLOR_BUTTON_BG)], selectbackground=[('readonly', COLOR_CARD_BG)], selectforeground=[('readonly', COLOR_TEXT)])    
+    style.map("Period.TCombobox", fieldbackground=[('readonly', COLOR_CARD_BG)], bordercolor=[('readonly', COLOR_BUTTON_BG)], selectbackground=[('readonly', COLOR_CARD_BG)], selectforeground=[('readonly', COLOR_TEXT)])     
     style.configure("Active.Period.TCombobox", fieldbackground=COLOR_BUTTON_BG, background=COLOR_BUTTON_BG, bordercolor=COLOR_BUTTON_BG, borderwidth=1, relief="solid", padding=[2, 2])
-    style.map("Active.Period.TCombobox", fieldbackground=[('readonly', COLOR_BUTTON_BG)], bordercolor=[('readonly', COLOR_BUTTON_BG)], selectbackground=[('readonly', COLOR_BUTTON_BG)], selectforeground=[('readonly', COLOR_TEXT)])    
+    style.map("Active.Period.TCombobox", fieldbackground=[('readonly', COLOR_BUTTON_BG)], bordercolor=[('readonly', COLOR_BUTTON_BG)], selectbackground=[('readonly', COLOR_BUTTON_BG)], selectforeground=[('readonly', COLOR_TEXT)])     
 
     style.configure("Filter.TButton", background=COLOR_BUTTON_BG, foreground=COLOR_TEXT, font=("Segoe UI", 11, "bold"), borderwidth=0, relief="flat", padding=[10, 5])
     style.map("Filter.TButton", background=[('active', COLOR_BUTTON_ACTIVE_BG), ('!active', COLOR_BUTTON_BG)])
