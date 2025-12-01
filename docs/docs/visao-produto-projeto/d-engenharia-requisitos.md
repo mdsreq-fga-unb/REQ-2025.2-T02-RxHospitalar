@@ -63,11 +63,11 @@ Nesta seção são estabelecidas as atividades da Engenharia de Requisitos (ER),
 **Resultado gerado:** Backlog do MVP atualizado, alinhado com a rastreabilidade dos O.E’S do produto, da avaliação técnica e valor de negócio do cliente.
 
 
-### User Design
+### Fase 2 - User Design
 
 #### 4.1.7 Representação de Requisitos:
 
-* **Prototipagem:** a materialização dos requisitos foi por meio de Figma para melhor verificação e validação posteriormente.
+* **Prototipagem:** a materialização dos requisitos foi por meio de [Figma](https://www.figma.com/design/Xk5sSYqw2tHww9UCYAKv7k/BASED--RX-Hospitalar?node-id=0-1&p=f&t=G1ZNAtvqbZ1XNQvB-0) para melhor verificação e validação posteriormente.
 
 **Resultado gerado:** Protótipo de baixa e média fidelidade
 
@@ -106,7 +106,44 @@ Nesta seção são estabelecidas as atividades da Engenharia de Requisitos (ER),
 
 **Resultado gerado:** [Formulário com o checklist da  validação do cliente e comentários adicionais sobre o protótipo de alta fidelidade](https://docs.google.com/document/d/1DuWLgI8KOPhmYx1iw2JULCNu_puY95xGvxx-HQFFgos/edit?usp=sharing)
 
+### Fase 3 - Construção
 
+#### 4.1.13 Verificação:
+
+* **Definition of Ready (DoR):**  Foram utilizados para garantir que as novas construções a serem feitas estejam alinhadas com  idea da concepção do produto representada pelo protótipo, não causando implementação que fujam muito do escopo que foi validado, conforme conversado com o cliente.  
+
+* **Revisão:** Durante todo processo de construção ao adicionar uma nova funcionalidade ou alteração considerável no código é preciso passar pela revisão de pelo menos um outro membro da equipe (realizando um Pull Request), que irá garantir a não quebra das funcionalidades já implementadas, o funcionamento esperado do que está sendo implementado, e também o alinhamento da implementação do requisito em relação ao (DoD).
+
+**Resultado gerado:** Implementação alinhada aos DoD, DoR, Qualidade de Requisitos (testes), através do TDD, Resultados da Revisão de pelo menos um outro memebro (Pull Request).  
+
+#### 4.1.14 Análise e Consenso && Organização e Atualização:
+
+* **Backlog do Produto:**  Backlog de Requisitos: Através de uma nova análise dos requisitos no backlog e do MoSCoW gerado pelal equipe foi trago em uma das nossas reuniões semanais dada a produtividade da equipe, perspectiva de entrega do produto e também da maior priorização dos requisitos de Análises Avançadas foi votada a retirada dos requisitos da categoria de Notificações do MVP. Para além disso, também tivemos atualizações referentes aos requisitos RF11 e RF05 advindas do cliente.
+
+
+* **Negociação:**   Foi tida uma conversa através do nosso grupo no whatsapp com o cliente para abordar sobre a possível mudança de escopo do MVP dado a produtividade da equipe em relação ao tempo de desenvolvimento necessário que os requisitos mais prioritários da categoria de Análises Avançadas estava maior do que o esperado. Dado os argumentos e explicação sincerada da proposta de mudança do MVP e análise das prioridades em relação ao que era mais necessário para o cliente a proposta de mundaça foi entendida com clareza e aceita com sucesso.
+
+
+**Resultado gerado:** MVP Backlog Atualizado e Requisitos com espeficações mais definidas alinhadas com a necessidade do cliente.  
+
+#### 4.1.15 Validação:
+
+* **Feedback:** Através do Sistema Executável gerado, foi possivel coletar o primerio feedback do cliente em relação a V1 do projeto. Com o uso de critérios de valiadção específicos para os requisitos propostos naquela fase utilizando um formulário, foi coletado as impressões do usúario sobre o uso da aplicação e os resultados gerado para que fosse possível melhorias, caso necessário.
+
+**Resultado gerado:** [Feedback do cliente sobre a implementação dos requisitos RF02, RF03, RF04, RF15](https://docs.google.com/document/u/6/d/1Rl8c0sF_EulcMqKozSS-cp1m0hZfKLWszexWU68Aw6Q/edit)  
+
+### Fase 4 - Transição
+
+#### 4.1.16 Verificação:
+
+* **Revisão:**  Durante todo processo de construção ao adicionar uma nova funcionalidade ou alteração considerável no código é preciso passar pela revisão de pelo menos um outro membro da equipe (realizando um Pull Request), que irá garantir a não quebra das funcionalidades já implementadas, a integração entre as implementações do backend e frontend com o funcionamento esperado definido pelos critérios de aceitação alinhado ao (DoD).
+
+
+
+* **Análise da Qualidade de Requisitos:** Por estarmos utilizando o TDD no nosso processo de desenvolvimento, os testes automatizaos em relação aos código do backend estão sendo realizado para garantir a confiabilidade necessária, dada a cobertura de teste que foi deferida para este projeto, garantido a sua funcionalidade dentro dos resultados esperados.
+
+
+**Resultado gerado:** Qualidade de Requisitos, Resultados da Revisão e Executável Funcional do Projeto    
 
 ---
 
