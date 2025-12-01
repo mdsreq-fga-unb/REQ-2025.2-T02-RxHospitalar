@@ -203,7 +203,7 @@ Ele materializa o objetivo de garantir segurança e controle de acesso ([OE07](h
 
 | ID    | Nome                                       |
 |-------|--------------------------------------------|
-| RF01  | Analisar Período de Estoque (CORE)         |
+| RF01  | Analisar Período de Estoque                |
 | RF02  | Integrar os Dados das 4 Planilhas          |
 | RF03  | Consultar Produto por Código               |
 | RF04  | Consultar Produto pela Linha               |
