@@ -9,7 +9,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(BASE_DIR)))
 
 # endereço planilha excel 
-file = os.path.join(PROJECT_ROOT, "data", "PlanilhaAnaliseTeste.xlsx")
+file = os.path.join(PROJECT_ROOT, "data", "planilha_de_dados.xlsx")
 
 #funcao para carregar dados das linhas com filtro de colunas
 def load_selected_columns( sheet_name: str, columns):
@@ -18,7 +18,14 @@ def load_selected_columns( sheet_name: str, columns):
         df = pd.read_excel(file, sheet_name=sheet_name, usecols=columns)
         
         if isinstance(df, dict):
-            df_master = pd.concat(df.values(), ignore_index=True)
+            # Filter out empty DataFrames to avoid FutureWarning
+            valid_dfs = [d for d in df.values() if not d.empty]
+            
+            if valid_dfs:
+                df_master = pd.concat(valid_dfs, ignore_index=True)
+            else:
+                df_master = pd.DataFrame()
+                
             return df_master
         
         return df
