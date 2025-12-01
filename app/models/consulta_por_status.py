@@ -86,7 +86,7 @@ def consulta_por_status():
 
     # Seleciona estoque cujos códigos NÃO aparecem em vendas recentes
     mask_sem_saida = ~estoque_codes.isin(vendas_recent_codes)
-    resultado = df_estoque.loc[mask_sem_saida, [col for col in [est_code, est_desc] if col in df_estoque.columns]].copy()
+    resultado = df_estoque.loc[mask_sem_saida].copy()
 
     # Saída no mesmo formato usado nos testes por linha (df + card)
     card = f"{len(resultado)} produto(s) em estoque sem saída nos últimos 6 meses."

@@ -71,13 +71,13 @@ class Header(ttk.Frame):
 
 
         # dropdown 1: notificacao
-        config_btn = ttk.Menubutton(buttons_frame, image=self.notifi_off,style="Icon.TButton",cursor="hand2")
-        config_btn.bind("<Enter>", lambda e: config_btn.configure(image=self.notifi_off_hover))
-        config_btn.bind("<Leave>", lambda e: config_btn.configure(image=self.notifi_off))
-        config_menu = tk.Menu(config_btn, tearoff=0)
-        config_menu.add_command(label="Notificações", command=lambda: print("Notif"))
-        config_btn["menu"] = config_menu
-        config_btn.grid(row=0, column=1, padx=5)
+        # config_btn = ttk.Menubutton(buttons_frame, image=self.notifi_off,style="Icon.TButton",cursor="hand2")
+        # config_btn.bind("<Enter>", lambda e: config_btn.configure(image=self.notifi_off_hover))
+        # config_btn.bind("<Leave>", lambda e: config_btn.configure(image=self.notifi_off))
+        # config_menu = tk.Menu(config_btn, tearoff=0)
+        # config_menu.add_command(label="Notificações", command=lambda: print("Notif"))
+        # config_btn["menu"] = config_menu
+        # config_btn.grid(row=0, column=1, padx=5)
 
         # dropdown 2: sair
         profile_btn = ttk.Menubutton(buttons_frame, image=self.profile_default,style="Icon.TButton", cursor="hand2")
