@@ -1,5 +1,5 @@
 ---
-sidebar_label: "N.º 14 (18/11/2025)"
+sidebar_label: "Ata N.º14 | 18/11"
 sidebar_position: 14
 ---
 
