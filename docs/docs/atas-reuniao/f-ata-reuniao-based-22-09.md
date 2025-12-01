@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Verificação dos Requisitos de Software em relação ao MVP"
+sidebar_label: "Ata N.º6 | 22/09"
 sidebar_position: 6
 ---
 

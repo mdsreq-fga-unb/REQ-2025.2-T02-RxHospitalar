@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Validação do BackLog do MVP"
+sidebar_label: "Ata N.º9 | 04/10"
 sidebar_position: 9
 ---
 
