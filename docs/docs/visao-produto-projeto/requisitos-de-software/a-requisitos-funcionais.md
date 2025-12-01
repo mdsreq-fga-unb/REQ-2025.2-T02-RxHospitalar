@@ -12,9 +12,7 @@ Os requisitos funcionais detalham as funcionalidades específicas que o sistema 
 ### Análise Base do Sistema
 
 Este grupo de requisitos constitui o núcleo analítico do sistema, automatizando os cálculos fundamentais de gestão de estoque.  
-Sua implementação visa reduzir drasticamente o tempo de análise ([OG1](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OG1))  
-e automatizar a gestão de estoque com base em regras parametrizáveis ([OG3](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OG3)),  
-atendendo diretamente aos objetivos de diminuir o tempo de análise ([OE01](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE1))  
+Sua implementação visa reduzir drasticamente o tempo de análise e automatizar a gestão de estoque com base em regras parametrizáveis diretamente aos objetivos de diminuir o tempo de análise ([OE01](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE1))  
 e automatizar cálculos de reposição ([OE05](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE5)).
 
 O **RF01** está relacionado ao **[OE05](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE5)** e o **RF02** está relacionado ao **[OE03](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE3)**.
@@ -32,8 +30,8 @@ O **RF01** está relacionado ao **[OE05](https://mdsreq-fga-unb.github.io/REQ-20
 > **Critérios de aceitação**:
 > - O sistema deve calcular o período de estoque baseado na fórmula: (Estoque Total / Média de Saída)
 > - Permitir configurar período de análise (3, 4, 5 meses, etc.)
-> - Destacar na interface produtos com uma cor que deixe evidente os produtos que estão com estoque abaixo do limite ideal (4 meses)
-> - Sugerir quantidade a ser comprada para atingir o estoque ideal
+> - Através de um botão o sistema atualiza os dados automaticamente a última versão do arquivo de dados
+
 
 ---
 
@@ -55,7 +53,7 @@ O **RF01** está relacionado ao **[OE05](https://mdsreq-fga-unb.github.io/REQ-20
 
 ### Consultas Diretas
 
-Este grupo de requisitos está conectado ao ([OG3](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OG3)) e ([OE04](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE4)), na funcionalidade que permite ao usuário consultar seus produtos através de diferentes chaves de pesquisa.
+Este grupo de requisitos está conectado ao ([OE04](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE4)), na funcionalidade que permite ao usuário consultar seus produtos através de diferentes chaves de pesquisa.
 
 **RF03 - Consultar Produto por código original do produto**
 
@@ -74,8 +72,8 @@ Este grupo de requisitos está conectado ao ([OG3](https://mdsreq-fga-unb.github
 **RF05 - Consultar produto por status (ativo, parado, etc.) (prioritário)**  
 
 > **Critérios de aceitação:**
-> - Consulta que utiliza o status dos produtos escolhido pelo usuário para listar  
->
+> - Consulta que utiliza o status parado dos produtos para listar para o usuario produtos que estão sem movimentação de vendas há pelo menos 6 meses
+  
 > **Objetivo Específico (OE) Relacionado:** [OE04](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE4)  
 
 **RF06 - Consultar por período de estoque específico (por X quantidade de meses)**  
@@ -85,19 +83,11 @@ Este grupo de requisitos está conectado ao ([OG3](https://mdsreq-fga-unb.github
 >
 > **Objetivo Específico (OE) Relacionado:** [OE04](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE4)  
 
-**Critérios de aceitação gerais:**
-
-- Interface deve permitir ao usuário aplicar filtros em poucos cliques
-- Permitir a aplicação de múltiplos filtros simultaneamente em uma única busca
-- Mostrar resultados em tempo real
-- Salvar configurações de filtros frequentes
-
 ---
 
 ### Análises Avançadas
 
-Indo além da análise básica, estes requisitos fornecem inteligência de negócio acionável, como sugestões de compra e análise de desempenho.  
-Eles contribuem diretamente para prover insights estratégicos por cliente e vendedor ([OG6](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OG6)) e apoiar a tomada de decisão baseada em dados, realizando os objetivos de oferecer visão analítica do histórico por cliente ([OE09](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE9)) e automatizar sugestões de reposição ([OE05](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE5)).
+Indo além da análise básica, estes requisitos fornecem inteligência de negócio acionável, como sugestões de compra e análise de desempenho. Eles contribuem diretamente para prover insights estratégicos por cliente e vendedor, e apoiar a tomada de decisão baseada em dados, realizando os objetivos de oferecer visão analítica do histórico por cliente ([OE09](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE9)) e automatizar sugestões de compra ([OE05](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE5)).
 
 **RF07 - Sugerir compras inteligentes**
 
@@ -110,7 +100,6 @@ Eles contribuem diretamente para prover insights estratégicos por cliente e ven
 > - Considerar unidades por caixa na sugestão
 > - Calcular valor total da compra sugerida
 > - Destacar na interface produtos críticos (estoque zerado ou muito baixo)
-> - Criar uma sugestão de compra para o usuário quando ele destacar uma célula com um produto marcado como crítico
 
 **RF08 - Consultar principais clientes de cada produto**
 
@@ -119,7 +108,8 @@ Eles contribuem diretamente para prover insights estratégicos por cliente e ven
 > **Objetivo Específico (OE) Relacionado:** [OE09](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE9) 
 >
 > **Critérios de aceitação:**
-> - Consultar os 5 clientes mais frequentes do produto
+> - Consultar os 5 clientes mais frequentes do produto  
+> - Mostrar média de compra mensal por cliente
 
 **RF09 - Consultar histórico de compras por cliente**
 
@@ -148,21 +138,12 @@ Eles contribuem diretamente para prover insights estratégicos por cliente e ven
 > **Critérios de aceitação:**
 > - Consultar quais meses há maior volume de compras nos últimos 4 meses e quais os clientes que mais compraram em cada mês.
 
-**Critérios de aceitação gerais:**
-
-- Consultar principais clientes por produto
-- Mostrar média de compra mensal por cliente
-- Identificar clientes que pararam de comprar
-- Relatórios de vendas por representante
-
 ---
 
 ### Notificação sobre produtos em estado crítico
 
 Estes requisitos implementam um sistema de alertas proativo para mitigar riscos operacionais.  
-Eles são fundamentais para notificar proativamente sobre situações críticas ([OG7](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OG7))  
-e melhorar a confiabilidade e redução de riscos, viabilizados pelos objetivos de notificar sobre produtos parados ([OE08](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE8))  
-e permitir a visualização rápida de produtos abaixo do estoque mínimo ([OE06](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE6)).
+Eles são fundamentais para notificar proativamente sobre situações críticas e melhorar a confiabilidade e redução de riscos, viabilizados pelos objetivos de notificar sobre produtos parados ([OE08](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE8)) e permitir a visualização rápida de produtos abaixo do estoque mínimo ([OE06](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE6)).
 
 **RF12 - Notificar produtos com baixa saída**
 
@@ -193,8 +174,7 @@ e permitir a visualização rápida de produtos abaixo do estoque mínimo ([OE06
 ### Autorização de Acesso
 
 Este grupo assegura a proteção dos dados sensíveis do negócio, um pilar crítico da solução.  
-Ele materializa o objetivo de garantir segurança e controle de acesso ([OG5](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OG5)),  
-atendendo rigorosamente ao objetivo de garantir sigilo e controle de acesso ([OE07](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE7)).
+Ele materializa o objetivo de garantir segurança e controle de acesso ([OE07](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE7)).
 
 **RF15 - Autenticar o usuário**
 
