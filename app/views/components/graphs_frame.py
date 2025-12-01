@@ -2,6 +2,8 @@ import tkinter as tk
 from tkinter import ttk
 from app.views.plots.clientes_principais import TopClientesGrafico
 from app.views.plots.vendedor_performance import ListaVendedores
+from app.models.consulta_principais_clientes import consulta_principais_clientes
+
 class GraphsFrame(ttk.Frame):
     def __init__(self, parent):
         # Frame PRINCIPAL: Esse continua com Card.TFrame (para ter a borda externa bonita)
@@ -62,29 +64,54 @@ class GraphsFrame(ttk.Frame):
         tem_vendedores = filter_data.get("vendedores")
 
         # Decide se mostra os gráficos ou placeholder(tirar placeholder quando hover gráficos fixos)
-        if tem_clientes or tem_vendedores:   
-            if tem_clientes:
-                self.mostrar_top_clientes()
-            if tem_vendedores:
-                self.mostrar_top_vendedores()
-        else:
+        codproduto = (filter_data or {}).get("codigo") or ""
+        if tem_clientes and codproduto.strip():
+            self.mostrar_top_clientes(df, filter_data)
+        if tem_vendedores:
+            self.mostrar_top_vendedores()
+
+        if not tem_clientes and not tem_vendedores:
             # Nenhum filtro: mostra placeholder
             ttk.Label(self.charts_container, 
                     text=f"Gráficos gerados com {len(df)} registros\n(O tamanho deste card se ajustará ao gráfico)", 
                     font=("Segoe UI", 10),
                     background="#F4F9F4").pack(pady=20)
-                    
 
-    def mostrar_top_clientes(self,df=None):
+    #Grafico de clientes principais
+    def mostrar_top_clientes(self,df=None, filter_data=None):
         client_frame = ttk.Frame(self.charts_container,style="CardInner.TFrame", width=532, height=320)
         client_frame.pack(side="left", expand=True, padx=10)
         client_frame.pack_propagate(False)
 
         # Dados de exemplo
-        clientes = ["cliente 3", "cliente 1", "cliente 2", "cliente 4", "cliente 5"]
-        quantidade = [1100, 1020, 950, 890, 789]
         faturamento = [9000, 7000, 5000, 3000, 2500]
         frequencias = [10, 8, 7, 5, 3]
+
+        # 1. Obtém o código do produto vindo dos filtros
+        
+        if filter_data is None:
+            filter_data = {}
+
+        codproduto = filter_data.get("codigo") or None
+        
+        if not codproduto:
+            return
+        #2. Consultar na planilha
+        try:
+            df_clientes = consulta_principais_clientes(codproduto=codproduto, limite=5)
+        except Exception as e:
+            print(f"[GraphsFrame] Erro ao carregar principais clientes: {e}")
+            return
+        # Se não retornou nada, avisa e sai
+        if df_clientes.empty:
+            return
+        # 3. Converte o DataFrame em listas para o gráfico
+        clientes = df_clientes["RAZAOSOCIAL"].tolist()
+        quantidade = df_clientes["QUANTIDADE"].tolist()
+
+        # 4. Garante que há pelo menos 1 linha antes de chamar o gráfico
+        if not clientes:
+            return
 
         TopClientesGrafico(client_frame, clientes, quantidade, faturamento, frequencias)
 

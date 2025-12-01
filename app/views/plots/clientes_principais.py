@@ -11,12 +11,25 @@ class TopClientesGrafico:
         self.faturamento = faturamento
         self.frequencias = frequencias
 
+        # Se não tiver dados, não tenta montar gráfico
+        if not self.clientes or not self.quantidade:
+            return
+        
         self.faturamento_total = sum(self.faturamento)
 
         # Ordenar dados de forma decrescente
         dados = list(zip(self.clientes, self.quantidade, self.faturamento, self.frequencias))
         dados_ordenados = sorted(dados, key=lambda x: x[1], reverse=True)
+
+        # NOVO: checa se ainda tem dados após o sort
+        if not dados_ordenados:
+            return
+
         self.clientes, self.quantidade, self.faturamento, self.frequencias = zip(*dados_ordenados)
+
+         # Guarda nomes completos e cria labels truncados
+        self.clientes_full = list(self.clientes)
+        self.clientes_labels = [self._truncate_label(nome) for nome in self.clientes_full]
 
         # Bind para redimensionamento
         self.master.bind("<Configure>", self._on_resize)
@@ -37,7 +50,7 @@ class TopClientesGrafico:
         # Barras
         cores = ["#06373D", "#08262C", "#2D595C", "#114640", "#7B8B7C"]
         self.barras = self.ax.bar(
-            self.clientes, 
+            range(len(self.clientes_labels)), 
             self.quantidade,
             color=cores,
             edgecolor="#01252A",
@@ -45,6 +58,9 @@ class TopClientesGrafico:
             alpha=0.9,
             width=0.5
         )
+        # Define os ticks do eixo X com labels truncados
+        self.ax.set_xticks(range(len(self.clientes_labels)))
+        self.ax.set_xticklabels(self.clientes_labels, rotation=0, fontsize=7)
 
         # Eixos
         self.ax.set_ylabel("Quantidade", fontsize=9, color="#3A3939", fontweight="bold")
@@ -95,15 +111,17 @@ class TopClientesGrafico:
         )
         self.annot.set_visible(False)
 
-        def update_annot(rect, quantidade, faturamento, freq):
+        def update_annot(idx,rect, quantidade, faturamento, freq):
             x = rect.get_x() + rect.get_width() / 2
             y = rect.get_height()
 
             self.annot.xy = (x, y)
-            y_offset = max(self.quantidade) * 0.08
-            self.annot.xyann = (x, y + y_offset)
+            
+            
+            nome_completo = self.clientes_full[idx]
 
             texto = (
+                f"{nome_completo}\n"
                 f"Quantidade: {quantidade}\n"
                 f"Faturamento: R$ {faturamento:,.2f}\n"
                 f"Frequência: {freq}"
@@ -111,16 +129,60 @@ class TopClientesGrafico:
             texto = texto.replace(",", "X").replace(".", ",").replace("X", ".")
 
             self.annot.set_text(texto)
-            self.annot.set_position((x, y + max(self.quantidade) * 0.05))
+            # --- Ajuste para não sair do gráfico ---
+            # posição "ideal" acima da barra
+            x_disp = x
+            y_disp = y + max(self.quantidade) * 0.05
+            self.annot.set_position((x_disp, y_disp))
+            # ------ Cálculo do bbox e correções nas bordas ------
+            self.fig.canvas.draw_idle()
+            renderer = self.fig.canvas.get_renderer()
+
+            bbox = self.annot.get_window_extent(renderer=renderer)   # bbox do tooltip em pixels
+            ax_bbox = self.ax.get_window_extent(renderer=renderer)   # bbox do eixo em pixels
+
+            # transformação: data -> pixels e inversa pixels -> data
+            data_to_px = self.ax.transData
+            px_to_data = data_to_px.inverted()
+
+            # Ajusta esquerda
+            if bbox.x0 < ax_bbox.x0:
+                dx_px = ax_bbox.x0 - bbox.x0          # quanto precisa andar pra direita em pixels
+                # converte esse deslocamento horizontal em coordenadas de dados
+                x0_data, _ = px_to_data.transform((0, 0))
+                x1_data, _ = px_to_data.transform((dx_px, 0))
+                x_disp += (x1_data - x0_data)
+
+            # Atualiza posição e recalcula bbox
+            self.annot.set_position((x_disp, y_disp))
+            bbox = self.annot.get_window_extent(renderer=renderer)
+
+            # Ajusta direita
+            if bbox.x1 > ax_bbox.x1:
+                dx_px = bbox.x1 - ax_bbox.x1          # quanto passou pra direita
+                x0_data, _ = px_to_data.transform((0, 0))
+                x1_data, _ = px_to_data.transform((dx_px, 0))
+                x_disp -= (x1_data - x0_data)
+
+            # Atualiza posição com correção horizontal final
+            self.annot.set_position((x_disp, y_disp))
+            bbox = self.annot.get_window_extent(renderer=renderer)
+
+            # Ajusta topo: se estourar em cima, joga pra baixo da barra
+            if bbox.y1 > ax_bbox.y1:
+                y_disp = y - max(self.quantidade) * 0.05
+                self.annot.set_position((x_disp, y_disp))
+
+            self.annot.set_position((x_disp, y_disp))
 
         def hover(event):
             visivel = self.annot.get_visible()
             if event.inaxes == self.ax:
-                for rect, quantidade, faturamento, freq in zip(
-                    self.barras, self.quantidade, self.faturamento, self.frequencias
+                for idx, (rect, quantidade, faturamento, freq) in enumerate(
+                    zip(self.barras, self.quantidade, self.faturamento, self.frequencias)
                 ):
                     if rect.contains(event)[0]:
-                        update_annot(rect, quantidade, faturamento, freq)
+                        update_annot(idx,rect, quantidade, faturamento, freq)
                         self.annot.set_visible(True)
                         self.fig.canvas.draw_idle()
                         return
@@ -150,7 +212,15 @@ class TopClientesGrafico:
         """Retorna o widget do canvas"""
         return self.canvas.get_tk_widget()
 
-
+    def _truncate_label(self, text, max_len=12):
+        """
+        Corta o texto se for maior que max_len e adiciona '...'.
+        Ex: 'Cliente Muito Grande' -> 'Cliente Mui...'
+        """
+        text = str(text)
+        if len(text) <= max_len:
+            return text
+        return text[:max_len - 3] + "..."
 
 # main - cria tela e container, grafico é criado dentro do container
 
@@ -161,7 +231,7 @@ if __name__ == "__main__":
     root.configure(bg="#FFFFFF")
 
     # Dados exemplo
-    clientes = ["cliente 3", "cliente 1", "cliente 2", "cliente 4", "cliente 5"]
+    clientes = ["cliente 3aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "cliente 1aaaaaaaaaaaaaa", "cliente 2", "cliente 4", "cliente aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa5"]
     quantidade = [1100, 1020, 950, 890, 789]
     faturamento = [9000, 7000, 5000, 3000, 2500]
     frequencias = [10, 8, 7, 5, 3]
