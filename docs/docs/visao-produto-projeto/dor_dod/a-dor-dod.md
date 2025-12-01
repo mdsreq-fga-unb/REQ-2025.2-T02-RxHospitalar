@@ -17,5 +17,5 @@ O DoD define os critérios que precisam ser cumpridos para que uma funcionalidad
 
 **Critérios de Conclusão (Definition of Done - DoD):** Uma funcionalidade só será considerada "Pronta" ao final de um Sprint se atender rigorosamente ao nosso Definition of Done. Nossa definição de "Pronto" inclui:
 - Todos os critérios de aceitação foram implementados.
-- O código ter sido desenvolvido seguindo a prática de TDD, ggarantindo que todo o código da lógica models seja testado (testes unitários e de integração) e integrado à versão mais estável do repositório no momento frontend /  experiment / integração .
+- O código ter sido desenvolvido seguindo a prática de TDD, garantindo que todo o código da lógica models seja testado (testes unitários e de integração) e integrado à versão mais estável do repositório no momento frontend /  experiment / integração .
 - O código ter passado pela revisão de outro membro da equipe (Code Review), recebendo retorno positivo.
