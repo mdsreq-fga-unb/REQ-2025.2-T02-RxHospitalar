@@ -26,22 +26,22 @@ def sugestao_compra(linha: str, periodo):
 
     # Carrega somente as linhas da GRUPO selecionado
     df_vendas = carregar_dados_por_colunas(sheet, cols, linha=linha_aux, coluna=coluna)
-    print("== VENDAS CARREGADAS ==")
-    print(df_vendas.head())
+    #print("== VENDAS CARREGADAS ==")
+    #print(df_vendas.head())
 
     # ====================================
     # 2. Processa datas e gera colunas por mês
     # ====================================
     df_vendas = separar_quantidade_por_data(df_vendas, periodo)
-    print("\n== VENDAS AGRUPADAS POR MÊS ==")
-    print(df_vendas.head())
+    #print("\n== VENDAS AGRUPADAS POR MÊS ==")
+    #print(df_vendas.head())
 
     # ======================
     # 3. Carregar estoque
     # ======================
     df_estoque = carregar_dados_por_colunas(
         sheet_name="Estoque",
-        columns=["Grupo", "Cód Original", "Qtd Caixa", "Estoque"],
+        columns=["Grupo", "Cód Original", "Qtd Caixa", "Estoque", "Preço Aquisição"],
         linha=linha_aux,
         coluna="Grupo"
     )
