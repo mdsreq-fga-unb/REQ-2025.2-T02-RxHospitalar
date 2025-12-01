@@ -83,10 +83,6 @@ class GraphsFrame(ttk.Frame):
         client_frame.pack(side="left", expand=True, padx=10)
         client_frame.pack_propagate(False)
 
-        # Dados de exemplo
-        faturamento = [9000, 7000, 5000, 3000, 2500]
-        frequencias = [10, 8, 7, 5, 3]
-
         # 1. Obtém o código do produto vindo dos filtros
         
         if filter_data is None:
@@ -107,13 +103,15 @@ class GraphsFrame(ttk.Frame):
             return
         # 3. Converte o DataFrame em listas para o gráfico
         clientes = df_clientes["RAZAOSOCIAL"].tolist()
-        quantidade = df_clientes["QUANTIDADE"].tolist()
+        frequencia = df_clientes["FREQUENCIA"].tolist()
+        faturamento = df_clientes["TOTAL_QUANTIDADE"].tolist()
+        media_mensal = df_clientes["MEDIA_MENSAL"].tolist()
 
         # 4. Garante que há pelo menos 1 linha antes de chamar o gráfico
         if not clientes:
             return
 
-        TopClientesGrafico(client_frame, clientes, quantidade, faturamento, frequencias)
+        TopClientesGrafico(client_frame, clientes, faturamento, frequencia, media_mensal)
 
     def mostrar_top_vendedores(self,df=None):
         vendor_frame = ttk.Frame(self.charts_container,style="CardInner.TFrame", width=500, height=250)

@@ -4,28 +4,28 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from matplotlib.figure import Figure
 
 class TopClientesGrafico:
-    def __init__(self, master, clientes, quantidade, faturamento, frequencias):
+    def __init__(self, master, clientes, faturamento, frequencias, media_mensal):
         self.master = master
         self.clientes = clientes
-        self.quantidade = quantidade
         self.faturamento = faturamento
         self.frequencias = frequencias
+        self.media_mensal = media_mensal
 
         # Se não tiver dados, não tenta montar gráfico
-        if not self.clientes or not self.quantidade:
+        if not self.clientes or not self.faturamento:
             return
         
         self.faturamento_total = sum(self.faturamento)
 
         # Ordenar dados de forma decrescente
-        dados = list(zip(self.clientes, self.quantidade, self.faturamento, self.frequencias))
+        dados = list(zip(self.clientes, self.faturamento, self.frequencias, self.media_mensal))
         dados_ordenados = sorted(dados, key=lambda x: x[1], reverse=True)
 
         # NOVO: checa se ainda tem dados após o sort
         if not dados_ordenados:
             return
 
-        self.clientes, self.quantidade, self.faturamento, self.frequencias = zip(*dados_ordenados)
+        self.clientes, self.faturamento, self.frequencias, self.media_mensal = zip(*dados_ordenados)
 
          # Guarda nomes completos e cria labels truncados
         self.clientes_full = list(self.clientes)
@@ -51,7 +51,7 @@ class TopClientesGrafico:
         cores = ["#06373D", "#08262C", "#2D595C", "#114640", "#7B8B7C"]
         self.barras = self.ax.bar(
             range(len(self.clientes_labels)), 
-            self.quantidade,
+            self.faturamento,
             color=cores,
             edgecolor="#01252A",
             linewidth=0.8,
@@ -63,9 +63,9 @@ class TopClientesGrafico:
         self.ax.set_xticklabels(self.clientes_labels, rotation=0, fontsize=7)
 
         # Eixos
-        self.ax.set_ylabel("Quantidade", fontsize=9, color="#3A3939", fontweight="bold")
+        self.ax.set_ylabel("Faturamento", fontsize=9, color="#3A3939", fontweight="bold")
         self.ax.set_title("Top 5 Clientes por Produto", fontsize=11, color="#01252A", fontweight="bold", pad=10)
-        self.ax.set_ylim(0, max(self.quantidade) * 1.2)
+        self.ax.set_ylim(0, max(self.faturamento) * 1.2)
 
         # Cores dos eixos e textos
         self.ax.spines['bottom'].set_color("#000000")
@@ -111,7 +111,7 @@ class TopClientesGrafico:
         )
         self.annot.set_visible(False)
 
-        def update_annot(idx,rect, quantidade, faturamento, freq):
+        def update_annot(idx,rect, faturamento, freq, media):
             x = rect.get_x() + rect.get_width() / 2
             y = rect.get_height()
 
@@ -122,9 +122,9 @@ class TopClientesGrafico:
 
             texto = (
                 f"{nome_completo}\n"
-                f"Quantidade: {quantidade}\n"
                 f"Faturamento: R$ {faturamento:,.2f}\n"
-                f"Frequência: {freq}"
+                f"Frequência: {int(freq)}\n"
+                f"Média mensal: {media:.2f}"
             )
             texto = texto.replace(",", "X").replace(".", ",").replace("X", ".")
 
@@ -132,7 +132,7 @@ class TopClientesGrafico:
             # --- Ajuste para não sair do gráfico ---
             # posição "ideal" acima da barra
             x_disp = x
-            y_disp = y + max(self.quantidade) * 0.05
+            y_disp = y + max(self.faturamento) * 0.05
             self.annot.set_position((x_disp, y_disp))
             # ------ Cálculo do bbox e correções nas bordas ------
             self.fig.canvas.draw_idle()
@@ -170,7 +170,7 @@ class TopClientesGrafico:
 
             # Ajusta topo: se estourar em cima, joga pra baixo da barra
             if bbox.y1 > ax_bbox.y1:
-                y_disp = y - max(self.quantidade) * 0.05
+                y_disp = y - max(self.faturamento) * 0.05
                 self.annot.set_position((x_disp, y_disp))
 
             self.annot.set_position((x_disp, y_disp))
@@ -178,11 +178,11 @@ class TopClientesGrafico:
         def hover(event):
             visivel = self.annot.get_visible()
             if event.inaxes == self.ax:
-                for idx, (rect, quantidade, faturamento, freq) in enumerate(
-                    zip(self.barras, self.quantidade, self.faturamento, self.frequencias)
+                for idx, (rect, faturamento, freq, media) in enumerate(
+                    zip(self.barras,self.faturamento, self.frequencias, self.media_mensal)
                 ):
                     if rect.contains(event)[0]:
-                        update_annot(idx,rect, quantidade, faturamento, freq)
+                        update_annot(idx,rect, faturamento, freq, media)
                         self.annot.set_visible(True)
                         self.fig.canvas.draw_idle()
                         return
@@ -231,7 +231,7 @@ if __name__ == "__main__":
     root.configure(bg="#FFFFFF")
 
     # Dados exemplo
-    clientes = ["cliente 3aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "cliente 1aaaaaaaaaaaaaa", "cliente 2", "cliente 4", "cliente aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa5"]
+    clientes = ["cliente 3", "cliente 1", "cliente 2", "cliente 4", "cliente 5"]
     quantidade = [1100, 1020, 950, 890, 789]
     faturamento = [9000, 7000, 5000, 3000, 2500]
     frequencias = [10, 8, 7, 5, 3]
