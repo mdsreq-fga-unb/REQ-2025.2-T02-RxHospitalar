@@ -259,6 +259,8 @@ class DashboardView(ttk.Frame):
 
             # Agenda a atualização da UI na thread principal
             self.after(0, self._on_filtering_complete, df_filtered, df_sugestoes)
+            
+            self.graphs_section.update_graphs(df_filtered, filter_data)
 
         except Exception as e:
             print(f"Erro crítico na thread de filtro: {e}")
