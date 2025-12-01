@@ -27,9 +27,7 @@ O **RF01** está relacionado ao **[OE05](https://mdsreq-fga-unb.github.io/REQ-20
 > **Objetivo Específico (OE) Relacionado:** [OE05](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE5)  
 >
 > **Critérios de aceitação**:
-> - O sistema deve calcular o período de estoque baseado na fórmula: (Estoque Total / Média de Saída)
-> - Permitir configurar período de análise (3, 4, 5 meses, etc.)
-> - Através de um botão o sistema atualiza os dados automaticamente a última versão do arquivo de dados
+> - O sistema deve destacar na interface os produto que estão com estoque crítico do limite ideal (4 meses)
 
 
 ---
@@ -95,7 +93,9 @@ Indo além da análise básica, estes requisitos fornecem inteligência de negó
 > **Objetivo Específico (OE) Relacionado:** [OE05](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE5)  
 >
 > **Critérios de aceitação**:
-> - Calcular quantidade sugerida para atingir meta de estoque
+> - Calcular quantidade sugerida para atingir meta de estoque  
+> - O sistema deve calcular o período de estoque baseado na fórmula: (Estoque Total / Média de Saída)  
+> - Permitir configurar período de análise (3, 4, 5 meses, etc.)
 > - Considerar unidades por caixa na sugestão
 > - Calcular valor total da compra sugerida
 > - Destacar na interface produtos críticos (estoque zerado ou muito baixo)
