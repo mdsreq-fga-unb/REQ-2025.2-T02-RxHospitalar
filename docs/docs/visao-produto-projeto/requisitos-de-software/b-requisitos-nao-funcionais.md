@@ -9,7 +9,7 @@ Os requisitos não funcionais especificam os critérios de qualidade do sistema,
 
 ### Performance  
 
-Esse requisito estabelece tempo de resposta e processamento, garantindo fluidez nas operações. Relaciona-se ao **[OG1](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OG1)** (reduzir tempo de análise) e ao **[OE01](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE1)** (diminuir em 50% o tempo de análise).  
+Esse requisito estabelece tempo de resposta e processamento, garantindo fluidez nas operações. Relaciona-se ao **[OE01](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE1)** (diminuir em 50% o tempo de análise).  
 
 **RNF01 - Performance do Sistema**  
 > - **Tempo de Resposta:** Executar a funcionalidade "Análise de Período de Estoque" (RF001). O tempo de resposta, desde o clique até a exibição completa dos resultados na tela, deve ser inferior a 30 segundos.  
@@ -20,7 +20,7 @@ Esse requisito estabelece tempo de resposta e processamento, garantindo fluidez 
 
 ### Usabilidade  
 
-Assegura que a interface seja intuitiva e responsiva (inclusive com modo escuro). Está diretamente ligado a **[OG4](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OG4)** (oferecer interface intuitiva e acessível) e **[OE02](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE2)/[OE04](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE4)** (interface fácil de usar, filtros dinâmicos e acessíveis em até 5 minutos).  
+Assegura que a interface seja intuitiva e responsiva (inclusive com modo escuro). Está diretamente ligado a **[OE02](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE2)/[OE04](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE4)** (interface fácil de usar, filtros dinâmicos e acessíveis em até 5 minutos).  
 
 **RNF02 - Usabilidade e Experiência do Usuário**  
 > - **Interface Inclusiva:** A tela principal de análise de dados deve apresentar as informações em um formato que demande pouco esforço de adaptação para o usuário entender e utilizar o sistema.  
@@ -32,7 +32,7 @@ Assegura que a interface seja intuitiva e responsiva (inclusive com modo escuro)
 
 ### Compatibilidade  
 
-Garante que o sistema seja compatível com planilhas e com o ambiente de uso (Windows). Apoia **[OG2](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OG2)** (centralizar e unificar dados), principalmente na integração de fontes conforme **[OE03](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE3)** (centralização das planilhas).  
+Garante que o sistema seja compatível com planilhas e com o ambiente de uso (Windows). Apoia principalmente na integração de fontes conforme **[OE03](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE3)** (centralização das planilhas).  
 
 **RNF03 - Compatibilidade com Ambientes e Planilhas**  
 > - **Importação sem Quebras:** O sistema deve ser capaz de importar com sucesso um arquivo `.xlsx` ou `.csv` válido, formatado conforme o template esperado.  
@@ -43,7 +43,7 @@ Garante que o sistema seja compatível com planilhas e com o ambiente de uso (Wi
 
 ### Segurança  
 
-Reforça a confidencialidade dos dados, backup e restauração, bem como a conformidade com a **LGPD**. Está totalmente conectado ao **[OG5](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OG5)** (garantir segurança e controle de acesso) e ao **[OE07](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE7)** (sigilo e controle de acesso).  
+Reforça a confidencialidade dos dados, backup e restauração, bem como a conformidade com a **LGPD**. Está totalmente conectado ao     **[OE07](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE7)** (sigilo e controle de acesso).  
 
 **RNF04 - Segurança**  
 > - **Acesso Autorizado:** O sistema deve ter autenticação para garantir somente acesso autorizado.  
@@ -56,7 +56,7 @@ Reforça a confidencialidade dos dados, backup e restauração, bem como a confo
 
 ### Confiabilidade  
 
-Garante a estabilidade do sistema em operação sem falhas críticas. Apoia a consecução de **[OG3](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OG3)** e **[OG7](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OG7)**, ao assegurar consistência nas análises e notificações (indiretamente relacionado a **[OE06](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE6)** e **[OE08](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE8)**).  
+Garante a estabilidade do sistema em operação sem falhas críticas. Apoia a consecução ao assegurar consistência nas análises(indiretamente relacionado a **[OE06](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE6)** e **[OE08](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE8)**).  
 
 **RNF05 - Confiabilidade Operacional**  
 > - **Fluidez Constante do Sistema:** Durante o período de Teste de Aceitação do Usuário (UAT), com duração de 2 dias úteis, o sistema não deve apresentar nenhuma falha que impeça a conclusão das tarefas pelo usuário.  
@@ -65,7 +65,7 @@ Garante a estabilidade do sistema em operação sem falhas críticas. Apoia a co
 
 ### Escalabilidade  
 
-Estabelece critérios para suportar crescimento de usuários e dados sem perda de desempenho. Relaciona-se a **[OG2](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OG2)** (centralizar dados de forma sustentável) e **[OG3](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OG3)** (automatizar gestão de estoque).  
+Estabelece critérios para suportar crescimento de usuários e dados sem perda de desempenho.  
 
 **RNF06 - Escalabilidade de Usuários e Dados**  
 > - **Estabilidade do Sistema:** Com o sistema populado com 1.000 produtos diferentes, os critérios de performance do RNF01 ainda devem ser atendidos.  
@@ -88,7 +88,7 @@ Define práticas para manter e evoluir o sistema, incluindo revisão de código,
 
 ### Manter Histórico de Notificações  
 
-Assegura rastreabilidade e auditoria das notificações geradas. Está conectado a **[OG6](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OG6)** (prover insights estratégicos) e **[OG7](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OG7)** (notificar situações críticas), reforçando **[OE08](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE8)** (alertas automáticos sobre produtos de baixo giro ou parados).  
+Assegura rastreabilidade e auditoria das notificações geradas. Está conectado a **[OE08](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/b-solucao-proposta#OE8)** (alertas automáticos sobre produtos de baixo giro ou parados).  
 
 **RNF08 - Histórico de Notificações**  
 > - **Descrição:** O sistema deve manter histórico de notificações por 15 dias para análise de rastreabilidade do produto. As notificações devem estar disponíveis na interface para o cliente, incluindo aquelas geradas pelos requisitos da categoria **Notificação sobre produtos em estado crítico**.  
