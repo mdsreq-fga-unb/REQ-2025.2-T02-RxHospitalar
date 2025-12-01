@@ -88,14 +88,14 @@ def juntar_por_codigo(df_vendas, df_estoque):
 
 def quantidade_para_comprar(df, periodo):
     """
-    Calcula a necessidade de compra baseada no estoque total vs média mensal.
+    Calcula a necessidade de compra em CAIXAS e o valor financeiro.
     
     Lógica:
-    1. Calcula ESTOQUE_TOTAL_UNIDADES (Estoque * Qtd Caixa)
-    2. Calcula QUANTIDADE_NECESSARIA (Média * Periodo)
-    3. Calcula SALDO (Estoque - Necessaria)
-    4. Filtra apenas onde SALDO < 0 (Déficit)
-    5. Gera SUGESTAO_COMPRA (Valor absoluto do déficit arredondado para cima)
+    1. Calcula estoque total em unidades.
+    2. Calcula necessidade baseada na média mensal.
+    3. Filtra produtos com déficit (Saldo Negativo).
+    4. Converte o déficit de unidades para QUANTIDADE DE CAIXAS (arredondando para cima).
+    5. Calcula o custo total (Caixas * Preço Aquisição).
     """
     
     # 1. Evita alterar o original
@@ -104,7 +104,8 @@ def quantidade_para_comprar(df, periodo):
     # ==============================================================================
     # PREPARAÇÃO (Garantir que colunas sejam números)
     # ==============================================================================
-    cols_numericas = ['Estoque', 'Qtd Caixa', 'MEDIA_MENSAL']
+    # Importante: Incluir 'Preço Aquisição' na conversão
+    cols_numericas = ['Estoque', 'Qtd Caixa', 'MEDIA_MENSAL', 'Preço Aquisição']
     for col in cols_numericas:
         if col in df.columns:
             df[col] = pd.to_numeric(df[col], errors='coerce').fillna(0)
@@ -112,60 +113,79 @@ def quantidade_para_comprar(df, periodo):
     # ==============================================================================
     # ETAPA 1: Calcular Estoque Total em Unidades
     # ==============================================================================
-    # Nome sugerido: ESTOQUE_TOTAL_UNIDADES
     df["ESTOQUE_TOTAL_UNIDADES"] = df["Estoque"] * df["Qtd Caixa"]
 
     # ==============================================================================
-    # ETAPA 2: Calcular Quantidade Necessária para o Período
+    # ETAPA 2: Calcular Quantidade Necessária para o Período (em Unidades)
     # ==============================================================================
-    # Nome sugerido: QUANTIDADE_NECESSARIA
     df["QUANTIDADE_NECESSARIA"] = df["MEDIA_MENSAL"] * periodo
 
     # ==============================================================================
-    # ETAPA 3: Calcular Diferença (Estoque - Necessidade)
+    # ETAPA 3: Calcular Saldo em Unidades
     # ==============================================================================
-    # Se o resultado for negativo, significa que FALTA produto.
-    # Se for positivo, SOBRA produto.
-    df["SALDO_ESTOQUE"] = df["ESTOQUE_TOTAL_UNIDADES"] - df["QUANTIDADE_NECESSARIA"]
+    # Negativo = Falta | Positivo = Sobra
+    df["SALDO_ESTOQUE_UNIDADES"] = df["ESTOQUE_TOTAL_UNIDADES"] - df["QUANTIDADE_NECESSARIA"]
 
     # ==============================================================================
     # ETAPA 4: Filtrar apenas os negativos (Onde precisa comprar)
     # ==============================================================================
-    # Mantemos apenas onde o saldo é menor que 0
-    df_compra = df[df["SALDO_ESTOQUE"] < 0].copy()
+    df_compra = df[df["SALDO_ESTOQUE_UNIDADES"] < 0].copy()
+
+    if df_compra.empty:
+        return pd.DataFrame() # Retorna vazio se não tiver nada para comprar
 
     # ==============================================================================
-    # ETAPA 5: Coluna final de Sugestão (Positivando o valor)
+    # ETAPA 5: Converter Déficit de Unidades para CAIXAS (NOVO!)
     # ==============================================================================
-    # Se o saldo é -100, a sugestão de compra deve ser 100.
-    # Usamos np.ceil para arredondar pra cima (não compramos meia unidade) e abs() para tirar o sinal negativo.
-    df_compra["SUGESTAO_COMPRA"] = np.ceil(df_compra["SALDO_ESTOQUE"].abs()).astype(int)
+    # Pega o valor absoluto do déficit (ex: faltam -50 unidades -> 50)
+    deficit_unidades = df_compra["SALDO_ESTOQUE_UNIDADES"].abs()
+    
+    # Proteção contra divisão por zero (se Qtd Caixa for 0, considera 1)
+    qtd_caixa_segura = df_compra["Qtd Caixa"].replace(0, 1)
+    
+    # Divide pela caixa e arredonda pra CIMA (np.ceil)
+    # Ex: Faltam 13 un, caixa de 12 -> 1.08 -> Comprar 2 caixas
+    df_compra["SUGESTAO_QTD_CAIXAS"] = np.ceil(deficit_unidades / qtd_caixa_segura).astype(int)
 
     # ==============================================================================
-    # ETAPA 6: Organização Final das Colunas
+    # ETAPA 6: Calcular Valor Financeiro (NOVO!)
     # ==============================================================================
-    # Pega as colunas de meses dinamicamente (ex: 10/2025, 09/2025...)
+    # Multiplica número de caixas pelo preço unitário da caixa
+    if "Preço Aquisição" in df_compra.columns:
+        df_compra["VALOR_TOTAL_COMPRA"] = df_compra["SUGESTAO_QTD_CAIXAS"] * df_compra["Preço Aquisição"]
+    else:
+        df_compra["VALOR_TOTAL_COMPRA"] = 0.0
+
+    # ==============================================================================
+    # ETAPA 7: Organização Final das Colunas
+    # ==============================================================================
+    # Pega as colunas de meses dinamicamente para mostrar no relatório
     cols_meses = [c for c in df_compra.columns if '/' in c]
     
-    colunas_finais = [
+    colunas_ordenadas = [
         "CODORIGINAL", 
         "GRUPO", 
-        "MEDIA_MENSAL",
-        "Estoque", 
-        "Qtd Caixa", 
-        "ESTOQUE_TOTAL_UNIDADES", 
+        cols_meses,              # Lista de meses
+        "MEDIA_MENSAL", 
+        "Estoque",               # Estoque físico atual
+        "Qtd Caixa",             # Unidades por caixa
+        "Preço Aquisição",       # Preço da caixa
+        "ESTOQUE_TOTAL_UNIDADES",
         "QUANTIDADE_NECESSARIA", 
-        "SALDO_ESTOQUE",    # Valor negativo mostrando o déficit
-        "SUGESTAO_COMPRA"   # Valor positivo sugerindo quanto comprar
+        "SALDO_ESTOQUE_UNIDADES",
+        "SUGESTAO_QTD_CAIXAS",   # <--- RESULTADO EM CAIXAS
+        "VALOR_TOTAL_COMPRA"     # <--- CUSTO ESTIMADO
     ]
     
-    # Adiciona os meses no meio para visualização, se existirem
-    colunas_ordenadas = ["CODORIGINAL", "GRUPO"] + cols_meses + [
-        "MEDIA_MENSAL", "ESTOQUE_TOTAL_UNIDADES", 
-        "QUANTIDADE_NECESSARIA", "SALDO_ESTOQUE", "SUGESTAO_COMPRA"
-    ]
-    
-    # Filtra colunas existentes para evitar erro se faltar alguma
-    colunas_validas = [c for c in colunas_ordenadas if c in df_compra.columns]
+    # "Achata" a lista (para tirar a lista de meses de dentro da lista principal)
+    colunas_finais_flat = []
+    for item in colunas_ordenadas:
+        if isinstance(item, list):
+            colunas_finais_flat.extend(item)
+        else:
+            colunas_finais_flat.append(item)
+
+    # Filtra apenas as colunas que realmente existem
+    colunas_validas = [c for c in colunas_finais_flat if c in df_compra.columns]
     
     return df_compra[colunas_validas]
