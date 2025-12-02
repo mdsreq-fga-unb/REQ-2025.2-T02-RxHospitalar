@@ -70,15 +70,25 @@ Responsável por recolher, reparar e redistribuir veículos pela cidade.
 
 
 ### Operador de frota (Carlos)
+Supervisiona as equipes de manutenção e faz monitoramento da frota em operação.
+<br/>
 ![Print do Miro com as principais atividade e User Stories da persona Carlos](image-2.png)
 
-| **Atividade Principal** | **User Stories**                                                                 |
-| ----------------------- | -------------------------------------------------------------------------------- |
-| Visualizar Frota        | Como operador, quero painel com mapa em tempo real                               |
-| Monitorar Indicadores   | Como operador, quero ver status, desempenho e alertas de veículos                |
-| Controlar Recolhimentos | Como operador, quero acompanhar deslocamento e recolhimento em campo             |
-| Redistribuir Veículos   | Como operador, quero comandos para redistribuição com base em análise de demanda |
-| Gerar Relatórios        | Como operador, quero exportar relatórios para parceiros e gestão                 |
+**Foco:** Visão centralizada no MVP, gestão ativa na Release 2 e automação estratégica na Release 3.
+<br/>
+| Fase | Jornada | História de Usuário |
+| :--- | :--- | :--- |
+| **MVP** | Monitorar | Como operador, quero um painel com mapa em tempo real da frota, para monitorar o status da operação em uma única tela. |
+| **MVP** | Monitorar | Como operador, quero filtrar veículos por status (manutenção, bateria baixa), para focar minha atenção onde é necessário. |
+| **MVP** | Gestão | Como operador, quero ver a localização das equipes no mapa, para coordenar os atendimentos logisticamente. |
+| **MVP** | Redistribuição | Como operador, quero ver "zonas quentes" e "zonas frias" de demanda, para decidir para onde mover os veículos ociosos. |
+| **MVP** | Relatórios | Como operador, quero exportar relatórios básicos de uso, para analisar o desempenho diário da frota. |
+| **REL 02** | Alertas | Como operador, quero alertas configuráveis para eventos críticos, para ser avisado passivamente sem vigiar o mapa o tempo todo. |
+| **REL 02** | Gestão | Como operador, quero alterar a rota da equipe em tempo real, para atender emergências ou mudanças repentinas. |
+| **REL 02** | Relatórios | Como operador, quero customizar os campos dos relatórios, para extrair análises específicas para a diretoria. |
+| **REL 03** | Histórico | Como operador, quero ver gráficos de performance histórica, para identificar tendências de comportamento e sazonalidade. |
+| **REL 03** | Inteligência | Como operador, quero sugestões automáticas de redistribuição (IA), para otimizar a frota com precisão matemática. |
+| **REL 03** | Integração | Como operador, quero integração automática com a Gestora Municipal, para cumprir obrigações regulatórias sem esforço manual. |
 
 
 ### Gestora municipal de mobilidade (Fernanda)
