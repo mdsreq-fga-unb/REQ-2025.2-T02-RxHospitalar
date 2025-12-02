@@ -2,11 +2,15 @@
 
 import json
 import os 
+from app.utils.path import get_resource_path
+
+
 
 def get_json_path():    return os.path.join(os.path.dirname(__file__), "user.json")
+path_final_json = get_resource_path(get_json_path())
 
 def get_user(username, password):
-    path = get_json_path()
+    path = path_final_json
     if not os.path.exists(path):
         print("[ERRO] Arquivo user.json não encontrado!")
         return False

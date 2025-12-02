@@ -3,14 +3,40 @@ import pandas as pd
 from pathlib import Path
 import unicodedata
 import re
+from app.utils.path import get_resource_path
 
-# --- CONFIGURAÇÕES DE CAMINHO ---
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(BASE_DIR)))
-file = os.path.join(PROJECT_ROOT, "data", "planilha_de_dados.xlsx")
+#caminho do arquivo excel
 
-# --- FUNÇÕES AUXILIARES ---
+# refatorado para  o executavel
 
+# --- BLOCO DE DIAGNÓSTICO (Copie isto) ---
+print("="*50)
+print("DIAGNÓSTICO DE CAMINHOS:")
+raiz = get_resource_path(".")
+print(f"1. Raiz do App: {raiz}")
+
+file = get_resource_path(os.path.join("data", "planilha_de_dados.xlsx"))
+print(f"2. Onde o código procura a planilha: {file}")
+
+existe = os.path.exists(file)
+print(f"3. O arquivo existe lá? {'SIM' if existe else 'NÃO'}")
+
+#Usada em RF07
+#funcao para carregar dados das linhas com filtro de colunas
+def carregar_dados_por_colunas( sheet_name: str, columns):
+
+    try:
+        df = pd.read_excel(file, sheet_name=sheet_name, usecols=columns)
+        return df
+    
+    except KeyError as e:
+        print(f"Error: One or more columns not found in the sheet. {e}")
+        return None
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        return pd.DataFrame()
+    
+# Função auxiliar para normalizar nomes de colunas (Reaproveitada de consulta_por_linha.py)
 def _norm(s: str) -> str:
     """Normaliza strings para comparação (remove acentos, espaços e lower case)."""
     if not isinstance(s, str): s = str(s)
