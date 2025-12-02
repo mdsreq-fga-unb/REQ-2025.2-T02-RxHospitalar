@@ -92,15 +92,23 @@ Supervisiona as equipes de manutenção e faz monitoramento da frota em operaç�
 
 
 ### Gestora municipal de mobilidade (Fernanda)
+
+Representa o poder público responsável por regular e acompanhar a operação dos modais de transporte sustentável.
+
 ![Print do Miro com as principais atividade e User Stories da persona Fernanda](image-3.png)
 
-| **Atividade Principal**    | **User Stories**                                                                   |
-| -------------------------- | ---------------------------------------------------------------------------------- |
-| Acompanhar Dados de Uso    | Como gestora, quero acessar painéis de uso, impacto ambiental e desempenho         |
-| Emitir Relatórios          | Como gestora, quero emitir relatórios integrados para políticas públicas           |
-| Integrar Dados             | Como gestora, quero integrar dados com sistemas da prefeitura                      |
-| Gerenciar Licenças         | Como gestora, quero ferramentas para emissão automática de licenças e autorizações |
-| Comunicação com Operadores | Como gestora, quero canal direto de comunicação com operadores parceiros           |
+**Foco:** Acesso a dados brutos no MVP, fiscalização visual na Release 2 e integração total de sistemas na Release 3.
+<br/>
+| Fase | Jornada | História de Usuário |
+| :--- | :--- | :--- |
+| **MVP** | Dados | Como gestora, quero um portal de dados brutos (API/CSV), para realizar análises independentes sem depender de envio manual. |
+| **MVP** | Relatórios | Como gestora, quero relatórios padronizados de viagens e distância, para comprovar quantitativamente o impacto na mobilidade. |
+| **MVP** | Comunicação | Como gestora, quero um canal direto de mensagens com os operadores, para enviar notificações oficiais de forma rastreável. |
+| **REL 02** | Fiscalização | Como gestora, quero mapas de calor de incidentes e estacionamento, para identificar áreas de risco e ordenar o espaço público. |
+| **REL 02** | Compliance | Como gestora, quero painel de status de licenças e cobertura, para fiscalizar se a operadora está cumprindo o contrato. |
+| **REL 03** | Integração | Como gestora, quero que os dados se integrem ao sistema GIS da prefeitura, para cruzar informações de mobilidade com dados urbanos. |
+| **REL 03** | Automação | Como gestora, quero agendar emissão automática de relatórios, para receber os indicadores estratégicos por e-mail. |
+| **REL 03** | Licenças | Como gestora, quero processar renovação de licenças online, para desburocratizar a regularização das empresas. |
 
 
 ### Motorista de apoio (Rogério)
