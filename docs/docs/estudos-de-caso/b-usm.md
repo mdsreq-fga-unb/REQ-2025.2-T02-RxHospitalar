@@ -113,22 +113,43 @@ Representa o poder público responsável por regular e acompanhar a operação d
 
 ### Motorista de apoio (Rogério)
 
+Profissional responsável por recolher bicicletas e patinetes danificados ou mal estacionados.
+
 ![Print do Miro com as principais atividade e User Stories da persona Rogério](image-4.png)
 
-| **Atividade Principal**  | **User Stories**                                                            |
-| ------------------------ | --------------------------------------------------------------------------- |
-| Receber Rotas            | Como motorista, quero receber rotas otimizadas para recolher veículos       |
-| Ver Prioridades          | Como motorista, quero notificações de prioridade no atendimento             |
-| Integrar-se com a Equipe | Como motorista, quero integração em tempo real com técnicos e central       |
-| Comprovar Recolhimento   | Como motorista, quero registrar digitalmente o recolhimento dos veículos    |
-| Realizar Checklist       | Como motorista, quero um checklist digital de segurança antes do transporte |
+**Foco:** Digitalizar a rota no MVP, aumentar segurança na Release 2 e otimizar trajetos na Release 3.
+<br/>
+| Fase | Jornada | História de Usuário |
+| :--- | :--- | :--- |
+| **MVP** | Rotas | Como motorista, quero receber lista de ordens de serviço por prioridade, para saber exatamente qual veículo buscar primeiro. |
+| **MVP** | Rotas | Como motorista, quero consultar status atual do veículo antes de ir, para não perder viagem buscando algo já recolhido. |
+| **MVP** | Comprovação | Como motorista, quero registro automático de hora e GPS no recolhimento, para validar minha produtividade sem esforço. |
+| **MVP** | Comprovação | Como motorista, quero anexar fotos do veículo na ordem de serviço, para substituir o envio manual por mensagens. |
+| **MVP** | Comunicação | Como motorista, quero chat no app com a equipe, para resolver dúvidas ou avisar atrasos sem ligações telefônicas. |
+| **REL 02** | Alertas | Como motorista, quero notificações push de novos chamados urgentes, para ser avisado imediatamente na rua. |
+| **REL 02** | Segurança | Como motorista, quero preencher checklist digital antes do transporte, para garantir o cumprimento das normas de segurança. |
+| **REL 02** | Ajuda | Como motorista, quero botão de apoio imediato, para solicitar suporte em caso de acidente ou falha mecânica. |
+| **REL 03** | Inteligência | Como motorista, quero sugestão automática de desvio de rota, para aproveitar a proximidade de novos chamados prioritários. |
+| **REL 03** | Formalização | Como motorista, quero assinar digitalmente a comprovação, para formalizar minha responsabilidade sobre a carga. |
+| **REL 03** | Segurança | Como motorista, quero gerar PDF do checklist realizado, para ter um comprovante pessoal dos procedimentos seguidos. |
 
-### Priorização (MVP)
+## Conclusão
+O desenvolvimento do User Story Mapping para a plataforma **EcoMove** permitiu traduzir a visão estratégica de um ecossistema de mobilidade urbana integrado em entregas de valor tangíveis e incrementais. A estruturação das jornadas para as cinco personas (Lucas, Marina, Carlos, Fernanda e Rogério) evidenciou que o sucesso do produto não depende apenas da experiência do usuário final, mas, crucialmente, da eficiência operacional e da integração com o poder público.
 
-| **Persona** | **Prioridades para o MVP**                                       |
-| ----------- | ---------------------------------------------------------------- |
-| Lucas       | Localizar, desbloquear, uso básico, pagamento e canal de suporte |
-| Marina      | Localização de defeitos, registro de manutenção e comunicação    |
-| Carlos      | Painel da frota e redistribuição básica                          |
-| Fernanda    | Painel de dados de uso e comunicação com operadores              |
-| Rogério     | Rotas otimizadas, comprovação e checklist                        |
+### Os principais pontos de destaque desta construção foram:
+
+**1. Foco na Confiabilidade para o Usuário Final** (Lucas) Diferente dos concorrentes que frustram usuários com falhas de desbloqueio e veículos indisponíveis, o USM priorizou no MVP histórias que garantem o básico bem feito: localização precisa e transparência sobre a bateria. As Releases 2 e 3 evoluem para a conveniência (reembolso automático, rotas a pé), visando recuperar a confiança do cidadão no transporte compartilhado.
+
+**2. Transformação Digital da Operação** (Marina, Carlos e Rogério) O mapeamento atacou a principal dor operacional: a dependência de processos manuais e planilhas.
+- **No MVP:** O foco foi a digitalização imediata (sair do papel/WhatsApp para o App), garantindo que a informação chegue a quem precisa.
+- **Na Evolução:** O produto escala de uma ferramenta de registro para uma ferramenta de inteligência, introduzindo automação de despacho e otimização de rotas via IA na Release 3, reduzindo custos operacionais e tempos de inatividade.
+
+**3. O Poder Público como Stakeholder Ativo** (Fernanda) O EcoMove se diferencia ao tratar a Gestora Municipal não como uma auditora externa, mas como uma usuária do sistema. O USM prevê, desde o MVP, a entrega de dados padronizados , evoluindo para uma integração sistêmica completa (GIS) na Release 3. Isso alinha o produto aos objetivos de negócio de promover integração com políticas públicas.
+
+**4. Estratégia de Release Incremental** A divisão em fases seguiu uma lógica clara de maturidade do produto:
+
+- **MVP (Viabilidade):** Focado em conectar as pontas e gerar dados. O objetivo é colocar a frota na rua com controle.
+- **Release 2 (Robustez e Segurança):** Focado em tratamento de exceções (falhas, acidentes, compliance) e melhoria da gestão visual.
+- **Release 3 (Inteligência e Escala):** Focado em automação, algoritmos de otimização e integrações complexas que geram diferencial competitivo.
+
+**Considerações Finais** O artefato gerado (USM) cumpre o objetivo de centralizar operações fragmentadas em uma plataforma única. Ele oferece um roteiro claro de desenvolvimento que equilibra a necessidade de entrada rápida no mercado (MVP) com a visão de longo prazo de tornar o transporte compartilhado sustentável e financeiramente viável. Como o USM é um artefato vivo, ele deverá ser revisitado conforme novos dados de uso e feedback das personas forem coletados após o lançamento do MVP.
