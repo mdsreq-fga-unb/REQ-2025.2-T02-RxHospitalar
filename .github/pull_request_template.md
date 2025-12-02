@@ -14,5 +14,5 @@ Preencha o checklist antes do PR ser aprovado:
 
 ### DoD
 - [ ] Todos os critérios de aceitação foram implementados
-- [ ] O código ter sido desenvolvido seguindo a prática de TDD, garantindo que todo o código seja testado (testes unitários e de integração) e integrado à versão principal do repositório (branch main).
+- [ ] O desenvolvimento backend foi feito seguindo a prática de TDD, garantindo que todo o código seja testado (testes unitários e de integração) e integrado à versão principal do repositório (branch main).
 - [ ] O código ter passado pela revisão de outro membro da equipe (Code Review), recebendo retorno positivo.

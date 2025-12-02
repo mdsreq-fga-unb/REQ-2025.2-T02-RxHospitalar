@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Ata N.º7 | 23/09" 
+sidebar_label: "Ata N.º07 | 23/09" 
 sidebar_position: 7 
 ---
 
