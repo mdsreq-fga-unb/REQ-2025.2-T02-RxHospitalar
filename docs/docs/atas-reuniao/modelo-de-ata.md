@@ -1,6 +1,6 @@
 ---
-sidebar_label: "N.º X (DD/MM/AAAA)"
-sidebar_position: 15
+sidebar_label: "Ata Modelo"
+sidebar_position: 24
 ---
 
 # ATA N.ºX | DD/MM

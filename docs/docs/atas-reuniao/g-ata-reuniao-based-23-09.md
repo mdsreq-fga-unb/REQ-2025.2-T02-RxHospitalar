@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Reunião de Organização da equipe e do projeto em relação ao RAD e Scrum" 
+sidebar_label: "Ata N.º07 | 23/09" 
 sidebar_position: 7 
 ---
 

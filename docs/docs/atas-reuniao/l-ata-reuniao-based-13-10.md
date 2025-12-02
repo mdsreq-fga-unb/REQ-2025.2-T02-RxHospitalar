@@ -1,9 +1,9 @@
 ---
-sidebar_label: "Verificação a partir da Jornada de Interação do Usuário"
+sidebar_label: "Ata N.º12 | 13/10"
 sidebar_position: 12
 ---
 
-# ATA N.º3 | 13/10/2025
+# ATA N.º12 | 13/10
 
 **Disciplina:** Requisitos de Software  
 **Data:** 13/10/2025  
