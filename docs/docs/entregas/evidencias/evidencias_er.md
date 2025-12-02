@@ -33,12 +33,7 @@ MVP validado pelo cliente.
 *Fonte: De autoria própria.*
 
 ### Organização e Atualização 
-Priorização de Requisitos
-.   
-<a id=""></a>
-*Figura 1: Tasks no GitHub Projects*
-<img src={useBaseUrl('/img/er_mapa_oe.png')} alt="" />
-*Fonte: De autoria própria.*
+Priorização de Requisitos: [MVP](https://mdsreq-fga-unb.github.io/REQ-2025.2-T02-RxHospitalar/docs/visao-produto-projeto/backlog-do-produto/b-mvp)
 
 ## Fase 2 - User Design
 
@@ -94,11 +89,11 @@ Garantir que os requisitos a serem implementados estavam dentro da ideia do prot
 Conversa com o cliente para validar a mudança de escopo do MVP  
 <a id=""></a>
 *Figura 1: Tasks no GitHub Projects*
-<img src={useBaseUrl('/img/er_coversacliente.png')} alt="" />
+<img src={useBaseUrl('/img/er_conversacliente.png')} alt="" />
 *Fonte: De autoria própria.*    
 <a id=""></a>
 *Figura 1: Tasks no GitHub Projects*
-<img src={useBaseUrl('/img/er_coversacliente2.png')} alt="" />
+<img src={useBaseUrl('/img/er_conversacliente2.png')} alt="" />
 *Fonte: De autoria própria.*    
 
 ### Validação
