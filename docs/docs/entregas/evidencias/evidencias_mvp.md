@@ -100,9 +100,9 @@ Essa seção apresenta as evidências de implementação dos requisitos funciona
 
  <a id="burnup_rxhospitalar_projects"></a>
 *Figura 11: Implementação do RF11*
-<img src={useBaseUrl('/img/rf11_tela1.png')} alt="Implementação do RF10" />
+<img src={useBaseUrl('/img/rf11_tela1.png')} alt="Implementação do RF11" />
 *Fonte: De autoria própria.*    
 <a id="burnup_rxhospitalar_projects"></a>
 *Figura 12: Implementação do RF11*
-<img src={useBaseUrl('/img/rf11_tela2.png')} alt="Implementação do RF10" />
+<img src={useBaseUrl('/img/rf11_tela2.png')} alt="Implementação do RF11" />
 *Fonte: De autoria própria.*
