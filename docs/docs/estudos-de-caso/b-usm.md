@@ -20,14 +20,16 @@ A EcoMove é uma startup fictícia voltada à mobilidade urbana sustentável com
 
 ## Atividades principais e user stories 
 
+<iframe width="768" height="432" src="https://miro.com/app/live-embed/uXjVJxdHdLc=/?embedMode=view_only_without_ui&moveToViewport=-752,2230,2155,1432&embedId=181717287864" frameborder="0" scrolling="no" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen></iframe>
+
 [**Link de redirecionamento para o USM no Miro**](https://miro.com/app/board/uXjVJxdHdLc=/?share_link_id=869782407306)
 
 ### Usuário urbano (Lucas)
 ![Print do Miro com as principais atividade e User Stories da persona Lucas](image.png)
 
-| **Atividade Principal**      | **User Stories (MVP)**                                                                |
+| **Jornada do usuário**      | **User Stories (MVP)**                                                                |
 | ---------------------------- | ------------------------------------------------------------------------------- |
-| Localizar Veículo            | Como usuário, quero ver no mapa onde estão os veículos disponíveis perto de mim |
+| Localizar Veículo            | Como usuário, quero visualizar a localização em tempo real dos veículos no mapa, para encontrar uma bicicleta ou patinete disponível nas redondezas. |
 | Desbloquear Veículo          | Como usuário, quero desbloquear o veículo de forma simples e confiável          |
 | Usar Veículo                 | Como usuário, quero ver informações de bateria e destino seguro                 |
 | Pagar e Receber Notificações | Como usuário, quero pagar de forma transparente e receber comprovante           |
