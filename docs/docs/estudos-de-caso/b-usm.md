@@ -25,16 +25,26 @@ A EcoMove é uma startup fictícia voltada à mobilidade urbana sustentável com
 [**Link de redirecionamento para o USM no Miro**](https://miro.com/app/board/uXjVJxdHdLc=/?share_link_id=869782407306)
 
 ### Usuário urbano (Lucas)
-![Print do Miro com as principais atividade e User Stories da persona Lucas](image.png)
+Trabalhador ou estudante que utiliza bicicletas ou patinetes para deslocamentos curtos entre casa, trabalho e transporte público.
 
-| **Jornada do usuário**      | **User Stories (MVP)**                                                                |
-| ---------------------------- | ------------------------------------------------------------------------------- |
-| Localizar Veículo            | Como usuário, quero visualizar a localização em tempo real dos veículos no mapa, para encontrar uma bicicleta ou patinete disponível nas redondezas. |
-| Desbloquear Veículo          | Como usuário, quero desbloquear o veículo de forma simples e confiável          |
-| Usar Veículo                 | Como usuário, quero ver informações de bateria e destino seguro                 |
-| Pagar e Receber Notificações | Como usuário, quero pagar de forma transparente e receber comprovante           |
-| Reportar Problema            | Como usuário, quero um canal direto para reportar defeitos ou incidentes        |
-| Acompanhar Histórico         | Como usuário, quero consultar meu histórico de uso e gastos                     |
+![Print do Miro com as principais atividade e User Stories da persona Lucas](image.png)
+<br/>
+**Foco:** Garantir o básico (encontrar e andar) no MVP, melhorar a confiança na Release 2 e trazer conveniência na Release 3.
+| Fase | Jornada | História de Usuário  |
+| :--- | :--- | :--- |
+| **MVP** | Localizar | Como usuário, quero visualizar veículos no mapa em tempo real, para encontrar uma bicicleta ou patinete disponível nas redondezas. |
+| **MVP** | Localizar | Como usuário, quero ver o endereço ou ponto de referência do veículo, para facilitar minha orientação visual ao chegar no local. |
+| **MVP** | Desbloquear | Como usuário, quero ver o nível de bateria antes de desbloquear, para evitar pegar um veículo que não aguente meu trajeto. |
+| **MVP** | Desbloquear | Como usuário, quero escanear QR Code no veículo, para iniciar o desbloqueio e começar a corrida instantaneamente. |
+| **MVP** | Pagar | Como usuário, quero cadastrar cartão e ter cobrança automática, para encerrar a corrida rapidamente sem burocracia. |
+| **MVP** | Reportar | Como usuário, quero selecionar opções rápidas de problemas (ex: pneu furado), para reportar falhas em segundos sem digitar muito. |
+| **REL 02** | Localizar | Como usuário, quero filtrar por tipo de veículo (bike/patinete), para escolher exatamente o modal que prefiro usar. |
+| **REL 02** | Localizar | Como usuário, quero ver status de dano no mapa, para não perder tempo caminhando até um veículo quebrado. |
+| **REL 02** | Pagar | Como usuário, quero reembolso automático em falha de desbloqueio, para não ter prejuízo financeiro por erro do sistema. |
+| **REL 02** | Reportar | Como usuário, quero anexar fotos e ter número de protocolo, para acompanhar o status da minha reclamação com segurança. |
+| **REL 03** | Localizar | Como usuário, quero que o app calcule a rota a pé até o veículo, para chegar até ele pelo caminho mais rápido. |
+| **REL 03** | Histórico | Como usuário, quero exportar histórico de pagamentos, para usar como comprovante de despesas ou reembolso. |
+| **REL 03** | Histórico | Como usuário, quero avaliar a corrida com nota e comentário, para contribuir com a melhoria do serviço. |
 
 
 ### Técnica de manutenção (Marina)
