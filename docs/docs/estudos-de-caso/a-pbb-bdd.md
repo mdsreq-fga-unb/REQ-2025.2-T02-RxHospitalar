@@ -21,15 +21,19 @@ A InovaHub é uma rede nacional que conecta e fomenta o ecossistema de inovaçã
 
 ## Organização do PBB - Miro
 
-[**Link de Redirecionamento para o PBB Canvas**](https://miro.com/app/board/uXjVJzWTeaU=/)
+<iframe width="768" height="432" src="https://miro.com/app/live-embed/uXjVJzWTeaU=/?embedMode=view_only_without_ui&moveToViewport=22550,36101,56936,25762&embedId=629343001680" frameborder="0" scrolling="no" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen></iframe>
 
-### Fotos - Evidências
-<img width="1913" height="865" alt="image" src="https://github.com/user-attachments/assets/5c99ded6-96a0-4421-aa1d-8290b083d8f0" />  
+## Personas - Atividades e Objetivos
 
-<img width="1913" height="865" alt="image" src="https://github.com/user-attachments/assets/f80c6864-5301-4be1-b6ff-31d29f5bd910" />  
+![Mariana](image-5.png)  
+![Lucas](image-6.png)  
+![Sérgio](image-7.png)  
+![Patrícia](image-8.png)  
+![Renato](image-9.png)  
+![Cláudia](image-10.png)
 
-<img width="1913" height="865" alt="image" src="https://github.com/user-attachments/assets/dfe0dbad-b4ce-4fe5-acba-67e20caa8520" />   
 
+## Problemas e Expectativas
 
 | **Problemas** | **Expectativas** |
 | :--- | :--- |
@@ -50,15 +54,64 @@ A InovaHub é uma rede nacional que conecta e fomenta o ecossistema de inovaçã
 | Comunicações dispersas | Integração entre as diferentes personas e as suas atividades |
 | Triagem manual | Processo digital que auxilia na organização da triagem das candidaturas por meio de categorização das etapas da triagem |    
 
-### Personas - Atividades e Objetivos
+## Funcionalidades + PBI  
+
+### Mariana
+
+![Mariana](image-12.png)   
+
+### Lucas
+
+![Lucas](image-11.png)  
+
+### Sérgio
+
+![Sérgio](image-13.png)
+
+### Patrícia
+
+![Patrícia](image-14.png)  
+
+### Renato
+
+![Renato](image-15.png)  
+
+### Cláudia
+
+![Cláudia](image-16.png)
 
 
+## US's + Critérios 
 
-### Funcionalidades + PBI
+### Mariana
 
+![Mariana](image-17.png)
+![Mariana](image-18.png)   
 
+### Lucas
 
-### US's + BDD
+![Lucas](image-19.png)
+![Lucas](image-20.png)   
+
+### Sérgio
+
+![Sérgio](image-21.png)
+![Sérgio](image-22.png)
+
+### Patrícia
+
+![Patrícia](image-23.png)
+![Patrícia](image-24.png)
+
+### Renato
+
+![Renato](image-25.png)
+![Renato](image-26.png)  
+
+### Cláudia
+
+![Cláudia](image-27.png)
+![Cláudia](image-28.png)
 
 
 
