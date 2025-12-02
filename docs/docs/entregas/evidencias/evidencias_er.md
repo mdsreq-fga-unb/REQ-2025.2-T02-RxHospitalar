@@ -76,7 +76,7 @@ Especificações da interação do usuário. Adição das histórias de usuário
 Adequação dos RF’s e OE’S do projeto às US coletadas com o cliente.     
 <a id=""></a>
 *Figura 1: Tasks no GitHub Projects*
-<img src={useBaseUrl('/img/er_mapa_rf_us.png')} alt="" />
+<img src={useBaseUrl('/img/er_mapa_us.png')} alt="" />
 *Fonte: De autoria própria.*  
 
 ### Validação
