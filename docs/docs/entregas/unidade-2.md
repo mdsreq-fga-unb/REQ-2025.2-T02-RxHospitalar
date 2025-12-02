@@ -16,9 +16,3 @@ sidebar_position: 2
     title="Finalização da Entrega da Unidade 2 + Gravação-20251021_003030-Gravação de Reunião.mp4">
 </iframe>
 </div>
-
-### Histórico de Versão
-
-| Data       | Versão | Descrição                              | Autor(es)      | 
-| ---------- | ------ | -------------------------------------- | -------------- | 
-| 21/10/2025 | 1.0    | Criação inicial da página de entregas. | Gabriel Augusto | 
