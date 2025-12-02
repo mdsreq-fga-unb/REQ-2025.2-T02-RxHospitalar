@@ -91,3 +91,18 @@ Essa seção apresenta as evidências de implementação dos requisitos funciona
 *Figura 10: Implementação do RF10*
 <img src={useBaseUrl('/img/rf10.png')} alt="Implementação do RF10" />
 *Fonte: De autoria própria.*
+
+ **RF11 - Consultar Padrões de Compra e Sazonalidade**
+
+ [Implementação(Back-End)](https://github.com/mdsreq-fga-unb/REQ-2025.2-T02-RxHospitalar/pull/162)  
+[Implementação(Front-End)](https://github.com/mdsreq-fga-unb/REQ-2025.2-T02-RxHospitalar/pull/176)  
+ - No sistema
+
+ <a id="burnup_rxhospitalar_projects"></a>
+*Figura 11: Implementação do RF11*
+<img src={useBaseUrl('/img/rf11_tela1.png')} alt="Implementação do RF11" />
+*Fonte: De autoria própria.*    
+<a id="burnup_rxhospitalar_projects"></a>
+*Figura 12: Implementação do RF11*
+<img src={useBaseUrl('/img/rf11_tela2.png')} alt="Implementação do RF11" />
+*Fonte: De autoria própria.*
