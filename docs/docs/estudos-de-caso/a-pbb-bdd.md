@@ -23,7 +23,7 @@ A InovaHub é uma rede nacional que conecta e fomenta o ecossistema de inovaçã
 
 <iframe width="768" height="432" src="https://miro.com/app/live-embed/uXjVJzWTeaU=/?embedMode=view_only_without_ui&moveToViewport=22550,36101,56936,25762&embedId=629343001680" frameborder="0" scrolling="no" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen></iframe>
 
-### Personas - Atividades e Objetivos
+## Personas - Atividades e Objetivos
 
 ![Mariana](image-5.png)  
 ![Lucas](image-6.png)  
@@ -33,7 +33,7 @@ A InovaHub é uma rede nacional que conecta e fomenta o ecossistema de inovaçã
 ![Cláudia](image-10.png)
 
 
-### Problemas e Expectativas
+## Problemas e Expectativas
 
 | **Problemas** | **Expectativas** |
 | :--- | :--- |
@@ -54,61 +54,61 @@ A InovaHub é uma rede nacional que conecta e fomenta o ecossistema de inovaçã
 | Comunicações dispersas | Integração entre as diferentes personas e as suas atividades |
 | Triagem manual | Processo digital que auxilia na organização da triagem das candidaturas por meio de categorização das etapas da triagem |    
 
-### Funcionalidades + PBI  
+## Funcionalidades + PBI  
 
-## Mariana
+### Mariana
 
 ![Mariana](image-12.png)   
 
-## Lucas
+### Lucas
 
 ![Lucas](image-11.png)  
 
-## Sérgio
+### Sérgio
 
 ![Sérgio](image-13.png)
 
-## Patrícia
+### Patrícia
 
 ![Patrícia](image-14.png)  
 
-## Renato
+### Renato
 
 ![Renato](image-15.png)  
 
-## Cláudia
+### Cláudia
 
 ![Cláudia](image-16.png)
 
 
-### US's + Critérios 
+## US's + Critérios 
 
-## Mariana
+### Mariana
 
 ![Mariana](image-17.png)
 ![Mariana](image-18.png)   
 
-## Lucas
+### Lucas
 
 ![Lucas](image-19.png)
 ![Lucas](image-20.png)   
 
-## Sérgio
+### Sérgio
 
 ![Sérgio](image-21.png)
 ![Sérgio](image-22.png)
 
-## Patrícia
+### Patrícia
 
 ![Patrícia](image-23.png)
 ![Patrícia](image-24.png)
 
-## Renato
+### Renato
 
 ![Renato](image-25.png)
 ![Renato](image-26.png)  
 
-## Cláudia
+### Cláudia
 
 ![Cláudia](image-27.png)
 ![Cláudia](image-28.png)
