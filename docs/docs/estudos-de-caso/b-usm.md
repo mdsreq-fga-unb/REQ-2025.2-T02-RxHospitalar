@@ -26,7 +26,7 @@ A EcoMove é uma startup fictícia voltada à mobilidade urbana sustentável com
 
 ### Usuário urbano (Lucas)
 Trabalhador ou estudante que utiliza bicicletas ou patinetes para deslocamentos curtos entre casa, trabalho e transporte público.
-
+<br/>
 ![Print do Miro com as principais atividade e User Stories da persona Lucas](image.png)
 <br/>
 **Foco:** Garantir o básico (encontrar e andar) no MVP, melhorar a confiança na Release 2 e trazer conveniência na Release 3.
@@ -48,15 +48,25 @@ Trabalhador ou estudante que utiliza bicicletas ou patinetes para deslocamentos 
 
 
 ### Técnica de manutenção (Marina)
+Responsável por recolher, reparar e redistribuir veículos pela cidade.
+<br/>
 ![Print do Miro com as principais atividade e User Stories da persona Marina](image-1.png)
 
-| **Atividade Principal**   | **User Stories**                                                                     |
-| ------------------------- | ------------------------------------------------------------------------------------ |
-| Identificar Defeitos      | Como técnica, quero acessar lista com localização exata dos veículos defeituosos     |
-| Registrar Reparo          | Como técnica, quero registrar rapidamente manutenções realizadas                     |
-| Ser Alertada de Falhas    | Como técnica, quero receber notificações automáticas de falhas recorrentes           |
-| Planejar Roteiro          | Como técnica, quero gerar rotas otimizadas para recolhimento/redistribuição          |
-| Comunicar-se com a Equipe | Como técnica, quero trocar mensagens instantâneas com o time de campo e supervisores |
+**Foco:** Sair do papel/planilha no MVP, priorizar o trabalho crítico na Release 2 e ter inteligência de dados na Release 3.
+<br/>
+| Fase | Jornada | História de Usuário |
+| :--- | :--- | :--- |
+| **MVP** | Alertas | Como técnica, quero receber alertas de falhas reportadas pelos usuários, para identificar rapidamente quais veículos precisam de atenção. |
+| **MVP** | Roteiro | Como técnica, quero ver no mapa a localização exata dos veículos a recolher, para não perder viagem indo a um local vazio. |
+| **MVP** | Roteiro | Como técnica, quero visualizar uma lista de veículos organizada em rota, para economizar combustível e tempo de deslocamento. |
+| **MVP** | Registro | Como técnica, quero formulário digital padronizado de manutenção, para eliminar o uso de planilhas manuais e evitar erros. |
+| **MVP** | Comunicação | Como técnica, quero chat integrado com o Operador de Frota, para formalizar orientações e resolver dúvidas na rua. |
+| **REL 02** | Roteiro | Como técnica, quero filtrar chamados por prioridade (crítico vs. moderado), para atacar primeiro os problemas mais urgentes. |
+| **REL 02** | Roteiro | Como técnica, quero ser notificada se o veículo for recolhido por outra equipe, para evitar deslocamento desnecessário até lá. |
+| **REL 02** | Registro | Como técnica, quero registrar as peças utilizadas no reparo, para ajudar no controle de estoque e custos. |
+| **REL 03** | Histórico | Como técnica, quero escanear QR Code para ver histórico do veículo, para diagnosticar problemas recorrentes com precisão. |
+| **REL 03** | Roteiro | Como técnica, quero visualizar zonas de atendimento no mapa, para organizar melhor a cobertura da minha equipe. |
+| **REL 03** | Segurança | Como técnica, quero acionar botão de emergência no app, para alertar a central imediatamente em situações de risco. |
 
 
 ### Operador de frota (Carlos)
