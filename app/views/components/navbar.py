@@ -3,6 +3,7 @@ from tkinter import ttk
 from PIL import Image, ImageTk
 from pathlib import Path
 from app.utils.navbar_utils import ToolTip, attach_update_tooltip, attach_hover_image, update, logout
+from app.utils.path import get_resource_path
 
 class Header(ttk.Frame):
     def __init__(self, parent, controller=None):
@@ -34,7 +35,8 @@ class Header(ttk.Frame):
 
         # === Ícone navbar ===
         img_path = Path(__file__).resolve().parent.parent / "images" / "Logo=NavBar.png"
-        img = Image.open(img_path).resize((171, 80))
+        final_img_path = get_resource_path(img_path)
+        img = Image.open(final_img_path).resize((171, 80))
         self.logo = ImageTk.PhotoImage(img)
 
         logo_label = ttk.Label(self, image=self.logo, background="#01252A",cursor="hand2")
@@ -45,12 +47,20 @@ class Header(ttk.Frame):
         # --- Carregar icones de navegação ---
         img_dir = Path(__file__).resolve().parent.parent / "images"
 
-        notifi_off = ImageTk.PhotoImage(Image.open(img_dir / "Notification=Off.png").resize((60, 60)))
-        profile_default = ImageTk.PhotoImage(Image.open(img_dir / "profile=Default.png").resize((60, 60)))
-        update_default = ImageTk.PhotoImage(Image.open(img_dir / "Update=Default.png").resize((60, 60)))
-        notifi_off_hover = ImageTk.PhotoImage(Image.open(img_dir / "Notification=Off Hover.png").resize((60, 60)))
-        profile_hover = ImageTk.PhotoImage(Image.open(img_dir / "profile=Selected.png").resize((60, 60)))
-        update_hover = ImageTk.PhotoImage(Image.open(img_dir / "Update=Selected.png").resize((60, 60)))
+        final_notify_off_path = get_resource_path(img_dir / "Notification=Off.png")
+        final_profile_default_path = get_resource_path(img_dir / "profile=Default.png")
+        final_update_default_path = get_resource_path(img_dir / "Update=Default.png")
+        final_notify_off_hover_path = get_resource_path(img_dir / "Notification=Off Hover.png")
+        final_profile_hover_path = get_resource_path(img_dir / "profile=Selected.png")
+        final_update_hover_path = get_resource_path(img_dir / "Update=Selected.png")
+
+        notifi_off = ImageTk.PhotoImage(Image.open(final_notify_off_path).resize((60, 60)))
+        profile_default = ImageTk.PhotoImage(Image.open(final_profile_default_path).resize((60, 60)))
+        update_default = ImageTk.PhotoImage(Image.open(final_update_default_path).resize((60, 60)))
+        notifi_off_hover = ImageTk.PhotoImage(Image.open(final_notify_off_hover_path).resize((60, 60)))
+        profile_hover = ImageTk.PhotoImage(Image.open(final_profile_hover_path).resize((60, 60)))
+        update_hover = ImageTk.PhotoImage(Image.open(final_update_hover_path).resize((60, 60)))
+        
         # Guardar imagens para não serem destruídas
         self.notifi_off = notifi_off
         self.profile_default = profile_default

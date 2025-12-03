@@ -5,7 +5,7 @@ import pandas as pd
 from datetime import datetime
 
 # 1. IMPORTS DO MODEL (app/models)
-from app.models.data_loader import load_selected_columns 
+from app.models.carregar_dados import carregar_dados_por_colunas 
 
 # 2. IMPORTS DAS VIEWS (app/views/pages)
 from app.views.pages.auth_page.login import LoginPage, ForgotPasswordPage
@@ -107,7 +107,7 @@ class AppController(tk.Tk):
         """Executa a função do Model que lê o arquivo fixo."""
         
         # O MODEL É CHAMADO
-        df_master = load_selected_columns(sheet_name, columns_to_load)
+        df_master = carregar_dados_por_colunas(sheet_name, columns_to_load)
         
         # Retorna para a thread principal (UI)
         self.after(0, self.finish_data_loading, df_master)
@@ -116,18 +116,34 @@ class AppController(tk.Tk):
     def finish_data_loading(self, df_master):
         """Roda na thread principal: destrói o modal e troca a tela."""
 
-        success = (df_master is not None and not df_master.empty)
+        df_final = pd.DataFrame() # Começa vazio por segurança
+
+        if isinstance(df_master, dict):
+            # Se veio um dicionário, é preciso escolher qual aba usar como principal.
+            # Tenta pegar a aba 'Estoque'. Se não existir, pega a primeira que vier.
+            if "Estoque" in df_master:
+                df_final = df_master["Estoque"]
+                print("Conversão: Aba 'Estoque' extraída do dicionário com sucesso.")
+            elif df_master: # Se o dict não estiver vazio mas não tiver 'Estoque'
+                primeira_aba = next(iter(df_master))
+                df_final = df_master[primeira_aba]
+                print(f"Aviso: Aba 'Estoque' não encontrada. Usando aba '{primeira_aba}'.")
+        
+        elif isinstance(df_master, pd.DataFrame):
+            # Se já veio como DataFrame, só repassa
+            df_final = df_master
+
+        # Agora a validação antiga funciona, pois df_final é garantidamente um DataFrame
+        success = (df_final is not None and not df_final.empty)
 
         if success:
-            self.df_master = df_master
+            self.df_master = df_final
             self.last_update_time = datetime.now()
-            print("Dados carregados com sucesso. Próxima tela: Dashboard.")
+            print("Dados carregados e convertidos com sucesso. Próxima tela: Dashboard.")
             
-            # 2. Define o TIMER para transicionar após 1500ms (1.5 segundos)
             self.after(1500, self.handle_final_transition, "DashboardView")
         else:
-            print(" Erro na importação.")
-            # 2. Define o TIMER para transicionar após 2500ms (dá mais tempo para ler o erro)
+            print("[Erro] Importação falhou: Dados vazios ou formato inválido.")
             self.after(2500, self.handle_final_transition, "LoginPage")
 
     def handle_final_transition(self, next_page):
