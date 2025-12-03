@@ -2,15 +2,16 @@
 
 import json
 import os 
-from app.utils.path import get_resource_path
+from app.utils.path import get_writable_path
 
 
 
-def get_json_path():    return os.path.join(os.path.dirname(__file__), "user.json")
-path_final_json = get_resource_path(get_json_path())
+def get_json_path():
+    """Retorna o caminho do arquivo user.json no local editável"""
+    return get_writable_path('user.json')
 
 def get_user(username, password):
-    path = path_final_json
+    path = get_json_path()
     if not os.path.exists(path):
         print("[ERRO] Arquivo user.json não encontrado!")
         return False
@@ -36,12 +37,16 @@ def change_password(new_password):
     if not os.path.exists(path):
         print("[ERRO] Arquivo user.json não encontrado!")
         return False
+    try:
+        with open(path, "r", encoding="utf-8") as file:
+            data = json.load(file)
 
-    with open(path, "r", encoding="utf-8") as file:
-        data = json.load(file)
+        data["password"] = new_password
 
-    data["password"] = new_password
-
-    with open(path, "w", encoding="utf-8") as file:
-        json.dump(data, file, indent=4, ensure_ascii=False)
-    return True
+        with open(path, "w", encoding="utf-8") as file:
+            json.dump(data, file, indent=4, ensure_ascii=False)
+        print(f"[INFO] Senha alterada com sucesso! Arquivo salvo em: {path}")
+        return True
+    except Exception as e:
+        print(f"[ERRO] Falha ao alterar senha: {e}")
+        return False
